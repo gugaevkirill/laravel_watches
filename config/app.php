@@ -179,7 +179,8 @@ return [
 
         // Spark
         Laravel\Spark\Providers\SparkServiceProvider::class,
-//        Laravel\Cashier\CashierServiceProvider::class,
+        Laravel\Cashier\CashierServiceProvider::class,
+        App\Providers\SparkServiceProvider::class,
     ],
 
     /*
