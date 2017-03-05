@@ -21,7 +21,7 @@ class CreateApiTokensTable extends Migration
             $table->tinyInteger('transient')->default(0);
             $table->timestamp('last_used_at')->nullable();
             $table->timestamp('expires_at')->nullable();
-            $table->timestamps();
+            $table->timestampsTz();
 
             $table->index(['user_id', 'expires_at']);
         });

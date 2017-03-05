@@ -24,7 +24,7 @@ class CreateInvoicesTable extends Migration
             $table->string('billing_zip')->nullable();
             $table->string('billing_country')->nullable();
             $table->string('vat_id', 50)->nullable();
-            $table->timestamps();
+            $table->timestampsTz();
 
             $table->index('created_at');
         });

@@ -18,7 +18,7 @@ class CreateAnnouncementsTable extends Migration
             $table->text('body');
             $table->string('action_text')->nullable();
             $table->text('action_url')->nullable();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

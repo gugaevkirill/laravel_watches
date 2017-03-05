@@ -1,16 +1,14 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+Route::get('/', 'MainController@mainPage')->name('index');
+Route::get('/repair', 'MainController@repairPage');
+Route::get('/sell', 'MainController@sellPage');
+Route::get('/about', 'MainController@aboutPage');
 
-Route::get('/', 'WelcomeController@show');
+Route::get('/contacts', 'ContactsController@contactsPage')->name('contacts');
+Route::post('/contacts', 'ContactsController@processForm');
 
-Route::get('/home', 'HomeController@show');
+Route::get('/{category}', 'CatalogController@categoryPage')
+    ->where(['category' => 'watches|jewelry|accessories']);
+Route::get('/{category}/{id}', 'CatalogController@productPage')
+    ->where(['id' => '[0-9]+', 'category' => 'watches|jewelry|accessories']);

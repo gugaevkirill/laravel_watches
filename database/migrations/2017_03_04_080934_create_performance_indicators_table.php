@@ -18,7 +18,7 @@ class CreatePerformanceIndicatorsTable extends Migration
             $table->decimal('yearly_recurring_revenue');
             $table->decimal('daily_volume');
             $table->integer('new_users');
-            $table->timestamps();
+            $table->timestampsTz();
 
             $table->index('created_at');
         });

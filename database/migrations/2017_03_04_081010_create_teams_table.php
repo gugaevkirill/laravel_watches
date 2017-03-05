@@ -32,7 +32,7 @@ class CreateTeamsTable extends Migration
             $table->string('vat_id', 50)->nullable();
             $table->text('extra_billing_information')->nullable();
             $table->timestamp('trial_ends_at')->nullable();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

@@ -21,7 +21,7 @@ class CreateNotificationsTable extends Migration
             $table->string('action_text')->nullable();
             $table->text('action_url')->nullable();
             $table->tinyInteger('read')->default(0);
-            $table->timestamps();
+            $table->timestampsTz();
 
             $table->index(['user_id', 'created_at']);
         });

@@ -21,7 +21,7 @@ class CreateSubscriptionsTable extends Migration
             $table->integer('quantity');
             $table->timestamp('trial_ends_at')->nullable();
             $table->timestamp('ends_at')->nullable();
-            $table->timestamps();
+            $table->timestampsTz();
         });
 
         Schema::create('team_subscriptions', function ($table) {
@@ -33,7 +33,7 @@ class CreateSubscriptionsTable extends Migration
             $table->integer('quantity');
             $table->timestamp('trial_ends_at')->nullable();
             $table->timestamp('ends_at')->nullable();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 
