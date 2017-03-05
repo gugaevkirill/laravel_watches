@@ -10,6 +10,8 @@ class Param extends Model
     public $incrementing = false;
     protected $primaryKey = 'slug';
 
+    const TYPES = ['integer', 'string', 'boolean', 'select'];
+
     public function auctions()
     {
         return $this->belongsToMany('App\Models\Auction\ScandyAuction');

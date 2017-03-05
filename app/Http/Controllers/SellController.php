@@ -13,4 +13,13 @@ class SellController extends Controller
     {
         return view('sell');
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function processForm(Request $request)
+    {
+        return redirect()->route('contacts');
+    }
 }

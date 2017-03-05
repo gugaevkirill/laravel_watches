@@ -15,7 +15,8 @@ class ContactsController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function processForm(Request $request)
     {

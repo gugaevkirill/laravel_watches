@@ -2,10 +2,15 @@
 
 namespace App;
 
+use Backpack\CRUD\CrudTrait;
+use Spatie\Permission\Traits\HasRoles;
 use Laravel\Spark\User as SparkUser;
 
 class User extends SparkUser
 {
+    use CrudTrait;
+    use HasRoles;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -47,4 +52,11 @@ class User extends SparkUser
         'trial_ends_at' => 'datetime',
         'uses_two_factor_auth' => 'boolean',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        if ($value != '') {
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
 }
