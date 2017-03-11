@@ -17,7 +17,7 @@ class CreateChunksTable extends Migration
             $table->string('slug')->primary();
             $table->string('title');
             $table->text('content_ru');
-            $table->text('content_en');
+            $table->text('content_en')->nullable();
         });
     }
 

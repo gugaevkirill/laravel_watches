@@ -26,13 +26,17 @@ $factory->define(Brand::class, function (Generator $faker) {
     ];
 });
 
+// Нельзя будет воспользоваться этой фабрикой без указания типа Product'a
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Param::class, function (Generator $faker) {
     return [
         'slug' => $faker->word,
-        'title_ru' => $faker->word,
+        'title_ru' => $faker->unique()->word,
         'title_en' => $faker->word,
-        'type' => array_rand(Param::TYPES),
+        'type' => 'string',
+        'required' => false,
+        'unique' => false,
+        'in_filter' => false,
     ];
 });
 

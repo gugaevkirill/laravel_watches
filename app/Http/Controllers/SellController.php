@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class SellController extends Controller
 {
@@ -20,6 +21,6 @@ class SellController extends Controller
      */
     public function processForm(Request $request)
     {
-        return redirect()->route('contacts');
+        return Redirect::to('sell.page', 300);
     }
 }

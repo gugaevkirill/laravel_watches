@@ -2,17 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Catalog\Brand;
+use App\Models\Catalog\Category;
+use App\Models\Catalog\Product;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
     /**
+     * @param Request $request
      * @param string $cateogory
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function categoryPage(string $cateogory)
+    public function categoryPage(Request $request, string $cateogory)
     {
-        return view('category');
+        /** @var Collection $productsAll */
+        $productsAll = Product::where('category_slug', $cateogory)->get();
+
+        return view(
+            'category',
+            [
+                'category' => Category::findOrFail($cateogory),
+                'brands' => Brand::whereIn('slug', $productsAll->pluck('brand_slug')->toArray())->get(),
+            ]
+        );
     }
 
     /**

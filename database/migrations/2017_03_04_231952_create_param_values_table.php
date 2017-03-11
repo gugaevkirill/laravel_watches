@@ -18,8 +18,8 @@ class CreateParamValuesTable extends Migration
             $table->smallInteger('order')->unsigned()->default(100)->index();
             $table->string('param_slug')->index();
             $table->foreign('param_slug')->references('slug')->on('params')->onDelete('cascade');
-            $table->string('value_ru')->unique();
-            $table->string('value_en')->unique()->nullable();
+            $table->string('value_ru');
+            $table->string('value_en')->nullable();
         });
     }
 

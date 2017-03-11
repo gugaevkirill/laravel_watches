@@ -30,7 +30,6 @@ class SettingsTableSeeder extends Seeder
             'value'         => '',
             'field'         => '{"name":"value","label":"Value","type":"email"}',
             'active'        => 1,
-
         ]);
 
         DB::table('settings')->insert([
@@ -40,7 +39,6 @@ class SettingsTableSeeder extends Seeder
             'value'         => '',
             'field'         => '{"name":"value","label":"Value","type":"email"}',
             'active'        => 1,
-
         ]);
 
         DB::table('settings')->insert([
@@ -50,7 +48,6 @@ class SettingsTableSeeder extends Seeder
             'value'         => 'this is the value',
             'field'         => '{"name":"value","label":"Value", "title":"Motto value" ,"type":"textarea"}',
             'active'        => 1,
-
         ]);
     }
 }

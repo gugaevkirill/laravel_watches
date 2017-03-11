@@ -177,6 +177,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // My own
+        App\Providers\BlateDirectivesProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
         // Spark
         Laravel\Spark\Providers\SparkServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,

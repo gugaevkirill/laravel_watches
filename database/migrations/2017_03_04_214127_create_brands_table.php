@@ -17,7 +17,7 @@ class CreateBrandsTable extends Migration
             $table->string('slug')->primary();
             $table->smallInteger('order')->unsigned()->default(100)->index();
             $table->string('name')->unique();
-            $table->string('image')->unique();
+            $table->string('image');
         });
     }
 

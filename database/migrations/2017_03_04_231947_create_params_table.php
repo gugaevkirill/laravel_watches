@@ -22,6 +22,7 @@ class CreateParamsTable extends Migration
             $table->enum('type', Param::TYPES)->index();
             $table->boolean('required')->default(false);
             $table->boolean('unique')->default(false);
+            $table->boolean('in_filter')->default(false);
         });
     }
 
