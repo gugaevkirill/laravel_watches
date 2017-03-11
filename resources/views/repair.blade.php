@@ -11,122 +11,217 @@
         <div class="col-md-9 col-md-push-3 information-entry">
             <div class="blog-landing-box type-1 detail-post">
                 <div class="blog-entry">
-                    <a class="image hover-class-1" href="#"><img src="/img/old//blog-thumbnail-1.jpg" alt="" /><span class="hover-label">Read More</span></a>
+                    <div class="image"><img src="/img/old//blog-thumbnail-1.jpg" alt="" /></div>
                     <div class="content">
-                        <h1 class="title">Fresh review of coming trends for Summer '15</h1>
-                        <div class="subtitle">Posted 06:12PM, 25 December 2015 by <a href="#"><b>Admin</b></a>  /  Category: <a href="#">Fashion</a>, <a href="#">Dresses</a></div>
+                        <h1 class="title">Ремонт швейцарских часов в Москве</h1>
                         <div class="article-container style-1">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua. Class aptent taciti sociosqu ad litora torquent. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
-                            <p>Ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                        </div>
-                        <div class="detail-post-tags">
-                            <b>Tags:</b>  <a href="#">apparel</a>, <a href="#">celebrity</a>, <a href="#">clothings</a>, <a href="#">cool t-shirts</a>, <a href="#">fashion</a>, <a href="#">halothemes</a>, <a href="#">jackets</a>, <a href="#">shoes</a>
+                            <p>Часы, бесспорно, один из лучших аксессуаров на все времена. На всем пути своего развития они постоянно видоизменялись и принимали самые необычные формы, а часовщики, отвечая движению прогресса, совершенствовали и усложняли механизм.</p>
+                            <p>Сегодня современные технологии производства и усложняющиеся конструкции механизмов требуют искусного и высококвалифицированного ремонта наручных часов. Часовые мастера должны обладать немалыми знаниями, оборудование — непрерывно модернизироваться, а техника исполнения ремонтных работ быть поистине достойной шедевров часового производства.</p>
+                            <p>SwissMaster является авторизованным сервисным центром по обслуживанию и ремонту швейцарских часов престижных марок. В нашей мастерской используется самое современное оборудование и новейший инструмент, позволяющий выполнять полный комплекс работ по диагностике и сервисному обслуживанию часов с учетом мировых стандартов. С вашими часами будут работать опытные мастера, которые не только проведут качественный ремонт, но и расскажут об индивидуальных особенностях часов, а также подскажут, как продлить их жизнь.</p>
                         </div>
                     </div>
                 </div>
                 <div class="blog-entry">
-                    <h3 class="additional-blog-title">Comments posted (2)</h3>
-                    <div class="comment">
-                        <a class="comment-image" href="#"><img src="/img/old//comment-1.jpg" alt="" /></a>
-                        <div class="comment-content">
-                            <div class="comment-title"><span>Christopher</span>  Posted 06:12PM, 25 December 2015</div>
-                            <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <a class="comment-image" href="#"><img src="/img/old//comment-2.jpg" alt="" /></a>
-                        <div class="comment-content">
-                            <div class="comment-title"><span>Helen</span>  Posted 06:12PM, 25 December 2015</div>
-                            <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-entry">
-                    <h3 class="additional-blog-title">Leave a comment</h3>
-                    <form>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <label>Your Name <span>*</span></label>
-                                <input class="simple-field" type="text" placeholder="Your name (required)" value="" />
-                                <label>Your Surname</label>
-                                <input class="simple-field" type="text" placeholder="Your surname" value="" />
-                                <label>Your Email <span>*</span></label>
-                                <input class="simple-field" type="text" placeholder="Your email address (required)" value="" />
-                                <div class="clear"></div>
-                            </div>
-                            <div class="col-sm-12">
-                                <label>Your Message <span>*</span></label>
-                                <textarea class="simple-field" placeholder="Your message content (required)"></textarea>
-                                <div class="button style-10">Send Message<input type="submit" value="" /></div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    <h3 class="additional-blog-title">Как мы работаем</h3>
 
+                    <div class="comment">
+                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <div class="comment-content">
+                            <div class="comment-title"><span>Приемка</span></div>
+                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <div class="comment-content">
+                            <div class="comment-title"><span>Проверка герметичности</span></div>
+                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <div class="comment-content">
+                            <div class="comment-title"><span>Выдача квитанции</span></div>
+                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <div class="comment-content">
+                            <div class="comment-title"><span>Диагностика</span></div>
+                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <div class="comment-content">
+                            <div class="comment-title"><span>Мойка часов</span></div>
+                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <div class="comment-content">
+                            <div class="comment-title"><span>Ремонт и замена деталей</span></div>
+                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <div class="comment-content">
+                            <div class="comment-title"><span>Сборка и проверка</span></div>
+                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="col-md-3 col-md-pull-9 information-entry blog-sidebar">
             <div class="information-blocks">
                 <div class="categories-list">
-                    <div class="block-title size-3">Blog Categories</div>
-                    <ul>
-                        <li><a href="#">All about clothing<span>(5)</span></a></li>
-                        <li><a href="#">Make-up &amp; beauty<span>(2)</span></a></li>
-                        <li><a href="#">Accessories <span>(0)</span></a></li>
-                        <li><a href="#">Fashion trends<span>(11)</span></a></li>
-                        <li><a href="#">Haircuts &amp; hairstyles<span>(7)</span></a></li>
-                    </ul>
+                    <div class="block-title size-3">Виды услуг</div>
                 </div>
             </div>
             <div class="information-blocks">
-                <h3 class="block-title inline-product-column-title">Recent Posts</h3>
                 <div class="inline-product-entry">
-                    <a class="image" href="#"><img src="/img/old//product-image-inline-4.jpg" alt=""></a>
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
-                            <a class="title" href="#">New collection from Armiani 2013</a>
-                            <div class="description">Posted 04 November 2014</div>
+                            <span class="title">Ремонт швейцарских часов</span>
+                            <div class="description">Краткий текст про услугу</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <a class="image" href="#"><img src="/img/old//product-image-inline-5.jpg" alt=""></a>
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
-                            <a class="title" href="#">New collection from Armiani 2013</a>
-                            <div class="description">Posted 04 November 2014</div>
+                            <span class="title">Обслуживание часов</span>
+                            <div class="description">Краткий текст про услугу</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <a class="image" href="#"><img src="/img/old//product-image-inline-6.jpg" alt=""></a>
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
-                            <a class="title" href="#">New collection from Armiani 2013</a>
-                            <div class="description">Posted 04 November 2014</div>
+                            <span class="title">Проверка и замена элементов питания</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Восстановление герметичности</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Полировка корпуса и браслета</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Полировка и замена стекол</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Замена ремешков</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Родирование корпусов и браслетов</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Ремонт колеса баланса</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Ремонт турбийона</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Ремонт репетира</span>
+                            <div class="description">Краткий текст про услугу</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="inline-product-entry">
+                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <div class="content">
+                        <div class="cell-view">
+                            <span class="title">Проверка подлинности часов</span>
+                            <div class="description">Краткий текст про услугу</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
             </div>
-            <div class="information-blocks">
-                <h3 class="block-title inline-product-column-title">Popular Tags</h3>
-                <div class="tags-box">
-                    <a href="#">Fashion</a>
-                    <a href="#">Clothing</a>
-                    <a href="#">Trends</a>
-                    <a href="#">2015</a>
-                    <a href="#">Summer</a>
-                    <a href="#">New</a>
-                </div>
-            </div>
-
         </div>
 
     </div>
