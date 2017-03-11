@@ -14,7 +14,7 @@ class MainController extends Controller
     public function mainPage()
     {
         return view('index', [
-            'brands' => Brand::take(9)->get(),
+            'brands' => Brand::take(9)->get(), // TODO: вытаскивать те бренды, по которым есть часы
 
             'watches' => Product::where('category_slug', 'watches')->take(5)->get(),
             'jewelry' => Product::where('category_slug', 'jewelry')->take(5)->get(),
@@ -27,6 +27,11 @@ class MainController extends Controller
      */
     public function aboutPage()
     {
-        return view('about');
+        return view(
+            'about',
+            [
+                'brands' => Brand::take(6)->get(),  // TODO: вытаскивать те бренды, по которым есть часы
+            ]
+        );
     }
 }
