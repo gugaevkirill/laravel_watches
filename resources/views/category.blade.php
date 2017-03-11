@@ -30,55 +30,23 @@
     <div class="row">
         <div class="col-md-9 col-md-push-3 col-sm-8 col-sm-push-4">
             <div class="row shop-grid grid-view">
-                {{--TODO: вывести отфильтрованные продукты--}}
-                <div class="col-md-3 col-sm-4 shop-grid-item">
-                    <div class="product-slide-entry shift-image">
-                        <div class="product-image">
-                            <img src="img/product-minimal-1.jpg" alt=""/>
-                            <img src="img/product-minimal-11.jpg" alt=""/>
-                            <div class="bottom-line left-attached">
-                                <a class="bottom-line-a square"><i class="fa fa-shopping-cart"></i></a>
-                                <a class="bottom-line-a square"><i class="fa fa-heart"></i></a>
-                                <a class="bottom-line-a square"><i class="fa fa-retweet"></i></a>
-                                <a class="bottom-line-a square"><i class="fa fa-expand"></i></a>
-                            </div>
-                        </div>
-                        <a class="tag" href="#">Men clothing</a>
-                        <a class="title" href="#">Blue Pullover Batwing Sleeve Zigzag</a>
-                        <div class="rating-box">
-                            <div class="star"><i class="fa fa-star"></i></div>
-                            <div class="star"><i class="fa fa-star"></i></div>
-                            <div class="star"><i class="fa fa-star"></i></div>
-                            <div class="star"><i class="fa fa-star"></i></div>
-                            <div class="star"><i class="fa fa-star"></i></div>
-                            <div class="reviews-number">25 reviews</div>
-                        </div>
-                        <div class="article-container style-1">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="price">
-                            <div class="prev">$199,99</div>
-                            <div class="current">$119,99</div>
-                        </div>
-                        <div class="list-buttons">
-                            <a class="button style-10">Add to cart</a>
-                            <a class="button style-11"><i class="fa fa-heart"></i> Add to Wishlist</a>
-                        </div>
+                @foreach($products as $item)
+                    <div class="col-md-3 col-sm-4 shop-grid-item">
+                        @include('parts.product-card')
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
+                @endforeach
             </div>
 
             <div class="page-selector">
-                <div class="description">Showing: 1-3 of 16</div>
+                {{--TODO: запилить тут вывод--}}
+                <div class="description">Показано: 1-4 из 16</div>
                 <div class="pages-box">
                     <a href="#" class="square-button active">1</a>
                     <a href="#" class="square-button">2</a>
                     <a href="#" class="square-button">3</a>
-                    <div class="divider">...</div>
-                    <a href="#" class="square-button"><i class="fa fa-angle-right"></i></a>
+                    {{--<div class="divider">...</div>--}}
+                    {{--<a href="#" class="square-button"><i class="fa fa-angle-right"></i></a>--}}
                 </div>
                 <div class="clear"></div>
             </div>
@@ -107,34 +75,27 @@
             <div class="information-blocks">
                 <div class="block-title size-2">Select</div>
                 <div class="row">
-                    <div class="col-xs-6">
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Armani
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Bershka Co
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Nelly.com
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Zigzag Inc
-                        </label>
-                    </div>
-                    <div class="col-xs-6">
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Armani
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Bershka Co
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Nelly.com
-                        </label>
-                        <label class="checkbox-entry">
-                            <input type="checkbox"/> <span class="check"></span> Zigzag Inc
-                        </label>
-                    </div>
+                    <label class="checkbox-entry col-xs-6">
+                        <input type="checkbox"/> <span class="check"></span> Select value
+                    </label>
+                    <label class="checkbox-entry col-xs-6">
+                        <input type="checkbox"/> <span class="check"></span> Select value
+                    </label>
+                    <label class="checkbox-entry col-xs-6">
+                        <input type="checkbox"/> <span class="check"></span> Select value
+                    </label>
+                    <label class="checkbox-entry col-xs-6">
+                        <input type="checkbox"/> <span class="check"></span> Select value
+                    </label>
+                    <label class="checkbox-entry col-xs-6">
+                        <input type="checkbox"/> <span class="check"></span> Select value
+                    </label>
+                    <label class="checkbox-entry col-xs-6">
+                        <input type="checkbox"/> <span class="check"></span> Select value
+                    </label>
+                    <label class="checkbox-entry col-xs-6">
+                        <input type="checkbox"/> <span class="check"></span> Select value
+                    </label>
                 </div>
             </div>
         </div>

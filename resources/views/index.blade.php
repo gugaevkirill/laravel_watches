@@ -64,7 +64,11 @@
                     <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-int-slides="2" data-sm-slides="3" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
                         <div class="swiper-wrapper">
                             @foreach($watches as $item)
-                                @include('parts.product-card')
+                                <div class="swiper-slide">
+                                    <div class="paddings-container">
+                                    @include('parts.product-card')
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                         <div class="pagination"></div>
@@ -76,7 +80,11 @@
                     <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-int-slides="2" data-sm-slides="3" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
                         <div class="swiper-wrapper">
                             @foreach($jewelry as $item)
-                                @include('parts.product-card')
+                                <div class="swiper-slide">
+                                    <div class="paddings-container">
+                                    @include('parts.product-card')
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                         <div class="pagination"></div>
@@ -88,7 +96,11 @@
                     <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-int-slides="2" data-sm-slides="3" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
                         <div class="swiper-wrapper">
                             @foreach($accessories as $item)
-                                @include('parts.product-card')
+                                <div class="swiper-slide">
+                                    <div class="paddings-container">
+                                    @include('parts.product-card')
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                         <div class="pagination"></div>

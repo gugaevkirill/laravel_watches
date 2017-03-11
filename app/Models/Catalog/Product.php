@@ -89,6 +89,6 @@ class Product extends Model
      */
     public function getHref()
     {
-        return "$this->category_slug/$this->id";
+        return "/$this->category_slug/$this->id";
     }
 }
