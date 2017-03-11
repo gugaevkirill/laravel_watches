@@ -31,7 +31,7 @@
                     <div class="header-top-entry">
                         <div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>
                         <div class="list">
-                            <a href="#" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>
+                            <a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>
                         </div>
                     </div>
                     <div class="header-top-entry hidden-xs">
