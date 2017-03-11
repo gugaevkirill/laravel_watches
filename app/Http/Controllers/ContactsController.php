@@ -16,13 +16,12 @@ class ContactsController extends Controller
     {
         return view(
             'contacts',
-            [
-                'success' => Session::get('success'),
-            ]
+            ['success' => Session::get('success')]
         );
     }
 
     /**
+     * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function processForm(Request $request)

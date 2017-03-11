@@ -35,6 +35,23 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SellForm extends Model
 {
+    const FIELDS = [
+        'name' => 'required|max:255|min:2',
+        'image' => 'image|mimes:jpeg,bmp,png,jpg',
+        'phone' => 'required|max:20|min:10',
+        'email' => 'nullable|email',
+        'reference' => 'required|max:255|min:2',
+        'year' => 'nullable|integer|digits:4',
+        'has_box' => 'nullable|boolean',
+        'has_documents' => 'nullable|boolean',
+        'amount' => 'nullable|integer',
+    ];
+
     protected $dateFormat = 'Y-m-d H:i:sP';
 
+    public function __construct(array $attributes = [])
+    {
+        $this->fillable = array_keys(self::FIELDS);
+        parent::__construct($attributes);
+    }
 }

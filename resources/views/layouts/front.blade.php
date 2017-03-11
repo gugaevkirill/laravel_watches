@@ -69,9 +69,7 @@
                     </div>
 
                     <div class="right-entries">
-                        {{--<a class="header-functionality-entry open-search-popup" href="#"><i class="fa fa-search"></i><span>Search</span></a>--}}
-                        {{--TODO: сделать popup--}}
-                        <a class="header-functionality-entry" href="@chunk('phone2')"><b><i class="fa fa-envelope-o"></i>Онлайн оценка</b></a>
+                        <a class="header-functionality-entry" href="/sell/"><b><i class="fa fa-envelope-o"></i>Онлайн оценка</b></a>
                     </div>
 
                 </div>

@@ -19,7 +19,7 @@ class CreateSellFormsTable extends Migration
             $table->string('image');
             $table->string('phone');
             $table->string('email')->nullable();
-            $table->string('reference')->nullable();
+            $table->string('reference');
             $table->smallInteger('year')->nullable();
             $table->boolean('has_box')->default(false);
             $table->boolean('has_documents')->default(false);

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
+use Redirect;
+use Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
+use App\Models\SellForm;
 
 class SellController extends Controller
 {
@@ -12,15 +15,41 @@ class SellController extends Controller
      */
     public function sellPage()
     {
-        return view('sell');
+        return view(
+            'sell',
+            ['success' => Session::get('success')]
+        );
     }
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return mixed
+     * @throws \Exception
      */
     public function processForm(Request $request)
     {
-        return Redirect::to('sell.page', 300);
+        $this->validate($request, SellForm::FIELDS);
+
+        // Обработка картинки
+        $image = $request->file('image');
+        $pathStorage = Storage::putFileAs(
+            'public/uploads/sellForm',
+            $image,
+            md5(time() . $image->getClientOriginalName()) . '.' . $image->getClientOriginalExtension()
+        );
+        $path = str_replace_first('public', '/storage', $pathStorage);
+
+        $data = array_merge(
+            $request->only(array_keys(SellForm::FIELDS)),
+            ['image' => $path]
+        );
+
+        // Обработка чекбоксов
+        $data['has_box'] = $data['has_box'] ?? false;
+        $data['has_documents'] = $data['has_documents'] ?? false;
+
+        SellForm::create($data);
+
+        return Redirect::back()->withSuccess(true);
     }
 }

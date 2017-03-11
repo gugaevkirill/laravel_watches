@@ -11,7 +11,7 @@ Route::get('/repair', 'RepairController@repairPage')->name('repair.page');
 Route::post('/repair', 'RepairController@processForm')->name('repair.process');
 
 Route::get('/sell', 'SellController@sellPage')->name('sell.page');
-Route::post('/sell', 'MainController@processForm')->name('sell.process');
+Route::post('/sell', 'SellController@processForm')->name('sell.process');
 
 Route::get('/contacts', 'ContactsController@contactsPage')->name('contacts.page');
 Route::post('/contacts', 'ContactsController@processForm')->name('contacts.process');
