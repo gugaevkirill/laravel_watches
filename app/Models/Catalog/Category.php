@@ -24,4 +24,12 @@ class Category extends Model
     protected $primaryKey = 'slug';
 
     const SLUGS = ['watches', 'jewelry', 'accessories'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

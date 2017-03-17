@@ -63,7 +63,7 @@
                                 <i class="fa fa-whatsapp"></i>
                             </span>
                             <span class="text">
-                                <b>@chunk('phone2')</b> <br/> Viber, WhatsApp
+                                <b>@chunk('phone2')</b> <br/> WhatsApp, Viber, Telegramm
                             </span>
                         </a>
                     </div>

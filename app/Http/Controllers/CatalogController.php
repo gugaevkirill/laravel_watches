@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Catalog\Brand;
 use App\Models\Catalog\Category;
 use App\Models\Catalog\Product;
+use App\Repositories\CatalogRepository;
 use Dompdf\Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -14,10 +15,19 @@ class CatalogController extends Controller
     /**
      * @param Request $request
      * @param string $cateogory
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param CatalogRepository $repository
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function categoryPage(Request $request, string $cateogory)
+    public function categoryPage(Request $request, string $cateogory, CatalogRepository $repository)
     {
+        $filteredRequest = $repository->filterRequest($request);
+        if ($filteredRequest->query != $request->query) {
+            return redirect($filteredRequest->getRequestUri());
+        }
+
+        $products = $repository->getProductsFromRequest($request, Category::find($cateogory));
+        dd($products);
+
         /** @var Collection $productsAll */
         $productsAll = Product::where('category_slug', $cateogory)->get();
 

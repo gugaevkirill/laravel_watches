@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Catalog\Category;
 use App\Models\Catalog\Param;
+use App\Models\Catalog\Product;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -11,14 +12,26 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class CatalogRepository
 {
     const PER_PAGE = 20;
+    // GET параметры, которые могут быть в запросе помимо params_slug
+    const ALLOWED_QUERY = ['brands', 'page'];
 
+    /**
+     * @param Request $request
+     * @return Request
+     */
     public function filterRequest(Request $request): Request
     {
-        $attributes = $request->query;
-        unset($attributes['brands'], $attributes['page']);
+        return $request;
 
-        $realAttrs = Param::whereIn('slug', array_keys($attributes))->get();
-        $fakeAttrs = array_diff(array_keys($attributes));
+        // TODO: имплементировать метод
+//        $attributes = $request->query;
+//
+//        unset($attributes['brands'], $attributes['page']);
+//
+//        // Чистим params
+//        $valid = Param::whereIn('slug', array_keys($attributes))->get('slug');
+//
+//        return $request->fullUrlWithQuery();
     }
 
     /**
@@ -28,12 +41,21 @@ class CatalogRepository
      */
     public function getProductsFromRequest(Request $request, ?Category $category): LengthAwarePaginator
     {
-        $filteredRequest = $this->filterRequest($request);
-        if ($filteredRequest->query != $request->query) {
-            return redirect($filteredRequest->getRequestUri());
+        // Unset'им служебные переменные из запроса и загоняем их в переменные
+        $attrs = $request->query->all();
+        foreach (self::ALLOWED_QUERY as $key) {
+            $$key = $request->get($key);
+            unset($attrs[$key]);
         }
 
+        // TODO: исправить тут костыль
+        $products = $category ? $category->products() : Product::whereNotNull('id');
 
+        foreach ($attrs as $param => $value) {
+            dd([$param, $value]);
+        }
+
+//        $products = Product::whereIn('brand_slug', $brands);
     }
 
     /**

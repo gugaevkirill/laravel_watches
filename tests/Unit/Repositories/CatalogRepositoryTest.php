@@ -23,6 +23,16 @@ class CatalogRepositoryTest extends TestCase
     public function testFilterRequest()
     {
         $this->markTestIncomplete();
+//        $request = Request::create($input['uri'], $input['method'], );
+
+        // Ошибка на POST
+        // Валидные не удалит
+        // Несуществующие параметры
+        // Несуществующие значения
+        // Несовпадение типов значений - строка
+        // Несовпадение типов значений - селект
+        // Несовпадение типов значений - число
+        // Несовпадение типов значений - boolean ??
     }
 
     /**
@@ -238,8 +248,6 @@ class CatalogRepositoryTest extends TestCase
 
         return $ans;
     }
-
-    // TODO: протестить редирект
 
     /**
      * @covers CatalogRepository::getFilters()

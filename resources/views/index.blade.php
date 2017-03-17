@@ -116,23 +116,23 @@
     <div class="row">
         <div class="information-entry col-md-6">
             <div class="sale-entry sale-entry-border" style="background: #333;">
-                <div class="sale-price"><i class="fa fa-3x fa-credit-card" style="
+                <div class="sale-price"><i class="fa fa-3x fa-check" style="
     padding: 20px;
     color: white;
 "></i></div>
-                <div class="sale-title">Деньги в день обращения</div>
-                <div class="sale-description">Текст про выкуп часов в день обращения по хорошей цене.</div>
+                <div class="sale-title">Выгодное предложение</div>
+                <div class="sale-description">И по скупке, и по продаже.</div>
             </div>
         </div>
         <div class="information-entry col-md-6">
             <div class="sale-entry sale-entry-border" style="background: #337ab7;">
                 <div class="sale-price" style="
     color: white;
-"><i class="fa fa-3x fa-check" style="
+"><i class="fa fa-3x fa-credit-card" style="
     padding: 20px;
 "></i></div>
-                <div class="sale-title">Только оригинальные часы</div>
-                <div class="sale-description">Очень мотивирующий к покупке текст про нас. Для SEO-продвижения полезно.</div>
+                <div class="sale-title">Деньги в день обращения</div>
+                <div class="sale-description">Когда вы приносите мы оцениваем и платим в тот же день.</div>
             </div>
         </div>
     </div>
@@ -144,16 +144,16 @@
             <h3 class="block-title">Текст о нас 1</h3>
             <div class="from-the-blog-entry">
                 <a href="#" class="image hover-class-1"><img src="img/old/from-the-blog-thumbnail.jpg" alt=""><span class="hover-label">Read More</span></a>
-                <div class="description">Seo-текст о нас и про наши услуги. Можно рассказать про что-то одно, например, ремонт, или про компению в целом. Желательно еще картинку поставить. Должно быть много буковок, чтобы занять больше места. Примерно столько же, сколько напечанано сейчас.</div>
+                <div class="description">«Перспектива» — известный Московский ломбард часов. Мы работаем достаточно продолжительное время и создали себе безупречную репутацию. «Перспектива» пользуется заслуженным авторитетом и доверием наших клиентов. Если Вы намерены осуществить продажу мужских или женских часов любых известных элитных марок, наш ломбард поможет Вам независимо от того, новые они или нет.</div>
                 <div class="clear"></div>
             </div>
         </div>
         <div class="col-md-4 information-entry">
-            <h3 class="block-title">Текст о нас 2</h3>
+            <h3 class="block-title">Как продать часы</h3>
             <ol class="list-type-2">
-                <li>Наше первное преимущество. Самое основательное и внушительное.</li>
-                <li>Второе преимущество. Т.к. второе, то люди меньше обращают на него внимание.</li>
-                <li>Наше последнее и не менее убойное, чем первое преи.</li>
+                <li><b>Осмотр</b> Эксперты проводят осмотр часов и определяют их стоимость в Вашем присутствии</li>
+                <li><b>Оформление документов</b> Юрист оформляет необходимые документы. Вам достаточно иметь при себе только паспорт.</li>
+                <li><b>Выдача наличных</b> Проверяем банкноты на банковском оборудовании. Выплачиваем наличными стоимость изделия. </li>
             </ol>
         </div>
         <div class="col-md-4 information-entry">
