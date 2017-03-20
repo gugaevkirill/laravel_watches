@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-md-9 information-entry">
             <div class="information-blocks">
-                <img class="project-thumbnail" src="/img/old//about-5.jpg" alt="" />
+                <img class="project-thumbnail" src="/img/about/about-bg.jpg" alt="" />
                 <div class="row">
                     <div class="col-md-6 information-entry">
                         <div class="article-container">
@@ -90,7 +90,7 @@
                 <h3 class="block-title inline-product-column-title">С НАМИ ПРИЯТНО И ВЫГОДНО РАБОТАТЬ:</h3>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/about/about-1.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Заголовок</span>
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/about/about-2.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Заголовок</span>
@@ -112,7 +112,7 @@
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/about/about-3.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Заголовок</span>

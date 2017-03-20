@@ -2,9 +2,8 @@ $(function() {
 
 	var marker = [], infowindow = [], map,
 		image = {
-			url: '/img/marker.png',
-			size: new google.maps.Size(60, 60),
-            scaledSize: new google.maps.Size(30, 30),
+			url: 'img/marker.png',
+			size: new google.maps.Size(61, 60),
 			anchor: new google.maps.Point(30, 30)
 		};
 
@@ -12,7 +11,7 @@ $(function() {
         marker[name] = new google.maps.Marker({
             position: location,
             map: map,
-			// icon: image
+			icon: image
         });
         marker[name].setMap(map);
 		

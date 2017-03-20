@@ -46,7 +46,7 @@
 
                 <div class="header-middle">
                     <div class="logo-wrapper">
-                        <a id="logo" href="/"><img src="https://www.radiusnetworks.com/img/logo-natgeo.png" alt="" /></a>
+                        <a id="logo" href="/"><img src="/img/logo1-blue.png" alt="" /></a>
                     </div>
 
                     <div class="middle-entry">
@@ -94,7 +94,7 @@
 
                             <div class="clear"></div>
 
-                            <a class="fixed-header-visible additional-header-logo"><img src="https://www.radiusnetworks.com/img/logo-natgeo.png"/></a>
+                            <a class="fixed-header-visible additional-header-logo"><img src="/img/logo1-white.png"/></a>
                         </nav>
                         <div class="navigation-footer responsive-menu-toggle-class">
                             <div class="socials-box">
@@ -118,7 +118,7 @@
                     <div class="footer-columns-entry">
                         <div class="row">
                             <div class="col-md-3">
-                                <img class="footer-logo" src="https://www.radiusnetworks.com/img/logo-natgeo.png" />
+                                <img class="footer-logo" src="/img/logo1-grey.png"/>
                                 <div class="footer-description">@chunk('footer-description')</div>
                                 <div class="footer-address">
                                     @chunk('address')<br/>
