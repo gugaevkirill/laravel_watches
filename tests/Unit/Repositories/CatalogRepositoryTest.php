@@ -42,6 +42,8 @@ class CatalogRepositoryTest extends TestCase
      */
     public function testGetProductsFromRequest(array $input)
     {
+        Product::truncate();
+
         // Бренды для теста
         if (isset($input['getParams']['brands'])) {
             foreach ($input['getParams']['brands'] as $slug) {
@@ -63,8 +65,12 @@ class CatalogRepositoryTest extends TestCase
                     'in_filter' => true
                 ]);
 
+                if (!isset($param['valuesCount'])) {
+                    continue;
+                }
+
                 $valueIds = [];
-                for ($i = 0; $i < $param['valuesCount'] ?? 0; $i++) {
+                for ($i = 0; $i < $param['valuesCount']; $i++) {
                     $valueIds[] = factory(ParamValue::class)->create([
                         'param_slug' => $param['slug']
                     ])->id;
@@ -72,7 +78,7 @@ class CatalogRepositoryTest extends TestCase
 
                 // Подменяем порядковые номера в GET параметрах на созданные id
                 if (isset($input['getParams'][$param['slug']])) {
-                    foreach ($input['getParams'][$param['slug']] as &$i) {
+                    foreach ($input['getParams'][$param['slug']] as $i) {
                         $i = $valueIds[$i];
                     }
                 }
@@ -91,7 +97,9 @@ class CatalogRepositoryTest extends TestCase
             $resultIds[] = $createdIds[$i];
         }
 
-        $repository = $this->createMock(CatalogRepository::class, ['filterRequest']);
+        $repository = $this->getMockBuilder(CatalogRepository::class, ['filterRequest'])
+            ->setMethods(['filterRequest'])
+            ->getMock();
         $repository->method('filterRequest')->willReturnArgument(0);
         $paginator = $repository->getProductsFromRequest(new Request($input['getParams']), $category);
 
@@ -111,13 +119,17 @@ class CatalogRepositoryTest extends TestCase
         $ans = [];
 
         $ans[] = [[
-            'message' => 'Лишние параметры в запросе не должны фильтровать выдачу',
-            'getParams' => [
-                'some_param' => 'some_value',
-                'some_other' => ['val1', 'val2'],
+            'message' => 'Лишние параметры в запросе должны сводить выдачу на нет',
+            'paramsToCreate' => [
+                ['slug' => 'some_param', 'type' => 'select', 'valuesCount' => 1],
+                ['slug' => 'some_other', 'type' => 'select', 'valuesCount' => 2],
             ],
-            'productsData' => array_fill(0, 4, []),
-            'results' => array_reverse(range(0, 3)),
+            'getParams' => [
+                'some_param' => [0],
+                'some_other' => [1, 0],
+            ],
+            'productsData' => array_fill(0, 2, []),
+            'results' => [],
         ]];
 
         $ans[] = [[
@@ -126,7 +138,7 @@ class CatalogRepositoryTest extends TestCase
                 'page' => 2
             ],
             'productsData' => array_fill(0, CatalogRepository::PER_PAGE + 3, []),
-            'results' => array_reverse(range(0, 3)),
+            'results' => array_reverse(range(0, 2)),
         ]];
 
         $ans[] = [[
@@ -134,8 +146,16 @@ class CatalogRepositoryTest extends TestCase
             'getParams' => [
                 'brands' => ['first_brand', 'third_brand']
             ],
-            'productsData' => array_fill(0, 4, []),
-            'results' => array_reverse(range(0, 4)),
+            'productsData' => array_merge(
+                array_fill(0, 4, []),
+                [
+                    ['brand_slug' => 'first_brand'],
+                    [],
+                    ['brand_slug' => 'third_brand'],
+                    ['brand_slug' => 'first_brand'],
+                ]
+            ),
+            'results' => [7, 6, 4],
         ]];
 
         $ans[] = [[

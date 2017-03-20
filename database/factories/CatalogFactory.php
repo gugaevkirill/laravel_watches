@@ -10,6 +10,7 @@ use Faker\Generator;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Category::class, function (Generator $faker) {
+    $faker = $faker->unique();
     return [
         'slug' => $faker->word,
         'name_ru' => $faker->name,
@@ -19,6 +20,7 @@ $factory->define(Category::class, function (Generator $faker) {
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Brand::class, function (Generator $faker) {
+    $faker = $faker->unique();
     return [
         'slug' => $faker->word,
         'name' => $faker->name,
@@ -29,6 +31,7 @@ $factory->define(Brand::class, function (Generator $faker) {
 // Нельзя будет воспользоваться этой фабрикой без указания типа Product'a
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Param::class, function (Generator $faker) {
+    $faker = $faker->unique();
     return [
         'slug' => $faker->word,
         'title_ru' => $faker->unique()->word,
@@ -42,6 +45,7 @@ $factory->define(Param::class, function (Generator $faker) {
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(ParamValue::class, function (Generator $faker) {
+    $faker = $faker->unique();
     return [
         'param_slug' => function () {
             return factory(Param::class)->create()->slug;
@@ -53,6 +57,7 @@ $factory->define(ParamValue::class, function (Generator $faker) {
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Product::class, function (Generator $faker) {
+    $faker = $faker->unique();
     return [
         'brand_slug' => function () {
             return factory(Brand::class)->create()->slug;

@@ -25,8 +25,7 @@ class CatalogController extends Controller
             return redirect($filteredRequest->getRequestUri());
         }
 
-        $products = $repository->getProductsFromRequest($request, Category::find($cateogory));
-        dd($products);
+        $paginator = $repository->getProductsFromRequest($request, Category::find($cateogory));
 
         /** @var Collection $productsAll */
         $productsAll = Product::where('category_slug', $cateogory)->get();
@@ -36,7 +35,7 @@ class CatalogController extends Controller
             [
                 'category' => Category::findOrFail($cateogory),
                 'brands' => Brand::whereIn('slug', $productsAll->pluck('brand_slug')->toArray())->get(),
-                'products' => Product::where('category_slug', $cateogory)->get(),
+                'products' => $paginator->getCollection(),
             ]
         );
     }

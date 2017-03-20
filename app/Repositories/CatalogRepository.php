@@ -38,6 +38,7 @@ class CatalogRepository
      * @param Request $request
      * @param Category|null $category
      * @return LengthAwarePaginator
+     * @throws \Exception
      */
     public function getProductsFromRequest(Request $request, ?Category $category): LengthAwarePaginator
     {
@@ -48,14 +49,49 @@ class CatalogRepository
             unset($attrs[$key]);
         }
 
-        // TODO: исправить тут костыль
-        $products = $category ? $category->products() : Product::whereNotNull('id');
+        $products = Product::query();
 
-        foreach ($attrs as $param => $value) {
-            dd([$param, $value]);
+        // Фильтр категории
+        if (isset($category)) {
+            $products = $products->where('category_slug', $category->slug);
         }
 
-//        $products = Product::whereIn('brand_slug', $brands);
+        // Фильтр брендов
+        if (!empty($brands)) {
+            $products = $products->whereIn('brand_slug', $brands);
+        }
+
+        // Фильтр атрибутов
+//        $params = Param::whereIn('slug', array_keys($attrs))->get();
+        foreach ($attrs as $slug => $values) {
+//            if (!is_array($values) || !($param = $params->where("slug", '==', $slug)->first())
+            if (!is_array($values)
+        ) {
+                throw new \Exception('Attribute value must be an array');
+            }
+
+            /** @var Param $param */
+            foreach ($values as &$value) {
+                $value = "'$value'";
+            }
+
+            $products = $products->whereRaw(
+                sprintf(
+                    "attributes->>'$slug' IN (%s)",
+                    implode(',', $values)
+                )
+            );
+        }
+
+        $products = $products->orderBy('id', 'desc')->get();
+        $page = $page ?? 1;
+
+        return new LengthAwarePaginator(
+            $products->slice(($page - 1) * self::PER_PAGE, self::PER_PAGE),
+            $products->count(),
+            self::PER_PAGE,
+            $page ?? 1
+        );
     }
 
     /**

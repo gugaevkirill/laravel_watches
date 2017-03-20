@@ -143,7 +143,7 @@
         <div class="col-md-4 information-entry">
             <h3 class="block-title">Текст о нас 1</h3>
             <div class="from-the-blog-entry">
-                <a href="#" class="image hover-class-1"><img src="img/old/from-the-blog-thumbnail.jpg" alt=""><span class="hover-label">Read More</span></a>
+                <span class="image"><img src="/img/main/main-1.jpg" alt=""></span>
                 <div class="description">«Перспектива» — известный Московский ломбард часов. Мы работаем достаточно продолжительное время и создали себе безупречную репутацию. «Перспектива» пользуется заслуженным авторитетом и доверием наших клиентов. Если Вы намерены осуществить продажу мужских или женских часов любых известных элитных марок, наш ломбард поможет Вам независимо от того, новые они или нет.</div>
                 <div class="clear"></div>
             </div>
