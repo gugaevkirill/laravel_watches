@@ -86,7 +86,7 @@
                                 <li><a href="/watches/">Часы</a></li>
                                 <li><a href="/jewelry/">Украшения</a></li>
                                 <li><a href="/accessories/">Аксессуары</a></li>
-                                <li><a href="/repair/">Ремонт</a></li>
+                                {{--<li><a href="/repair/">Ремонт</a></li>--}}
                                 <li><a href="/sell/">Продать часы</a></li>
                                 <li><a href="/about/">О нас</a></li>
                                 <li><a href="/contacts/">Контакты</a></li>
@@ -143,7 +143,7 @@
                                 <h3 class="column-title">Услуги</h3>
                                 <ul class="column">
                                     <li><a href="/sell/">Скупка часов</a></li>
-                                    <li><a href="/repair/">Ремонт часов</a></li>
+                                    {{--<li><a href="/repair/">Ремонт часов</a></li>--}}
                                 </ul>
                                 <div class="clear"></div>
                             </div>
