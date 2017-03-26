@@ -3,7 +3,7 @@
 @section('content')
 <div class="navigation-banner-swiper">
     <div class="swiper-slide active">
-        <div class="navigation-banner-wrapper light-text align-3" style="background-image: url(/img/old/mini-1.jpg); background-position: center center;">
+        <div class="navigation-banner-wrapper light-text align-3" style="background-image: url(/img/sell/2400x1000.png); background-position: center center;">
             <div class="navigation-banner-content">
                 <div class="cell-view">
                     <h2 class="subtitle"></h2>
@@ -20,7 +20,7 @@
 <div class="mozaic-banners-wrapper type-2">
     <div class="row">
         <div class="banner-column col-sm-6">
-            <a style="background-image: url(/img/old//mini-3.jpg); background-size: cover; background-position: right top;" class="mozaic-banner-entry type-3">
+            <a style="background-image: url(/img/sell/600x420_2.png); background-size: cover; background-position: center center;" class="mozaic-banner-entry type-3">
                 <span class="mozaic-banner-content">
                     <span class="subtitle">При наличии документов</span>
                     <span class="title">Деньги в день обращения</span>
@@ -29,7 +29,7 @@
             </a>
         </div>
         <div class="banner-column col-sm-6">
-            <a style="background-image: url(/img/old//mini-4.jpg); background-size: cover; background-position: right top;" class="mozaic-banner-entry type-3">
+            <a style="background-image: url(/img/sell/600x420_3.png); background-size: cover; background-position: center center;" class="mozaic-banner-entry type-3">
                 <span class="mozaic-banner-content">
                     <span class="subtitle">обеспечиваем вам</span>
                     <span class="title">Полную приватность</span>
