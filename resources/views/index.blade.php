@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide active" data-val="0">
-                            <div class="navigation-banner-wrapper light-text align-1" style="background-image: url(/img/main/1800x1000_Rolex.png);">
+                            <div class="navigation-banner-wrapper light-text align-1" style="background-image: url(/img/main/900x500_Rolex.jpg);">
                                 <div class="navigation-banner-content">
                                     <div class="cell-view">
                                         {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
