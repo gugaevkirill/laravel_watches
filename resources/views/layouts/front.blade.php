@@ -94,7 +94,7 @@
 
                             <div class="clear"></div>
 
-                            <a class="fixed-header-visible additional-header-logo"><img src="/img/logo1-white.png"/></a>
+                            <a class="fixed-header-visible additional-header-logo" href="/"><img src="/img/logo1-white.png"/></a>
                         </nav>
                         <div class="navigation-footer responsive-menu-toggle-class">
                             <div class="socials-box">
@@ -118,7 +118,7 @@
                     <div class="footer-columns-entry">
                         <div class="row">
                             <div class="col-md-3">
-                                <img class="footer-logo" src="/img/logo1-grey.png"/>
+                                <a href="/"><img class="footer-logo" src="/img/logo1-grey.png" style="margin-bottom: 15px;"/></a>
                                 <div class="footer-description">@chunk('footer-description')</div>
                                 <div class="footer-address">
                                     @chunk('address')<br/>
