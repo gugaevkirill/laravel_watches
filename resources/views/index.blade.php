@@ -19,11 +19,11 @@
                 <div class="swiper-container" data-autoplay="5000" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide active" data-val="0">
-                            <div class="navigation-banner-wrapper light-text align-1" style="background-image: url(/img/main/1800x1000_Patek.png);">
+                            <div class="navigation-banner-wrapper light-text align-1" style="background-image: url(/img/main/900x500_PatekP2.jpg);">
                                 <div class="navigation-banner-content">
                                     <div class="cell-view">
-                                        <h2 class="subtitle">Слайдер из баннеров</h2>
-                                        <h1 class="title">Слайдер</h1>
+                                        {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
+                                        <h1 class="title">Patek Philippe</h1>
                                         <div class="description">Нужно выбрать содержимое этих трех слайдов</div>
                                         <div class="info">
                                             <a class="button style-1" href="/watches/?brands[]=patek_philippe">В каталог</a>
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide active" data-val="0">
-                            <div class="navigation-banner-wrapper light-text align-1" style="background-image: url(/img/main/1800x1000_Piguet.png);">
+                            <div class="navigation-banner-wrapper light-text align-1" style="background-image: url(/img/main/900x500_Piguet2.jpg);">
                                 <div class="navigation-banner-content">
                                     <div class="cell-view">
                                         {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
