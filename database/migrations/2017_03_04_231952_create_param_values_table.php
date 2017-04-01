@@ -15,8 +15,8 @@ class CreateParamValuesTable extends Migration
     {
         Schema::create('param_values', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('order')->unsigned()->default(100)->index();
-            $table->string('param_slug')->index();
+            $table->smallInteger('order')->unsigned()->default(100);
+            $table->string('param_slug');
             $table->foreign('param_slug')->references('slug')->on('params')->onDelete('cascade');
             $table->string('value_ru');
             $table->string('value_en')->nullable();

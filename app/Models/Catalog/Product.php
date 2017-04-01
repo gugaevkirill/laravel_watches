@@ -16,12 +16,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property array $images
  * @property int $price_rub
  * @property int $price_dollar
- * @property array $attributes
+ * @property array $attrs
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property-read \App\Models\Catalog\Brand $brand
  * @property-read \App\Models\Catalog\Category $category
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Product whereAttributes($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Product whereFttrs($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Product whereBrandSlug($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Product whereCategorySlug($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Product whereCreatedAt($value)
@@ -40,7 +40,7 @@ class Product extends Model
     protected $dateFormat = 'Y-m-d H:i:sP';
     protected $casts = [
         'images' => 'array',
-        'attributes'=>'array',
+        'attrs'=>'array',
     ];
 
     public function brand()
@@ -59,15 +59,15 @@ class Product extends Model
      */
     public function param(string $slug)
     {
-        if (!isset($this->attributes[$slug])) {
+        if (!isset($this->attrs[$slug])) {
             return null;
         }
 
         if (Param::findOrFail($slug)->type == 'select') {
-            return ParamValue::findOrFail($this->attributes[$slug]);
+            return ParamValue::findOrFail($this->attrs[$slug]);
         }
 
-        return $this->attributes[$slug];
+        return $this->attrs[$slug];
     }
 
     /**

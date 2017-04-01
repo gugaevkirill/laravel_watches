@@ -66,6 +66,6 @@ $factory->define(Product::class, function (Generator $faker) {
             return factory(Category::class)->create()->slug;
         },
         'name' => $faker->name,
-        'images' => [$faker->image()],
+        'images' => [$faker->imageUrl()],
     ];
 });

@@ -14,9 +14,9 @@ class CategoriesParamsTable extends Migration
     public function up()
     {
         Schema::create('categories_params', function (Blueprint $table) {
-            $table->string('category_slug')->index();
+            $table->string('category_slug');
             $table->foreign('category_slug')->references('slug')->on('categories')->onDelete('cascade');
-            $table->string('param_slug')->index();
+            $table->string('param_slug');
             $table->foreign('param_slug')->references('slug')->on('params')->onDelete('cascade');
             $table->primary(['category_slug', 'param_slug']);
         });

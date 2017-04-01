@@ -15,10 +15,10 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('order')->unsigned()->default(100)->index();
-            $table->string('brand_slug')->index();
+            $table->smallInteger('order')->unsigned()->default(100);
+            $table->string('brand_slug');
             $table->foreign('brand_slug')->references('slug')->on('brands')->onDelete('cascade');
-            $table->string('category_slug')->index();
+            $table->string('category_slug');
             $table->foreign('category_slug')->references('slug')->on('categories')->onDelete('cascade');
 
             $table->string('name')->unique();
@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
             $table->text('images')->default;
             $table->integer('price_rub')->unsigned()->nullable();
             $table->integer('price_dollar')->unsigned()->nullable();
-            $table->json('attributes')->nullable();
+            $table->jsonb('attrs')->nullable();
 
             $table->timestampsTz();
         });

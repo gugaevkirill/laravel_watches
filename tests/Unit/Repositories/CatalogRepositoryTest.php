@@ -59,8 +59,10 @@ class CatalogRepositoryTest extends TestCase
         // Параметры для теста
         if (isset($input['paramsToCreate'])) {
             foreach ($input['paramsToCreate'] as $param) {
+                $slug = $param['slug'];
+
                 factory(Param::class)->create([
-                    'slug' => $param['slug'],
+                    'slug' => $slug,
                     'type' => $param['type'],
                     'in_filter' => true
                 ]);
@@ -72,14 +74,24 @@ class CatalogRepositoryTest extends TestCase
                 $valueIds = [];
                 for ($i = 0; $i < $param['valuesCount']; $i++) {
                     $valueIds[] = factory(ParamValue::class)->create([
-                        'param_slug' => $param['slug']
+                        'param_slug' => $slug
                     ])->id;
                 }
 
                 // Подменяем порядковые номера в GET параметрах на созданные id
-                if (isset($input['getParams'][$param['slug']])) {
-                    foreach ($input['getParams'][$param['slug']] as $i) {
-                        $i = $valueIds[$i];
+                if (isset($input['getParams'][$slug])) {
+                    $tmp = [];
+                    foreach ($input['getParams'][$slug] as $i) {
+                        $tmp[] = $valueIds[$i];
+                    }
+                    $input['getParams'][$slug] = $tmp;
+                }
+                unset($tmp);
+
+                // Подменяем Product Attrs на ID Values'ов, созданных в тесте
+                foreach ($input['productsData'] as $key => $product) {
+                    if (isset($product['attrs'], $product['attrs'][$slug])) {
+                        $input['productsData'][$key]['attrs'][$slug] = $valueIds[$product['attrs'][$slug]];
                     }
                 }
             }
@@ -180,35 +192,35 @@ class CatalogRepositoryTest extends TestCase
             'productsData' => [
                 [],
                 [
-                    'params' => [
+                    'attrs' => [
                         'bool_param' => true,
                         'another_param' => true,
                         'third_param' => false,
                     ]
                 ],
                 [
-                    'params' => [
+                    'attrs' => [
                         'bool_param' => false,
                         'another_param' => true,
                         'third_param' => false,
                     ]
                 ],
                 [
-                    'params' => [
+                    'attrs' => [
                         'bool_param' => false,
                         'another_param' => false,
                         'third_param' => true,
                     ]
                 ],
                 [
-                    'params' => [
+                    'attrs' => [
                         'bool_param' => false,
                         'another_param' => false,
                         'third_param' => false,
                     ]
                 ],
                 [
-                    'params' => [
+                    'attrs' => [
                         'bool_param' => true,
                         'another_param' => false,
                         'third_param' => true,
@@ -229,41 +241,41 @@ class CatalogRepositoryTest extends TestCase
             ],
             'productsData' => [
                 [
-                    'params' => [
-                        'select_param' => [2],
+                    'attrs' => [
+                        'select_param' => 2,
                     ]
                 ],
                 [],
                 [
-                    'params' => [
-                        'select_param' => [3],
+                    'attrs' => [
+                        'select_param' => 3,
                     ]
                 ],
                 [
-                    'params' => [
-                        'bubble_param' => [0],
+                    'attrs' => [
+                        'bubble_param' => 0,
                     ]
                 ],
                 [
-                    'params' => [
-                        'select_param' => [1, 0],
-                        'bubble_param' => [0],
+                    'attrs' => [
+                        'select_param' => 1,
+                        'bubble_param' => 0,
                     ]
                 ],
                 [
-                    'params' => [
-                        'select_param' => [1, 2],
-                        'bubble_param' => [1],
+                    'attrs' => [
+                        'select_param' => 2,
+                        'bubble_param' => 1,
                     ]
                 ],
                 [
-                    'params' => [
-                        'select_param' => [0],
-                        'bubble_param' => [0, 1],
+                    'attrs' => [
+                        'select_param' => 0,
+                        'bubble_param' => 1,
                     ]
                 ],
             ],
-            'results' => [5, 4, 0],
+            'results' => [5, 2, 0],
         ]];
 
         return $ans;
