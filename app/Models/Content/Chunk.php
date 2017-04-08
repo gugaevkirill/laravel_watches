@@ -25,4 +25,6 @@ class Chunk extends Model
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
+
+    protected $fillable = ['slug', 'title', 'content_ru', 'content_en'];
 }

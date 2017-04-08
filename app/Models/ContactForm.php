@@ -34,6 +34,8 @@ class ContactForm extends Model
 
     protected $dateFormat = 'Y-m-d H:i:sP';
 
+    protected $fillable = ['name', 'message', 'contact'];
+
     public function __construct(array $attributes = [])
     {
         $this->fillable = array_keys(self::FIELDS);

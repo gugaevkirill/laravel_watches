@@ -50,6 +50,17 @@ class SellForm extends Model
         'amount' => 'nullable|integer',
     ];
 
+    protected $fillable = [
+        'name',
+        'image',
+        'phone',
+        'email',
+        'reference',
+        'year',
+        'has_box',
+        'has_documents',
+        'amount',
+    ];
     protected $dateFormat = 'Y-m-d H:i:sP';
 
     public function __construct(array $attributes = [])

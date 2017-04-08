@@ -46,6 +46,18 @@ class Product extends Model
         'attrs'=>'array',
     ];
 
+    protected $fillable = [
+        'order',
+        'brand_slug',
+        'category_slug',
+        'name',
+        'description',
+        'images',
+        'price_rub',
+        'price_dollar',
+        'attrs',
+    ];
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);
