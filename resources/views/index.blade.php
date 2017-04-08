@@ -8,7 +8,7 @@
                 <div class="title">Бренды<i class="fa fa-angle-down"></i></div>
                 <div class="list">
                     @foreach($brands as $brand)
-                    <a class="entry" href="/watches/?brands[]={{ $brand->slug }}"><span><i class="fa fa-angle-right"></i>{{ $brand->name }}</span></a>
+                    <a class="entry" href="{{ $brand->getHref() }}"><span><i class="fa fa-angle-right"></i>{{ $brand->name }}</span></a>
                     @endforeach
                 </div>
             </div>

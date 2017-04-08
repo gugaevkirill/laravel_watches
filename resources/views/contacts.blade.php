@@ -6,7 +6,10 @@
 @endpush
 
 @section('content')
-<div class="contact-spacer"></div>
+<div class="breadcrumb-box">
+    <a href="/">Главная</a>
+    <a>Контакты</a>
+</div>
 
 <div class="information-blocks">
     <div class="map-box type-2">

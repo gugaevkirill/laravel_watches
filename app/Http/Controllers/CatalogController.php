@@ -6,7 +6,6 @@ use App\Models\Catalog\Brand;
 use App\Models\Catalog\Category;
 use App\Models\Catalog\Product;
 use App\Repositories\CatalogRepository;
-use Dompdf\Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
@@ -41,12 +40,32 @@ class CatalogController extends Controller
     }
 
     /**
-     * @param string $cateogory
-     * @param int $id
+     * @param string $categorySlug
+     * @param int $productId
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function productPage(string $cateogory, int $id)
+    public function productPage(string $categorySlug, int $productId)
     {
-        return view('product_template');
+        $product = Product::find($productId);
+        $category = Category::findOrFail($categorySlug);
+        $brand = $product->brand;
+
+        return view(
+            'product',
+            [
+                'brandName' => $brand->name,
+                'brandHref' => $brand->getHref(),
+                'brandImage' => $brand->image,
+
+                'categoryName' => $category->name_ru,
+
+                'productName' => $product->name,
+                'productPrices' => $product->getPrices(),
+                'productAttrs' => $product->attrs ?? [],
+                'productImages' => $product->images,
+
+                'featuredItems' => CatalogRepository::getFeaturedProducts($product),
+            ]
+        );
     }
 }

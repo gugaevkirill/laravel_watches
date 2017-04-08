@@ -107,4 +107,18 @@ class CatalogRepository
     {
 
     }
+
+    /**
+     * @param Product $product
+     * @return Collection
+     */
+    public static function getFeaturedProducts(Product $product): Collection
+    {
+        // TODO: заюзать кеш для этого
+        return Product::where('category_slug', $product->category_slug)
+            ->orderByRaw("random()")
+            ->where('id', '!=', $product->id)
+            ->take(4)
+            ->get();
+    }
 }

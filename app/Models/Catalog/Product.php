@@ -71,17 +71,32 @@ class Product extends Model
     }
 
     /**
+     * @return array
+     */
+    public function getPrices(): array
+    {
+        // Цена в долларах и рублях
+        $prices = [];
+        if ($this->price_rub) {
+            $prices[] = number_format($this->price_rub, 0, '.', ' ') . ' ₽';
+        }
+        if ($this->price_dollar) {
+            $prices[] = number_format($this->price_dollar, 0, '.', ' ') . ' $';
+        }
+
+        return $prices;
+    }
+
+    /**
      * @return string
      */
-    public function getPrice()
+    public function getPriceString(): string
     {
-        if ($this->price_rub) {
-            return number_format($this->price_rub, 0, '.', ' ') . 'руб';
-        } elseif ($this->price_dollar) {
-            return number_format($this->price_rub, 0, '.', ' ') . '$';
-        } else {
-            return 'По запросу';
+        if (!empty($this->getPrices())) {
+            return $this->getPrices()[0];
         }
+
+        return 'По запросу';
     }
 
     /**

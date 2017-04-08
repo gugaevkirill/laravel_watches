@@ -9,7 +9,7 @@
                         <div class="cell-view">
                             <a class="title" href="{{ $item->getHref() }}" target="_blank">{{ $item->name }}</a>
                             <div class="price">
-                                <div class="current">{{ $item->getPrice() }}</div>
+                                <div class="current">{{ $item->getPriceString() }}</div>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         <div class="cell-view">
                             <a class="title" href="{{ $item->getHref() }}" target="_blank">{{ $item->name }}</a>
                             <div class="price">
-                                <div class="current">{{ $item->getPrice() }}</div>
+                                <div class="current">{{ $item->getPriceString() }}</div>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="cell-view">
                             <a class="title" href="{{ $item->getHref() }}" target="_blank">{{ $item->name }}</a>
                             <div class="price">
-                                <div class="current">{{ $item->getPrice() }}</div>
+                                <div class="current">{{ $item->getPriceString() }}</div>
                             </div>
                         </div>
                     </div>

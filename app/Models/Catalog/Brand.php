@@ -22,4 +22,9 @@ class Brand extends Model
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
+
+    public function getHref(): string
+    {
+        return "/watches/?brands[]=$this->slug";
+    }
 }
