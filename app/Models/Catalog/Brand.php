@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use App\Models\SaveImageTrait;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,12 +22,16 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     use CrudTrait;
+    use SaveImageTrait;
 
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
 
     protected $fillable = ['order', 'name', 'image', 'slug'];
+
+    // Папка куда складывать картинки
+    protected $imageDestination = 'brands';
 
     public function getHref(): string
     {

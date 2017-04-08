@@ -41,6 +41,16 @@ class ProductCrudController extends CrudController
             'update/create/both'
         );
 
+        $this->crud->addField(
+            [
+                'name' => 'images',
+                'label' => 'Картинки',
+                'type' => 'images',
+                'upload' => true,
+            ],
+            'update/create/both'
+        );
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

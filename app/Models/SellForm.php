@@ -37,6 +37,7 @@ use Illuminate\Database\Eloquent\Model;
 class SellForm extends Model
 {
     use CrudTrait;
+    use SaveImageTrait;
 
     const FIELDS = [
         'name' => 'required|max:255|min:2',
@@ -62,6 +63,9 @@ class SellForm extends Model
         'amount',
     ];
     protected $dateFormat = 'Y-m-d H:i:sP';
+
+    // Папка куда складывать картинки
+    protected $imageDestination = 'sellform';
 
     public function __construct(array $attributes = [])
     {

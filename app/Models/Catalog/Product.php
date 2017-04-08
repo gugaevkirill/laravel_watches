@@ -58,6 +58,9 @@ class Product extends Model
         'attrs',
     ];
 
+    // Папка куда складывать картинки
+    protected $imageDestination = 'products';
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);
@@ -120,5 +123,15 @@ class Product extends Model
     public function getHref()
     {
         return "/$this->category_slug/$this->id";
+    }
+
+    /**
+     * @param mixed $value
+     */
+    public function setImagesAttribute($value)
+    {
+        $attribute_name = "images";
+
+        $this->uploadMultipleFilesToDisk($value, $attribute_name, null, $this->imageDestination);
     }
 }

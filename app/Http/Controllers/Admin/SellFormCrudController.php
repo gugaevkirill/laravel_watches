@@ -63,6 +63,18 @@ class SellFormCrudController extends CrudController
             'update/create/both'
         );
 
+        $this->crud->addField(
+            [
+                'label' => "Картинка",
+                'name' => "image",
+                'type' => 'image',
+                'upload' => true,
+                'crop' => true, // set to true to allow cropping, false to disable
+                'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
+            ],
+            'update/create/both'
+        );
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
