@@ -23,10 +23,10 @@ class CreateProductsTable extends Migration
 
             $table->string('name')->unique();
             $table->text('description')->nullable();
-            $table->text('images')->default;
+            $table->json('images');
             $table->integer('price_rub')->unsigned()->nullable();
             $table->integer('price_dollar')->unsigned()->nullable();
-            $table->jsonb('attrs')->nullable();
+            $table->json('attrs')->nullable();
 
             $table->timestampsTz();
         });

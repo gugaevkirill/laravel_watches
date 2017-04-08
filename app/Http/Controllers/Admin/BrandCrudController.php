@@ -68,6 +68,13 @@ class BrandCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+        $this->crud->removeColumn('image');
+        $this->crud->addColumn([
+            // run a function on the CRUD model and show its return value
+            'label' => "Картинка", // Table column heading
+            'type' => "model_function",
+            'function_name' => 'getAdminImageHtml', // the method in your Model
+        ]);
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack

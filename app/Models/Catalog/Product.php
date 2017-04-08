@@ -132,6 +132,52 @@ class Product extends Model
     {
         $attribute_name = "images";
 
-        $this->uploadMultipleFilesToDisk($value, $attribute_name, null, $this->imageDestination);
+        if ($value == null) {
+            $this->attributes[$attribute_name] = '["img/watches_default.png"]';
+        } else {
+            $request = \Request::instance();
+            $attribute_value = (array) $this->{$attribute_name};
+            $files_to_clear = $request->get('clear_'.$attribute_name);
+
+            // if a file has been marked for removal,
+            // delete it from the disk and from the db
+            if ($files_to_clear) {
+                $attribute_value = (array) $this->{$attribute_name};
+                foreach ($files_to_clear as $key => $filename) {
+                    \Storage::disk('local')->delete($filename);
+                    $attribute_value = array_where($attribute_value, function ($value, $key) use ($filename) {
+                        return $value != $filename;
+                    });
+                }
+            }
+
+            // if a new file is uploaded, store it on disk and its filename in the database
+            if ($request->hasFile($attribute_name)) {
+                foreach ($request->file($attribute_name) as $file) {
+                    if ($file->isValid()) {
+                        // 1. Generate a new file name
+                        $new_file_name = md5($file->getClientOriginalName().time()).'.'.$file->getClientOriginalExtension();
+
+                        // 2. Move the new file to the correct path
+                        $file_path = $file->storeAs('public/' . $this->imageDestination, $new_file_name, 'local');
+
+                        // 3. Add the public path to the database
+                        $attribute_value[] = 'storage/' . $this->imageDestination . '/' . $new_file_name;
+                    }
+                }
+            }
+
+            $this->attributes[$attribute_name] = json_encode($attribute_value);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdminImageHtml(): string
+    {
+        return !empty($this->images)
+            ? "<img src='/{$this->images[0]}' style='max-width: 60px; max-height: 70px;'>"
+            : "";
     }
 }

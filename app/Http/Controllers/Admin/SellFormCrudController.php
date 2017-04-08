@@ -32,6 +32,7 @@ class SellFormCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        // ------ CRUD FIELDS
         $this->crud->addField(
             [
                 'name' => 'email',
@@ -75,13 +76,21 @@ class SellFormCrudController extends CrudController
             'update/create/both'
         );
 
-        // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+        $this->crud->removeColumn('image');
+
+        $this->crud->addColumn([
+            // run a function on the CRUD model and show its return value
+            'label' => "Картинка", // Table column heading
+            'type' => "model_function",
+            'function_name' => 'getAdminImageHtml', // the method in your Model
+        ]);
+
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack

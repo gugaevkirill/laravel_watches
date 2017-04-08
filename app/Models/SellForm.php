@@ -72,4 +72,14 @@ class SellForm extends Model
         $this->fillable = array_keys(self::FIELDS);
         parent::__construct($attributes);
     }
+
+    /**
+     * @return string
+     */
+    public function getAdminImageHtml(): string
+    {
+        return $this->image
+            ? "<img src='/$this->image' style='max-width: 70px; max-height: 70px;'>"
+            : "";
+    }
 }

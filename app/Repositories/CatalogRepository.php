@@ -81,7 +81,7 @@ class CatalogRepository
 
             $products = $products->whereRaw(
                 sprintf(
-                    "attrs->'$slug' <@ '[%s]'",
+                    "(attrs->'$slug')::jsonb <@ '[%s]'::jsonb",
                     implode(',', $values)
                 )
             );

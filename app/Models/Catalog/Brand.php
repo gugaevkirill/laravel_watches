@@ -37,4 +37,14 @@ class Brand extends Model
     {
         return "/watches/?brands[]=$this->slug";
     }
+
+    /**
+     * @return string
+     */
+    public function getAdminImageHtml(): string
+    {
+        return $this->image
+            ? "<img src='/$this->image' style='max-width: 70px; max-height: 60px;'>"
+            : "";
+    }
 }
