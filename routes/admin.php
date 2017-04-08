@@ -5,8 +5,8 @@ CRUD::resource('param', 'ParamCrudController');
 CRUD::resource('value_param', 'ParamValueCrudController');
 CRUD::resource('product', 'ProductCrudController');
 
-CRUD::resource('sell-form', 'SellFormCrudController');
-CRUD::resource('contact-form', 'ContactFormCrudController');
+CRUD::resource('sellform', 'SellFormCrudController');
+CRUD::resource('contactform', 'ContactFormCrudController');
 
 CRUD::resource('chunk', 'ChunkCrudController');
 

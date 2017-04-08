@@ -29,8 +29,8 @@
                 <li><a href="{{ url('admin/product') }}"><i class="fa fa-cubes"></i> <span>Товары</span></a></li>
 
                 <li class="header">Формы</li>
-                <li><a href="{{ url('admin/sell-form') }}"><i class="fa fa-shopping-cart"></i> <span>Формы заказа</span></a></li>
-                <li><a href="{{ url('admin/contact-form') }}"><i class="fa fa-phone"></i> <span>Формы обратного звонока</span></a></li>
+                <li><a href="{{ url('admin/sellform') }}"><i class="fa fa-shopping-cart"></i> <span>Формы заказа</span></a></li>
+                <li><a href="{{ url('admin/contactform') }}"><i class="fa fa-phone"></i> <span>Формы обратного звонока</span></a></li>
 
                 <li class="header">Прочее</li>
                 <li><a href="{{ url('admin/chunk') }}"><i class="fa fa-font"></i> <span>Чанки</span></a></li>
