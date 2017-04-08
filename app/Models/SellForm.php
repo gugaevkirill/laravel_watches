@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -35,6 +36,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SellForm extends Model
 {
+    use CrudTrait;
+
     const FIELDS = [
         'name' => 'required|max:255|min:2',
         'image' => 'image|mimes:jpeg,bmp,png,jpg',

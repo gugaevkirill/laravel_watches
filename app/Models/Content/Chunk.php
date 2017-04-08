@@ -2,6 +2,7 @@
 
 namespace App\Models\Content;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -19,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Chunk extends Model
 {
+    use CrudTrait;
+
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';

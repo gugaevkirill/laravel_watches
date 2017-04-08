@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -27,9 +28,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Param extends Model
 {
+    use CrudTrait;
+
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
+
+    protected $fillable = ['order', 'title_ru', 'title_en', 'slug', 'type', 'required', 'unique', 'in_filter'];
 
     const TYPES = ['integer', 'string', 'boolean', 'select'];
 }

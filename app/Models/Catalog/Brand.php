@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -19,9 +20,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Brand extends Model
 {
+    use CrudTrait;
+
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
+
+    protected $fillable = ['order', 'name', 'image', 'slug'];
 
     public function getHref(): string
     {

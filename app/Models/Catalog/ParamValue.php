@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -21,6 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ParamValue extends Model
 {
+    use CrudTrait;
+
     public $timestamps = false;
     protected $table = 'param_values';
 }

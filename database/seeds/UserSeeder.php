@@ -1,7 +1,7 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
-use \App\User;
 
 class UserSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
         factory(User::class)->create([
             'name' => 'Кирилл',
             'email' => 'gugaevkirill@gmail.com',
-            'password' => 'admin',
+            'password' => 'p@ssword56',
             'uses_two_factor_auth' => false
         ]);
     }

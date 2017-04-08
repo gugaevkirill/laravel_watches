@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -37,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
+    use CrudTrait;
+
     protected $dateFormat = 'Y-m-d H:i:sP';
     protected $casts = [
         'images' => 'array',

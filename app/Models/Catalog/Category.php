@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -19,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
+    use CrudTrait;
+
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';

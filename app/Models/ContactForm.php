@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -23,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ContactForm extends Model
 {
+    use CrudTrait;
+
     const FIELDS = [
         'name' => 'required|max:255|min:2',
         'contact' => 'required|max:255|min:7',
