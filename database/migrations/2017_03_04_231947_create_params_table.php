@@ -19,7 +19,7 @@ class CreateParamsTable extends Migration
             $table->string('title_ru')->unique();
             $table->string('title_en')->unique()->nullable();
             $table->smallInteger('order')->unsigned()->default(100);
-            $table->enum('type', Param::TYPES);
+            $table->enum('type', array_keys(Param::TYPES));
             $table->boolean('required')->default(false);
             $table->boolean('unique')->default(false);
             $table->boolean('in_filter')->default(false);

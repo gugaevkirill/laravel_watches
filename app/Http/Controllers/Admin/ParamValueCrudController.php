@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ParamRequest as StoreRequest;
-use App\Http\Requests\ParamRequest as UpdateRequest;
+use App\Http\Requests\ParamValueRequest as StoreRequest;
+use App\Http\Requests\ParamValueRequest as UpdateRequest;
 use App\Models\Catalog\Param;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 
-class ParamCrudController extends CrudController
+class ParamValueCrudController extends CrudController
 {
 
     public function setUp()
@@ -20,25 +20,15 @@ class ParamCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Catalog\Param');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/param');
-        $this->crud->setEntityNameStrings('param', 'params');
+        $this->crud->setModel('App\Models\Catalog\ParamValue');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/value_param');
+        $this->crud->setEntityNameStrings('param_value', 'param_values');
 
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-
-        // ------ CRUD FIELDS
-        $this->crud->addField(
-            [
-                'name' => 'slug',
-                'label' => 'Slug',
-                'type' => 'text',
-            ],
-            'update/create'
-        );
 
         $this->crud->setFromDb();
 
@@ -54,40 +44,13 @@ class ParamCrudController extends CrudController
 
         $this->crud->addField(
             [
-                'name' => 'required',
-                'label' => 'Обязательный',
-                'type' => 'checkbox',
-                'default' => false
-            ],
-            'update/create/both'
-        );
-
-        $this->crud->addField(
-            [
-                'name' => 'unique',
-                'label' => 'Уникальный',
-                'type' => 'checkbox',
-                'default' => false
-            ],
-            'update/create/both'
-        );
-
-        $this->crud->addField(
-            [
-                'name' => 'in_filter',
-                'label' => 'Показывать в боковом фильтре',
-                'type' => 'checkbox',
-                'default' => false
-            ],
-            'update/create/both'
-        );
-
-        $this->crud->addField(
-            [
-                'name' => 'type',
-                'label' => 'Тип',
+                'label' => "Параметр",
+                'name' => 'param_slug', // the db column for the foreign key
                 'type' => 'select2_from_array',
-                'options' => Param::TYPES,
+                'options' => Param::where('type', 'select')
+                    ->get(['title_ru', 'slug'])
+                    ->pluck('title_ru', 'slug')
+                    ->toArray(),
                 'allows_null' => false,
                 'allows_multiple' => false,
             ],
@@ -164,7 +127,7 @@ class ParamCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::storeCrud($request);
+        $redirect_location = parent::storeCrud();
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
@@ -173,7 +136,7 @@ class ParamCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::updateCrud($request);
+        $redirect_location = parent::updateCrud();
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;

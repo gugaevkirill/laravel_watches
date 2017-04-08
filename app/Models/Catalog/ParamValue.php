@@ -26,4 +26,6 @@ class ParamValue extends Model
 
     public $timestamps = false;
     protected $table = 'param_values';
+
+    protected $fillable = ['order', 'value_ru', 'value_en', 'param_slug'];
 }

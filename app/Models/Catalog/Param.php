@@ -36,5 +36,10 @@ class Param extends Model
 
     protected $fillable = ['order', 'title_ru', 'title_en', 'slug', 'type', 'required', 'unique', 'in_filter'];
 
-    const TYPES = ['integer', 'string', 'boolean', 'select'];
+    const TYPES = [
+        'integer' => 'Integer',
+        'string' => 'String',
+        'boolean' => 'Boolean',
+        'select' => 'Select',
+    ];
 }
