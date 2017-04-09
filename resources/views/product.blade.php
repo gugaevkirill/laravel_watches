@@ -80,7 +80,7 @@
 
                 @foreach ($productAttrs as $attrName => $attrValue)
                 <div class="detail-info-entry">
-                    <span class="detail-info-entry-title">{{ $attrName }}</span>
+                    <span class="detail-info-entry-title">{{ $attrName }}:</span>
                     <span>{{ $attrValue }}</span>
                 </div>
                 @endforeach
@@ -105,6 +105,7 @@
                         </div>
                     </div>
                 </div>
+                @if (count($featuredItems))
                 <div class="col-md-12">
                     <div class="information-blocks">
                         <div class="information-entry products-list">
@@ -128,6 +129,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>

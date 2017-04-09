@@ -61,7 +61,7 @@ class CatalogController extends Controller
 
                 'productName' => $product->name,
                 'productPrices' => $product->getPrices(),
-                'productAttrs' => $product->attrs ?? [],
+                'productAttrs' => $product->getAttrsForProductPage(),
                 'productImages' => $product->images,
 
                 'featuredItems' => CatalogRepository::getFeaturedProducts($product),

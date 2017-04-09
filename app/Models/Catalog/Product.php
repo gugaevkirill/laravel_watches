@@ -81,11 +81,34 @@ class Product extends Model
             return null;
         }
 
-        if (Param::findOrFail($slug)->type == 'select') {
-            return ParamValue::findOrFail($this->attrs[$slug]);
+        switch (Param::findOrFail($slug)->type) {
+            case 'select':
+                // TODO: закрыть получение параметров кешем
+                return ParamValue::findOrFail($this->attrs[$slug])->value_ru;
+            case 'boolean':
+                return $this->attrs[$slug] ? 'Да' : 'Нет';
+            default:
+                return $this->attrs[$slug];
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function getAttrsForProductPage(): array
+    {
+        $params = Param::whereIn('slug', array_keys($this->attrs))
+            ->orderBy('order')
+            ->get(['title_ru', 'title_en', 'type', 'slug']);
+
+        $ans = [];
+        foreach ($params as $param) {
+            if ($val = $this->param($param->slug)) {
+                $ans[$param->title_ru] = $val;
+            }
         }
 
-        return $this->attrs[$slug];
+        return $ans;
     }
 
     /**
@@ -123,6 +146,16 @@ class Product extends Model
     public function getHref()
     {
         return "/$this->category_slug/$this->id";
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdminImageHtml(): string
+    {
+        return !empty($this->images)
+            ? "<img src='/{$this->images[0]}' style='max-width: 60px; max-height: 70px;'>"
+            : "";
     }
 
     /**
@@ -169,15 +202,5 @@ class Product extends Model
 
             $this->attributes[$attribute_name] = json_encode($attribute_value);
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function getAdminImageHtml(): string
-    {
-        return !empty($this->images)
-            ? "<img src='/{$this->images[0]}' style='max-width: 60px; max-height: 70px;'>"
-            : "";
     }
 }
