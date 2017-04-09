@@ -101,6 +101,15 @@ class ParamCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+
+        $this->crud->removeColumn('title_en');
+
+        $this->crud->addColumn([
+            // run a function on the CRUD model and show its return value
+            'label' => "Slug", // Table column heading
+            'name' => 'slug',
+            'type' => "text",
+        ]);
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack

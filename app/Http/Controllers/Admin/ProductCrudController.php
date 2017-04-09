@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Backpack\CRUD\app\Http\Controllers\CrudController;
-
-// VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\ProductRequest as StoreRequest;
 use App\Http\Requests\ProductRequest as UpdateRequest;
 use App\Models\Catalog\Brand;
 use App\Models\Catalog\Category;
+use App\Models\Catalog\Param;
+use Backpack\CRUD\app\Http\Controllers\CrudController;
+
+// VALIDATION: change the requests to match your own file names if you need form validation
 class ProductCrudController extends CrudController
 {
 
@@ -31,6 +32,8 @@ class ProductCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
+
+        // ------ CRUD FIELDS
 
         $this->crud->addField(
             [
@@ -74,7 +77,8 @@ class ProductCrudController extends CrudController
             [
                 'name' => 'attrs',
                 'label' => 'Аттрибуты',
-                'type' => 'textarea',
+                'type' => 'json_attributes',
+                'params' => Param::getForAdminPage(),
             ],
             'update/create/both'
         );
@@ -89,7 +93,6 @@ class ProductCrudController extends CrudController
             'update/create/both'
         );
 
-        // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
