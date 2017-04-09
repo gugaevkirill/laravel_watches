@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
         factory(User::class)->create([
             'name' => 'Кирилл',
             'email' => 'gugaevkirill@gmail.com',
-            'password' => 'p@ssword56',
+            'password' => 'pass@word56',
             'uses_two_factor_auth' => false
         ]);
     }
