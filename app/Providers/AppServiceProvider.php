@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Content\Chunk;
+use App\Observers\ChunkObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Chunk::observe(ChunkObserver::class);
     }
 
     /**

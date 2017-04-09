@@ -2,6 +2,7 @@
 
 namespace App\Models\Content;
 
+use App\Events\ChunkEvent;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
