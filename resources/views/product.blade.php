@@ -34,6 +34,8 @@
                         <div class="zoom-area"></div>
                     </div>
                 </div>
+
+                @if (count($productImages) > 1)
                 <div class="swiper-hidden-edges">
                     <div class="swiper-container product-thumbnails-swiper" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="3" data-int-slides="3" data-sm-slides="3" data-md-slides="4" data-lg-slides="4" data-add-slides="4">
                         <div class="swiper-wrapper">
@@ -52,6 +54,7 @@
                         <div class="pagination"></div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <div class="col-sm-7 col-md-4 information-entry">

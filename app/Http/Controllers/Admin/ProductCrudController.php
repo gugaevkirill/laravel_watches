@@ -93,6 +93,24 @@ class ProductCrudController extends CrudController
             'update/create/both'
         );
 
+        $this->crud->addField(
+            [
+                'name' => 'price_rub',
+                'label' => 'Цена, руб.',
+                'type' => 'number',
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField(
+            [
+                'name' => 'price_dollar',
+                'label' => 'Цена, usd.',
+                'type' => 'number',
+            ],
+            'update/create/both'
+        );
+
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
