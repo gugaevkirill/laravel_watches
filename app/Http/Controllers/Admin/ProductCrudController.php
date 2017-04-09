@@ -76,7 +76,7 @@ class ProductCrudController extends CrudController
         $this->crud->addField(
             [
                 'name' => 'attrs',
-                'label' => 'Аттрибуты',
+                'label' => 'Атрибуты',
                 'type' => 'json_attributes',
                 'params' => Param::getForAdminPage(),
             ],

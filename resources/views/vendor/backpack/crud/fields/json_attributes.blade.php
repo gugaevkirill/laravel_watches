@@ -1,8 +1,10 @@
 <?php
     // Преобразуем объект к массиву
     $tmp = [];
-    foreach ($field['value'] as $key => $val) {
-        $tmp[] = ['slug' => $key, 'value' => $val];
+    if ($field['value']) {
+        foreach ($field['value'] as $key => $val) {
+            $tmp[] = ['slug' => $key, 'value' => $val];
+        }
     }
     $field['value'] = $tmp;
 ?>
