@@ -87,6 +87,8 @@ class Product extends Model
                 return ParamValue::findOrFail($this->attrs[$slug])->value_ru;
             case 'boolean':
                 return $this->attrs[$slug] ? 'Да' : 'Нет';
+            case 'integer':
+                return number_format($this->attrs[$slug], 0, '.', ' ');
             default:
                 return $this->attrs[$slug];
         }
