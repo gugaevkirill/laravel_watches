@@ -1,5 +1,7 @@
 <?php
 
+use \App\Models\Catalog\Category;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -11,8 +13,9 @@
 |
 */
 
-Route::group([
-    'middleware' => 'auth:api'
-], function () {
-    //
+Route::group([], function () {
+    $categoryRegex = '^(' . implode('|', Category::SLUGS) . ')$';
+
+    Route::any('{category}', 'CatalogController@categoryAPI')
+        ->where(['category' => $categoryRegex]);
 });

@@ -8,6 +8,7 @@ use App\Models\Catalog\Product;
 use App\Repositories\CatalogRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class CatalogController extends Controller
 {
@@ -28,15 +29,42 @@ class CatalogController extends Controller
 
         /** @var Collection $productsAll */
         $productsAll = Product::where('category_slug', $cateogory)->get();
+        $brands = Brand::whereIn('slug', $productsAll->pluck('brand_slug')->toArray())
+            ->get(['name', 'slug']);
 
         return view(
             'category',
             [
                 'category' => Category::findOrFail($cateogory),
-                'brands' => Brand::whereIn('slug', $productsAll->pluck('brand_slug')->toArray())->get(),
-                'products' => $paginator->getCollection(),
+                'brands' => $brands->toArray(),
+                'brandsJSON' => $this->keyBy($brands, 'slug')->toJson(),
+                'paginator' => $paginator,
             ]
         );
+    }
+
+    /**
+     * @param Request $request
+     * @param string $cateogory
+     * @param CatalogRepository $repository
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+     */
+    public function categoryAPI(Request $request, string $cateogory, CatalogRepository $repository)
+    {
+        $filteredRequest = $repository->filterRequest($request);
+        if ($filteredRequest->query != $request->query) {
+            return abort(404);
+        }
+
+        // Просто чтобы проверить существование категории
+        $category = Category::findOrFail($cateogory);
+        $paginator = $repository->getProductsFromRequest($request, Category::find($cateogory));
+
+        return response()->json([
+            'totalPages' => $paginator->lastPage(),
+            'html' => $paginator->render('parts/products-list')->toHtml(),
+            'countInfo' => $paginator->render('parts/products-count')->toHtml(),
+        ]);
     }
 
     /**
@@ -67,5 +95,19 @@ class CatalogController extends Controller
                 'featuredItems' => CatalogRepository::getFeaturedProducts($product),
             ]
         );
+    }
+
+    /**
+     * @param Collection $collection
+     * @param string $key
+     * @return Collection
+     */
+    private function keyBy(Collection $collection, string $key): Collection
+    {
+        return $collection->keyBy($key)->map(function ($item) use ($key) {
+            unset($item[$key]);
+            return $item;
+        });
+
     }
 }

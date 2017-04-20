@@ -17,6 +17,7 @@
     <link href="/css/ie9.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     @stack('styles')
+    @stack('headOther')
 
     <title>@chunk('title')</title>
 </head>

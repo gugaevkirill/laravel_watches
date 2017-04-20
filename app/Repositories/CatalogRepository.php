@@ -13,7 +13,7 @@ class CatalogRepository
 {
     const PER_PAGE = 20;
     // GET параметры, которые могут быть в запросе помимо params_slug
-    const ALLOWED_QUERY = ['brands', 'page'];
+    const ALLOWED_QUERY = ['brand', 'page'];
 
     /**
      * @param Request $request
@@ -57,8 +57,8 @@ class CatalogRepository
         }
 
         // Фильтр брендов
-        if (!empty($brands)) {
-            $products = $products->whereIn('brand_slug', $brands);
+        if (!empty($brand)) {
+            $products = $products->where('brand_slug', $brand);
         }
 
         // Фильтр атрибутов
