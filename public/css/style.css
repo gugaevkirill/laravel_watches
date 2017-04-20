@@ -1,13 +1,3 @@
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-/*This is main CSS file that contains custom style rules used in this template*/
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-/* Template Name: Mango | Responsive Ecommerce HTML5 Template*/
-/* Version: 1.1 */
-/* Author: 8theme*/
-/* Website: http://www.8theme.com
-/* Copyright: (C)8theme 2015 */
-/*-------------------------------------------------------------------------------------------------------------------------------*/
-
 /*--------------------------------------------------------*/
 /* TABLE OF CONTENTS: */
 /*--------------------------------------------------------*/
@@ -1780,8 +1770,8 @@ body.style-10 .product-slide-entry .subtitle:hover{color: #ca1515;}
 .detail-info-entry{margin-bottom: 25px;}
 .detail-info-entry-title{font-size: 14px; color: #313131; line-height: 18px; font-weight: 600; margin-bottom: 7px;}
 .product-detail-box .price{line-height: 36px; font-family: 'Lato', sans-serif; letter-spacing: -2px;}
-.product-detail-box .price .prev{font-size: 25px; color: #9c9c9c; font-weight: 400; display: inline-block; vertical-align: middle; margin-right: 7px;}
-.product-detail-box .price .current{font-size: 36px; color: #262626!important; font-weight: 700; display: inline-block; vertical-align: middle;}
+.product-detail-box .price .prev{font-size: 25px; color: #707070; font-weight: 400; display: inline-block; vertical-align: middle; margin-right: 7px; margin-right: 20px; text-decoration: none; }
+.product-detail-box .price .current{font-size: 36px; color: #262626!important; font-weight: 700; display: inline-block; vertical-align: middle; margin-right: 20px;}
 .size-selector{font-size: 0;}
 .size-selector .spacer{height: 0; margin-top: -12px;}
 .size-selector .entry{display: inline-block; width: 40px; height: 40px; line-height: 37px; border: 1px #d9d9d9 solid; text-align: center; font-size: 12px; color: #4c4c4c; font-weight: 500; margin-right: 12px; position: relative; text-transform: uppercase; cursor: pointer; margin-bottom: 12px;}
@@ -1964,7 +1954,7 @@ select{background: #fff!important;}
 .page-selector .description{float: left; font-size: 13px; line-height: 30px; font-weight: 400; color: #808080; margin-bottom: 15px;}
 .page-selector .pages-box{float: right;}
 .square-button{width: 28px; line-height: 28px; border: 1px #e3e3e3 solid; display: inline-block; font-size: 12px; color: #666666; font-weight: 500; text-align: center;}
-.square-button:hover, .square-button.active{background: #cd0000; border-color: #cd0000; color: #fff;}
+.square-button:hover, .square-button.active{background: #008acc; border-color: #0075ad; color: #fff;}
 .page-selector .square-button{margin-right: 4px; margin-bottom: 15px;}
 .page-selector .square-button:last-child{margin-right: 0;}
 .page-selector .divider{display: inline-block; font-size: 18px; line-height: 18px; vertical-align: bottom; margin-right: 4px; margin-bottom: 15px;}
@@ -3196,6 +3186,14 @@ body.teaser-3 .teaser-title{font-size: 72px; line-height: 62px; border-top: 4px 
 @media (max-width: 767px) {
     .article-container.columns-2, .article-container.columns-3{-webkit-column-count: 1; -moz-column-count: 1; column-count: 1; -webkit-column-gap: 0px; -moz-column-gap: 0px; column-gap: 0px;}
 }
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 00 - CUSTOM STYLES */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+.brands-filter > li { padding-top: 15px; cursor: pointer; }
+.brands-filter > li.active { font-weight: bold; }
+
+.buy-button { float: none!important; }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /* 00 - MEDIA QUERIES */

@@ -35,7 +35,7 @@ class Brand extends Model
 
     public function getHref(): string
     {
-        return "/watches/?brands[]=$this->slug";
+        return "/watches/?brand=$this->slug";
     }
 
     /**

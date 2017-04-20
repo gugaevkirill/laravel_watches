@@ -34,11 +34,11 @@
                     {{--TODO: запилить тут вывод--}}
                     <div class="description">@include('parts/products-count')</div>
                     <div class="pages-box">
-                        <a href="#" class="square-button active">1</a>
-                        <a href="#" class="square-button">2</a>
-                        <a href="#" class="square-button">3</a>
+                        <a class="square-button active">1</a>
+                        {{--<a class="square-button">2</a>--}}
+                        {{--<a class="square-button">3</a>--}}
                         {{--<div class="divider">...</div>--}}
-                        {{--<a href="#" class="square-button"><i class="fa fa-angle-right"></i></a>--}}
+                        {{--<a class="square-button"><i class="fa fa-angle-right"></i></a>--}}
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -57,42 +57,42 @@
                     </ul>
                 </div>
 
-                <div class="information-blocks">
-                    <div class="block-title size-2">Boolean</div>
-                    <div class="size-selector">
-                        <div class="entry active">Все</div>
-                        <div class="entry">Да</div>
-                        <div class="entry">Нет</div>
-                        <div class="spacer"></div>
-                    </div>
-                </div>
+                {{--<div class="information-blocks">--}}
+                    {{--<div class="block-title size-2">Boolean</div>--}}
+                    {{--<div class="size-selector">--}}
+                        {{--<div class="entry active">Все</div>--}}
+                        {{--<div class="entry">Да</div>--}}
+                        {{--<div class="entry">Нет</div>--}}
+                        {{--<div class="spacer"></div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-                <div class="information-blocks">
-                    <div class="block-title size-2">Select</div>
-                    <div class="row">
-                        <label class="checkbox-entry col-xs-6">
-                            <input type="checkbox"/> <span class="check"></span> Select value
-                        </label>
-                        <label class="checkbox-entry col-xs-6">
-                            <input type="checkbox"/> <span class="check"></span> Select value
-                        </label>
-                        <label class="checkbox-entry col-xs-6">
-                            <input type="checkbox"/> <span class="check"></span> Select value
-                        </label>
-                        <label class="checkbox-entry col-xs-6">
-                            <input type="checkbox"/> <span class="check"></span> Select value
-                        </label>
-                        <label class="checkbox-entry col-xs-6">
-                            <input type="checkbox"/> <span class="check"></span> Select value
-                        </label>
-                        <label class="checkbox-entry col-xs-6">
-                            <input type="checkbox"/> <span class="check"></span> Select value
-                        </label>
-                        <label class="checkbox-entry col-xs-6">
-                            <input type="checkbox"/> <span class="check"></span> Select value
-                        </label>
-                    </div>
-                </div>
+                {{--<div class="information-blocks">--}}
+                    {{--<div class="block-title size-2">Select</div>--}}
+                    {{--<div class="row">--}}
+                        {{--<label class="checkbox-entry col-xs-6">--}}
+                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
+                        {{--</label>--}}
+                        {{--<label class="checkbox-entry col-xs-6">--}}
+                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
+                        {{--</label>--}}
+                        {{--<label class="checkbox-entry col-xs-6">--}}
+                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
+                        {{--</label>--}}
+                        {{--<label class="checkbox-entry col-xs-6">--}}
+                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
+                        {{--</label>--}}
+                        {{--<label class="checkbox-entry col-xs-6">--}}
+                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
+                        {{--</label>--}}
+                        {{--<label class="checkbox-entry col-xs-6">--}}
+                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
+                        {{--</label>--}}
+                        {{--<label class="checkbox-entry col-xs-6">--}}
+                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
+                        {{--</label>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>

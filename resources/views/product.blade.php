@@ -13,7 +13,7 @@
 
 <div class="information-blocks">
     <div class="row">
-        <div class="col-sm-5 col-md-4 col-lg-5 information-entry">
+        <div class="col-sm-5 col-md-4 col-lg-3 information-entry">
             <div class="product-preview-box">
                 <div class="swiper-container product-preview-swiper" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
                     <div class="swiper-wrapper">
@@ -57,26 +57,26 @@
                 @endif
             </div>
         </div>
-        <div class="col-sm-7 col-md-4 information-entry">
+        <div class="col-sm-7 col-md-4 col-lg-6 information-entry">
             <div class="product-detail-box">
                 <h1 class="product-title">{{ $productName }}</h1>
                 <h3 class="product-subtitle">{{ $brandName }}</h3>
 
                 <div class="price detail-info-entry">
                     @if (!empty($productPrices))
-                        <div class="current">{{ $productPrices[0] }}</div>
+                        <div class="current">{{ $productPrices[0] ?? '' }}</div>
                         @if (isset($productPrices[1]))
                         <div class="prev">{{ $productPrices[1] }}</div>
                         @endif
                     @endif
 
-                    <a class="button style-10">
-                        @if (empty($productPrices))
-                            Узнать цену
-                        @else
-                            Купить
-                        @endif
-                    </a>
+                    {{--<a class="button style-10 buy-button">--}}
+                        {{--@if (empty($productPrices))--}}
+                            {{--Узнать цену--}}
+                        {{--@else--}}
+                            {{--Купить--}}
+                        {{--@endif--}}
+                    {{--</a>--}}
 
                     <div class="clear"></div>
                 </div>
@@ -117,7 +117,7 @@
                             @foreach($featuredItems as $item)
                             <div class="inline-product-entry">
                                 <a href="{{ $item->getHref() }}" class="image">
-                                    <img alt="{{ $item->name }}" src="/{{ $item->images[0] }}"></a>
+                                    <img alt="{{ $item->name }}" src="/{{ $item->images[0] ?? '' }}"></a>
                                 <div class="content">
                                     <div class="cell-view">
                                         <a href="{{ $item->getHref() }}" class="title">{{ $item->name }}</a>
