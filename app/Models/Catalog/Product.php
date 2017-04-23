@@ -2,8 +2,10 @@
 
 namespace App\Models\Catalog;
 
+use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * App\Models\Catalog\Product
@@ -60,6 +62,16 @@ class Product extends Model
 
     // Папка куда складывать картинки
     protected $imageDestination = 'products';
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new OrderByOrderScope());
+        static::addGlobalScope('id', function (Builder $builder) {
+            $builder->orderBy('id', 'desc');
+        });
+    }
 
     public function brand()
     {

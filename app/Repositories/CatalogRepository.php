@@ -43,7 +43,10 @@ class CatalogRepository
     public function getProductsFromRequest(Request $request, ?Category $category): LengthAwarePaginator
     {
         // Unset'им служебные переменные из запроса и загоняем их в переменные
-        $attrs = $request->query->all();
+        $attrs = array_merge(
+            $request->query->all(),
+            $request->request->all()
+        );
         foreach (self::ALLOWED_QUERY as $key) {
             $$key = $request->get($key);
             unset($attrs[$key]);
@@ -61,33 +64,34 @@ class CatalogRepository
             $products = $products->where('brand_slug', $brand);
         }
 
-        // Фильтр атрибутов
+//         Фильтр атрибутов
         $params = Param::whereIn('slug', array_keys($attrs))->get();
-        foreach ($attrs as $slug => $values) {
-            if (!is_array($values)
-                || !($param = $params->where("slug", '==', $slug)->first())
-            ) {
-                throw new \Exception('Attribute value must be an array');
+        foreach ($attrs as $slug => $value) {
+            if ($value == "0") {
+                // TODO: тест на это. Если у value значение 0 - значит это все
+                continue;
             }
 
-            // TODO: посмотреть, как сохраняет данные админка
-            foreach ($values as &$value) {
-                if (is_bool($value)) {
-                    $value = $value ? 'true' : 'false';
+            if (!is_string($value)
+                || !($param = $params->where("slug", '==', $slug)->first())
+            ) {
+                throw new \Exception('Invalid URL');
+            }
+
+            $values = explode(',', $value);
+
+            foreach ($values as &$val) {
+                if (is_bool($val)) {
+                    $val = $val ? 'true' : 'false';
                 } else {
-                    $value = "$value";
+                    $val = "$val";
                 }
             }
 
-            $products = $products->whereRaw(
-                sprintf(
-                    "(attrs->'$slug')::jsonb <@ '[%s]'::jsonb",
-                    implode(',', $values)
-                )
-            );
+            $products = $products->whereRaw("(attrs->'$slug')::jsonb <@ '[$value]'::jsonb");
         }
 
-        $products = $products->orderBy('id', 'desc')->get();
+        $products = $products->get();
 
         $page = $page ?? 1;
 

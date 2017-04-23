@@ -3,7 +3,9 @@
 namespace App\Models\Catalog;
 
 use App\Models\SaveImageTrait;
+use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -32,6 +34,16 @@ class Brand extends Model
 
     // Папка куда складывать картинки
     protected $imageDestination = 'brands';
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new OrderByOrderScope());
+        static::addGlobalScope('name', function (Builder $builder) {
+            $builder->orderBy('name');
+        });
+    }
 
     public function getHref(): string
     {

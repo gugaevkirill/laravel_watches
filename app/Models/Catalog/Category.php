@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,6 +28,13 @@ class Category extends Model
     protected $primaryKey = 'slug';
 
     const SLUGS = ['watches', 'jewelry', 'accessories'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new OrderByOrderScope());
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

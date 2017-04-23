@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalog\Brand;
 use App\Models\Catalog\Category;
+use App\Models\Catalog\Param;
 use App\Models\Catalog\Product;
 use App\Repositories\CatalogRepository;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
 
 class CatalogController extends Controller
 {
@@ -32,12 +32,33 @@ class CatalogController extends Controller
         $brands = Brand::whereIn('slug', $productsAll->pluck('brand_slug')->toArray())
             ->get(['name', 'slug']);
 
+        $params = Param::whereIn('type', ['select', 'boolean'])
+            ->where('in_filter', true)
+            ->with('values')
+            // TODO: получать нужный title в зависимости от языка
+            ->get(['slug', 'title_ru', 'type'])
+            ->map(function (Param $one) {
+                $ans = $one->toArray();
+                $ans['title'] = $ans['title_ru'];
+                unset($ans['title_ru']);
+
+                $tmp = [];
+                foreach ($ans['values'] as $value) {
+                    $tmp['val' . $value['id']] = ['title' => $value['value_ru']];
+                }
+                $ans['values'] = $tmp;
+
+                return $ans;
+            });
+
         return view(
             'category',
             [
                 'category' => Category::findOrFail($cateogory),
                 'brands' => $brands->toArray(),
                 'brandsJSON' => $this->keyBy($brands, 'slug')->toJson(),
+                'params' => $params,
+                'paramsJSON' => $this->keyBy($params, 'slug')->toJson(),
                 'paginator' => $paginator,
             ]
         );

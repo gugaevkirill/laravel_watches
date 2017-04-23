@@ -60,7 +60,7 @@
     {{-- push things in the after_scripts section --}}
 
     @push('crud_fields_scripts')
-    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="/js/vue.js"></script>
     <script>
         var vueJsonAttr = new Vue({
             el: '#jsonattr',

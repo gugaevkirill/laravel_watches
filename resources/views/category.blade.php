@@ -1,8 +1,8 @@
 @extends('layouts.front')
 
 @push('headOther')
-<script src="https://unpkg.com/vue@2.2.6"></script>
-<script src="https://unpkg.com/vue-router@2.4.0/dist/vue-router.js"></script>
+<script src="/js/vue.js"></script>
+<script src="/js/vue-router.js"></script>
 @endpush
 
 @push('scripts')
@@ -10,7 +10,8 @@
     var config = {
         brands: {!! $brandsJSON !!},
         page: {{ $paginator->currentPage() }},
-        totalPages: {{ $paginator->lastPage() }}
+        totalPages: {{ $paginator->lastPage() }},
+        params: {!! $paramsJSON !!}
     };
 </script>
 <script src="/js/catalog.js"></script>
@@ -57,42 +58,27 @@
                     </ul>
                 </div>
 
-                {{--<div class="information-blocks">--}}
-                    {{--<div class="block-title size-2">Boolean</div>--}}
-                    {{--<div class="size-selector">--}}
-                        {{--<div class="entry active">Все</div>--}}
-                        {{--<div class="entry">Да</div>--}}
-                        {{--<div class="entry">Нет</div>--}}
-                        {{--<div class="spacer"></div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<div class="information-blocks">--}}
-                    {{--<div class="block-title size-2">Select</div>--}}
-                    {{--<div class="row">--}}
-                        {{--<label class="checkbox-entry col-xs-6">--}}
-                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
-                        {{--</label>--}}
-                        {{--<label class="checkbox-entry col-xs-6">--}}
-                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
-                        {{--</label>--}}
-                        {{--<label class="checkbox-entry col-xs-6">--}}
-                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
-                        {{--</label>--}}
-                        {{--<label class="checkbox-entry col-xs-6">--}}
-                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
-                        {{--</label>--}}
-                        {{--<label class="checkbox-entry col-xs-6">--}}
-                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
-                        {{--</label>--}}
-                        {{--<label class="checkbox-entry col-xs-6">--}}
-                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
-                        {{--</label>--}}
-                        {{--<label class="checkbox-entry col-xs-6">--}}
-                            {{--<input type="checkbox"/> <span class="check"></span> Select value--}}
-                        {{--</label>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+                @foreach ($params as $param)
+                <div class="information-blocks">
+                    <div class="block-title size-2">{{ $param['title'] }}</div>
+                    @if ($param['type'] == 'boolean' || ($param['type'] == 'select' && count($param['values']) < 3))
+                    <div class="size-selector">
+                        <div class="entry active">Все</div>
+                        @foreach($param['values'] as $valId => $val)
+                        <div class="entry">{{ $val['title'] }}</div>
+                        @endforeach
+                    </div>
+                    @else
+                    <div class="row">
+                        @foreach($param['values'] as $valId => $val)
+                        <label class="checkbox-entry col-xs-6" @click="modifyParam('{{ $param['slug'] }}')">
+                            <input type="checkbox" v-model="params.{{ $param['slug'] }}.values.{{ $valId }}.active"/> <span class="check"></span> {{ $val['title'] }}
+                        </label>
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+                @endforeach
             </div>
         </div>
     </div>

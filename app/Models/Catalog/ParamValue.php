@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,4 +29,19 @@ class ParamValue extends Model
     protected $table = 'param_values';
 
     protected $fillable = ['order', 'value_ru', 'value_en', 'param_slug'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new OrderByOrderScope());
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function param()
+    {
+        return $this->belongsTo(Param::class);
+    }
 }
