@@ -61,17 +61,17 @@
                 @foreach ($params as $param)
                 <div class="information-blocks">
                     <div class="block-title size-2">{{ $param['title'] }}</div>
-                    @if ($param['type'] == 'boolean' || ($param['type'] == 'select' && count($param['values']) < 3))
+                    @if (isset($param['value']))
                     <div class="size-selector">
-                        <div class="entry active">Все</div>
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '0' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '0')">Все</div>
                         @foreach($param['values'] as $valId => $val)
-                        <div class="entry">{{ $val['title'] }}</div>
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '{{ substr($valId, 3) }}' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '{{ substr($valId, 3) }}')">{{ $val['title'] }}</div>
                         @endforeach
                     </div>
                     @else
                     <div class="row">
                         @foreach($param['values'] as $valId => $val)
-                        <label class="checkbox-entry col-xs-6" @click="modifyParam('{{ $param['slug'] }}')">
+                        <label class="checkbox-entry col-xs-6" @click="updateRouteParam('{{ $param['slug'] }}')">
                             <input type="checkbox" v-model="params.{{ $param['slug'] }}.values.{{ $valId }}.active"/> <span class="check"></span> {{ $val['title'] }}
                         </label>
                         @endforeach

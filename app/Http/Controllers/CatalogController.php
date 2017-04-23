@@ -39,14 +39,22 @@ class CatalogController extends Controller
             ->get(['slug', 'title_ru', 'type'])
             ->map(function (Param $one) {
                 $ans = $one->toArray();
+
+                // Название параметра на нужном языке
                 $ans['title'] = $ans['title_ru'];
                 unset($ans['title_ru']);
 
+                // Массив значений параметра
                 $tmp = [];
                 foreach ($ans['values'] as $value) {
                     $tmp['val' . $value['id']] = ['title' => $value['value_ru']];
                 }
                 $ans['values'] = $tmp;
+
+                // Для параметров, у которых значение может быть только одно
+                if ($one->type == 'boolean' || ($one->type == 'select' && count($ans['values']) < 3)) {
+                    $ans['value'] = '';
+                }
 
                 return $ans;
             });

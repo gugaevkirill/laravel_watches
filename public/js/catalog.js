@@ -35,14 +35,23 @@ const app = new Vue({
             // Params
             for (var pKey in this.params) {
                 if (this.params.hasOwnProperty(pKey)) {
-                    for (var vKey in this.params[pKey].values) {
-                        if (this.params[pKey].values.hasOwnProperty(vKey)) {
-                            this.$set(
-                                this.params[pKey].values[vKey],
-                                'active',
-                                !!to.query[pKey]
-                                && to.query[pKey].split(",").indexOf(vKey.substring(3)) > -1
-                            );
+                    // Если параметр допускает только одно значение
+                    if (this.params[pKey].hasOwnProperty('value')) {
+                        this.$set(
+                            this.params[pKey],
+                            'value',
+                            to.query[pKey] || '0'
+                        );
+                    } else {
+                        for (var vKey in this.params[pKey].values) {
+                            if (this.params[pKey].values.hasOwnProperty(vKey)) {
+                                this.$set(
+                                    this.params[pKey].values[vKey],
+                                    'active',
+                                    !!to.query[pKey]
+                                    && to.query[pKey].split(",").indexOf(vKey.substring(3)) > -1
+                                );
+                            }
                         }
                     }
                 }
@@ -69,9 +78,12 @@ const app = new Vue({
             router.push({query: {brand: '0'}});
         },
 
-        modifyParam: function (pKey) {
-            var tmpString = '',
-                query = this.$route.query;
+        /**
+         * Для множественных параметров
+         * @param pKey
+         */
+        updateRouteParam: function (pKey) {
+            var tmpString = '';
 
             for (var vKey in this.params[pKey].values) {
                 if (this.params[pKey].values.hasOwnProperty(vKey)
@@ -81,7 +93,6 @@ const app = new Vue({
                 }
             }
 
-            var tmpObj = {};
             if (tmpString) {
                 tmpString = tmpString.substr(0, tmpString.length - 1);
             } else {
@@ -89,7 +100,19 @@ const app = new Vue({
                 tmpString = '0';
             }
 
+            var tmpObj = {};
             tmpObj[pKey] = tmpString;
+            router.push({query: tmpObj});
+        },
+
+        /**
+         * Для параметра с единственным значением
+         * @param pKey
+         * @param val
+         */
+        setParam(pKey, val) {
+            var tmpObj = {};
+            tmpObj[pKey] = val;
             router.push({query: tmpObj});
         }
     }

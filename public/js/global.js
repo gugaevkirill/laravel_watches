@@ -473,10 +473,10 @@ $(function() {
     });
 
     //product page - selecting size, quantity, color
-    $('.size-selector .entry').on('click', function(){
-    	$(this).parent().find('.active').removeClass('active');
-    	$(this).addClass('active');
-    });
+    // $('.size-selector .entry').on('click', function(){
+    // 	$(this).parent().find('.active').removeClass('active');
+    // 	$(this).addClass('active');
+    // });
 
     $('.color-selector .entry').on('click', function(){
     	$(this).parent().find('.active').removeClass('active');
