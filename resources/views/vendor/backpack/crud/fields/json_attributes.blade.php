@@ -93,7 +93,9 @@
                 jsonAttrs: function () {
                     var tmp = {};
                     this.attributes.forEach(function (attr) {
-                        console.log([attr.slug, attr.value]);
+                        if (attr.value === null && attr.type == 'boolean') {
+                            attr.value = false;
+                        }
                         tmp[attr.slug] = attr.value;
                     });
 

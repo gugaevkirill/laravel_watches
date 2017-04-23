@@ -78,14 +78,8 @@ class CatalogRepository
                 throw new \Exception('Invalid URL');
             }
 
-            $values = explode(',', $value);
-
-            foreach ($values as &$val) {
-                if (is_bool($val)) {
-                    $val = $val ? 'true' : 'false';
-                } else {
-                    $val = "$val";
-                }
+            if ($param->type == 'boolean') {
+                $value = $value === '1' ? 'true' : 'false';
             }
 
             $products = $products->whereRaw("(attrs->'$slug')::jsonb <@ '[$value]'::jsonb");

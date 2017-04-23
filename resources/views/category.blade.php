@@ -64,9 +64,17 @@
                     @if (isset($param['value']))
                     <div class="size-selector">
                         <div :class="['entry', params.{{ $param['slug'] }}.value === '0' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '0')">Все</div>
+
+                        {{-- Для параметров типа Select --}}
                         @foreach($param['values'] as $valId => $val)
                         <div :class="['entry', params.{{ $param['slug'] }}.value === '{{ substr($valId, 3) }}' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '{{ substr($valId, 3) }}')">{{ $val['title'] }}</div>
                         @endforeach
+
+                        {{-- Для boolean параметров --}}
+                        @if ($param['type'] == 'boolean')
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '1' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '1')">Да</div>
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '2' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '2')">Нет</div>
+                        @endif
                     </div>
                     @else
                     <div class="row">
