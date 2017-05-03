@@ -105,8 +105,9 @@ const app = new Vue({
                 tmpString = '0';
             }
 
-            var tmpObj = { page: 1 };
+            var tmpObj = this.getRouteQuery();
             tmpObj[pKey] = tmpString;
+            tmpObj['page'] = 1;
             router.push({query: tmpObj});
         },
 
@@ -115,10 +116,24 @@ const app = new Vue({
          * @param pKey
          * @param val
          */
-        setParam(pKey, val) {
-            var tmpObj = { page: 1 };
+        setParam: function(pKey, val) {
+            var tmpObj = this.getRouteQuery();
             tmpObj[pKey] = val;
-            router.push({query: tmpObj});
+            tmpObj['page'] = 1;
+
+            router.replace({query: tmpObj});
+        },
+
+        getRouteQuery: function () {
+            var tmp = {};
+
+            for (var key in this.$route.query) {
+                if (this.$route.query.hasOwnProperty(key)) {
+                    tmp[key] = this.$route.query[key];
+                }
+            }
+
+            return tmp;
         }
     }
 });
