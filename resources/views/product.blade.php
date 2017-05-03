@@ -59,7 +59,7 @@
         </div>
         <div class="col-sm-7 col-md-4 col-lg-6 information-entry">
             <div class="product-detail-box">
-                <h1 class="product-title">{{ $productName }}</h1>
+                <h1 class="product-title roboto">{{ $productName }}</h1>
                 <h3 class="product-subtitle">{{ $brandName }}</h3>
 
                 <div class="price detail-info-entry roboto">

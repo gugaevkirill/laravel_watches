@@ -17,7 +17,10 @@ class SellController extends Controller
     {
         return view(
             'sell',
-            ['success' => Session::get('success')]
+            [
+                'success' => Session::get('success'),
+                'isSellPage' => true,
+            ]
         );
     }
 

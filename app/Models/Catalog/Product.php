@@ -111,6 +111,10 @@ class Product extends Model
      */
     public function getAttrsForProductPage(): array
     {
+        if (!$this->attrs) {
+            return [];
+        }
+
         $params = Param::whereIn('slug', array_keys($this->attrs))
             ->orderBy('order')
             ->get(['title_ru', 'title_en', 'type', 'slug']);

@@ -68,7 +68,7 @@
                     <h3 class="block-title size-3">Оригинальные швейцарские часы</h3>
                     <ul>
                         @foreach($brands as $brand)
-                        <li><a href="/watches/?brands[]={{ $brand->slug }}">{{ $brand->name }}</a></li>
+                        <li><a href="/watches/?brand={{ $brand->slug }}">{{ $brand->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>

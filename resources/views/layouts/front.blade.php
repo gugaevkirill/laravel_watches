@@ -41,10 +41,11 @@
             <header class="type-1">
                 <div class="header-top">
                     <div class="header-top-entry">
-                        <div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>
-                        <div class="list">
-                            <a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>
-                        </div>
+                        {{-- TODO: запилить выбиралку языка --}}
+                        {{--<div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>--}}
+                        {{--<div class="list">--}}
+                            {{--<a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="header-top-entry hidden-xs">
                         <div class="title"><i class="fa fa-phone"></i>Остались вопросы? Свяжитесь с нами <a href="@chunk('phone1href')" class="roboto"><b>@chunk('phone1')</b></a></div>
@@ -81,7 +82,11 @@
                     </div>
 
                     <div class="right-entries">
+                        @if (isset($isSellPage))
+                        <a class="header-functionality-entry" href="/contacts/"><b><i class="fa fa-envelope-o"></i>Контакты</b></a>
+                        @else
                         <a class="header-functionality-entry" href="/sell/"><b><i class="fa fa-envelope-o"></i>Онлайн оценка</b></a>
+                        @endif
                     </div>
 
                 </div>

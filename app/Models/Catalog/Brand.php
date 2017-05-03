@@ -7,6 +7,7 @@ use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 /**
  * App\Models\Catalog\Brand
@@ -58,5 +59,18 @@ class Brand extends Model
         return $this->image
             ? "<img src='/$this->image' style='max-width: 70px; max-height: 60px;'>"
             : "";
+    }
+
+    /**
+     * Бренды, в которых есть товары
+     * @param int $limit
+     * @return Collection
+     */
+    public static function getWithProducts(int $limit = 10): Collection
+    {
+        return self::rightJoin('products', 'products.brand_slug', '=', 'brands.slug')
+            ->distinct()
+            ->limit($limit)
+            ->get(['brands.*']);
     }
 }

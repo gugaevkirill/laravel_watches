@@ -30,7 +30,7 @@ class MainController extends Controller
         return view(
             'about',
             [
-                'brands' => Brand::take(6)->get(),  // TODO: вытаскивать те бренды, по которым есть часы
+                'brands' => Brand::getWithProducts(6),
             ]
         );
     }
