@@ -9,8 +9,8 @@
 <script>
     var config = {
         brands: {!! $brandsJSON !!},
-        page: {{ $paginator->currentPage() }},
-        totalPages: {{ $paginator->lastPage() }},
+        page: {{ $currentPage }},
+        totalPages: {{ $totalPages }},
         params: {!! $paramsJSON !!}
     };
 </script>
@@ -35,11 +35,7 @@
                     {{--TODO: запилить тут вывод--}}
                     <div class="description">@include('parts/products-count')</div>
                     <div class="pages-box">
-                        <a class="square-button active">1</a>
-                        {{--<a class="square-button">2</a>--}}
-                        {{--<a class="square-button">3</a>--}}
-                        {{--<div class="divider">...</div>--}}
-                        {{--<a class="square-button"><i class="fa fa-angle-right"></i></a>--}}
+                        {!! $pagesNumberHTML !!}
                     </div>
                     <div class="clear"></div>
                 </div>

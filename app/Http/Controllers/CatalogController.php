@@ -67,7 +67,13 @@ class CatalogController extends Controller
                 'brandsJSON' => $this->keyBy($brands, 'slug')->toJson(),
                 'params' => $params,
                 'paramsJSON' => $this->keyBy($params, 'slug')->toJson(),
-                'paginator' => $paginator,
+                'items' => $paginator->getCollection(),
+                'currentPage' => $paginator->currentPage(),
+                'totalPages' => $paginator->lastPage(),
+                'perPage' => $paginator->perPage(),
+                'count' => $paginator->count(),
+                'total' => $paginator->total(),
+                'pagesNumberHTML' => $paginator->render('parts/products-pagen'),
             ]
         );
     }
