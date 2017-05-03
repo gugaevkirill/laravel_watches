@@ -22,11 +22,11 @@
         <div class="article-container style-1">
             <div class="cell-view">
                 <h5>Телефон</h5>
-                <p><a href="@chunk('phone1href')">@chunk('phone1')</a></p>
+                <p><a href="@chunk('phone1href')" class="roboto">@chunk('phone1')</a></p>
                 <h5>Адрес</h5>
-                <p>@chunk('address')</p>
+                <p class="roboto">@chunk('address')</p>
                 <h5>Часы работы</h5>
-                <p>@chunk('working-hours')</p>
+                <p class="roboto">@chunk('working-hours')</p>
             </div>
         </div>
     </div>

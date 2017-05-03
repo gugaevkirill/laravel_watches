@@ -62,7 +62,7 @@
                 <h1 class="product-title">{{ $productName }}</h1>
                 <h3 class="product-subtitle">{{ $brandName }}</h3>
 
-                <div class="price detail-info-entry">
+                <div class="price detail-info-entry roboto">
                     @if (!empty($productPrices))
                         <div class="current">{{ $productPrices[0] ?? '' }}</div>
                         @if (isset($productPrices[1]))

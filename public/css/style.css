@@ -108,7 +108,6 @@ a, a:link, a:visited, a:active, a:hover{cursor: pointer; text-decoration: none; 
 ul{list-style: none;}
 body{font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 14px; line-height: 1;}
 
-
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /* 03 - GLOBAL SETTINGS */
 /*-------------------------------------------------------------------------------------------------------------------------------*/
@@ -3194,6 +3193,8 @@ body.teaser-3 .teaser-title{font-size: 72px; line-height: 62px; border-top: 4px 
 .brands-filter > li.active { font-weight: bold; }
 
 .buy-button { float: none!important; }
+
+.roboto { font-family: 'Roboto', sans-serif!important; }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /* 00 - MEDIA QUERIES */

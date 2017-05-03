@@ -186,19 +186,19 @@
                     <div class="swiper-slide">
                         <blockquote class="latest-review">
                             <div class="text">Неожиданно хороший сервис. Думал, придется отдать хорошую вещь за копейки, но здесь предложили действительно хорошую цену! Спасибо вам и успехов в бизнесе!</div>
-                            <footer><cite>Алексей Ягофаров</cite>, 10.01.2016</footer>
+                            <footer class="roboto"><cite>Алексей Ягофаров</cite>, 10.01.2016</footer>
                         </blockquote>
                     </div>
                     <div class="swiper-slide">
                         <blockquote class="latest-review">
                             <div class="text">Пришлось продать любимые часы, так как напряженка с деньгами. Все корректно и вежливо, никаких проблем. Деньги получила в течение получаса, спасибо!</div>
-                            <footer><cite>Дарья Осипова</cite>, 18.07.2016</footer>
+                            <footer class="roboto"><cite>Дарья Осипова</cite>, 18.07.2016</footer>
                         </blockquote>
                     </div>
                     <div class="swiper-slide">
                         <blockquote class="latest-review">
                             <div class="text">В других ломбардах за мой Ролекс давали, как за китайскую подделку, курам на смех! Здесь предложили адекватную цену и выплатили быстро. Буду рекомендовать знакомым.</div>
-                            <footer><cite>Андрей Кишин</cite>, 12.02.2017</footer>
+                            <footer class="roboto"><cite>Андрей Кишин</cite>, 12.02.2017</footer>
                         </blockquote>
                     </div>
                 </div>

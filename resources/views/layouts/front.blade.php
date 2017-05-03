@@ -18,11 +18,15 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/idangerous.swiper.css" rel="stylesheet" type="text/css" />
     <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
     <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700%7CDancing+Script%7CMontserrat:400,700%7CMerriweather:400,300italic%7CLato:400,700,900' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <!--[if IE 9]>
     <link href="/css/ie9.css" rel="stylesheet" type="text/css" />
     <![endif]-->
+
     @stack('styles')
     @stack('headOther')
 
@@ -43,7 +47,7 @@
                         </div>
                     </div>
                     <div class="header-top-entry hidden-xs">
-                        <div class="title"><i class="fa fa-phone"></i>Остались вопросы? Свяжитесь с нами <a href="@chunk('phone1href')"><b>@chunk('phone1')</b></a></div>
+                        <div class="title"><i class="fa fa-phone"></i>Остались вопросы? Свяжитесь с нами <a href="@chunk('phone1href')" class="roboto"><b>@chunk('phone1')</b></a></div>
                     </div>
                     <div class="socials-box">
                         @chunk('social-box')
@@ -62,7 +66,7 @@
                             <span class="image">
                                 <i class="fa fa-phone"></i>
                             </span>
-                            <span class="text">
+                            <span class="text roboto">
                                 <b>@chunk('phone1')</b> <br/> Контактный телефон
                             </span>
                         </a>
@@ -70,7 +74,7 @@
                             <span class="image">
                                 <i class="fa fa-whatsapp"></i>
                             </span>
-                            <span class="text">
+                            <span class="text roboto">
                                 <b>@chunk('phone2')</b> <br/> WhatsApp, Viber, Telegramm
                             </span>
                         </a>
@@ -128,7 +132,7 @@
                             <div class="col-md-3">
                                 <a href="/"><img class="footer-logo" src="/img/logo1-grey.png" style="margin-bottom: 15px;"/></a>
                                 <div class="footer-description">@chunk('footer-description')</div>
-                                <div class="footer-address">
+                                <div class="footer-address roboto">
                                     @chunk('address')<br/>
                                     Телефон: @chunk('phone1')<br/>
                                     Онлайн-оценка: @chunk('phone2')<br/>
@@ -158,8 +162,8 @@
                             <div class="clearfix visible-sm-block"></div>
                             <div class="col-md-3">
                                 <h3 class="column-title">Контактная информация</h3>
-                                <div class="footer-description">@chunk('address')</div>
-                                <div class="footer-description">
+                                <div class="footer-description roboto">@chunk('address')</div>
+                                <div class="footer-description roboto">
                                     Часы работы: @chunk('working-hours')<br/>
                                 </div>
                                 <div class="clear"></div>

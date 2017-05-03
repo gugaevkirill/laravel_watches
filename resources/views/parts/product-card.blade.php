@@ -5,6 +5,6 @@
     <a class="tag" href="{{ $item->getHref() }}" target="_blank">{{ $item->param('ref') ?? 'Референс' }}</a>
     <a class="title" href="{{ $item->getHref() }}" target="_blank">{{ $item->name }}</a>
     <div class="price">
-        <div class="current">{{ $item->getPriceString() }}</div>
+        <div class="current roboto">{{ $item->getPriceString() }}</div>
     </div>
 </div>
