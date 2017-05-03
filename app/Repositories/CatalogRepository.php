@@ -11,7 +11,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class CatalogRepository
 {
-    const PER_PAGE = 20;
+    const PER_PAGE = 2;
     // GET параметры, которые могут быть в запросе помимо params_slug
     const ALLOWED_QUERY = ['brand', 'page'];
 

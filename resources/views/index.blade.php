@@ -26,7 +26,7 @@
                                         <h1 class="title">Patek Philippe</h1>
                                         <div class="description">Нужно выбрать содержимое этих трех слайдов</div>
                                         <div class="info">
-                                            <a class="button style-1" href="/watches/?brands[]=patek_philippe">В каталог</a>
+                                            <a class="button style-1" href="/watches/?brand=patek_philippe">В каталог</a>
                                         </div>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                         <h1 class="title">Audemars Piguet</h1>
                                         <div class="description">Нужно выбрать содержимое этих трех слайдов</div>
                                         <div class="info">
-                                            <a class="button style-1" href="/watches/?brands[]=audemars_piguet">В каталог</a>
+                                            <a class="button style-1" href="/watches/?brand=audemars_piguet">В каталог</a>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                         <h1 class="title">ROLEX</h1>
                                         <div class="description">Нужно выбрать содержимое этих трех слайдов</div>
                                         <div class="info">
-                                            <a class="button style-1" href="/watches/?brands[]=rolex">В каталог</a>
+                                            <a class="button style-1" href="/watches/?brand=rolex">В каталог</a>
                                         </div>
                                     </div>
                                 </div>

@@ -20,7 +20,7 @@
 @section('content')
 <div class="breadcrumb-box">
     <a href="/">Главная</a>
-    <a>{{ $category->name_ru }}</a>
+    <a href="/{{ $category->slug }}/">{{ $category->name_ru }}</a>
 </div>
 
 <div id="vue-catalog">
