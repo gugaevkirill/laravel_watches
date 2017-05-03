@@ -9,8 +9,8 @@
 <script>
     var config = {
         brands: {!! $brandsJSON !!},
-        page: {{ $currentPage }},
-        totalPages: {{ $totalPages }},
+        currentPage: {{ $paginator->currentPage() }},
+        totalPages: {{ $paginator->lastPage() }},
         params: {!! $paramsJSON !!}
     };
 </script>
@@ -35,7 +35,7 @@
                     {{--TODO: запилить тут вывод--}}
                     <div class="description">@include('parts/products-count')</div>
                     <div class="pages-box">
-                        {!! $pagesNumberHTML !!}
+                        {!! $paginator->render('parts/products-pagen') !!}
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -46,7 +46,7 @@
                     <div class="block-title size-3">Бренды</div>
                     <ul class="brands-filter">
                         @foreach($brands as $brand)
-                        <router-link :to="{ query: { brand: '{{ $brand['slug'] }}' }}" tag="li" v-if="!brands.{{ $brand['slug'] }}.active">
+                        <router-link :to="{ query: { brand: '{{ $brand['slug'] }}', page: 1 }}" tag="li" v-if="!brands.{{ $brand['slug'] }}.active">
                             {{ $brand['name'] }}
                         </router-link>
                         <li class="active" v-if="brands.{{ $brand['slug'] }}.active" @click.stop="unsetBrand()">{{ $brand['name'] }}</li>

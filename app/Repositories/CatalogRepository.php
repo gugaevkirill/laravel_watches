@@ -11,7 +11,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class CatalogRepository
 {
-    const PER_PAGE = 20;
+    // TODO: выставить в 20
+    const PER_PAGE = 3;
     // GET параметры, которые могут быть в запросе помимо params_slug
     const ALLOWED_QUERY = ['brand', 'page'];
 
@@ -64,7 +65,7 @@ class CatalogRepository
             $products = $products->where('brand_slug', $brand);
         }
 
-//         Фильтр атрибутов
+        // Фильтр атрибутов
         $params = Param::whereIn('slug', array_keys($attrs))->get();
         foreach ($attrs as $slug => $value) {
             if ($value == "0") {

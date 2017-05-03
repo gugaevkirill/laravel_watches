@@ -8,12 +8,16 @@ const app = new Vue({
     el: '#vue-catalog',
     data: {
         brands: config.brands,
-        totalPages: config.totalPages,
+        currentPage: config.currentPage,
         token: config.token,
         params: config.params
     },
     mounted: function () {
         this.updateFilters(this.$route);
+
+        $(document).on('click', '.pages-box > .square-button', function(event) {
+            router.replace({ query: { page: $(event.target).text() }})
+        })
     },
     watch: {
         '$route' (to, from) {
@@ -30,7 +34,8 @@ const app = new Vue({
                 }
             }
 
-            // TODO: Page
+            // Page
+            this.$set(this, 'currentPage', to.query['page'] || 1);
 
             // Params
             for (var pKey in this.params) {
@@ -67,7 +72,7 @@ const app = new Vue({
             .done(function(data) {
                 $('.shop-grid.grid-view').html(data.html);
                 $('.page-selector .description').html(data.countInfo);
-                that.totalPages = data.totalPages;
+                $('.page-selector > .pages-box').html(data.pagenInfo);
             })
             .fail(function() {
                 // location.reload();
@@ -75,7 +80,7 @@ const app = new Vue({
         },
 
         unsetBrand: function () {
-            router.push({query: {brand: '0'}});
+            router.replace({query: {brand: '0', page: 1}});
         },
 
         /**
@@ -100,7 +105,7 @@ const app = new Vue({
                 tmpString = '0';
             }
 
-            var tmpObj = {};
+            var tmpObj = { page: 1 };
             tmpObj[pKey] = tmpString;
             router.push({query: tmpObj});
         },
@@ -111,7 +116,7 @@ const app = new Vue({
          * @param val
          */
         setParam(pKey, val) {
-            var tmpObj = {};
+            var tmpObj = { page: 1 };
             tmpObj[pKey] = val;
             router.push({query: tmpObj});
         }
