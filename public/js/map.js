@@ -4,7 +4,7 @@ $(function() {
 		image = {
 			url: '/img/marker.png',
 			size: new google.maps.Size(30, 45),
-			anchor: new google.maps.Point(30, 50)
+			anchor: new google.maps.Point(30, 45)
 		};
 
 	function addMarker(location,name,contentstr){
