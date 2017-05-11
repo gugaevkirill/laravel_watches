@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposers\FeaturedProductsComposer;
 use App\Http\ViewComposers\LayoutComposer;
 use App\Models\Content\Chunk;
 use App\Observers\ChunkObserver;
@@ -22,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Add view composers:
         View::composer('layouts/front', LayoutComposer::class);
+        View::composer('parts/featured-products', FeaturedProductsComposer::class);
     }
 
     /**

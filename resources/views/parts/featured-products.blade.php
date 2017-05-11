@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-4 information-entry">
             <h3 class="block-title inline-product-column-title">Часы дня</h3>
-            @foreach ($watches->slice(0, 3) as $item)
+            @foreach ($watches as $item)
                 <div class="inline-product-entry">
                     <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
                     <div class="content">
@@ -19,7 +19,7 @@
         </div>
         <div class="col-sm-4 information-entry">
             <h3 class="block-title inline-product-column-title">Новые аксессуары</h3>
-            @foreach ($accessories->slice(0, 3) as $item)
+            @foreach ($accessories as $item)
                 <div class="inline-product-entry">
                     <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
                     <div class="content">
@@ -36,7 +36,7 @@
         </div>
         <div class="col-sm-4 information-entry">
             <h3 class="block-title inline-product-column-title">Элитные товары</h3>
-            @foreach ($luxury->slice(0, 3) as $item)
+            @foreach ($luxury as $item)
                 <div class="inline-product-entry">
                     <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
                     <div class="content">

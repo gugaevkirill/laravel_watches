@@ -13,13 +13,6 @@ class RepairController extends Controller
      */
     public function repairPage()
     {
-        return view(
-            'repair',
-            [
-                'watches' => Product::where('category_slug', 'watches')->take(5)->get(),
-                'luxury' => Product::where('category_slug', 'luxury')->take(5)->get(),
-                'accessories' => Product::where('category_slug', 'accessories')->take(5)->get(),
-            ]
-        );
+        return view('repair');
     }
 }
