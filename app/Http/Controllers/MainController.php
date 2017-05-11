@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Catalog\Brand;
+use App\Models\Catalog\Category;
 use App\Models\Catalog\Product;
 
 class MainController extends Controller

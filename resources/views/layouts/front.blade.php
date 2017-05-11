@@ -100,10 +100,10 @@
                     <div class="nav-overflow">
                         <nav>
                             <ul>
-                                <li><a href="/watches/">Часы</a></li>
-                                <li><a href="/jewelry/">Украшения</a></li>
-                                <li><a href="/accessories/">Аксессуары</a></li>
-                                {{--<li><a href="/repair/">Ремонт</a></li>--}}
+                                @foreach ($categories as $category)
+                                <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
+                                @endforeach
+                                <li><a href="/repair/">Ремонт</a></li>
                                 <li><a href="/sell/">Продать часы</a></li>
                                 <li><a href="/about/">О нас</a></li>
                                 <li><a href="/contacts/">Контакты</a></li>

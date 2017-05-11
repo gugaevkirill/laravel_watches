@@ -1,5 +1,6 @@
 <?php
 
+CRUD::resource('category', 'CategoryCrudController');
 CRUD::resource('brand', 'BrandCrudController');
 CRUD::resource('param', 'ParamCrudController');
 CRUD::resource('value_param', 'ParamValueCrudController');

@@ -2,7 +2,7 @@
 
 use \App\Models\Catalog\Category;
 
-$categoryRegex = '^(' . implode('|', Category::SLUGS) . ')$';
+$categoryRegex = '^(' . Category::get(['slug'])->implode('slug', '|') . ')$';
 
 Route::get('/', 'MainController@mainPage')->name('index');
 Route::get('/about', 'MainController@aboutPage');

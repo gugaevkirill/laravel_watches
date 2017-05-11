@@ -27,7 +27,9 @@ class Category extends Model
     public $incrementing = false;
     protected $primaryKey = 'slug';
 
-    const SLUGS = ['watches', 'jewelry', 'accessories'];
+    protected $fillable = ['slug', 'order', 'name_ru', 'name_en'];
+
+    const SLUGS = ['watches', 'luxury', 'accessories'];
 
     protected static function boot()
     {

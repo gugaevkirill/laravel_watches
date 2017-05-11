@@ -29,17 +29,17 @@ class CategoriesSeeder extends Seeder
         ]);
 
         $this->createCategory([
-            'slug' => 'jewelry',
+            'slug' => 'accessories',
             'order' => 2,
-            'name_ru' => 'Украшения',
-            'name_en' => 'Jewelry',
+            'name_ru' => 'Аксессуары',
+            'name_en' => 'Accessories',
         ]);
 
         $this->createCategory([
-            'slug' => 'accessories',
+            'slug' => 'luxury',
             'order' => 3,
-            'name_ru' => 'Аксессуары',
-            'name_en' => 'Accessories',
+            'name_ru' => 'Элитные товары',
+            'name_en' => 'Luxury goods',
         ]);
     }
 }

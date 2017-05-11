@@ -14,7 +14,7 @@ use \App\Models\Catalog\Category;
 */
 
 Route::group([], function () {
-    $categoryRegex = '^(' . implode('|', Category::SLUGS) . ')$';
+    $categoryRegex = '^(' . Category::get(['slug'])->implode('slug', '|') . ')$';
 
     Route::any('{category}', 'CatalogController@categoryAPI')
         ->where(['category' => $categoryRegex]);
