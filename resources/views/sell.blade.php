@@ -130,7 +130,7 @@
                         <label class="text-success">Форма отправлена!</label>
                     @endif
 
-                    <div class="button style-10">Отправить<input type="submit" value="" /></div>
+                    <div class="button style-10 sell-button">Отправить<input type="submit" value="" /></div>
                 </div>
             </div>
             {{ Form::close() }}

@@ -899,10 +899,10 @@ body.style-1 .footer-columns-entry{border-top: none; padding-top: 0;}
 
 /* 05.04 - from the blog */
 .from-the-blog-entry{}
-.from-the-blog-entry .image{float: left; width: 180px; margin-right: 20px; position: relative; overflow: hidden;}
+.from-the-blog-entry .image { float: left; width: 180px; margin: 0 20px 10px 0; position: relative; overflow: hidden;}
 .hover-class-1:after{background: #8bab0a; position: absolute; left: 0; top: 0; width: 100%; height: 100%; content: ""; opacity: 0;}
 body:not(.mobile) .hover-class-1:hover:after{opacity: 0.7;}
-.from-the-blog-entry .image img{display: block; width: 100%; height: auto; position: relative;}
+.from-the-blog-entry .image img {display: block; width: 100%; height: auto; position: relative;}
 .hover-class-1 .hover-label{position: absolute; width: 100%; text-align: center; top: 50%; margin-top: -10px; font-size: 14px; line-height: 20px; color: #fff; font-weight: 600; z-index: 1; left: -100%;}
 body:not(.mobile) .hover-class-1:hover .hover-label{left: 0;}
 .from-the-blog-entry .description{font-size: 13px; line-height: 24px; color: #a3a2a2;}
@@ -932,6 +932,7 @@ body:not(.mobile) .hover-class-1:hover .hover-label{left: 0;}
 	#content-block .mozaic-banner-entry.type-1, #content-block .mozaic-banner-entry.type-2, #content-block .mozaic-banner-entry.type-3, #content-block .mozaic-swiper{height: auto;}
 	.mozaic-banner-content{padding: 25px 20px;}
 	.mozaic-swiper .mozaic-banner-content{padding-bottom: 55px;}
+    .sell-button { margin: 15px 0; }
 }
 
 @media only screen and (max-width: 992px){

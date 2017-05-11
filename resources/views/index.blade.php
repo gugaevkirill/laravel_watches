@@ -80,7 +80,7 @@
             <div class="title">Новинки</div>
             <div class="list">
                 <a class="block-title tab-switcher active">Швейцарские часы</a>
-                <a class="block-title tab-switcher">Ювелирные изделия</a>
+                <a class="block-title tab-switcher">Элитные товары</a>
                 <a class="block-title tab-switcher">Аксессуары</a>
                 <div class="clear"></div>
             </div>
@@ -106,7 +106,7 @@
                 <div class="products-swiper">
                     <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-int-slides="2" data-sm-slides="3" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
                         <div class="swiper-wrapper">
-                            @foreach($jewelry as $item)
+                            @foreach($luxury as $item)
                                 <div class="swiper-slide">
                                     <div class="paddings-container">
                                     @include('parts.product-card')

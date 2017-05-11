@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @push('scripts')
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyABoeMU4atJosF8dwBb0Z5t5fHqs2dGYu4"></script>
 <script src="/js/map.js"></script>
 @endpush
 
