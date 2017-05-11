@@ -24,7 +24,7 @@
                                     <div class="cell-view">
                                         {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
                                         <h1 class="title">Patek Philippe</h1>
-                                        <div class="description">Нужно выбрать содержимое этих трех слайдов</div>
+                                        <div class="description">Часы класса «Люкс»</div>
                                         <div class="info">
                                             <a class="button style-1" href="/watches/?brand=patek_philippe">В каталог</a>
                                         </div>
@@ -39,7 +39,7 @@
                                     <div class="cell-view">
                                         {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
                                         <h1 class="title">Audemars Piguet</h1>
-                                        <div class="description">Нужно выбрать содержимое этих трех слайдов</div>
+                                        <div class="description">Шедевры часового искусства</div>
                                         <div class="info">
                                             <a class="button style-1" href="/watches/?brand=audemars_piguet">В каталог</a>
                                         </div>
@@ -54,7 +54,7 @@
                                     <div class="cell-view">
                                         {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
                                         <h1 class="title">ROLEX</h1>
-                                        <div class="description">Нужно выбрать содержимое этих трех слайдов</div>
+                                        <div class="description">Новый уровень совершенства</div>
                                         <div class="info">
                                             <a class="button style-1" href="/watches/?brand=rolex">В каталог</a>
                                         </div>

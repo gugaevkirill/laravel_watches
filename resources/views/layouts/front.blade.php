@@ -160,7 +160,7 @@
                                 <h3 class="column-title">Услуги</h3>
                                 <ul class="column">
                                     <li><a href="/sell/">Скупка часов</a></li>
-                                    {{--<li><a href="/repair/">Ремонт часов</a></li>--}}
+                                    <li><a href="/repair/">Ремонт часов</a></li>
                                 </ul>
                                 <div class="clear"></div>
                             </div>
