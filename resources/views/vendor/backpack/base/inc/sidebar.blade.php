@@ -23,7 +23,7 @@
                 <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
                 <li class="header">Каталог</li>
-                <li><a href="{{ url('admin/category') }}"><i class="fa fa-sun-o"></i> <span>Категории</span></a></li>
+                <li><a href="{{ url('admin/category') }}"><i class="fa fa-bookmark"></i> <span>Категории</span></a></li>
                 <li><a href="{{ url('admin/brand') }}"><i class="fa fa-sun-o"></i> <span>Бренды</span></a></li>
                 <li><a href="{{ url('admin/param') }}"><i class="fa fa-hand-spock-o"></i> <span>Параметры</span></a></li>
                 <li><a href="{{ url('admin/value_param') }}"><i class="fa fa-hand-pointer-o"></i> <span>Значения параметров</span></a></li>

@@ -17,7 +17,7 @@ class RepairController extends Controller
             'repair',
             [
                 'watches' => Product::where('category_slug', 'watches')->take(5)->get(),
-                'jewelry' => Product::where('category_slug', 'jewelry')->take(5)->get(),
+                'luxury' => Product::where('category_slug', 'luxury')->take(5)->get(),
                 'accessories' => Product::where('category_slug', 'accessories')->take(5)->get(),
             ]
         );

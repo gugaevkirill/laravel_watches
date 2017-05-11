@@ -18,8 +18,8 @@
             @endforeach
         </div>
         <div class="col-sm-4 information-entry">
-            <h3 class="block-title inline-product-column-title">Украшения со скидкой</h3>
-            @foreach ($jewelry->slice(0, 3) as $item)
+            <h3 class="block-title inline-product-column-title">Новые аксессуары</h3>
+            @foreach ($accessories->slice(0, 3) as $item)
                 <div class="inline-product-entry">
                     <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
                     <div class="content">
@@ -35,8 +35,8 @@
             @endforeach
         </div>
         <div class="col-sm-4 information-entry">
-            <h3 class="block-title inline-product-column-title">Аксессуары</h3>
-            @foreach ($accessories->slice(0, 3) as $item)
+            <h3 class="block-title inline-product-column-title">Элитные товары</h3>
+            @foreach ($luxury->slice(0, 3) as $item)
                 <div class="inline-product-entry">
                     <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
                     <div class="content">

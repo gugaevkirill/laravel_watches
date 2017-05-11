@@ -11,7 +11,7 @@
         <div class="col-md-9 col-md-push-3 information-entry">
             <div class="blog-landing-box type-1 detail-post">
                 <div class="blog-entry">
-                    <div class="image"><img src="/img/old//blog-thumbnail-1.jpg" alt="" /></div>
+                    <div class="image"><img src="/img/repair.jpg" alt="" /></div>
                     <div class="content">
                         <h1 class="title">Ремонт швейцарских часов в Москве</h1>
                         <div class="article-container style-1">

@@ -7,8 +7,7 @@ $categoryRegex = '^(' . Category::get(['slug'])->implode('slug', '|') . ')$';
 Route::get('/', 'MainController@mainPage')->name('index');
 Route::get('/about', 'MainController@aboutPage');
 
-//Route::get('/repair', 'RepairController@repairPage')->name('repair.page');
-//Route::post('/repair', 'RepairController@processForm')->name('repair.process');
+Route::get('/repair', 'RepairController@repairPage')->name('repair.page');
 
 Route::get('/sell', 'SellController@sellPage')->name('sell.page');
 Route::post('/sell', 'SellController@processForm')->name('sell.process');
