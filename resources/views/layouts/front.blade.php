@@ -27,11 +27,14 @@
     <link href="/css/ie9.css" rel="stylesheet" type="text/css" />
     <![endif]-->
 
+    <meta name="yandex-verification" content="7d31fe5986c87c0d" />
+
     @stack('styles')
     @stack('headOther')
 
     <title>@chunk('title')</title>
 </head>
+
 <body class="style-3">
 
 <div id="content-block">
@@ -186,11 +189,18 @@
 <script src="/js/idangerous.swiper.min.js"></script>
 <script src="/js/global.js"></script>
 
-<!-- custom scrollbar -->
+{{-- custom scrollbar --}}
 <script src="/js/jquery.mousewheel.js"></script>
 <script src="/js/jquery.jscrollpane.min.js"></script>
 
 @stack('scripts')
+
+{{-- Yandex.Metrika counter --}}
+<script type="text/javascript">
+    (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter44775544 = new Ya.Metrika({ id:44775544, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/44775544" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+{{-- /Yandex.Metrika counter --}}
 
 </body>
 </html>
