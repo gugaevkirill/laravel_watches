@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('title')
+    {{ $productName }}
+@endsection
+
 @push('scripts')
 <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="https://yastatic.net/share2/share.js" async="async"></script>

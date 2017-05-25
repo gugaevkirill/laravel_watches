@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('title')
+    Ремонт швейцарских часов в Москве - мастерская EliteBazaar
+@endsection
+
 @section('content')
 <div class="breadcrumb-box">
     <a href="/">Главная</a>

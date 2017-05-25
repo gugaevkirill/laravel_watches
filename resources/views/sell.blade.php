@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('title')
+    Скупка швейцарских часов в Москве - элитный часовой ломбард.
+@endsection
+
 @section('content')
 <div class="navigation-banner-swiper">
     <div class="swiper-slide active">

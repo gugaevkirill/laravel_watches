@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('title')
+    EliteBazaar - О нас. Ломбард и часовая мастерская в москве. Продажа и ремонт швейцарских часов.
+@endsection
+
 @section('content')
 <div class="breadcrumb-box">
     <a href="/">Главная</a>

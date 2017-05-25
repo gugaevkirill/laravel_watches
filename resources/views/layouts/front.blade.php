@@ -32,7 +32,7 @@
     @stack('styles')
     @stack('headOther')
 
-    <title>@chunk('title')</title>
+    <title>@yield('title', 'Элитная жизнь')</title>
 </head>
 
 <body class="style-3">

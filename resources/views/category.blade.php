@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('title')
+    {{ $category->name_ru }} - EliteBazaar
+@endsection
+
 @push('headOther')
 <script src="/js/vue.js"></script>
 <script src="/js/vue-router.js"></script>
