@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="comment">
-                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <span class="comment-image"><img src="/img/repair/bill.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Выдача квитанции</span></div>
                             <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="comment">
-                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <span class="comment-image"><img src="/img/repair/diagnostic.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Диагностика</span></div>
                             <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="comment">
-                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <span class="comment-image"><img src="/img/repair/remont.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Ремонт и замена деталей</span></div>
                             <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="comment">
-                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <span class="comment-image"><img src="/img/repair/sborka.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Сборка и проверка</span></div>
                             <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
@@ -91,7 +91,7 @@
             </div>
             <div class="information-blocks">
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/swiss.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Ремонт швейцарских часов</span>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/obsluzhivanie.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Обслуживание часов</span>
@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/battery.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Проверка и замена элементов питания</span>
@@ -179,7 +179,7 @@
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/balance.jpg" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Ремонт колеса баланса</span>
