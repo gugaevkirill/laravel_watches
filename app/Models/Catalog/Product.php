@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use App\Scopes\IsActiveScope;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -67,6 +68,7 @@ class Product extends Model
     {
         parent::boot();
 
+        static::addGlobalScope(new IsActiveScope());
         static::addGlobalScope(new OrderByOrderScope());
         static::addGlobalScope('id', function (Builder $builder) {
             $builder->orderBy('id', 'desc');

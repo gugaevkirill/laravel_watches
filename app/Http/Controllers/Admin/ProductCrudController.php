@@ -38,6 +38,15 @@ class ProductCrudController extends CrudController
 
         $this->crud->addField(
             [
+                'name' => 'is_active',
+                'label' => 'Активный?',
+                'type' => 'checkbox',
+            ],
+            'update'
+        );
+
+        $this->crud->addField(
+            [
                 'name' => 'order',
                 'label' => 'Сортировка',
                 'type' => 'number',
@@ -119,6 +128,12 @@ class ProductCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->removeColumns(['attrs', 'images', 'description']);
+
+        $this->crud->addColumn([
+            // run a function on the CRUD model and show its return value
+            'label' => "Активный?", // Table column heading
+            'name' => 'is_active',
+        ]);
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value
