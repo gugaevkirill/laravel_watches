@@ -13,7 +13,7 @@
     <label>{!! $field['label'] !!}</label>
 
     <div id="jsonattr">
-        <div class="form-group col-md-12" v-for="param in params">
+        <div class="form-group col-md-12" v-for="param in params" v-if="paramInCurrentCat(param)">
             <label class="col-md-4 col-xs-12">@{{ param.title_ru }}</label>
 
             <input  v-if="param.type == 'string'"  type="text"     v-model="param.value" class="col-md-7 col-xs-11">
@@ -85,13 +85,19 @@
                 // Вид атрибутов в формате json для сохранения в админке
                 jsonAttrs: {
                     get:function () {
+                        var that = this;
                         var tmp = {};
+
                         this.params.forEach(function (param) {
                             if (param.value === null && param.type == 'boolean') {
                                 param.value = false;
                             }
 
-                            if (!param.hasOwnProperty('value') || param.value === null) {
+                            // Отбрасываем пустые параметры и параметры, не принадлежащие категории
+                            if (!param.hasOwnProperty('value')
+                                || param.value === null
+                                || !that.paramInCurrentCat(param)
+                            ) {
                                 return false;
                             }
 
@@ -114,6 +120,10 @@
                 clearParam: function (slug) {
                     console.log('Clear param: ' + slug);
                     this.$set(this.getParamBySlug(slug), 'value', null);
+                },
+
+                paramInCurrentCat: function (param) {
+                    return param.categories.indexOf(this.category) != -1;
                 }
             }
         });

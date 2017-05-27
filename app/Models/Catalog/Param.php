@@ -78,8 +78,19 @@ class Param extends Model
      */
     public static function getForAdminPage(): array
     {
-        return self::orderByRaw('"order" ASC, "title_ru" DESC')
+        $params = self::orderByRaw('"order" ASC, "title_ru" DESC')
+            ->with('categories')
             ->get(['slug', 'title_ru', 'type', 'required'])
             ->toArray();
+
+        foreach ($params as &$param) {
+            $tmp = [];
+            foreach ($param['categories'] as $cat) {
+                $tmp[] = $cat['slug'];
+            }
+            $param['categories'] = $tmp;
+        }
+
+        return $params;
     }
 }
