@@ -13,7 +13,7 @@ class AlterProductsTable extends Migration
      */
     public function up()
     {
-        DB::statement("ALTER TABLE products ADD COLUMN is_active BOOLEAN DEFAULT TRUE;");
+        DB::statement("ALTER TABLE products ADD COLUMN IF NOT EXISTS is_active BOOLEAN DEFAULT TRUE;");
     }
 
     /**
@@ -23,5 +23,6 @@ class AlterProductsTable extends Migration
      */
     public function down()
     {
+        //
     }
 }

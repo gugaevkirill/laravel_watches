@@ -40,8 +40,8 @@ class ParamValue extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function param()
+    public function params()
     {
-        return $this->belongsTo(Param::class);
+        return $this->belongsToMany(Param::class, 'params_param_values');
     }
 }

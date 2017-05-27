@@ -42,20 +42,15 @@ class ParamValueCrudController extends CrudController
             'update/create/both'
         );
 
-        $this->crud->addField(
-            [
-                'label' => "Параметр",
-                'name' => 'param_slug', // the db column for the foreign key
-                'type' => 'select2_from_array',
-                'options' => Param::where('type', 'select')
-                    ->get(['title_ru', 'slug'])
-                    ->pluck('title_ru', 'slug')
-                    ->toArray(),
-                'allows_null' => false,
-                'allows_multiple' => false,
-            ],
-            'update/create/both'
-        );
+        $this->crud->addField([
+            'label' => 'Параметры',
+            'type' => 'select2_multiple',
+            'name' => 'params',
+            'entity' => 'params',
+            'attribute' => 'title_ru',
+            'model' => 'App\Models\Catalog\Param',
+            'pivot' => true,
+        ]);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

@@ -94,6 +94,17 @@ class ParamCrudController extends CrudController
             'update/create/both'
         );
 
+        $this->crud->addField([
+            'label' => 'Categories',
+            'type' => 'select2_multiple',
+            'name' => 'categories',
+            'entity' => 'categories',
+            'attribute' => 'name_ru',
+            'model' => 'App\Models\Catalog\Category',
+            'pivot' => true,
+        ]);
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

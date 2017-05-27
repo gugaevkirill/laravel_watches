@@ -55,11 +55,19 @@ class Param extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'categories_params');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function values()
     {
-        return $this->hasMany(ParamValue::class);
+        return $this->belongsToMany(ParamValue::class, 'params_param_values');
     }
 
     /**
