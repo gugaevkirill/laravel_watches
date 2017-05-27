@@ -29,6 +29,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Param extends Model
 {
+    const CATEGORY_PIVOT = 'categories_params';
+    const VALUE_PIVOT = 'params_param_values';
+
     use CrudTrait;
 
     public $timestamps = false;
@@ -59,7 +62,7 @@ class Param extends Model
      */
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'categories_params');
+        return $this->belongsToMany(Category::class, self::CATEGORY_PIVOT);
     }
 
     /**
@@ -67,7 +70,7 @@ class Param extends Model
      */
     public function values()
     {
-        return $this->belongsToMany(ParamValue::class, 'params_param_values');
+        return $this->belongsToMany(ParamValue::class, self::VALUE_PIVOT);
     }
 
     /**

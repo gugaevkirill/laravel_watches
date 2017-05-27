@@ -14,26 +14,29 @@ class CatalogController extends Controller
 {
     /**
      * @param Request $request
-     * @param string $cateogory
+     * @param string $cateogorySlug
      * @param CatalogRepository $repository
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function categoryPage(Request $request, string $cateogory, CatalogRepository $repository)
+    public function categoryPage(Request $request, string $cateogorySlug, CatalogRepository $repository)
     {
         $filteredRequest = $repository->filterRequest($request);
         if ($filteredRequest->query != $request->query) {
             return redirect($filteredRequest->getRequestUri());
         }
 
-        $paginator = $repository->getProductsFromRequest($request, Category::find($cateogory));
+        $category = Category::findOrFail($cateogorySlug);
+        $paginator = $repository->getProductsFromRequest($request, $category);
 
         /** @var Collection $productsAll */
-        $productsAll = Product::where('category_slug', $cateogory)->get();
+        $productsAll = Product::where('category_slug', $cateogorySlug)->get();
         $brands = Brand::whereIn('slug', $productsAll->pluck('brand_slug')->toArray())
             ->get(['name', 'slug']);
 
         $params = Param::whereIn('type', ['select', 'boolean'])
             ->where('in_filter', true)
+            ->join(Param::CATEGORY_PIVOT, 'param_slug', '=', 'params.slug')
+            ->where('category_slug', $cateogorySlug)
             ->with('values')
             // TODO: получать нужный title в зависимости от языка
             ->get(['slug', 'title_ru', 'type'])
@@ -62,7 +65,7 @@ class CatalogController extends Controller
         return view(
             'category',
             [
-                'category' => Category::findOrFail($cateogory),
+                'category' => $category,
                 'brands' => $brands->toArray(),
                 'brandsJSON' => $this->keyBy($brands, 'slug')->toJson(),
                 'params' => $params,

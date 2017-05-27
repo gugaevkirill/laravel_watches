@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Schema;
+use App\Models\Catalog\Param;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -16,7 +17,7 @@ class ParamValuesGlue extends Migration
         DB::statement("ALTER TABLE param_values DROP CONSTRAINT IF EXISTS param_values_param_slug_foreign;");
         DB::statement("ALTER TABLE param_values DROP COLUMN IF EXISTS param_slug;");
 
-        Schema::create('params_param_values', function (Blueprint $table) {
+        Schema::create(Param::VALUE_PIVOT, function (Blueprint $table) {
             $table->string('param_slug');
             $table->foreign('param_slug')->references('slug')->on('params')->onDelete('cascade');
             $table->integer('param_value_id');
@@ -32,6 +33,6 @@ class ParamValuesGlue extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('params_param_values');
+        Schema::dropIfExists(Param::VALUE_PIVOT);
     }
 }

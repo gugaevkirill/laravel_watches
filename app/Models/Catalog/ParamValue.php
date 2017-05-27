@@ -42,6 +42,6 @@ class ParamValue extends Model
      */
     public function params()
     {
-        return $this->belongsToMany(Param::class, 'params_param_values');
+        return $this->belongsToMany(Param::class, Param::VALUE_PIVOT);
     }
 }

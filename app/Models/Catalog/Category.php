@@ -45,4 +45,12 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function params()
+    {
+        return $this->belongsToMany(Param::class, Param::CATEGORY_PIVOT);
+    }
 }
