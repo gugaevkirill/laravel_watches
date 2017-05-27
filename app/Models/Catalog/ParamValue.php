@@ -38,10 +38,21 @@ class ParamValue extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function params()
     {
         return $this->belongsToMany(Param::class, Param::VALUE_PIVOT);
+    }
+
+    /**
+     * @return array
+     */
+    public static function getForAdminPage(): array
+    {
+        return self::orderByRaw('"order" ASC, "value_ru" DESC')
+            ->join(Param::VALUE_PIVOT, 'id', '=', 'param_value_id')
+            ->get(['id', 'value_ru', 'param_slug'])
+            ->toArray();
     }
 }

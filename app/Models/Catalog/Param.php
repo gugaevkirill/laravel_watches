@@ -78,33 +78,8 @@ class Param extends Model
      */
     public static function getForAdminPage(): array
     {
-        $result = self::orderByRaw('"order" ASC, "title_ru" DESC')
+        return self::orderByRaw('"order" ASC, "title_ru" DESC')
             ->get(['slug', 'title_ru', 'type', 'required'])
-            ->map(function (self $product) {
-                return $product->toArray();
-            })
-            ->values();
-
-        $values = ParamValue::orderByRaw('"order" ASC, "value_ru" DESC')
-            ->get(['id', 'param_slug', 'value_ru'])
-            ->map(function (ParamValue $value) {
-                return $value->toArray();
-            });
-
-        $result = $result->map(function (&$product) use ($values) {
-            if ($product['type'] == 'select') {
-                $product['values'] = $values->where('param_slug', '==', $product['slug'])
-                    ->values()
-                    ->map(function (array $value) {
-                        unset($value['param_slug']);
-                        return $value;
-                    })
-                    ->toArray();
-            }
-
-            return $product;
-        });
-
-        return $result->toArray();
+            ->toArray();
     }
 }

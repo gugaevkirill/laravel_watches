@@ -9,37 +9,23 @@
     $field['value'] = $tmp;
 ?>
 
-<div @include('crud::inc.field_wrapper_attributes') >
+<div @include('crud::inc.field_wrapper_attributes') id="json-attrs-block">
     <label>{!! $field['label'] !!}</label>
 
     <div id="jsonattr">
-        <div class="form-group col-md-12" v-for="(attr, index) in attributes">
-            <label class="col-md-4 col-xs-12">
-                <a href="#" @click.stop.prevent="removeAttr(index)"><i class="fa fa-trash-o"></i></a>
-                &nbsp;&nbsp;@{{ attr.title_ru }}
-            </label>
+        <div class="form-group col-md-12" v-for="param in params">
+            <label class="col-md-4 col-xs-12">@{{ param.title_ru }}</label>
 
-            <input v-if="attr.type == 'string'" type="text" v-model="attr.value" class="col-md-8 col-xs-12">
-            <input v-if="attr.type == 'integer'" type="number" v-model="attr.value" class="col-md-8 col-xs-12">
-            <input v-if="attr.type == 'boolean'" type="checkbox" v-model="attr.value" class="col-md-8 col-xs-12">
-            <select v-if="attr.type == 'select'" v-model="attr.value" class="col-md-8 col-xs-12">
-                <option :value="val.id" v-for="val in getParamBySlug(attr.slug).values">@{{ val.value_ru }}</option>
-            </select>
-        </div>
-
-        <div class="form-group col-md-12" v-if="availableParams.length">
-            <div class="col-xs-12" style="border-top: 1px solid lightgrey; padding-top: 15px;"></div>
-            <label class="col-md-3 col-xs-12">
-                Добавить новый:
-            </label>
-
-            <select v-model="tmpParamSlug" class="col-md-4 col-xs-12">
-                <option :value="param.slug" v-for="param in availableParams">@{{ param.title_ru }}</option>
+            <input  v-if="param.type == 'string'"  type="text"     v-model="param.value" class="col-md-7 col-xs-11">
+            <input  v-if="param.type == 'integer'" type="number"   v-model="param.value" class="col-md-7 col-xs-11">
+            <input  v-if="param.type == 'boolean'" type="checkbox" v-model="param.value" class="col-md-7 col-xs-11">
+            <select v-if="param.type == 'select'"  v-model="param.value" class="col-md-7 col-xs-11">
+                <option :value="val.id" v-for="val in values" v-if="val.param_slug==param.slug">@{{ val.value_ru }}</option>
             </select>
 
-            <div class="col-md-5">
-                <a href="#" class="btn btn-info" @click.stop.prevent="addAttr(tmpParamSlug)">Добавить</a>
-            </div>
+            <span class="col-xs-1" v-if="param.type != 'boolean'">
+                <a href="#" @click.stop.prevent="clearParam(param.slug)"><i class="fa fa-close"></i></a>
+            </span>
         </div>
 
         <input type="hidden" name="attrs" v-model="jsonAttrs">
@@ -62,44 +48,59 @@
     @push('crud_fields_scripts')
     <script src="/js/vue.js"></script>
     <script>
+        var categorySelect = $("select[name='category_slug']");
+
         var vueJsonAttr = new Vue({
             el: '#jsonattr',
             data: {
-                attributes: JSON.parse('{!! json_encode($field['value']) !!}'),
                 params: JSON.parse('{!! json_encode($field['params']) !!}'),
-                tmpParamSlug: null
+                values: JSON.parse('{!! json_encode($field['values']) !!}'),
+                categories: JSON.parse('{!! json_encode($field['categories']) !!}'),
+
+                // Текущие значения
+                category: categorySelect.find("option:selected").val()
             },
 
             created: function () {
                 var that = this;
-                this.attributes.forEach(function (attr) {
-                    param = that.getParamBySlug(attr.slug);
-                    attr.title_ru = param ? param.title_ru : '???';
-                    attr.type = param ? param.type : 'string';
+
+                // Подписываемся на изменение категории
+                categorySelect.change(function () {
+                    that.category = $(this).val();
                 });
+
+                // Первоначальные значения параметрам
+                var attributes = JSON.parse('{!! json_encode($field['value']) !!}');
+                attributes.forEach(function (attr) {
+                    var param = that.getParamBySlug(attr.slug);
+                    param.value = attr.value;
+                });
+
+                setInterval(function () {
+                    that.$forceUpdate();
+                }, 500);
             },
 
             computed: {
-                availableParams: function () {
-                    var that = this;
+                // Вид атрибутов в формате json для сохранения в админке
+                jsonAttrs: {
+                    get:function () {
+                        var tmp = {};
+                        this.params.forEach(function (param) {
+                            if (param.value === null && param.type == 'boolean') {
+                                param.value = false;
+                            }
 
-                    return this.params.filter(function (param) {
-                        return !that.attributes.find(function (attr) {
-                            return attr.slug == param.slug;
+                            if (!param.hasOwnProperty('value') || param.value === null) {
+                                return false;
+                            }
+
+                            tmp[param.slug] = param.value;
                         });
-                    });
-                },
 
-                jsonAttrs: function () {
-                    var tmp = {};
-                    this.attributes.forEach(function (attr) {
-                        if (attr.value === null && attr.type == 'boolean') {
-                            attr.value = false;
-                        }
-                        tmp[attr.slug] = attr.value;
-                    });
-
-                    return JSON.stringify(tmp);
+                        return JSON.stringify(tmp);
+                    },
+                    cache: false
                 }
             },
 
@@ -110,25 +111,9 @@
                     })
                 },
 
-                removeAttr: function (num) {
-                    console.log('Remove attr: ' + num);
-                    this.attributes.splice(num, 1);
-                },
-
-                addAttr: function (slug) {
-                    param = this.getParamBySlug(slug);
-                    if (!param) {
-                        return false;
-                    }
-
-                    console.log('Add attr: ' + slug);
-
-                    this.attributes.push({
-                        slug: slug,
-                        title_ru: param.title_ru,
-                        value: null,
-                        type: param.type
-                    });
+                clearParam: function (slug) {
+                    console.log('Clear param: ' + slug);
+                    this.$set(this.getParamBySlug(slug), 'value', null);
                 }
             }
         });

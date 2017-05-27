@@ -53,4 +53,14 @@ class Category extends Model
     {
         return $this->belongsToMany(Param::class, Param::CATEGORY_PIVOT);
     }
+
+    /**
+     * @return array
+     */
+    public static function getForAdminPage(): array
+    {
+        return self::all(['name_ru', 'slug'])
+            ->pluck('name_ru', 'slug')
+            ->toArray();
+    }
 }

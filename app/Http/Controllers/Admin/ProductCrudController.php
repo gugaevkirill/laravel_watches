@@ -7,6 +7,7 @@ use App\Http\Requests\ProductRequest as UpdateRequest;
 use App\Models\Catalog\Brand;
 use App\Models\Catalog\Category;
 use App\Models\Catalog\Param;
+use App\Models\Catalog\ParamValue;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
@@ -64,9 +65,7 @@ class ProductCrudController extends CrudController
                 'label' => "Категория",
                 'name' => 'category_slug', // the db column for the foreign key
                 'type' => 'select2_from_array',
-                'options' => Category::all(['name_ru', 'slug'])
-                    ->pluck('name_ru', 'slug')
-                    ->toArray(),
+                'options' => Category::getForAdminPage(),
                 'allows_null' => false,
                 'allows_multiple' => false,
             ],
@@ -78,7 +77,9 @@ class ProductCrudController extends CrudController
                 'name' => 'attrs',
                 'label' => 'Атрибуты',
                 'type' => 'json_attributes',
+                'categories' => Category::getForAdminPage(),
                 'params' => Param::getForAdminPage(),
+                'values' => ParamValue::getForAdminPage(),
             ],
             'update/create/both'
         );
