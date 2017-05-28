@@ -35,7 +35,7 @@
 
                 <li class="header">Прочее</li>
                 <li><a href="{{ url('admin/chunk') }}"><i class="fa fa-font"></i> <span>Чанки</span></a></li>
-                <li><a href="{{ url('admin/user') }}"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
+{{--                <li><a href="{{ url('admin/user') }}"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>--}}
                 {{--<li class="treeview">--}}
                     {{--<a href=""><i class="fa fa-group"></i><span>Пользователи</span><i class="fa fa-angle-left pull-right"></i></a>--}}
                     {{--<ul class="treeview-menu">--}}
