@@ -20,7 +20,7 @@
                 <!-- ================================================ -->
                 <!-- ==== Recommended place for admin menu items ==== -->
                 <!-- ================================================ -->
-                <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+{{--                <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>--}}
 
                 <li class="header">Каталог</li>
                 <li><a href="{{ url('admin/category') }}"><i class="fa fa-bookmark"></i> <span>Категории</span></a></li>
