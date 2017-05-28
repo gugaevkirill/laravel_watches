@@ -20,7 +20,7 @@ class ParamsSaveTrigger extends Migration
             $$
             DECLARE
               param RECORD;
-              tmp RECORD;
+              tmp INTEGER;
             BEGIN
               -- Проверим наличие reqired параметров
               FOR param IN
@@ -36,8 +36,11 @@ class ParamsSaveTrigger extends Migration
                 END IF;
             
                 IF param.unique = true THEN
-                  SELECT * INTO tmp FROM products WHERE (products.attrs->param.slug)::jsonb <@ (NEW.attrs->param.slug)::jsonb;
-                  IF FOUND THEN
+                  SELECT count(*)
+                  INTO tmp FROM products
+                  WHERE (products.attrs->param.slug)::jsonb <@ (NEW.attrs->param.slug)::jsonb
+                    AND products.id <> NEW.id;
+                  IF tmp > 0 THEN
                     RAISE EXCEPTION 'Параметр % должен иметь уникальное значение!', param.title_ru;
                   END IF;
                 END IF;
