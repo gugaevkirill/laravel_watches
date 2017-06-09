@@ -682,6 +682,7 @@ footer{position: relative;}
 .product-image-label.type-2{right: 7px; top: 7px; width: 40px; height: 40px; background: #d41b1b;}
 .product-image-label.type-3{left: 50%; top: 50%; margin: -32px 0 0 -32px; width: 65px; height: 65px; background: rgba(64,64,64,0.95);}
 .product-slide-entry .product-image { display: flex; max-height: 214px; align-items: center; margin-bottom: 15px; position: relative; overflow: hidden; }
+#vue-catalog .product-slide-entry .product-image { max-height: 260px; }
 .product-slide-entry img{width: 100%; height: auto; display: block; position: relative; backface-visibility: hidden; -webkit-backface-visibility: hidden;}
 .product-slide-entry>img:first-child{margin-bottom: 15px;}
 .product-slide-entry .product-image:hover img{transform: scale(1.1); -moz-transform: scale(1.1); -webkit-transform: scale(1.1); -ms-transform: scale(1.1);}
@@ -2245,7 +2246,7 @@ transform: translateX(-50%); position: relative;}
 .list-view .shop-grid-item{width: 100%;}
 .list-view .product-slide-entry{max-width: 100%; margin-left: 230px; padding-bottom: 45px; margin-bottom: 44px; text-align: left!important;}
 .list-view .product-slide-entry:after{content: ""; display: block; clear: both; height: 1px; background: #ebebeb; margin-left: -230px; top: 45px; position: relative;}
-.list-view .product-slide-entry .product-image{max-width: 200px; margin-left: -230px; float: left; margin-bottom: 0;}
+.list-view .product-slide-entry .product-image { max-width: 200px; margin-left: -230px; float: left; margin-bottom: 0;}
 .product-slide-entry .price{margin-bottom: 20px;}
 .product-slide-entry .article-container{display: none; margin-bottom: 15px;}
 .product-slide-entry .list-buttons{display: none; margin-bottom: 15px;}
