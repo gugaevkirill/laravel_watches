@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="navigation-banner-swiper">
+<div class="navigation-banner-swiper" style="margin-bottom: 0;">
     <div class="swiper-slide active">
         <div class="navigation-banner-wrapper light-text align-3" style="background-image: url(/img/sell/1200x500.jpg); background-position: center center;">
             <div class="navigation-banner-content">
@@ -19,6 +19,29 @@
         </div>
     </div>
     <div class="clear"></div>
+</div>
+
+<div class="column-article-wrapper">
+    <div class="row nopadding">
+        <div class="col-sm-4 information-entry left-border nopadding">
+            <div class="column-article-entry">
+                <a class="title roboto">Скупаем только оригинал</a>
+                <div class="description">Мы готовы выкупить ваши часы в Москве, только если они настоящие. Специалисты компании Elite Bazaar не смогут вам помочь, если вы хотите продать китайские копии, электронные часы в пластмассовом корпусе, или изделия производства СССР.</div>
+            </div>
+        </div>
+        <div class="col-sm-4 information-entry left-border nopadding">
+            <div class="column-article-entry">
+                <a class="title roboto">Честная оценка</a>
+                <div class="description">Точная цена швейцарских часов озвучивается только после осмотра профессионального эксперта. Такой подход позволяет гарантировать, что клиент получит за свои винтажные или элитные часы максимальную цену.</div>
+            </div>
+        </div>
+        <div class="col-sm-4 information-entry left-border nopadding">
+            <div class="column-article-entry">
+                <a class="title roboto">Бесплатная экспертиза</a>
+                <div class="description">Обращаясь к нам, вы можете рассчитывать на бесплатную оценку. Мы гарантируем, что оценка будет максимально объективной. Своевременное обращение к нам позволит убедиться, что вас не обманывают в другом месте.</div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="mozaic-banners-wrapper type-2">
@@ -41,31 +64,6 @@
             </a>
         </div>
         <div class="clear"></div>
-    </div>
-</div>
-
-<div class="hidden-sm hidden-xs" style="height: 30px;"></div>
-
-<div class="column-article-wrapper">
-    <div class="row nopadding">
-        <div class="col-sm-4 information-entry left-border nopadding">
-            <div class="column-article-entry">
-                <a class="title roboto">Скупаем только оригинал</a>
-                <div class="description">Мы готовы выкупить ваши часы в Москве, только если они настоящие. Специалисты компании Elite Bazaar не смогут вам помочь, если вы хотите продать китайские копии, электронные часы в пластмассовом корпусе, или изделия производства СССР.</div>
-            </div>
-        </div>
-        <div class="col-sm-4 information-entry left-border nopadding">
-            <div class="column-article-entry">
-                <a class="title roboto">Честная оценка</a>
-                <div class="description">Точная цена швейцарских часов озвучивается только после осмотра профессионального эксперта. Такой подход позволяет гарантировать, что клиент получит за свои винтажные или элитные часы максимальную цену.</div>
-            </div>
-        </div>
-        <div class="col-sm-4 information-entry left-border nopadding">
-            <div class="column-article-entry">
-                <a class="title roboto">Бесплатная экспертиза</a>
-                <div class="description">Обращаясь к нам, вы можете рассчитывать на бесплатную оценку. Мы гарантируем, что оценка будет максимально объективной. Своевременное обращение к нам позволит убедиться, что вас не обманывают в другом месте.</div>
-            </div>
-        </div>
     </div>
 </div>
 

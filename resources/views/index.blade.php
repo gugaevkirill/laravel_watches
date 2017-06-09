@@ -3,7 +3,7 @@
 @section('content')
 <div class="information-blocks">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 p-a-0">
             <div class="sidebar-navigation">
                 <div class="title">Бренды<i class="fa fa-angle-down"></i></div>
                 <div class="list">
@@ -14,7 +14,7 @@
             </div>
             <div class="clear"></div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 p-a-0">
             <div class="navigation-banner-swiper">
                 <div class="swiper-container" data-autoplay="5000" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
                     <div class="swiper-wrapper">
@@ -141,8 +141,8 @@
 
 <div class="information-blocks">
     <div class="row">
-        <div class="information-entry col-md-6">
-            <div class="sale-entry sale-entry-border" style="background: #333;">
+        <div class="information-entry col-md-6 p-a-0">
+            <div class="sale-entry sale-entry-border main-banner1">
                 <div class="sale-price"><i class="fa fa-3x fa-check" style="
     padding: 20px;
     color: white;
@@ -151,8 +151,8 @@
                 <div class="sale-description">Как при покупке, так и при продаже.</div>
             </div>
         </div>
-        <div class="information-entry col-md-6">
-            <div class="sale-entry sale-entry-border" style="background: #337ab7;">
+        <div class="information-entry col-md-6 p-a-0">
+            <div class="sale-entry sale-entry-border main-banner2">
                 <div class="sale-price" style="color: white;"><i class="fa fa-3x fa-credit-card" style="padding: 20px;"></i></div>
                 <div class="sale-title">Быстрые выплаты</div>
                 <div class="sale-description">Вы получите деньги в тот же день, когда обратитесь к нам.</div>

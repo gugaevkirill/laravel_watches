@@ -40,7 +40,7 @@
 <div id="content-block">
     <div class="content-center fixed-header-margin">
         {{-- HEADER --}}
-        <div class="header-wrapper style-3">
+        <div class="header-wrapper style-15">
             <header class="type-1">
                 <div class="header-top">
                     <div class="header-top-entry">
@@ -62,7 +62,7 @@
 
                 <div class="header-middle">
                     <div class="logo-wrapper">
-                        <a id="logo" href="/"><img src="/img/logo1-blue.png" alt="" /></a>
+                        <a id="logo" href="/"><img src="/img/logo-white.png" alt="" /></a>
                     </div>
 
                     <div class="middle-entry">
@@ -113,8 +113,6 @@
                             </ul>
 
                             <div class="clear"></div>
-
-                            <a class="fixed-header-visible additional-header-logo" href="/"><img src="/img/logo1-white.png"/></a>
                         </nav>
                         <div class="navigation-footer responsive-menu-toggle-class">
                             <div class="socials-box">
