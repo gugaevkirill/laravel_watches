@@ -10,7 +10,7 @@
     {{--<a>Ремонт часов</a>--}}
 {{--</div>--}}
 
-<div class="information-blocks m-t-30">
+<div class="information-blocks repair-block">
     <div class="row">
         <div class="col-md-9 col-md-push-3 information-entry">
             <div class="blog-landing-box type-1 detail-post">

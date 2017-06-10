@@ -141,7 +141,7 @@
 
 <div class="information-blocks">
     <div class="row">
-        <div class="information-entry col-md-6 p-a-0">
+        <div class="information-entry col-md-6 promotion">
             <div class="sale-entry sale-entry-border main-banner1">
                 <div class="sale-price"><i class="fa fa-3x fa-check" style="
     padding: 20px;
@@ -151,7 +151,7 @@
                 <div class="sale-description">Как при покупке, так и при продаже.</div>
             </div>
         </div>
-        <div class="information-entry col-md-6 p-a-0">
+        <div class="information-entry col-md-6 promotion">
             <div class="sale-entry sale-entry-border main-banner2">
                 <div class="sale-price" style="color: white;"><i class="fa fa-3x fa-credit-card" style="padding: 20px;"></i></div>
                 <div class="sale-title">Быстрые выплаты</div>
@@ -161,17 +161,17 @@
     </div>
 </div>
 
-<div class="information-blocks">
+<div class="information-blocks m-b-30">
     <div class="row">
         <div class="col-md-4 information-entry">
             <h3 class="block-title">Кто мы такие?</h3>
             <div class="from-the-blog-entry">
                 <span class="image"><img src="/img/main/main-1.jpg" alt=""></span>
-                <div class="description">Компания Elite Bazaar представляет собой проверенный временем ломбард, где можно выгодно продать часы. Мужские или женские – не имеет значения. Доверие многочисленных клиентов подтверждает высокий уровень и безупречную репутацию заведения. Независимо от состояния часов, которые у вас имеются, вы можете быть стопроцентно уверены, что Elite Bazaar предложит лучшую цену.</div>
+                <div class="description m-b-30">Компания Elite Bazaar представляет собой проверенный временем ломбард, где можно выгодно продать часы. Мужские или женские – не имеет значения. Доверие многочисленных клиентов подтверждает высокий уровень и безупречную репутацию заведения. Независимо от состояния часов, которые у вас имеются, вы можете быть стопроцентно уверены, что Elite Bazaar предложит лучшую цену.</div>
                 <div class="clear"></div>
             </div>
         </div>
-        <div class="col-md-4 information-entry">
+        <div class="col-md-4 information-entry m-b-30">
             <h3 class="block-title">Как продать часы</h3>
             <ol class="list-type-2">
                 <li><b>Оценка</b> Прямо при вас эксперт оценивает состояние часов и озвучивает их точную стоимость.</li>
@@ -179,7 +179,7 @@
                 <li><b>Выплата суммы</b> Оценочная стоимость часов выплачивается клиенту. Все банкноты проходят проверку на подлинность. </li>
             </ol>
         </div>
-        <div class="col-md-4 information-entry">
+        <div class="col-md-4 information-entry m-b-30 otz">
             <h3 class="block-title">Отзывы</h3>
             <div class="swiper-container blockquote-slider" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="1">
                 <div class="swiper-wrapper">
@@ -202,7 +202,7 @@
                         </blockquote>
                     </div>
                 </div>
-                <div class="pagination"></div>
+                <div class="pagination "></div>
             </div>
         </div>
     </div>

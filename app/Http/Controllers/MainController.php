@@ -16,9 +16,9 @@ class MainController extends Controller
         return view('index', [
             'brands' => Brand::take(9)->get(), // TODO: вытаскивать те бренды, по которым есть часы
 
-            'watches' => Product::where('category_slug', 'watches')->take(5)->get(),
-            'luxury' => Product::where('category_slug', 'luxury')->take(5)->get(),
-            'accessories' => Product::where('category_slug', 'accessories')->take(5)->get(),
+            'watches' => Product::where('category_slug', 'watches')->take(6)->get(),
+            'luxury' => Product::where('category_slug', 'luxury')->take(6)->get(),
+            'accessories' => Product::where('category_slug', 'accessories')->take(6)->get(),
         ]);
     }
 

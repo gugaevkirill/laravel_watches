@@ -80,12 +80,13 @@
                             </span>
                             <span class="text roboto">
                                 <a href="@chunk('phone1href')"><b>@chunk('phone1')</b></a>&nbsp;&nbsp;
-                                <a class="popup-trigger">Перезвоните мне</a>
+                                <a class="popup-trigger">Перезвоните&nbsp;мне</a>
                             </span>
                         </span>
                         <span class="icon-entry">
                             <span class="text roboto">
                                 <a href="@chunk('phone2href')"><b>@chunk('phone2')</b></a>
+                                <div class="clearfix hidden-md-up"></div>
                                 <a href="@chunk('phone2href')">
                                     {{--<i class="fa fa-whatsapp"></i>--}}
                                     <img src="/img/whatsapp.png" alt="">
@@ -130,13 +131,6 @@
 
                         <div class="clear"></div>
                     </nav>
-                    <div class="navigation-footer responsive-menu-toggle-class">
-                        <div class="socials-box">
-                            @chunk('social-box')
-                            <div class="clear"></div>
-                        </div>
-                        <div class="navigation-copyright">@yield('copyright')</div>
-                    </div>
                 </div>
             </header>
             <div class="clear"></div>
@@ -150,7 +144,7 @@
                 <footer class="type-1">
                     <div class="footer-columns-entry">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-sm-5">
                                 <a href="/"><img class="footer-logo" src="/img/logo1-grey.png" style="margin-bottom: 15px;"/></a>
                                 <div class="footer-description">@chunk('footer-description')</div>
                                 <div class="footer-address roboto">
