@@ -22,12 +22,12 @@
 @endpush
 
 @section('content')
-<div class="breadcrumb-box">
-    <a href="/">Главная</a>
-    <a href="/{{ $category->slug }}/">{{ $category->name_ru }}</a>
-</div>
+{{--<div class="breadcrumb-box">--}}
+    {{--<a href="/">Главная</a>--}}
+    {{--<a href="/{{ $category->slug }}/">{{ $category->name_ru }}</a>--}}
+{{--</div>--}}
 
-<div id="vue-catalog">
+<div id="vue-catalog" class="m-t-30">
     <div class="information-blocks">
         <div class="row">
             <div class="col-md-9 col-md-push-3 col-sm-8 col-sm-push-4">

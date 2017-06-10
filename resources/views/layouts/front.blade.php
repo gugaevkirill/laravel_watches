@@ -107,9 +107,9 @@
 
                     <div class="right-entries">
                         @if (isset($isSellPage))
-                        <a class="header-functionality-entry" href="/contacts/"><b><i class="fa fa-envelope-o"></i>Контакты</b></a>
+                        <a class="header-functionality-entry" href="/contacts/"><i class="fa fa-envelope-o"></i>Контакты</a>
                         @else
-                        <a class="header-functionality-entry" href="/sell/"><b><i class="fa fa-envelope-o"></i>Онлайн оценка</b></a>
+                        <a class="header-functionality-entry" href="/sell/"><i class="fa fa-envelope-o"></i>Онлайн оценка</a>
                         @endif
                     </div>
                 </div>
@@ -163,9 +163,9 @@
                             <div class="col-md-3 col-sm-4">
                                 <h3 class="column-title">Магазин</h3>
                                 <ul class="column">
-                                    <li><a href="/watches/">Швейцарские часы</a></li>
-                                    <li><a href="/jewelry/">Ювелирные изделия</a></li>
-                                    <li><a href="/accessories/">Аксессуары</a></li>
+                                    @foreach ($categories as $category)
+                                        <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
+                                    @endforeach
                                     <li><a href="/about/">О нас</a></li>
                                     <li><a href="/contacts/">Контакты</a></li>
                                 </ul>

@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
-<div class="information-blocks">
+<div class="information-blocks" style="margin-bottom: 30px;">
     <div class="row">
         <div class="col-md-3 p-a-0">
             <div class="sidebar-navigation">

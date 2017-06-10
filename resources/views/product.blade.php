@@ -10,12 +10,12 @@
 @endpush
 
 @section('content')
-<div class="breadcrumb-box">
-    <a href="/">Главная</a>
-    <a>{{ $categoryName }}</a>
-</div>
+{{--<div class="breadcrumb-box">--}}
+    {{--<a href="/">Главная</a>--}}
+    {{--<a>{{ $categoryName }}</a>--}}
+{{--</div>--}}
 
-<div class="information-blocks">
+<div class="information-blocks m-t-30">
     <div class="row">
         <div class="col-sm-5 col-md-4 col-lg-3 information-entry">
             <div class="product-preview-box">

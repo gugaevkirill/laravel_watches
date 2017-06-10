@@ -5,12 +5,12 @@
 @endsection
 
 @section('content')
-<div class="breadcrumb-box">
-    <a href="/">Главная</a>
-    <a>О нас</a>
-</div>
+{{--<div class="breadcrumb-box">--}}
+    {{--<a href="/">Главная</a>--}}
+    {{--<a>О нас</a>--}}
+{{--</div>--}}
 
-<div class="information-blocks">
+<div class="information-blocks m-t-30">
     <div class="row">
         <div class="col-md-9 information-entry">
             <div class="information-blocks">
