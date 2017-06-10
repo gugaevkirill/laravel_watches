@@ -43,69 +43,9 @@
         <div class="header-wrapper style-15">
             <header class="type-1">
                 <div class="header-top">
-                    <div class="header-top-entry">
-                        {{-- TODO: запилить выбиралку языка --}}
-                        {{--<div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>--}}
-                        {{--<div class="list">--}}
-                            {{--<a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>--}}
-                        {{--</div>--}}
-                    </div>
-                    <div class="header-top-entry hidden-xs">
-                        <div class="title"><i class="fa fa-phone"></i>Остались вопросы? Свяжитесь с нами <a href="@chunk('phone1href')" class="roboto"><b>@chunk('phone1')</b></a></div>
-                    </div>
-                    <div class="socials-box">
-                        @chunk('social-box')
-                    </div>
-                    <div class="menu-button responsive-menu-toggle-class"><i class="fa fa-reorder"></i></div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="header-middle">
-                    <div class="logo-wrapper">
-                        <a id="logo" href="/"><img src="/img/logo-white.png" alt="" /></a>
-                    </div>
-
-                    <div class="middle-entry">
-                        <a class="icon-entry" href="@chunk('phone1href')">
-                            <span class="image">
-                                <i class="fa fa-phone"></i>
-                            </span>
-                            <span class="text roboto">
-                                <b>@chunk('phone1')</b> <br/> Контактный телефон
-                            </span>
-                        </a>
-                        <a class="icon-entry" href="@chunk('phone2href')">
-                            <span class="image">
-                                <i class="fa fa-whatsapp"></i>
-                            </span>
-                            <span class="text roboto">
-                                <b>@chunk('phone2')</b> <br/> WhatsApp, Viber, Telegramm
-                            </span>
-                        </a>
-                    </div>
-
-                    <div class="right-entries">
-                        @if (isset($isSellPage))
-                        <a class="header-functionality-entry" href="/contacts/"><b><i class="fa fa-envelope-o"></i>Контакты</b></a>
-                        @else
-                        <a class="header-functionality-entry" href="/sell/"><b><i class="fa fa-envelope-o"></i>Онлайн оценка</b></a>
-                        @endif
-                    </div>
-
-                </div>
-
-                <div class="close-header-layer"></div>
-                <div class="navigation">
-                    <div class="navigation-header responsive-menu-toggle-class">
-                        <div class="title">Меню</div>
-                        <div class="close-menu"></div>
-                    </div>
                     <div class="nav-overflow">
                         <nav>
                             <ul>
-                                @foreach ($categories as $category)
-                                <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
-                                @endforeach
                                 <li><a href="/repair/">Ремонт</a></li>
                                 <li><a href="/sell/">Продать часы</a></li>
                                 <li><a href="/about/">О нас</a></li>
@@ -121,6 +61,80 @@
                             </div>
                             <div class="navigation-copyright">@yield('copyright')</div>
                         </div>
+                    </div>
+                    {{--<div class="header-top-entry">--}}
+                        {{-- TODO: запилить выбиралку языка --}}
+                        {{--<div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>--}}
+                        {{--<div class="list">--}}
+                            {{--<a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="header-top-entry hidden-xs">--}}
+                        {{--<div class="title"><i class="fa fa-phone"></i>Остались вопросы? Свяжитесь с нами <a href="@chunk('phone1href')" class="roboto"><b>@chunk('phone1')</b></a></div>--}}
+                    {{--</div>--}}
+                    {{--<div class="socials-box">--}}
+                        {{--@chunk('social-box')--}}
+                    {{--</div>--}}
+                    {{--<div class="menu-button responsive-menu-toggle-class"><i class="fa fa-reorder"></i></div>--}}
+                    {{--<div class="clear"></div>--}}
+                </div>
+
+                <div class="header-middle text-center">
+                    <div class="middle-entry">
+                        <span class="icon-entry">
+                            <span class="image">
+                                <i class="fa fa-phone"></i>
+                            </span>
+                            <span class="text roboto">
+                                <a href="@chunk('phone1href')"><b>@chunk('phone1')</b></a>
+                                {{-- TODO: всплывашка --}}
+                                <a>Контактный телефон</a>
+                            </span>
+                        </span>
+                        <span class="icon-entry">
+                            <span class="text roboto">
+                                <a href="@chunk('phone2href')"><b>@chunk('phone2')</b></a>
+                                <a href=""><i class="fa fa-whatsapp"></i></a>
+                                <a href=""><i class="fa fa-viber"></i></a>
+                                <a href=""><i class="fa fa-telegram"></i></a>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="logo-wrapper">
+                        <a id="logo" href="/"><img src="/img/logo-white.png" alt="" /></a>
+                    </div>
+
+                    <div class="right-entries">
+                        @if (isset($isSellPage))
+                        <a class="header-functionality-entry" href="/contacts/"><b><i class="fa fa-envelope-o"></i>Контакты</b></a>
+                        @else
+                        <a class="header-functionality-entry" href="/sell/"><b><i class="fa fa-envelope-o"></i>Онлайн оценка</b></a>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="close-header-layer"></div>
+                <div class="navigation">
+                    <div class="navigation-header responsive-menu-toggle-class">
+                        <div class="title">Меню</div>
+                        <div class="close-menu"></div>
+                    </div>
+                    <nav>
+                        <ul>
+                            @foreach ($categories as $category)
+                            <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
+                            @endforeach
+                        </ul>
+
+                        <div class="clear"></div>
+                    </nav>
+                    <div class="navigation-footer responsive-menu-toggle-class">
+                        <div class="socials-box">
+                            @chunk('social-box')
+                            <div class="clear"></div>
+                        </div>
+                        <div class="navigation-copyright">@yield('copyright')</div>
                     </div>
                 </div>
             </header>
