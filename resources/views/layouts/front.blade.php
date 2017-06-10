@@ -80,23 +80,32 @@
                 </div>
 
                 <div class="header-middle text-center">
-                    <div class="middle-entry">
+                    <div class="middle-entry text-left">
                         <span class="icon-entry">
                             <span class="image">
                                 <i class="fa fa-phone"></i>
                             </span>
                             <span class="text roboto">
-                                <a href="@chunk('phone1href')"><b>@chunk('phone1')</b></a>
-                                {{-- TODO: всплывашка --}}
-                                <a>Контактный телефон</a>
+                                <a href="@chunk('phone1href')"><b>@chunk('phone1')</b></a>&nbsp;&nbsp;
+                                <a class="popup-trigger">Перезвоните мне</a>
                             </span>
                         </span>
                         <span class="icon-entry">
                             <span class="text roboto">
                                 <a href="@chunk('phone2href')"><b>@chunk('phone2')</b></a>
-                                <a href=""><i class="fa fa-whatsapp"></i></a>
-                                <a href=""><i class="fa fa-viber"></i></a>
-                                <a href=""><i class="fa fa-telegram"></i></a>
+                                &nbsp;
+                                <a href="@chunk('phone2href')">
+                                    {{--<i class="fa fa-whatsapp"></i>--}}
+                                    <img src="/img/whatsapp.png" alt="">
+                                </a>
+                                <a href="@chunk('phone2href')">
+                                    {{--<i class="fa fa-viber"></i>--}}
+                                    <img src="/img/viber.png" alt="">
+                                </a>
+                                <a href="@chunk('phone2href')">
+                                    {{--<i class="fa fa-telegram"></i>--}}
+                                    <img src="/img/telegram.png" alt="">
+                                </a>
                             </span>
                         </span>
                     </div>
