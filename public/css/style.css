@@ -142,18 +142,10 @@ body { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 14px; li
 .button.style-5:hover{background: transparent; border-color: #bfbfbf;}
 .button.style-6{border-color: #fff; background: #fff;}
 .button.style-6:hover{color: #fff; background: transparent; border-color: #bfbfbf;}
-.button.style-7{background: rgba(241, 126, 14, 0.9); border-color: rgba(241, 126, 14, 0.9); color: #fff;}
-.button.style-7:hover{background: transparent;}
 .button.style-8{background: transparent; color: #fff; border-color: rgba(204, 204, 204, 0.2);}
 .button.style-8:hover{border-color: rgba(204, 204, 204, 1);}
 .button.style-10, .button.style-18{font-size: 14px; line-height: 18px; padding: 11px 40px; text-transform: uppercase; font-weight: 700; color: #fff; border: 2px #262626 solid; background: #262626; letter-spacing: 2px;}
 .button.style-10:hover {background: #fff; color: #262626;}
-.button.style-11{font-size: 13px; color: #262626; font-weight: 700; text-transform: uppercase; line-height: 18px; padding: 12px 40px; border: 1px #fff solid; background: #fff;}
-.button.style-11:hover{color: #808080;}
-.button.style-16:hover{background: #fff; border-color: #e0e0e0;}
-.button.style-17:hover{background: transparent; color: #507299;}
-.button.style-18{background: #f2f2f2; border-color: #f2f2f2; color: #333;}
-.button.style-18:hover{background: transparent;}
 .button-x{font-size: 12px; line-height: 15px; width: 15px; text-align: center; color: #808080;}
 .button-x .fa{display: block; line-height: 15px;}
 /*overflow*/
@@ -1381,32 +1373,10 @@ body.style-6 .submenu.right-align{left: 100%!important; right: auto;}
 /* 11 - TEMPLATE WIDE */
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-/* 11.01 - header */
-.header-wrapper.style-7 header.fixed-header nav{max-width: 100%;}
-@media (max-width: 1199px) {
-    .header-wrapper.style-7 header.type-2{background: #262626;}
-}
-
 /* 11.02 - content styles */
-body.style-7 .bubbles span{background: #66900d;}
-.footer-wrapper.style-7 footer.type-2 .copyright a{color: #66900d;}
-.footer-wrapper.style-7 footer.type-2 .footer-links a:hover{color: #66900d;}
-body.style-7 .search-button{background: #66900d;}
-body.style-7 .product-slide-entry{max-width: 310px; text-align: center;}
-body.style-7 .product-slide-entry .title:hover{color: #66900d;}
 .product-slide-entry .subtitle{font-size: 15px; line-height: 22px; color: #2e2e2e; font-weight: 600; display: block; text-align: left;}
 .product-slide-entry .subtitle:hover{color: #66900d;}
 .product-slide-entry .date{font-size: 13px; line-height: 22px; color: #a3a2a2; text-align: left;}
-body.style-7 .information-blocks{border-top: 1px #ebebeb solid;}
-body.style-7 .information-blocks:first-child{border: none;}
-body.style-7 .price .current{color: #66900d;}
-body.style-7 .swiper-active-switch{background: #66900d; border-color: #66900d;}
-body.style-7 .cart-box.popup .content .price{color: #66900d;}
-body.style-7 .cart-box.popup .summary .grandtotal span{color: #66900d;}
-body.style-7 .button.style-4{background: #66900d; border-color: #66900d;}
-@media (min-width: 1200px) {
-    body.style-7 .information-blocks{margin-bottom: 100px;}
-}
 
 
 /* 11.03 - fullscreen banner */
@@ -1732,10 +1702,7 @@ body.style-10 .product-slide-entry .subtitle:hover{color: #53667b;}
 .share-box .title{font-size: 14px; color: #808080; font-weight: 300; line-height: 30px; float: left;}
 .share-box .socials-box{float: right;}
 .share-box .socials-box a {margin: 0;}
-.product-detail-box .button.style-10, .product-detail-box .button.style-11{float: left; width: 50%; padding-left: 10px; padding-right: 10px;}
-@media (min-width: 767px) {
-    .product-detail-box .button.style-10, .product-detail-box .button.style-11{max-width: 187px;}
-}
+
 .product-sidebar .products-list{padding: 30px 30px 15px 30px; border: 1px #f0f0f0 solid;}
 .product-sidebar .block-title{font-size: 18px;}
 .product-sidebar .inline-product-entry:last-child{border-bottom: none;}
@@ -2234,9 +2201,7 @@ transform: translateX(-50%); position: relative;}
     .list-view .product-slide-entry .product-image{max-width: 210px; margin-left: 0; float: none; margin-bottom: 15px; display: inline-block;}
     .list-view .product-slide-entry:after{margin-left: 0;}
     .products-swiper .paddings-container{padding: 0 8px;}
-    body.style-7 .product-slide-entry{
-        max-width: 200px;
-    }
+
     .food-category{
         width: 100%;
     }
@@ -2415,7 +2380,6 @@ transform: translateX(-50%); position: relative;}
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /* 29.01 - header (class "type-2") */
-.header-wrapper.style-11 header{}
 header.type-4 .header-top:before{background: #2e2e2e; position: absolute; width: 10000px; left: 50%; margin-left: -5000px; height: 100%; content: "";}
 @media (min-width: 1200px) {
     /*header.type-2:not(.fixed-header) nav, header.type-2:not(.fixed-header) .navigation{position: static;}*/
@@ -2506,20 +2470,9 @@ header.type-4 .menu-button{color: #fff;}
 .parallax-view:hover{color: #b1b1b1;}
 .side-square-entry .products-swiper{margin-bottom: 35px;}
 .swiper-slide.no-shadow:before{display: none;}
-body.style-18 .swiper-active-switch{background: #c2a325; border-color: #c2a325;}
-body.style-18 .price .current{color: #c2a325;}
-body.style-18 .product-slide-entry .title:hover{color: #c2a325;}
-body.style-18 .search-button{background: #c2a325;}
-.footer-wrapper.style-18 .copyright a{color: #c2a325;}
-.footer-wrapper.style-18 .footer-links a:hover{color: #c2a325;}
-body.style-18 .cart-box.popup .content .price{color: #c2a325;}
-body.style-18 .cart-box.popup .summary .grandtotal span{color: #c2a325;}
-body.style-18 .button.style-4{background: #c2a325; border-color: #c2a325;}
-body.style-18 .article-container ul li:before{color: #c2a325;}
-body.style-18 .bubbles span{background: #c2a325;}
+
 /*Desktops (>=992px)*/
 @media (max-width: 1199px) {
-    .header-wrapper.style-18 header{background: #262626!important;}
     .side-square-entry .align-content{left: 5%; right: 5%;}
 }
 /* Tablets (>=768px)*/
