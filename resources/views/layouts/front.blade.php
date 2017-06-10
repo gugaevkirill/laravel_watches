@@ -54,13 +54,6 @@
 
                             <div class="clear"></div>
                         </nav>
-                        <div class="navigation-footer responsive-menu-toggle-class">
-                            <div class="socials-box">
-                                @chunk('social-box')
-                                <div class="clear"></div>
-                            </div>
-                            <div class="navigation-copyright">@yield('copyright')</div>
-                        </div>
                     </div>
                     {{--<div class="header-top-entry">--}}
                         {{-- TODO: запилить выбиралку языка --}}
@@ -93,7 +86,6 @@
                         <span class="icon-entry">
                             <span class="text roboto">
                                 <a href="@chunk('phone2href')"><b>@chunk('phone2')</b></a>
-                                &nbsp;
                                 <a href="@chunk('phone2href')">
                                     {{--<i class="fa fa-whatsapp"></i>--}}
                                     <img src="/img/whatsapp.png" alt="">
