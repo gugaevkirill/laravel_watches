@@ -112,7 +112,7 @@
                         <div class="title">Меню</div>
                     </div>
                     <nav>
-                        <div class="close-menu">&#9876;{{--&#10005;--}}</div>
+                        <div class="close-menu">&#10005;</div>
 
                         <ul class="georgia">
                             @foreach ($categories as $category)

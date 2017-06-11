@@ -68,6 +68,7 @@ EliteBazaar - Контакты
             </div>
             {{ Form::close() }}
         </div>
+        <div class="p-t-30 p-b-30 hidden-xs-up display-block"></div>
         <div class="col-md-4 information-entry">
             <h3 class="block-title main-heading">Выгодные условия и оперативность</h3>
             <div class="article-container style-1">
