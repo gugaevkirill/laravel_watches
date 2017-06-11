@@ -46,16 +46,10 @@
                     <div class="nav-overflow">
                         <div class="menu-button responsive-menu-toggle-class"><i class="fa fa-reorder"></i></div>
                         <nav class="hidden-xs">
-                            <ul>
-                                <li><a href="/repair/">Ремонт</a></li>
-                                <li><a href="/sell/">Продать часы</a></li>
-                                <li><a href="/about/">О нас</a></li>
-                                <li><a href="/contacts/">Контакты</a></li>
-                            </ul>
-
+                            @include('parts.menu-submenu')
                             <div class="clear"></div>
                         </nav>
-                        <img class="nav-logo" src="/img/logo1-grey.png">
+                        <img class="nav-logo" src="/img/logo_xss.png">
                         <div class="header-top-entry">
                             <div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>
                             <div class="list">
@@ -81,15 +75,12 @@
                                 <a href="@chunk('phone2href')"><b>@chunk('phone2')</b></a>
                                 <div class="clearfix hidden-md-up"></div>
                                 <a href="@chunk('phone2href')" class="soc m-a-0">
-                                    {{--<i class="fa fa-whatsapp"></i>--}}
                                     <img src="/img/whatsapp.png" alt="WhatsApp">
                                 </a>
                                 <a href="@chunk('phone2href')" class="soc">
-                                    {{--<i class="fa fa-viber"></i>--}}
                                     <img src="/img/viber.png" alt="Viber">
                                 </a>
                                 <a href="@chunk('phone2href')" class="soc">
-                                    {{--<i class="fa fa-telegram"></i>--}}
                                     <img src="/img/telegram.png" alt="Telegram">
                                 </a>
                             </span>
@@ -119,14 +110,17 @@
                 <div class="navigation">
                     <div class="navigation-header responsive-menu-toggle-class">
                         <div class="title">Меню</div>
-                        <div class="close-menu"></div>
                     </div>
                     <nav>
-                        <ul>
+                        <div class="close-menu">&#9876;{{--&#10005;--}}</div>
+
+                        <ul class="georgia">
                             @foreach ($categories as $category)
                             <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
                             @endforeach
                         </ul>
+
+                        @include('parts.menu-submenu')
 
                         <div class="clear"></div>
                     </nav>
