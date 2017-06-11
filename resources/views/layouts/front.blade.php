@@ -44,7 +44,8 @@
             <header class="type-1">
                 <div class="header-top">
                     <div class="nav-overflow">
-                        <nav>
+                        <div class="menu-button responsive-menu-toggle-class"><i class="fa fa-reorder"></i></div>
+                        <nav class="hidden-xs">
                             <ul>
                                 <li><a href="/repair/">Ремонт</a></li>
                                 <li><a href="/sell/">Продать часы</a></li>
@@ -54,22 +55,14 @@
 
                             <div class="clear"></div>
                         </nav>
+                        <img class="nav-logo" src="/img/logo1-grey.png">
+                        <div class="header-top-entry">
+                            <div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>
+                            <div class="list">
+                                <a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>
+                            </div>
+                        </div>
                     </div>
-                    {{--<div class="header-top-entry">--}}
-                        {{-- TODO: запилить выбиралку языка --}}
-                        {{--<div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>--}}
-                        {{--<div class="list">--}}
-                            {{--<a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="header-top-entry hidden-xs">--}}
-                        {{--<div class="title"><i class="fa fa-phone"></i>Остались вопросы? Свяжитесь с нами <a href="@chunk('phone1href')" class="roboto"><b>@chunk('phone1')</b></a></div>--}}
-                    {{--</div>--}}
-                    {{--<div class="socials-box">--}}
-                        {{--@chunk('social-box')--}}
-                    {{--</div>--}}
-                    {{--<div class="menu-button responsive-menu-toggle-class"><i class="fa fa-reorder"></i></div>--}}
-                    {{--<div class="clear"></div>--}}
                 </div>
 
                 <div class="header-middle text-center">
@@ -87,17 +80,17 @@
                             <span class="text roboto">
                                 <a href="@chunk('phone2href')"><b>@chunk('phone2')</b></a>
                                 <div class="clearfix hidden-md-up"></div>
-                                <a href="@chunk('phone2href')">
+                                <a href="@chunk('phone2href')" class="soc m-a-0">
                                     {{--<i class="fa fa-whatsapp"></i>--}}
-                                    <img src="/img/whatsapp.png" alt="">
+                                    <img src="/img/whatsapp.png" alt="WhatsApp">
                                 </a>
-                                <a href="@chunk('phone2href')">
+                                <a href="@chunk('phone2href')" class="soc">
                                     {{--<i class="fa fa-viber"></i>--}}
-                                    <img src="/img/viber.png" alt="">
+                                    <img src="/img/viber.png" alt="Viber">
                                 </a>
-                                <a href="@chunk('phone2href')">
+                                <a href="@chunk('phone2href')" class="soc">
                                     {{--<i class="fa fa-telegram"></i>--}}
-                                    <img src="/img/telegram.png" alt="">
+                                    <img src="/img/telegram.png" alt="Telegram">
                                 </a>
                             </span>
                         </span>
@@ -109,9 +102,15 @@
 
                     <div class="right-entries">
                         @if (isset($isSellPage))
-                        <a class="header-functionality-entry" href="/contacts/"><i class="fa fa-envelope-o"></i>Контакты</a>
+                        <a class="header-functionality-entry" href="/contacts/">
+                            <i class="fa fa-envelope-o"></i>
+                            <span>Контакты</span>
+                        </a>
                         @else
-                        <a class="header-functionality-entry" href="/sell/"><i class="fa fa-envelope-o"></i>Онлайн оценка</a>
+                        <a class="header-functionality-entry" href="/sell/">
+                            <i class="fa fa-envelope-o"></i>
+                            <span>Онлайн оценка</span>
+                        </a>
                         @endif
                     </div>
                 </div>
