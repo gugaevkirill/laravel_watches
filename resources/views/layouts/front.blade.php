@@ -49,7 +49,9 @@
                             @include('parts.menu-submenu')
                             <div class="clear"></div>
                         </nav>
-                        <img class="nav-logo" src="/img/logo_xss.png">
+
+                        <a href="/"><img class="nav-logo" src="/img/logo_xss.png"></a>
+
                         <div class="header-top-entry">
                             <div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>
                             <div class="list">
