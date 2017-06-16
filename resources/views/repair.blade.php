@@ -19,9 +19,9 @@
                     <div class="content">
                         <h1 class="title">Ремонт швейцарских часов в Москве</h1>
                         <div class="article-container style-1">
-                            <p>Часы, бесспорно, один из лучших аксессуаров на все времена. На всем пути своего развития они постоянно видоизменялись и принимали самые необычные формы, а часовщики, отвечая движению прогресса, совершенствовали и усложняли механизм.</p>
-                            <p>Сегодня современные технологии производства и усложняющиеся конструкции механизмов требуют искусного и высококвалифицированного ремонта наручных часов. Часовые мастера должны обладать немалыми знаниями, оборудование — непрерывно модернизироваться, а техника исполнения ремонтных работ быть поистине достойной шедевров часового производства.</p>
-                            <p>SwissMaster является авторизованным сервисным центром по обслуживанию и ремонту швейцарских часов престижных марок. В нашей мастерской используется самое современное оборудование и новейший инструмент, позволяющий выполнять полный комплекс работ по диагностике и сервисному обслуживанию часов с учетом мировых стандартов. С вашими часами будут работать опытные мастера, которые не только проведут качественный ремонт, но и расскажут об индивидуальных особенностях часов, а также подскажут, как продлить их жизнь.</p>
+                            <p>Часы — любимый аксессуар многих людей. Они позволяют следить за временем, наделяют образ лоском и шиком. Сегодня существует огромное количество разнообразных моделей, разнящихся формой, размером, конструкционными особенностями.</p>
+                            <p>Часы — сложный механизм, легко выходящий из строя под действием пагубных факторов. Только настоящий профессионал, обладающий необходимым опытом, навыками и знаниями, сможет аккуратно реанимировать изделие используя в работе оборудование современного образца.</p>
+                            <p>ELITE BAZAAR — сервисный центр, выполняющий ремонт и обслуживание швейцарских часов швейцарских марок. Качество сервиса соответствует мировым стандартам. У нас вы сможете получить ответ на любой вопрос относительно эксплуатации часов и узнать, как лучше использовать часы, чтобы продлить срок бесперебойной работы.</p>
                         </div>
                     </div>
                 </div>
@@ -29,18 +29,18 @@
                     <h3 class="additional-blog-title">Как мы работаем</h3>
 
                     <div class="comment">
-                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <span class="comment-image"><img src="/img/repair/apply.png" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Приемка</span></div>
-                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                            <div class="comment-text">Мастер в присутствии клиента проводит диагностику часового механизма, объясняет причину неисправности изделия, отвечает на интересующие вопросы. Все обнаруженные дефекты фиксирует в квитанции. На основе предварительных выводов регламентирует спектр работ, срок их выполнения.</div>
                         </div>
                     </div>
 
                     <div class="comment">
-                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <span class="comment-image"><img src="/img/repair/waterproof.png" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Проверка герметичности</span></div>
-                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                            <div class="comment-text">Герметичность — залог качественной работы механизма. Наш мастер проверит герметичность ваших часов абсолютно бесплатно. Проверка осуществляется на воздушной установке, так что целостность корпуса не будет нарушена.</div>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                         <span class="comment-image"><img src="/img/repair/bill.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Выдача квитанции</span></div>
-                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                            <div class="comment-text">Перед принятием часов на диагностику и ремонт происходит заполнения квитанции. В ней указываются некоторые технические характеристики изделия и перечисляются дефекты.</div>
                         </div>
                     </div>
 
@@ -56,15 +56,15 @@
                         <span class="comment-image"><img src="/img/repair/diagnostic.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Диагностика</span></div>
-                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                            <div class="comment-text">С помощью специальных устрановок проверяем точность хода и герметичность часов. Производим разборку, осмотр и тестирование отдельных систем механизма.</div>
                         </div>
                     </div>
 
                     <div class="comment">
-                        <span class="comment-image"><img src="/img/old//comment-1.jpg" alt="" /></span>
+                        <span class="comment-image"><img src="/img/repair/wash.png" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Мойка часов</span></div>
-                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                            <div class="comment-text">Ультразвуковая мойка позволяет очистить детали часов от различных отложений, накопившихся в процессе работы, снижающих точность хода часового механизма. После мойки мастер смажет детали, соберет изделие и проведет проверку точности хода.</div>
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@
                         <span class="comment-image"><img src="/img/repair/remont.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Ремонт и замена деталей</span></div>
-                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                            <div class="comment-text">Выполнение ремонтных работ любой сложности. При необходимости замены подбираются или заказываются оригинальные комплектующие, многие из которых в наличии на складе. На работы и детали предоставляется гарантия.</div>
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@
                         <span class="comment-image"><img src="/img/repair/sborka.jpg" alt="" /></span>
                         <div class="comment-content">
                             <div class="comment-title"><span>Сборка и проверка</span></div>
-                            <div class="comment-text">Краткий (или не очень) текст про то, как мы осуществляем данный жтап работ по ремонту часов. Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.  Далее идет текст.</div>
+                            <div class="comment-text">Отремонтированные часы собираются и проходят проверку на герметичность. Далее, происходит проверка точности хода. При обнаружении несоответствия одного из заявленных параметров, настройка часового механизма проводится повторно.</div>
                         </div>
                     </div>
                 </div>
@@ -99,18 +99,18 @@
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Ремонт швейцарских часов</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Квалифицированный, срочный ремонт на швейцарском оборудовании, с гарантией на все виды услуг — производит наша мастерская.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/repair/obsluzhivanie.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/obsluzhivanie.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Обслуживание часов</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Профилактический осмотр часов, реставрация на современном оборудовании профессиональными мастерами — всегда лучший результат.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -121,62 +121,62 @@
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Проверка и замена элементов питания</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Грамотная замена элемента питания — абсолютная точность хода часов. Параллельно выполним диагностику прибора, ответим на любые вопросы.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/germ.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Восстановление герметичности</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Проверка, восстановление, тестирование герметичности. Большой опыт работ — залог качественного предоставления услуг.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/polish.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Полировка корпуса и браслета</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Вернем наручному аксессуару яркий, презентабельный вид. Уберем с поверхности корпуса и браслета потертости, сколы, царапины.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/glass.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Полировка и замена стекол</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Профессиональная замена стекол любой конфигурации, качественная полировка. Возможна установка сапфирового, минерального, органического стекла.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/strap.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Замена ремешков</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Быстро установим на часы ремни европейских производителей. При возможности восстановим ваш экземпляр. Подгоним под ваше запястье.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/rodium.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Родирование корпусов и браслетов</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Родирование вернет часам утраченный блеск, защитит от пагубного воздействия внешних факторов. Работы выполняются на специальной установке.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -187,40 +187,40 @@
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Ремонт колеса баланса</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Быстрый, но деликатный ремонт, настройка анкерного механизма, колеса баланса. Гарантии на каждый вид услуги.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/tourbillon.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Ремонт турбийона</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Индивидуальный подход при ремонте турбийона. Запчасти оригинальные, работы высококачественные, гарантии на все услуги.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/repeater.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Ремонт репетира</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Качественная замена и подстройка — гарантия долгой и безошибочной работы часов.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="inline-product-entry">
-                    <span class="image"><img src="/img/old//product-image-inline-4.jpg" alt=""></span>
+                    <span class="image"><img src="/img/repair/swiss_made.png" alt=""></span>
                     <div class="content">
                         <div class="cell-view">
                             <span class="title">Проверка подлинности часов</span>
-                            <div class="description">Краткий текст про услугу</div>
+                            <div class="description">Тщательная проверка подлинности часов с минимально необходимой сборкой-разборкой.</div>
                         </div>
                     </div>
                     <div class="clear"></div>
