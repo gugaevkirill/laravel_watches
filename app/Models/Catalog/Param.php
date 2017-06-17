@@ -80,7 +80,7 @@ class Param extends Model
     {
         $params = self::orderByRaw('"order" ASC, "title_ru" DESC')
             ->with('categories')
-            ->get(['slug', 'title_ru', 'type', 'required'])
+            ->get(['slug', 'title_ru', 'type', 'required', 'unique'])
             ->toArray();
 
         foreach ($params as &$param) {

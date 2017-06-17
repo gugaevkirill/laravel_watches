@@ -21,7 +21,7 @@
         <div :class="['form-group', 'col-md-12', (!param.required || param.value) ? '' : 'has-error']" v-for="param in params" v-if="paramInCurrentCat(param)">
             <label class="col-md-4 col-xs-12">
                 @{{ param.title_ru }}
-                <i class="fa fa-copyright" v-if="true" data-toggle="tooltip" data-placement="bottom" title="Уникальный"></i>
+                <i class="fa fa-copyright" v-if="param.unique" data-toggle="tooltip" data-placement="bottom" title="Уникальный"></i>
             </label>
 
             <input  v-if="param.type == 'string'"  type="text"     v-model="param.value" class="col-md-7 col-xs-11">
@@ -31,7 +31,7 @@
                 <option :value="val.id" v-for="val in values" v-if="val.param_slug==param.slug">@{{ val.value_ru }}</option>
             </select>
 
-            <a href="" @click.stop.prevent="clearParam(param.slug)" class="col-xs-1" v-if="param.type != 'boolean' && param.value != undefined">
+            <a href="" @click.stop.prevent="clearParam(param.slug)" class="col-xs-1" v-if="param.type != 'boolean' && param.value">
                 <i class="fa fa-close text-muted" data-toggle="tooltip" data-placement="right" title="Очистить"></i>
             </a>
         </div>
