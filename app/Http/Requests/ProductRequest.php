@@ -25,7 +25,13 @@ class ProductRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'order' => 'required|min:0|numeric',
+            'brand_slug' => 'required',
+            'category_slug' => 'required',
+            'name' => 'required|string|min:5|max:100',
+            'description' => 'string|min:10|max:1000',
+            'price_rub' => 'numeric|min:100|max:10000000000',
+            'price_dollar' => 'numeric|min:100|max:10000000000',
         ];
     }
 

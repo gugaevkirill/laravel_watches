@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\Sell_formRequest as StoreRequest;
-use App\Http\Requests\Sell_formRequest as UpdateRequest;
+use App\Http\Requests\SellFormRequest as StoreRequest;
+use App\Http\Requests\SellFormRequest as UpdateRequest;
 use App\Models\SellForm;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 

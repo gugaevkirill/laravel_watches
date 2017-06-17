@@ -25,7 +25,10 @@ class CategoryRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'slug' => 'required|min:2|max:255|regex:/^[A-Za-z0-9]+$/',
+            'order' => 'required|min:0|numeric',
+            'name_ru' => 'required|string|max:40',
+            'name_en' => 'required|string|max:40',
         ];
     }
 

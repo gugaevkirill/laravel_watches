@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class Sell_formRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
+class SellFormRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,12 @@ class Sell_formRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:2|max:255|string',
+            'phone' => 'required|min:6|max:30|string',
+            'email' => 'email',
+            'reference' => 'required|min:2|max:30|string',
+            'year' => 'numeric|min:1950|max:2030',
+            'amount' => 'numeric|min:100|max:1000000000',
         ];
     }
 

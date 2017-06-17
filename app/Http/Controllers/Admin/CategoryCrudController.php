@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ChunkRequest as StoreRequest;
-use App\Http\Requests\ChunkRequest as UpdateRequest;
+use App\Http\Requests\CategoryRequest as StoreRequest;
+use App\Http\Requests\CategoryRequest as UpdateRequest;
 use App\Models\Catalog\Category;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 

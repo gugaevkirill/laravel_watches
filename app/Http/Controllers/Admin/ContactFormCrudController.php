@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\Contact_formRequest as StoreRequest;
-use App\Http\Requests\Contact_formRequest as UpdateRequest;
+use App\Http\Requests\ContactFormRequest as StoreRequest;
+use App\Http\Requests\ContactFormRequest as UpdateRequest;
 use App\Models\ContactForm;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 

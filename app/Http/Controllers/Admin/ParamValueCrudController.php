@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ParamValueRequest as StoreRequest;
 use App\Http\Requests\ParamValueRequest as UpdateRequest;
-use App\Models\Catalog\Param;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
