@@ -2,12 +2,18 @@
 
 namespace App\Exceptions;
 
+use Symfony\Component\Debug\ExceptionHandler as SymfonyExceptionHandler;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\Debug\Exception\FlattenException;
+use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 class Handler extends ExceptionHandler
 {
+    // Была ли выкинута ошибка в админке
+    protected $isAdminException = false;
+
     /**
      * A list of the exception types that should not be reported.
      *
@@ -32,6 +38,9 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        if ($this->shouldReport($exception)) {
+            app('sentry')->captureException($exception);
+        }
         parent::report($exception);
     }
 
@@ -44,7 +53,22 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        // Если ошибка в админке, показывать ее
+        if (explode('/', $request->getPathInfo())[1] == 'admin') {
+            $this->isAdminException = true;
+        }
+
         return parent::render($request, $exception);
+    }
+
+    protected function convertExceptionToResponse(Exception $e)
+    {
+        $e = FlattenException::create($e);
+
+        $debug = $this->isAdminException || config('app.debug', false);
+        $handler = new SymfonyExceptionHandler($debug);
+
+        return SymfonyResponse::create($handler->getHtml($e), $e->getStatusCode(), $e->getHeaders());
     }
 
     /**

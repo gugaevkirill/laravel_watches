@@ -13,7 +13,6 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
 class ProductCrudController extends CrudController
 {
-
     public function setUp()
     {
 
