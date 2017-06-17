@@ -9,12 +9,20 @@
     $field['value'] = $tmp;
 ?>
 
+<style>
+    .has-error input, .has-error select { border: 1px solid #d44837; }
+    .has-error label { color: #a94442; }
+</style>
+
 <div @include('crud::inc.field_wrapper_attributes') id="json-attrs-block">
     <label>{!! $field['label'] !!}</label>
 
     <div id="jsonattr">
-        <div class="form-group col-md-12" v-for="param in params" v-if="paramInCurrentCat(param)">
-            <label class="col-md-4 col-xs-12">@{{ param.title_ru }}</label>
+        <div :class="['form-group', 'col-md-12', (!param.required || param.value) ? '' : 'has-error']" v-for="param in params" v-if="paramInCurrentCat(param)">
+            <label class="col-md-4 col-xs-12">
+                @{{ param.title_ru }}
+                <i class="fa fa-copyright" v-if="true" data-toggle="tooltip" data-placement="bottom" title="Уникальный"></i>
+            </label>
 
             <input  v-if="param.type == 'string'"  type="text"     v-model="param.value" class="col-md-7 col-xs-11">
             <input  v-if="param.type == 'integer'" type="number"   v-model="param.value" class="col-md-7 col-xs-11">
@@ -23,9 +31,9 @@
                 <option :value="val.id" v-for="val in values" v-if="val.param_slug==param.slug">@{{ val.value_ru }}</option>
             </select>
 
-            <span class="col-xs-1" v-if="param.type != 'boolean'">
-                <a href="#" @click.stop.prevent="clearParam(param.slug)"><i class="fa fa-close"></i></a>
-            </span>
+            <a href="" @click.stop.prevent="clearParam(param.slug)" class="col-xs-1" v-if="param.type != 'boolean' && param.value != undefined">
+                <i class="fa fa-close text-muted" data-toggle="tooltip" data-placement="right" title="Очистить"></i>
+            </a>
         </div>
 
         <input type="hidden" name="attrs" v-model="jsonAttrs">
