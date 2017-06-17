@@ -69,7 +69,7 @@
                             </span>
                             <span class="text roboto">
                                 <a href="@chunk('phone1href')"><b>@chunk('phone1')</b></a>&nbsp;&nbsp;
-                                <a class="popup-trigger">Перезвоните&nbsp;мне</a>
+                                <a class="popup-trigger" href="/contacts/#call-us">Перезвоните&nbsp;мне</a>
                             </span>
                         </span>
                         <span class="icon-entry">

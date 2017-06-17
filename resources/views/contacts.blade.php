@@ -36,6 +36,7 @@ EliteBazaar - Контакты
     </div>
     <div class="clear"></div>
 
+    <a name="call-us"></a>
     <div class="row">
         <div class="col-md-8 information-entry">
             <h3 class="block-title main-heading">Свяжитесь с нами</h3>
