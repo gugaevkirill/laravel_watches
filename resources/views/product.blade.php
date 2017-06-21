@@ -5,8 +5,7 @@
 @endsection
 
 @push('scripts')
-<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-<script src="https://yastatic.net/share2/share.js" async="async"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-594a0788009cfcb0"></script>
 @endpush
 
 @section('content')
@@ -95,7 +94,7 @@
                 <div class="share-box detail-info-entry">
                     <div class="title">Поделиться в соц. сетях:</div>
                     <div class="clear"></div>
-                    <div class="ya-share2" data-services="vkontakte,facebook,viber,whatsapp,telegram"></div>
+                    <div class="addthis_inline_share_toolbox"></div>
                 </div>
             </div>
         </div>
