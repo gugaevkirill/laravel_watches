@@ -2700,6 +2700,7 @@ body.teaser-3 .teaser-title{font-size: 72px; line-height: 62px; border-top: 4px 
 .hidden-md-up, .hidden-xs-up { display: none; }
 .display-block { display: block!important; }
 
+.pull-none { float: none!important; }
 .georgia { font-family: Georgia, serif; }
 .brands-filter > li { padding-top: 15px; cursor: pointer; }
 .brands-filter > li.active { font-weight: bold; }

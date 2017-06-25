@@ -116,7 +116,7 @@
                     <nav>
                         <div class="close-menu">&#10005;</div>
 
-                        <ul class="georgia">
+                        <ul class="georgia pull-none">
                             @foreach ($categories as $category)
                             <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
                             @endforeach
