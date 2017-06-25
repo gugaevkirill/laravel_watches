@@ -963,7 +963,7 @@ body:not(.mobile) .hover-class-1:hover .hover-label{left: 0;}
 
 /* 07.02 - content styles */
 body.style-3 .swiper-tabs .block-title:before{background: #507299;}
-body.style-3 .product-slide-entry .title {color: #507299; display: block; min-height: 54px; }
+body.style-3 .product-slide-entry .title { display: block; min-height: 54px; }
 body.style-3 .product-slide-entry .title:hover{color: #507299;}
 body.style-3 .bubbles span{background: #507299;}
 body.style-3 .swiper-active-switch{background: #507299; border-color: #507299;}
@@ -1016,6 +1016,7 @@ body.style-3 .cart-box.popup .summary .grandtotal span{color: #507299;}
     .header-wrapper.style-3 header:before{bottom: 0;}
     .header-wrapper.style-3 .header-functionality-entry .fa{color: #fff;}
     .header-wrapper.style-3 .menu-button{color: #fff;}
+    body.style-3 .product-slide-entry .title { min-height: 36px; }
 }
 
 /* 07.04 - banners */
@@ -1049,6 +1050,7 @@ body:not(.mobile) .mozaic-banners-wrapper.type-2 a.mozaic-banner-entry:hover:bef
 /* Tablets (>=768px)*/
 @media (max-width: 991px) {
     .text-widget .image{float: left; margin-right: 30px;}
+    body.style-3 .product-slide-entry .title { min-height: 0; }
 }
 /*Phones (<768px)*/
 @media (max-width: 767px) {
