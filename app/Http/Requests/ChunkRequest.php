@@ -25,7 +25,7 @@ class ChunkRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            'slug' => 'required|min:2|max:255|string|regex:/^[A-Za-z0-9]+$/',
+            'slug' => 'required|min:2|max:255|string|regex:/^[A-Za-z0-9_]+$/',
             'title' => 'required|min:2|max:255|string',
             'content_ru' => 'string',
             'content_eu' => 'string',

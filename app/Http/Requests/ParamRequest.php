@@ -25,7 +25,7 @@ class ParamRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            'slug' => 'required|min:2|max:255|string|regex:/^[A-Za-z0-9]+$/',
+            'slug' => 'required|min:2|max:255|string|regex:/^[A-Za-z0-9_]+$/',
             'title_ru' => 'required|string|min:2|max:80',
             'title_en' => 'required|string|min:2|max:80',
             'order' => 'required|min:0|numeric',
