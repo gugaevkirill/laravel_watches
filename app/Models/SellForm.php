@@ -82,4 +82,21 @@ class SellForm extends Model
             ? "<img src='/$this->image' style='max-width: 70px; max-height: 70px;'>"
             : "";
     }
+
+    /**
+     * Хак чтобы картинки сохранялись нормально !!!
+     * @param array $attributes
+     * @param array $options
+     * @return bool
+     */
+    public function update(array $attributes = [], array $options = [])
+    {
+        if (isset($attributes['image'])) {
+            // Для вновь загруженных картинок
+            if (strpos($attributes['image'], '/storage/') !== false) {
+                $attributes['image'] = 'storage/' . explode('/storage/', $attributes['image'])[1];
+            }
+        }
+        parent::update($attributes, $options);
+    }
 }
