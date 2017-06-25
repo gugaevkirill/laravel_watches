@@ -385,7 +385,7 @@ body:not(.mobile) .socials-box a:hover .fa{top: -5px;}
 .header-functionality-entry b{font-size: 18px; color: #000; font-weight: 700; font-family: 'Montserrat', sans-serif;}
 .logo-wrapper { display: table-cell; vertical-align: middle; width: 33%; }
 #logo{display: inline-block; max-width: 90%; height: auto; min-height: 45px;}
-#logo img { display: block; width: 100%; margin: -30px 0 -80px 0!important; z-index: -1; }
+#logo img { display: block; width: 100%; margin: -30px 0 -80px 0!important; z-index: -1; min-height: 308px; }
 .middle-entry { display: table-cell; vertical-align: middle; width: 33%; padding-top: 30px; }
 .search-box{background: #fff;}
 .search-button{float: right; width: 45px; height: 45px; background: #03b4ea; position: relative;}
@@ -473,6 +473,7 @@ header .icon-entry .text .popup-trigger:hover { color: #446386; }
 
 /*Desktops (>=992px)*/
 @media (max-width: 1199px) {
+    #logo img { min-height: 288px; }
     header { padding: 0; }
     .navigation nav > ul > li { width: 260px; }
 	body.opened-menu{overflow: scroll;}
@@ -515,6 +516,7 @@ header .icon-entry .text .popup-trigger:hover { color: #446386; }
 
 /* Tablets (>=768px)*/
 @media (max-width: 991px) {
+    #logo img { min-width: 258px; }
     header nav { padding: 0; }
     header .icon-entry .text { line-height: 35px; }
     header .icon-entry:last-child { margin-bottom: 10px!important; }
@@ -779,7 +781,7 @@ body:not(.mobile) #content-block .sidebar-navigation .entry:hover .fa{color: #ff
 }
 
 /* 04.07 - navigation banner */
-.navigation-banner-swiper{margin-bottom: 30px;}
+.navigation-banner-swiper { margin-bottom: 30px; max-height: 506px; overflow: hidden; }
 .navigation-banner-wrapper {position: relative; background-size: cover;}
 .navigation-banner-wrapper.align-3 { margin: 0 -15px; }
 .navigation-banner-wrapper.align-1{background-position: right top;}
@@ -802,7 +804,8 @@ body:not(.mobile) #content-block .sidebar-navigation .entry:hover .fa{color: #ff
 .navigation-banner-swiper .pagination{display: none;}
 /* Tablets (>=768px)*/
 @media (max-width: 991px) {
-	#content-block .navigation-banner-content{height: 350px;}
+    .navigation-banner-swiper { max-height: 350px; }
+    #content-block .navigation-banner-content{height: 350px;}
 	#content-block .navigation-banner-content{width: 63%;}
 	#content-block .navigation-banner-content .title{font-size: 60px; line-height: 60px;}
 	#content-block .navigation-banner-swiper .pagination{display: block; margin-top: 20px;}
@@ -812,7 +815,9 @@ body:not(.mobile) #content-block .sidebar-navigation .entry:hover .fa{color: #ff
 }
 /*Phones (<768px)*/
 @media (max-width: 767px) {
-	#content-block .navigation-banner-content .title{font-size: 40px; line-height: 40px; letter-spacing: -4px;}
+    .navigation-banner-swiper { max-height: 300px; }
+
+    #content-block .navigation-banner-content .title{font-size: 40px; line-height: 40px; letter-spacing: -4px;}
 	#content-block .navigation-banner-content .subtitle{font-size: 25px; line-height: 25px; margin-bottom: 10px;}
 	#content-block .navigation-banner-content .description{color: #3c3c3c; padding-right: 0;}
 	#content-block .navigation-banner-content { height: 300px; padding: 0 35px; width: auto; text-align: center; float: none; }
