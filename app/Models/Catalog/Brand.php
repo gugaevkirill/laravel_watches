@@ -73,4 +73,25 @@ class Brand extends Model
             ->limit($limit)
             ->get(['brands.*']);
     }
+
+    /**
+     * Хак чтобы картинки сохранялись нормально !!!
+     * @param array $attributes
+     * @param array $options
+     * @return bool
+     */
+    public function update(array $attributes = [], array $options = [])
+    {
+        if (isset($attributes['image'])) {
+            // Для предзагруженных картинок
+            if (strpos($attributes['image'], '/img/') !== false) {
+                $attributes['image'] = 'img/' . explode('/img/', $attributes['image'])[1];
+            }
+            // Для вновь загруженных картинок
+            if (strpos($attributes['image'], '/storage/') !== false) {
+                $attributes['image'] = 'storage/' . explode('/storage/', $attributes['image'])[1];
+            }
+        }
+        parent::update($attributes, $options);
+    }
 }
