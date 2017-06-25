@@ -963,6 +963,7 @@ body:not(.mobile) .hover-class-1:hover .hover-label{left: 0;}
 
 /* 07.02 - content styles */
 body.style-3 .swiper-tabs .block-title:before{background: #507299;}
+body.style-3 .product-slide-entry .title {color: #507299; display: block; min-height: 54px; }
 body.style-3 .product-slide-entry .title:hover{color: #507299;}
 body.style-3 .bubbles span{background: #507299;}
 body.style-3 .swiper-active-switch{background: #507299; border-color: #507299;}
