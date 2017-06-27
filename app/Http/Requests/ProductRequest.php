@@ -29,7 +29,7 @@ class ProductRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
             'brand_slug' => 'required',
             'category_slug' => 'required',
             'name' => 'required|string|min:5|max:100',
-            'description' => 'string|min:10|max:1000',
+            'description' => 'string|min:10|max:10000',
             'price_rub' => 'numeric|min:100|max:10000000000',
             'price_dollar' => 'numeric|min:100|max:10000000000',
         ];
