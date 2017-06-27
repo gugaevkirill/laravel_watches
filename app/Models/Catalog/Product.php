@@ -202,6 +202,9 @@ class Product extends Model
                         return $value != $filename;
                     });
                 }
+
+                // Для нормального удаления картинок
+                $attribute_value = array_values($attribute_value);
             }
 
             // if a new file is uploaded, store it on disk and its filename in the database
