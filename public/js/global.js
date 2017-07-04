@@ -15,6 +15,28 @@ $(function() {
 
 	"use strict";
 
+    /*================*/
+    /* 00 - Photo Swipe Gallery */
+    /*================*/
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    var galleryItems = [];
+    $('.product-preview-swiper .swiper-slide').each(function(i, el) {
+        var tmp = {
+            src: $(el).attr('data-fullurl'),
+            w: 0,
+            h: 0
+        };
+
+        $("<img/>") // Make in memory copy of image to avoid css issues
+            .attr("src", tmp.src)
+            .load(function() {
+                tmp.w = this.width; // Note: $(this).width() will not
+                tmp.h = this.height; // work for in memory images.
+            });
+
+        galleryItems.push(tmp);
+    });
+
 	/*================*/
 	/* 01 - VARIABLES */
 	/*================*/
@@ -73,6 +95,8 @@ $(function() {
 				paginationSlice.show();
 			}
 		});
+
+        pswp.updateSize(force);
 	}
 	if(!_ismobile){
 		$(window).resize(function(){
@@ -148,7 +172,9 @@ $(function() {
 				},
 				onSlideClick: function(swiper){
 					if($t.hasClass('product-preview-swiper')){
-						// TODO: открывать галерею
+                        // Initializes and opens PhotoSwipe
+                        var pswp = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, {index: swiper.activeIndex - 1});
+					    pswp.init();
 					}
 					else if($t.hasClass('product-thumbnails-swiper')){
 						swipers['swiper-'+$t.parent().parent().find('.product-preview-swiper').attr('id')].swipeTo(swiper.clickedSlideIndex);
