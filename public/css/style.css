@@ -1488,7 +1488,7 @@ body.style-10 .product-slide-entry .subtitle:hover{color: #53667b;}
 /*preview box*/
 .product-preview-box{max-width: 570px;}
 .product-preview-box .pagination{display: none;}
-.product-preview-box .swiper-slide img{display: block; width: 100%; height: auto;}
+.product-preview-box .swiper-slide img { display: none; width: 100%; height: auto; }
 .product-zoom-container{position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; display: none; opacity: 0;}
 .product-zoom-container.visible{display: block;}
 .product-zoom-container .move-box{position: absolute; width: 300%; left: 0; top: 0;}
