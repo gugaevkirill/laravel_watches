@@ -18,6 +18,10 @@ trait ImageTrait
         return $this->imageUrlPrefix . $image . $this->imgFormat;
     }
 
+    /**
+     * URL первой картинки из $this->imagesnew для браузера
+     * @return string
+     */
     public function getFirstImageUrl(): string
     {
         if (!$this->imagesnew) {
@@ -32,7 +36,7 @@ trait ImageTrait
      * @param int $image
      * @return string
      */
-    private function getImageDestination($image): string
+    public function getImageDestination($image): string
     {
         return $this->imageDestination . $image . $this->imgFormat;
     }
@@ -104,6 +108,8 @@ trait ImageTrait
                 \Storage::disk()->delete($this->getImageDestination($image));
             }
             $this->attributes[$this->imagesFieldName] = '[]';
+        } elseif (is_array($value) && is_int($value[0])) {
+            $this->attributes[$this->imagesFieldName] = json_encode($value);
         } else {
             $request = \Request::instance();
             $attribute_value = (array) $this->{$this->imagesFieldName};

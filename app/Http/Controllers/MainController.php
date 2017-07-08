@@ -15,6 +15,20 @@ class MainController extends Controller
      */
     public function mainPage()
     {
+        foreach (Product::all() as $product) {
+            $new = [];
+            foreach ($product->images as $imgOld) {
+                $filename = crc32($imgOld . microtime());
+                $image = \Image::make($imgOld);
+                \Storage::disk()->put($product->getImageDestination($filename), $image->stream());
+                $new[] = $filename;
+            }
+
+            $product->setAttribute('imagesnew', $new);
+            $product->save();
+        }
+
+
         $brands = collect(
             \DB::select(
                 'select br.*
