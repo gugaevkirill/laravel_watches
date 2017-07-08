@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\ParamValue whereValueEn($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\ParamValue whereValueRu($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Catalog\Param[] $params
  */
 class ParamValue extends Model
 {

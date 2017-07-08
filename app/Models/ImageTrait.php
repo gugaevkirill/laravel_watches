@@ -13,7 +13,7 @@ trait ImageTrait
      */
     public function getImageUrl($image): string
     {
-        return $this->imageUrlPrefix . $image . ".jpg";
+        return $this->imageUrlPrefix . $image . ".png";
     }
 
     /**
@@ -23,7 +23,7 @@ trait ImageTrait
      */
     private function getImageDestination($image): string
     {
-        return $this->imageDestination . $image . ".jpg";
+        return $this->imageDestination . $image . ".png";
     }
 
     /**
@@ -44,11 +44,8 @@ trait ImageTrait
     {
         // if the image was erased
         if ($value == null) {
-            // delete the image from disk
             \Storage::disk()->delete($this->getImageDestination($this->image));
-
-            // set null in the database column
-            $this->attributes[$this->imageFieldName] = '';
+            $this->attributes[$this->imageFieldName] = null;
         }
         // if a base64 was sent, store it in the db
         elseif (starts_with($value, 'data:image'))
@@ -59,14 +56,11 @@ trait ImageTrait
             $this->attributes[$this->imageFieldName] = $filename;
         } elseif ($value instanceof UploadedFile) {
             $filename = crc32(microtime());
-            \Storage::putFileAs(
-                $this->imageDestination,
-                $value,
-                $filename . ".jpg"
-            );
+            $image = \Image::make($value);
+            \Storage::disk()->put($this->getImageDestination($filename), $image->stream());
             $this->attributes[$this->imageFieldName] = $filename;
         } else {
-            $this->attributes[$this->imageFieldName] = $value ?? null;
+            $this->attributes[$this->imageFieldName] = $value;
         }
     }
 }

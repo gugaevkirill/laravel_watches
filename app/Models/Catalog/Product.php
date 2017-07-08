@@ -38,6 +38,11 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Product wherePriceRub($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Product whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property bool|null $is_active
+ * @property mixed|null $imagesnew
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereAttrs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereImagesnew($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereIsActive($value)
  */
 class Product extends Model
 {

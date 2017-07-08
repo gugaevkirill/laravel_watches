@@ -21,6 +21,8 @@ use Illuminate\Support\Collection;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Brand whereOrder($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Brand whereSlug($value)
  * @mixin \Eloquent
+ * @property int|null $imagenew
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Brand whereImagenew($value)
  */
 class Brand extends Model
 {

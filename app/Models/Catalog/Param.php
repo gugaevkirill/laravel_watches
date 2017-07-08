@@ -26,6 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Param whereType($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Param whereUnique($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Catalog\Category[] $categories
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Catalog\ParamValue[] $values
  */
 class Param extends Model
 {

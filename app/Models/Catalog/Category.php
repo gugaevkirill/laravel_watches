@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Category whereOrder($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Category whereSlug($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Catalog\Param[] $params
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Catalog\Product[] $products
  */
 class Category extends Model
 {

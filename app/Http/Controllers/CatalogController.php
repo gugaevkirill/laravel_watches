@@ -7,8 +7,8 @@ use App\Models\Catalog\Category;
 use App\Models\Catalog\Param;
 use App\Models\Catalog\Product;
 use App\Repositories\CatalogRepository;
-use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class CatalogController extends Controller
 {
@@ -108,6 +108,7 @@ class CatalogController extends Controller
     {
         $product = Product::find($productId);
         $category = Category::findOrFail($categorySlug);
+        /** @var Brand $brand */
         $brand = $product->brand;
 
         return view(
@@ -115,7 +116,7 @@ class CatalogController extends Controller
             [
                 'brandName' => $brand->name,
                 'brandHref' => $brand->getHref(),
-                'brandImage' => $brand->image,
+                'brandImage' => $brand->getImageUrl($brand->image),
 
                 'categoryName' => $category->name_ru,
 

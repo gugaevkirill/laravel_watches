@@ -33,6 +33,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\SellForm whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\SellForm whereYear($value)
  * @mixin \Eloquent
+ * @property int|null $imagenew
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SellForm whereImagenew($value)
  */
 class SellForm extends Model
 {
