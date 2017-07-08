@@ -44,11 +44,11 @@ class BrandCrudController extends CrudController
         $this->crud->addField(
             [
                 'name' => 'order',
-                 'label' => 'Сортировка',
-                 'type' => 'number',
-                 'default' => 100
-             ],
-             'update/create/both'
+                'label' => 'Сортировка',
+                'type' => 'number',
+                'default' => 100
+            ],
+            'update/create/both'
         );
 
         $this->crud->addField(
@@ -60,7 +60,7 @@ class BrandCrudController extends CrudController
                 'crop' => true, // set to true to allow cropping, false to disable
                 'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
             ],
-             'update/create/both'
+            'update/create/both'
         );
 
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

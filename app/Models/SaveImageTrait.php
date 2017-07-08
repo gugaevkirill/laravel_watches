@@ -10,7 +10,6 @@ trait SaveImageTrait
     public function setImageAttribute($value)
     {
         $attribute_name = "image";
-        $destination_path = "brands";
 
         // if the image was erased
         if ($value == null) {

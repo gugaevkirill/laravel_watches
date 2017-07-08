@@ -14,7 +14,8 @@
         "laravel/framework": "5.4.*",
         "laravel/spark": "~4.0",
         "laravel/tinker": "~1.0",
-        "sentry/sentry-laravel": "^0.7.0"
+        "sentry/sentry-laravel": "^0.7.0",
+        "intervention/image": "^2"
     },
     "require-dev": {
         "backpack/generators": "^1.1",
