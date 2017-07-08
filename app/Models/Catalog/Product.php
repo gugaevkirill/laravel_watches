@@ -41,6 +41,8 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class Product extends Model
 {
+    const IMAGES_FIELD_NAME = "imagesnew";
+
     use CrudTrait;
 
     protected $dateFormat = 'Y-m-d H:i:sP';
@@ -183,19 +185,17 @@ class Product extends Model
      */
     public function setImagesAttribute($value)
     {
-        $attribute_name = "images";
-
         if ($value == null) {
-            $this->attributes[$attribute_name] = '["img/watches_default.png"]';
+            $this->attributes[static::IMAGES_FIELD_NAME] = '["img/watches_default.png"]';
         } else {
             $request = \Request::instance();
-            $attribute_value = (array) $this->{$attribute_name};
-            $files_to_clear = $request->get('clear_'.$attribute_name);
+            $attribute_value = (array) $this->{static::IMAGES_FIELD_NAME};
+            $files_to_clear = $request->get('clear_'.static::IMAGES_FIELD_NAME);
 
             // if a file has been marked for removal,
             // delete it from the disk and from the db
             if ($files_to_clear) {
-                $attribute_value = (array) $this->{$attribute_name};
+                $attribute_value = (array) $this->{static::IMAGES_FIELD_NAME};
                 foreach ($files_to_clear as $key => $filename) {
                     \Storage::disk('local')->delete($filename);
                     $attribute_value = array_where($attribute_value, function ($value, $key) use ($filename) {
@@ -208,8 +208,8 @@ class Product extends Model
             }
 
             // if a new file is uploaded, store it on disk and its filename in the database
-            if ($request->hasFile($attribute_name)) {
-                foreach ($request->file($attribute_name) as $file) {
+            if ($request->hasFile(static::IMAGES_FIELD_NAME)) {
+                foreach ($request->file(static::IMAGES_FIELD_NAME) as $file) {
                     if ($file->isValid()) {
                         // 1. Generate a new file name
                         $new_file_name = md5($file->getClientOriginalName().time()).'.'.$file->getClientOriginalExtension();
@@ -223,7 +223,7 @@ class Product extends Model
                 }
             }
 
-            $this->attributes[$attribute_name] = json_encode($attribute_value);
+            $this->attributes[static::IMAGES_FIELD_NAME] = json_encode($attribute_value);
         }
     }
 }

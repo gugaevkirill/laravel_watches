@@ -54,7 +54,7 @@ class BrandCrudController extends CrudController
         $this->crud->addField(
             [
                 'label' => "Картинка",
-                'name' => "image",
+                'name' => "imagenew",
                 'type' => 'image',
                 'upload' => true,
                 'crop' => true, // set to true to allow cropping, false to disable

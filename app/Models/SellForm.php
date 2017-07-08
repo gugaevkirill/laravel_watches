@@ -36,6 +36,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SellForm extends Model
 {
+    const IMAGE_FIELD_NAME = "imagenew";
+
     use CrudTrait;
     use SaveImageTrait;
 

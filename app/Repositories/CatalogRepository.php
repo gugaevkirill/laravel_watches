@@ -68,7 +68,6 @@ class CatalogRepository
         $params = Param::whereIn('slug', array_keys($attrs))->get();
         foreach ($attrs as $slug => $value) {
             if ($value == "0") {
-                // TODO: тест на это. Если у value значение 0 - значит это все
                 continue;
             }
 

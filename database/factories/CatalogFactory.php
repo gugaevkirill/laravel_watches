@@ -15,6 +15,7 @@ $factory->define(Category::class, function (Generator $faker) {
         'slug' => $faker->word . str_random(5),
         'name_ru' => $faker->name,
         'name_en' => $faker->name,
+        'order' => random_int(1000, 9999),
     ];
 });
 
@@ -39,6 +40,7 @@ $factory->define(Param::class, function (Generator $faker) {
         'required' => false,
         'unique' => false,
         'in_filter' => false,
+        'order' => 100,
     ];
 });
 
@@ -48,6 +50,7 @@ $factory->define(ParamValue::class, function (Generator $faker) {
     return [
         'value_ru' => $faker->word . str_random(5),
         'value_en' => $faker->word . str_random(5),
+        'order' => 100,
     ];
 });
 
@@ -63,5 +66,6 @@ $factory->define(Product::class, function (Generator $faker) {
         },
         'name' => $faker->name,
         'images' => [],
+        'order' => 100,
     ];
 });

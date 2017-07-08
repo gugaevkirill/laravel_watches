@@ -24,6 +24,8 @@ use Illuminate\Support\Collection;
  */
 class Brand extends Model
 {
+    const IMAGE_FIELD_NAME = "imagenew";
+
     use CrudTrait;
     use SaveImageTrait;
 
