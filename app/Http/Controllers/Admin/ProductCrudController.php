@@ -94,7 +94,7 @@ class ProductCrudController extends CrudController
 
         $this->crud->addField(
             [
-                'name' => 'images',
+                'name' => 'imagesnew',
                 'label' => 'Картинки',
                 'type' => 'upload_multiple',
                 'upload' => true,
@@ -126,11 +126,11 @@ class ProductCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-        $this->crud->removeColumns(['attrs', 'images', 'description']);
+        $this->crud->removeColumns(['attrs', 'images', 'imagesnew', 'description']);
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value
-            'label' => "Активный?", // Table column heading
+            'label' => "Активный", // Table column heading
             'name' => 'is_active',
         ]);
 
@@ -138,7 +138,7 @@ class ProductCrudController extends CrudController
             // run a function on the CRUD model and show its return value
             'label' => "Картинка", // Table column heading
             'type' => "model_function",
-            'function_name' => 'getAdminImageHtml', // the method in your Model
+            'function_name' => 'getAdminImagesHtml', // the method in your Model
         ]);
 
         // $this->crud->addColumn(); // add a single column, at the end of the stack

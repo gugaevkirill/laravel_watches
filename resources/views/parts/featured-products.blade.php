@@ -4,7 +4,7 @@
             <h3 class="block-title inline-product-column-title">Часы дня</h3>
             @foreach ($watches as $item)
                 <div class="inline-product-entry">
-                    <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
+                    <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="{{ $item->getFirstImageUrl() }}" alt="{{ $item->name }}" /></a>
                     <div class="content">
                         <div class="cell-view">
                             <a class="title" href="{{ $item->getHref() }}" target="_blank">{{ $item->name }}</a>
@@ -21,7 +21,7 @@
             <h3 class="block-title inline-product-column-title">Новые аксессуары</h3>
             @foreach ($accessories as $item)
                 <div class="inline-product-entry">
-                    <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
+                    <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="{{ $item->getFirstImageUrl() }}" alt="{{ $item->name }}" /></a>
                     <div class="content">
                         <div class="cell-view">
                             <a class="title" href="{{ $item->getHref() }}" target="_blank">{{ $item->name }}</a>
@@ -38,7 +38,7 @@
             <h3 class="block-title inline-product-column-title">Элитные товары</h3>
             @foreach ($luxury as $item)
                 <div class="inline-product-entry">
-                    <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="/{{ $item->images[0] ?? '' }}" alt="{{ $item->name }}" /></a>
+                    <a class="image" href="{{ $item->getHref() }}" target="_blank"><img src="{{ $item->getFirstImageUrl() }}" alt="{{ $item->name }}" /></a>
                     <div class="content">
                         <div class="cell-view">
                             <a class="title" href="{{ $item->getHref() }}" target="_blank">{{ $item->name }}</a>

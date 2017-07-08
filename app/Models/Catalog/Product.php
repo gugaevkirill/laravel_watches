@@ -2,6 +2,7 @@
 
 namespace App\Models\Catalog;
 
+use App\Models\ImageTrait;
 use App\Scopes\IsActiveScope;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
@@ -46,13 +47,13 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class Product extends Model
 {
-    const IMAGES_FIELD_NAME = "imagesnew";
-
+    use ImageTrait;
     use CrudTrait;
 
     protected $dateFormat = 'Y-m-d H:i:sP';
     protected $casts = [
         'images' => 'array',
+        'imagesnew' => 'array',
         'attrs'=>'array',
     ];
 
@@ -62,14 +63,16 @@ class Product extends Model
         'category_slug',
         'name',
         'description',
-        'images',
+        'imagesnew',
         'price_rub',
         'price_dollar',
         'attrs',
     ];
 
-    // Папка куда складывать картинки
-    protected $imageDestination = 'products';
+    // Картинки
+    protected $imagesFieldName = "imagesnew";
+    protected $imageDestination = '/public/products/';
+    protected $imageUrlPrefix = '/storage/products/';
 
     protected static function boot()
     {
@@ -173,62 +176,5 @@ class Product extends Model
     public function getHref()
     {
         return "/$this->category_slug/$this->id";
-    }
-
-    /**
-     * @return string
-     */
-    public function getAdminImageHtml(): string
-    {
-        return !empty($this->imagesnew)
-            ? "<img src='/{$this->imagesnew[0]}' style='max-width: 60px; max-height: 70px;'>"
-            : "";
-    }
-
-    /**
-     * @param mixed $value
-     */
-    public function setImagesAttribute($value)
-    {
-        if ($value == null) {
-            $this->attributes[static::IMAGES_FIELD_NAME] = '["img/watches_default.png"]';
-        } else {
-            $request = \Request::instance();
-            $attribute_value = (array) $this->{static::IMAGES_FIELD_NAME};
-            $files_to_clear = $request->get('clear_'.static::IMAGES_FIELD_NAME);
-
-            // if a file has been marked for removal,
-            // delete it from the disk and from the db
-            if ($files_to_clear) {
-                $attribute_value = (array) $this->{static::IMAGES_FIELD_NAME};
-                foreach ($files_to_clear as $key => $filename) {
-                    \Storage::disk('local')->delete($filename);
-                    $attribute_value = array_where($attribute_value, function ($value, $key) use ($filename) {
-                        return $value != $filename;
-                    });
-                }
-
-                // Для нормального удаления картинок
-                $attribute_value = array_values($attribute_value);
-            }
-
-            // if a new file is uploaded, store it on disk and its filename in the database
-            if ($request->hasFile(static::IMAGES_FIELD_NAME)) {
-                foreach ($request->file(static::IMAGES_FIELD_NAME) as $file) {
-                    if ($file->isValid()) {
-                        // 1. Generate a new file name
-                        $new_file_name = md5($file->getClientOriginalName().time()).'.'.$file->getClientOriginalExtension();
-
-                        // 2. Move the new file to the correct path
-                        $file_path = $file->storeAs('public/' . $this->imageDestination, $new_file_name, 'local');
-
-                        // 3. Add the public path to the database
-                        $attribute_value[] = 'storage/' . $this->imageDestination . '/' . $new_file_name;
-                    }
-                }
-            }
-
-            $this->attributes[static::IMAGES_FIELD_NAME] = json_encode($attribute_value);
-        }
     }
 }

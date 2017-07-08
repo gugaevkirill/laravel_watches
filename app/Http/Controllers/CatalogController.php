@@ -111,19 +111,24 @@ class CatalogController extends Controller
         /** @var Brand $brand */
         $brand = $product->brand;
 
+        $productImages = [];
+        foreach ($product->imagesnew as $image) {
+            $productImages[] = $product->getImageUrl($image);
+        }
+
         return view(
             'product',
             [
                 'brandName' => $brand->name,
                 'brandHref' => $brand->getHref(),
-                'brandImage' => $brand->getImageUrl($brand->image),
+                'brandImage' => $brand->getImageUrl($brand->imagenew),
 
                 'categoryName' => $category->name_ru,
 
                 'productName' => $product->name,
                 'productPrices' => $product->getPrices(),
                 'productAttrs' => $product->getAttrsForProductPage(),
-                'productImages' => $product->images,
+                'productImages' => $productImages,
 
                 'featuredItems' => CatalogRepository::getFeaturedProducts($product),
             ]

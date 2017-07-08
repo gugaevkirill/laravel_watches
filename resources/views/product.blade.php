@@ -28,9 +28,9 @@
                 <div class="swiper-container product-preview-swiper" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
                     <div class="swiper-wrapper">
                         @foreach ($productImages as $productImage)
-                        <div class="swiper-slide" data-fullurl="/{{ $productImage }}">
+                        <div class="swiper-slide" data-fullurl="{{ $productImage }}">
                             <div class="product-zoom-image">
-                                <img src="/{{ $productImage }}" alt="{{ $productName }}" data-zoom="/{{ $productImage }}" />
+                                <img src="{{ $productImage }}" alt="{{ $productName }}"/>
                             </div>
                         </div>
                         @endforeach
@@ -49,7 +49,7 @@
                                 @endif
                             ">
                                 <div class="paddings-container">
-                                    <img src="/{{ $productImage }}" alt="{{ $productName }}" />
+                                    <img src="{{ $productImage }}" alt="{{ $productName }}" />
                                 </div>
                             </div>
                             @endforeach
@@ -106,7 +106,7 @@
                 <div class="col-md-12">
                     <div class="information-blocks production-logo">
                         <div class="background">
-                            <div class="logo"><img src="/{{ $brandImage }}" alt="" /></div>
+                            <div class="logo"><img src="{{ $brandImage }}" alt="" /></div>
                             <a href="{{ $brandHref }}">Перейти к бренду</a>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                             @foreach($featuredItems as $item)
                             <div class="inline-product-entry">
                                 <a href="{{ $item->getHref() }}" class="image">
-                                    <img alt="{{ $item->name }}" src="/{{ $item->images[0] ?? '' }}"></a>
+                                    <img alt="{{ $item->name }}" src="{{ $item->getFirstImageUrl() }}"></a>
                                 <div class="content">
                                     <div class="cell-view">
                                         <a href="{{ $item->getHref() }}" class="title">{{ $item->name }}</a>
