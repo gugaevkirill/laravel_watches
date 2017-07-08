@@ -6,6 +6,8 @@ use \Illuminate\Http\UploadedFile;
 
 trait ImageTrait
 {
+    protected $imgFormat = '.jpg';
+
     /**
      * URL картинки для браузера
      * @param int $image
@@ -13,7 +15,7 @@ trait ImageTrait
      */
     public function getImageUrl($image): string
     {
-        return $this->imageUrlPrefix . $image . ".png";
+        return $this->imageUrlPrefix . $image . $this->imgFormat;
     }
 
     /**
@@ -23,7 +25,7 @@ trait ImageTrait
      */
     private function getImageDestination($image): string
     {
-        return $this->imageDestination . $image . ".png";
+        return $this->imageDestination . $image . $this->imgFormat;
     }
 
     /**
