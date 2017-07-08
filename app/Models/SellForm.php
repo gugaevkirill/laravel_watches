@@ -36,14 +36,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SellForm extends Model
 {
-    const IMAGE_FIELD_NAME = "imagenew";
-
     use CrudTrait;
-    use SaveImageTrait;
+    use ImageTrait;
 
     const FIELDS = [
         'name' => 'required|max:255|min:2',
-        'image' => 'image|mimes:jpeg,bmp,png,jpg',
+        'imagenew' => 'image|mimes:jpeg,bmp,png,jpg',
         'phone' => 'required|max:20|min:10',
         'email' => 'nullable|email',
         'reference' => 'required|max:255|min:2',
@@ -52,53 +50,16 @@ class SellForm extends Model
         'has_documents' => 'nullable|boolean',
         'amount' => 'nullable|integer',
     ];
-
-    protected $fillable = [
-        'name',
-        'image',
-        'phone',
-        'email',
-        'reference',
-        'year',
-        'has_box',
-        'has_documents',
-        'amount',
-    ];
     protected $dateFormat = 'Y-m-d H:i:sP';
 
-    // Папка куда складывать картинки
-    protected $imageDestination = 'sellform';
+    // Картинка
+    protected $imageFieldName = "imagenew";
+    protected $imageDestination = '/public/sellform/';
+    protected $imageUrlPrefix = '/storage/sellform/';
 
     public function __construct(array $attributes = [])
     {
         $this->fillable = array_keys(self::FIELDS);
         parent::__construct($attributes);
-    }
-
-    /**
-     * @return string
-     */
-    public function getAdminImageHtml(): string
-    {
-        return $this->image
-            ? "<img src='/$this->image' style='max-width: 70px; max-height: 70px;'>"
-            : "";
-    }
-
-    /**
-     * Хак чтобы картинки сохранялись нормально !!!
-     * @param array $attributes
-     * @param array $options
-     * @return bool
-     */
-    public function update(array $attributes = [], array $options = [])
-    {
-        if (isset($attributes['image'])) {
-            // Для вновь загруженных картинок
-            if (strpos($attributes['image'], '/storage/') !== false) {
-                $attributes['image'] = 'storage/' . explode('/storage/', $attributes['image'])[1];
-            }
-        }
-        parent::update($attributes, $options);
     }
 }

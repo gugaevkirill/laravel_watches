@@ -2,7 +2,7 @@
 
 namespace App\Models\Catalog;
 
-use App\Models\SaveImageTrait;
+use App\Models\ImageTrait;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Builder;
@@ -24,19 +24,20 @@ use Illuminate\Support\Collection;
  */
 class Brand extends Model
 {
-    const IMAGE_FIELD_NAME = "imagenew";
-
     use CrudTrait;
-    use SaveImageTrait;
+    use ImageTrait;
 
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
 
-    protected $fillable = ['order', 'name', 'image', 'slug'];
+    protected $fillable = ['order', 'name', 'imagenew', 'slug'];
 
-    // Папка куда складывать картинки
-    protected $imageDestination = 'brands';
+    // Картинка
+    protected $imageFieldName = "imagenew";
+    protected $imageDestination = '/public/brands/';
+    protected $imageUrlPrefix = '/storage/brands/';
+
 
     protected static function boot()
     {
@@ -54,16 +55,6 @@ class Brand extends Model
     }
 
     /**
-     * @return string
-     */
-    public function getAdminImageHtml(): string
-    {
-        return $this->image
-            ? "<img src='/$this->image' style='max-width: 70px; max-height: 60px;'>"
-            : "";
-    }
-
-    /**
      * Бренды, в которых есть товары
      * @param int $limit
      * @return Collection
@@ -74,26 +65,5 @@ class Brand extends Model
             ->distinct()
             ->limit($limit)
             ->get(['brands.*']);
-    }
-
-    /**
-     * Хак чтобы картинки сохранялись нормально !!!
-     * @param array $attributes
-     * @param array $options
-     * @return bool
-     */
-    public function update(array $attributes = [], array $options = [])
-    {
-        if (isset($attributes['image'])) {
-            // Для предзагруженных картинок
-            if (strpos($attributes['image'], '/img/') !== false) {
-                $attributes['image'] = 'img/' . explode('/img/', $attributes['image'])[1];
-            }
-            // Для вновь загруженных картинок
-            if (strpos($attributes['image'], '/storage/') !== false) {
-                $attributes['image'] = 'storage/' . explode('/storage/', $attributes['image'])[1];
-            }
-        }
-        parent::update($attributes, $options);
     }
 }

@@ -33,19 +33,7 @@ class SellController extends Controller
     {
         $this->validate($request, SellForm::FIELDS);
 
-        // Обработка картинки
-        $image = $request->file('image');
-        $pathStorage = Storage::putFileAs(
-            'public/uploads/sellForm',
-            $image,
-            md5(time() . $image->getClientOriginalName()) . '.' . $image->getClientOriginalExtension()
-        );
-        $path = str_replace_first('public', '/storage', $pathStorage);
-
-        $data = array_merge(
-            $request->only(array_keys(SellForm::FIELDS)),
-            ['image' => $path]
-        );
+        $data = array_filter($request->only(array_keys(SellForm::FIELDS)));
 
         // Обработка чекбоксов
         $data['has_box'] = $data['has_box'] ?? false;

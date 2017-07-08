@@ -67,11 +67,9 @@ class SellFormCrudController extends CrudController
         $this->crud->addField(
             [
                 'label' => "Картинка",
-                'name' => "image",
+                'name' => "imagenew",
                 'type' => 'image',
                 'upload' => true,
-                'crop' => true, // set to true to allow cropping, false to disable
-                'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
             ],
             'update/create/both'
         );
@@ -82,7 +80,7 @@ class SellFormCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-        $this->crud->removeColumn('image');
+        $this->crud->removeColumn('imagenew');
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value

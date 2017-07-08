@@ -81,7 +81,7 @@
 
                 <div class="col-sm-6">
                     <label>Фото <span>*</span></label>
-                    <input class="simple-field" type="file" name="image" required />
+                    <input class="simple-field" type="file" name="imagenew" required />
                     <div class="clear"></div>
                 </div>
 

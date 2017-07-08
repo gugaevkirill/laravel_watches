@@ -175,8 +175,8 @@ class Product extends Model
      */
     public function getAdminImageHtml(): string
     {
-        return !empty($this->images)
-            ? "<img src='/{$this->images[0]}' style='max-width: 60px; max-height: 70px;'>"
+        return !empty($this->imagesnew)
+            ? "<img src='/{$this->imagesnew[0]}' style='max-width: 60px; max-height: 70px;'>"
             : "";
     }
 

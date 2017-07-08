@@ -14,8 +14,8 @@ class NewImagesFieldInProductsBrands extends Migration
     public function up()
     {
             DB::statement("ALTER TABLE products ADD COLUMN imagesnew json DEFAULT '[]';");
-            DB::statement("ALTER TABLE brands ADD COLUMN imagenew integer;");
-            DB::statement("ALTER TABLE sell_forms ADD COLUMN imagenew integer;");
+            DB::statement("ALTER TABLE brands ADD COLUMN imagenew BIGINT;");
+            DB::statement("ALTER TABLE sell_forms ADD COLUMN imagenew BIGINT;");
             DB::statement("ALTER TABLE brands DROP COLUMN image;");
             DB::statement("ALTER TABLE sell_forms DROP COLUMN image;");
             DB::statement("ALTER TABLE products alter COLUMN images DROP NOT NULL ;");
