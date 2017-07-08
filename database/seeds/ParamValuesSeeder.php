@@ -2,15 +2,25 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Catalog\ParamValue;
+use App\Models\Catalog\Param;
 
 class ParamValuesSeeder extends Seeder
 {
     /**
-     * @param array $data
+     * @param array $paramSlugs
+     * @param string $valueRu
      */
-    private function createParamValue(array $data)
+    private function createParamValue(array $paramSlugs, string $valueRu)
     {
-        factory(ParamValue::class)->create($data);
+        /** @var ParamValue $valueObj */
+        $valueObj = factory(ParamValue::class)->create([
+            'value_ru' => $valueRu,
+        ]);
+
+        foreach ($paramSlugs as $slug) {
+            $valueObj->params()->save(Param::findOrFail($slug));
+        }
+
         echo '.';
     }
 
@@ -22,71 +32,29 @@ class ParamValuesSeeder extends Seeder
     public function run()
     {
         // Пол
-        $this->createParamValue([
-            'param_slug' => 'gender',
-            'value_ru' => 'Мужские',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'gender',
-            'value_ru' => 'Женские',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'gender',
-            'value_ru' => 'Унисекс',
-        ]);
+        $this->createParamValue(['gender'], 'Мужские');
+        $this->createParamValue(['gender'], 'Женские');
+        $this->createParamValue(['gender'], 'Унисекс');
 
         // Состояние
-        $this->createParamValue([
-            'param_slug' => 'condition',
-            'value_ru' => 'Новые',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'condition',
-            'value_ru' => 'Б/У',
-        ]);
+        $this->createParamValue(['condition'], 'Новые');
+        $this->createParamValue(['condition'], 'Б/У');
 
         // Материал корпуса
-        $this->createParamValue([
-            'param_slug' => 'case_material',
-            'value_ru' => 'Титан',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'case_material',
-            'value_ru' => 'Нержавеющая сталь',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'case_material',
-            'value_ru' => 'Платина',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'case_material',
-            'value_ru' => 'Золото',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'case_material',
-            'value_ru' => 'Серебро',
-        ]);
-        $this->createParamValue([
-            'param_slug' => 'case_material',
-            'value_ru' => 'Сталь',
-        ]);
+        $this->createParamValue(['case_material'], 'Титан');
+        $this->createParamValue(['case_material'], 'Нержавеющая сталь');
+        $this->createParamValue(['case_material'], 'Платина');
+        $this->createParamValue(['case_material'], 'Золото');
+        $this->createParamValue(['case_material'], 'Серебро');
+        $this->createParamValue(['case_material'], 'Сталь');
 
         // Механизм
-        $this->createParamValue([
-            'param_slug' => 'movement',
-            'value_ru' => 'Механика с автоподзаводом',
-        ]);
+        $this->createParamValue(['movement'], 'Механика с автоподзаводом');
 
         // Материал ремешка
-        $this->createParamValue([
-            'param_slug' => 'band_material',
-            'value_ru' => 'Кожа аллигатора',
-        ]);
+        $this->createParamValue(['band_material'], 'Кожа аллигатора');
 
         // Стекло
-        $this->createParamValue([
-            'param_slug' => 'glass',
-            'value_ru' => 'Сапфир',
-        ]);
+        $this->createParamValue(['glass'], 'Сапфир');
     }
 }

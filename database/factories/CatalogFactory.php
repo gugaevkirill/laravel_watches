@@ -12,7 +12,7 @@ use Faker\Generator;
 $factory->define(Category::class, function (Generator $faker) {
     $faker = $faker->unique();
     return [
-        'slug' => $faker->word,
+        'slug' => $faker->word . str_random(5),
         'name_ru' => $faker->name,
         'name_en' => $faker->name,
     ];
@@ -22,9 +22,8 @@ $factory->define(Category::class, function (Generator $faker) {
 $factory->define(Brand::class, function (Generator $faker) {
     $faker = $faker->unique();
     return [
-        'slug' => $faker->word,
+        'slug' => $faker->word . str_random(5),
         'name' => $faker->name,
-        'image' => $faker->image(),
     ];
 });
 
@@ -33,9 +32,9 @@ $factory->define(Brand::class, function (Generator $faker) {
 $factory->define(Param::class, function (Generator $faker) {
     $faker = $faker->unique();
     return [
-        'slug' => $faker->word,
-        'title_ru' => $faker->unique()->word,
-        'title_en' => $faker->word,
+        'slug' => $faker->word . str_random(5),
+        'title_ru' => $faker->unique()->word . str_random(5),
+        'title_en' => $faker->word . str_random(5),
         'type' => 'string',
         'required' => false,
         'unique' => false,
@@ -47,11 +46,8 @@ $factory->define(Param::class, function (Generator $faker) {
 $factory->define(ParamValue::class, function (Generator $faker) {
     $faker = $faker->unique();
     return [
-        'param_slug' => function () {
-            return factory(Param::class)->create()->slug;
-        },
-        'value_ru' => $faker->word,
-        'value_en' => $faker->word,
+        'value_ru' => $faker->word . str_random(5),
+        'value_en' => $faker->word . str_random(5),
     ];
 });
 
@@ -66,6 +62,6 @@ $factory->define(Product::class, function (Generator $faker) {
             return factory(Category::class)->create()->slug;
         },
         'name' => $faker->name,
-        'images' => [$faker->imageUrl()],
+        'images' => [],
     ];
 });

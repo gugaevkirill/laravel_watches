@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        if (\App\User::all()->isEmpty()) {
+            $this->call(UserSeeder::class);
+        }
+
         if (\App\Models\Catalog\Brand::all()->isEmpty()) {
             $this->call(BrandsSeeder::class);
         }
@@ -37,10 +41,6 @@ class DatabaseSeeder extends Seeder
 
         if (\Backpack\Settings\app\Models\Setting::all()->isEmpty()) {
             $this->call(\Backpack\Settings\database\seeds\SettingsTableSeeder::class);
-        }
-
-        if (\App\User::all()->isEmpty()) {
-            $this->call(UserSeeder::class);
         }
     }
 }
