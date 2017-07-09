@@ -58,7 +58,7 @@ class ProductCrudController extends CrudController
             [
                 'label' => "Бренд",
                 'name' => 'brand_slug', // the db column for the foreign key
-                'type' => 'select2_from_array',
+                'type' => 'select_from_array',
                 'options' => Brand::all(['name', 'slug'])
                     ->pluck('name', 'slug')
                     ->toArray(),
@@ -72,7 +72,7 @@ class ProductCrudController extends CrudController
             [
                 'label' => "Категория",
                 'name' => 'category_slug', // the db column for the foreign key
-                'type' => 'select2_from_array',
+                'type' => 'select_from_array',
                 'options' => Category::getForAdminPage(),
                 'allows_null' => false,
                 'allows_multiple' => false,

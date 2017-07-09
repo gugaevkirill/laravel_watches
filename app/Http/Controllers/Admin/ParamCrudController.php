@@ -86,7 +86,7 @@ class ParamCrudController extends CrudController
             [
                 'name' => 'type',
                 'label' => 'Тип',
-                'type' => 'select2_from_array',
+                'type' => 'select_from_array',
                 'options' => Param::TYPES,
                 'allows_null' => false,
                 'allows_multiple' => false,
@@ -96,7 +96,7 @@ class ParamCrudController extends CrudController
 
         $this->crud->addField([
             'label' => 'Categories',
-            'type' => 'select2_multiple',
+            'type' => 'select_multiple',
             'name' => 'categories',
             'entity' => 'categories',
             'attribute' => 'name_ru',

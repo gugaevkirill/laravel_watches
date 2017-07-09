@@ -43,7 +43,7 @@ class ParamValueCrudController extends CrudController
 
         $this->crud->addField([
             'label' => 'Параметры',
-            'type' => 'select2_multiple',
+            'type' => 'select_multiple',
             'name' => 'params',
             'entity' => 'params',
             'attribute' => 'title_ru',

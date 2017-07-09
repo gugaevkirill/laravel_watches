@@ -9,11 +9,6 @@
     $field['value'] = $tmp;
 ?>
 
-<style>
-    .has-error input, .has-error select { border: 1px solid #d44837; }
-    .has-error label { color: #a94442; }
-</style>
-
 <div @include('crud::inc.field_wrapper_attributes') id="json-attrs-block">
     <label>{!! $field['label'] !!}</label>
 
