@@ -95,10 +95,6 @@ $(function() {
 				paginationSlice.show();
 			}
 		});
-
-		if (pswp) {
-            pswp.updateSize(force);
-        }
 	}
 	if(!_ismobile){
 		$(window).resize(function(){

@@ -240,7 +240,7 @@ nav > ul > li { padding-right: 20px; padding-left: 20px;}
 nav { position: relative;}
 .navigation { text-align: center; border-bottom: 2px solid #f7f7f7; }
 .navigation nav > ul > li { display: inline-block; padding: 0 50px; width: 270px; text-align: center; position: relative; }
-.navigation nav > ul > li:after { content: "✳"; font-size: 15px; right: -5px; top: 50%; line-height: 10px; margin-top: -6px; position: absolute; opacity: 0.5; }
+.navigation nav > ul > li:after { content: "\f005"; font-family: FontAwesome; font-size: 11px; right: -5px; top: 50%; line-height: 10px; margin-top: -6px; position: absolute; opacity: 0.5; }
 .navigation nav > ul > li:last-child:after { display: none; }
 .navigation nav > ul > li > a { font-size: 15px; color: #505461; line-height: 70px; text-transform: uppercase; }
 .navigation nav > ul > li > a:hover { color: #53667b; }
@@ -1443,6 +1443,8 @@ header .line-entry{white-space: nowrap;}
 /*Phones (<768px)*/
 @media (max-width: 767px) {
     .product-header-content .line-entry:first-child{left: 15px; right: 15px;}
+    .header-top-entry .title { border: none; }
+    .header-top-entry .title img { display: none; }
 }
 
 /* 14.03 - content styles */
