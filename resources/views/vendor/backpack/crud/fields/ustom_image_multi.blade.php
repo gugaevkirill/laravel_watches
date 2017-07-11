@@ -45,7 +45,13 @@ if (isset($field['value']) && is_array($field['value'])) {
             </div>
         </div>
 
-        <input name="{{ $field['name'] }}[]" type="hidden" value="">
+        <!-- Инпут на добавление картинок -->
+        <input name="{{ $field['name'] }}[]" type="hidden" :value="image" v-for="image in images">
+        <input name="{{ $field['name'] }}" type="hidden" value="" v-if="images.length == 0">
+
+        <!-- Инпут на удаление картинок -->
+        <input name="clean_{{ $field['name'] }}[]" type="hidden" :value="image" v-for="image in images_to_remove" v-if="!isBase64(image)">
+
         <input
                 type="file"
                 accept="image/*"

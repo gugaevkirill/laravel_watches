@@ -71,6 +71,15 @@ trait ImageTrait
     }
 
     /**
+     * @param $image
+     * @return bool
+     */
+    private function isBase64($image): bool
+    {
+        return substr($image, 0, 10) == 'data:image';
+    }
+
+    /**
      * Сохранение одной картинки
      * @param mixed $value
      */
@@ -99,49 +108,42 @@ trait ImageTrait
     }
 
     /**
-     * @param mixed $value
+     * @param $value
+     * @throws \Exception
      */
     public function setImagesnewAttribute($value)
     {
-        if ($value == null) {
+        if (empty($value)) {
+            // Если надо удалить все
             foreach ($this->imagesnew as $image) {
                 \Storage::disk()->delete($this->getImageDestination($image));
             }
             $this->attributes[$this->imagesFieldName] = '[]';
-        } elseif (is_array($value) && is_int($value[0])) {
-            $this->attributes[$this->imagesFieldName] = json_encode($value);
-        } else {
+        } elseif (is_array($value)) {
+            $tmp = [];
+            // Сохраняем новые картинки на диск
+            foreach ($value as $img) {
+                if ($this->isBase64($img)) {
+                    $filename = crc32($img . microtime());
+                    $image = \Image::make($img);
+                    \Storage::disk()->put($this->getImageDestination($filename), $image->stream());
+                    $tmp[] = $filename;
+                } else {
+                    $tmp[] = $img;
+                }
+            }
+            $this->attributes[$this->imagesFieldName] = json_encode($tmp);
+
+            // Стираем с диска удаленные картинки
             $request = \Request::instance();
-            $attribute_value = (array) $this->{$this->imagesFieldName};
-            $files_to_clear = $request->get('clear_' . $this->imagesFieldName);
-
-            // if a file has been marked for removal,
-            // delete it from the disk and from the db
-            if ($files_to_clear) {
-                foreach ($files_to_clear as $key => $filename) {
+//            dd($request, 'clean_' . $this->imagesFieldName, $request->get('clean_' . $this->imagesFieldName));
+            if ($toClean = $request->get('clean_' . $this->imagesFieldName)) {
+                foreach ($toClean as $filename) {
                     \Storage::disk()->delete($this->getImageDestination($filename));
-                    $attribute_value = array_where($attribute_value, function ($value, $key) use ($filename) {
-                        return $value != $filename;
-                    });
-                }
-
-                // Для нормального удаления картинок
-                $attribute_value = array_values($attribute_value);
-            }
-
-            // if a new file is uploaded, store it on disk and its filename in the database
-            if ($request->hasFile($this->imagesFieldName)) {
-                foreach ($request->file($this->imagesFieldName) as $file) {
-                    if ($file->isValid()) {
-                        $filename = crc32($file->getClientOriginalName() . microtime());
-                        $image = \Image::make($file);
-                        \Storage::disk()->put($this->getImageDestination($filename), $image->stream());
-                        $attribute_value[] = $filename;
-                    }
                 }
             }
-
-            $this->attributes[$this->imagesFieldName] = json_encode($attribute_value);
+        } else {
+            throw new \Exception('Invalid value');
         }
     }
 }
