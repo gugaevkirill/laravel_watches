@@ -13,10 +13,12 @@ if (isset($field['value']) && is_array($field['value'])) {
         <label>{!! $field['label'] !!}</label>
 
         <ul class="well well-sm images-container" v-if="images.length">
-            <li v-for="image in images">
+            <li v-for="image, i in images">
                 <img :src="getFullUrl(image)" @click.stop="openCropper(image)" class="cursor-pointer" v-if="isBase64(image)">
                 <img :src="getFullUrl(image)" v-else>
                 <i class="fa fa-trash clear-button" @click.stop="remove(image)"></i>
+                <i class="fa fa-arrow-right right-button rlb" @click.stop="moveRight(image)" v-if="i < images.length - 1"></i>
+                <i class="fa fa-arrow-left left-button rlb" @click.stop="moveLeft(image)" v-if="i > 0"></i>
             </li>
         </ul>
 
@@ -81,8 +83,8 @@ if (isset($field['value']) && is_array($field['value'])) {
                     el: '#custom-image-multi',
                     data: {
                         images: JSON.parse('{!! json_encode($images) !!}'),
-                        openInCropperImage: null,
                         images_to_remove: [],
+                        openInCropper: null,
                         mainImage: null,
                     },
                     mounted: function () {
@@ -122,6 +124,12 @@ if (isset($field['value']) && is_array($field['value'])) {
 
                             return "/storage/products/" + img + ".jpg";
                         },
+                        hideCropper: function () {
+                            $(this.$el).find('.image').addClass('hidden');
+                        },
+                        showCropper: function () {
+                            $(this.$el).find('.image').removeClass('hidden');
+                        },
 //                        getBase64FromImageUrl (url) {
 //                            var promise = new Promise(function(resolve, reject) {
 //                                var img = new Image();
@@ -149,10 +157,8 @@ if (isset($field['value']) && is_array($field['value'])) {
 //                            return getAns();
 //                        },
                         openCropper: function (img) {
-                            var cropperEl = $(this.$el).find('.image.hidden'),
-                                that = this;
-
-                            this.openInCropperImage = img;
+                            var that = this;
+                            this.openInCropper = img;
 
                             // Инициализируем Cropper в первый раз
                             if (!this.mainImage) {
@@ -194,16 +200,16 @@ if (isset($field['value']) && is_array($field['value'])) {
 //                            }
 
                             this.mainImage.cropper("replace", img);
-                            cropperEl.removeClass('hidden');
+                            this.showCropper();
                         },
                         acceptCropper() {
                             var that = this;
 
-                            index = _.findIndex(this.images, function (el) { return el === that.openInCropperImage; });
+                            index = _.findIndex(this.images, function (el) { return el === that.openInCropper; });
                             this.$set(this.images, index, this.mainImage.cropper('getCroppedCanvas').toDataURL());
 
                             // Скрыть cropper
-                            this.mainImage.closest('.image').addClass('hidden');
+                            this.hideCropper();
                         },
                         remove: function (img) {
                             this.images = _.remove(this.images, function (el) {
@@ -211,17 +217,36 @@ if (isset($field['value']) && is_array($field['value'])) {
                             });
                             this.images_to_remove.push(img);
 
-                            // Скрыть cropper
-                            if (img === this.openInCropperImage) {
-                                this.mainImage.closest('.image').addClass('hidden');
+                            if (img === this.openInCropper) {
+                                this.hideCropper();
                             }
                         },
-//                        moveUp: function (img) {
-//
-//                        },
-//                        moveDown: function (img) {
-//
-//                        },
+                        moveRight: function (img) {
+                            var that = this,
+                                index = _.findIndex(this.images, function (el) { return el === img; });
+
+                            if (index === this.images.length) {
+                                return;
+                            }
+
+                            console.log(index);
+
+                            this.hideCropper();
+                            this.$set(this.images, index, this.images[index + 1]);
+                            this.$set(this.images, index + 1, img);
+                        },
+                        moveLeft: function (img) {
+                            var that = this,
+                                index = _.findIndex(this.images, function (el) { return el === img; });
+
+                            if (index === 0) {
+                                return;
+                            }
+
+                            this.hideCropper();
+                            this.$set(this.images, index, this.images[index - 1]);
+                            this.$set(this.images, index - 1, img);
+                        },
                     }
                 });
             });

@@ -187,13 +187,13 @@
     <div class="clear"></div>
 </div>
 
-<script src="/js/jquery-2.1.3.min.js"></script>
-<script src="/js/idangerous.swiper.min.js"></script>
+<script src="/js/libs/jquery-2.1.3.min.js"></script>
+<script src="/js/libs/idangerous.swiper.min.js"></script>
 <script src="/js/global.js"></script>
 
 {{-- custom scrollbar --}}
-<script src="/js/jquery.mousewheel.js"></script>
-<script src="/js/jquery.jscrollpane.min.js"></script>
+<script src="/js/libs/jquery.mousewheel.js"></script>
+<script src="/js/libs/jquery.jscrollpane.min.js"></script>
 
 @stack('scripts')
 

@@ -37,10 +37,6 @@
 
 
 @if ($crud->checkIfFieldIsFirstOfItsType($field, $fields))
-    @push('crud_fields_styles')
-    {{-- No styles --}}
-    @endpush
-
     @push('crud_fields_scripts')
     <script>
         var categorySelect = $("select[name='category_slug']");

@@ -10,8 +10,8 @@
 @endpush
 
 @push('scripts')
-<script src="/js/photoswipe.min.js"></script>
-<script src="/js/photoswipe-ui-default.min.js"></script>
+<script src="/js/libs/photoswipe.min.js"></script>
+<script src="/js/libs/photoswipe-ui-default.min.js"></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-594a0788009cfcb0"></script>
 @endpush
 

@@ -5,8 +5,8 @@
 @endsection
 
 @push('headOther')
-<script src="/js/vue.js"></script>
-<script src="/js/vue-router.js"></script>
+<script src="/js/libs/vue.js"></script>
+<script src="/js/libs/vue-router.js"></script>
 @endpush
 
 @push('scripts')
