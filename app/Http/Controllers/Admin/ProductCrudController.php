@@ -96,7 +96,7 @@ class ProductCrudController extends CrudController
             [
                 'name' => 'imagesnew',
                 'label' => 'Картинки',
-                'type' => 'upload_multiple',
+                'type' => 'ustom_image_multi',
                 'upload' => true,
             ],
             'update/create/both'
@@ -139,6 +139,8 @@ class ProductCrudController extends CrudController
             'label' => "Картинка", // Table column heading
             'type' => "model_function",
             'function_name' => 'getAdminImagesHtml', // the method in your Model
+            'upload' => true,
+            'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
         ]);
 
         // $this->crud->addColumn(); // add a single column, at the end of the stack

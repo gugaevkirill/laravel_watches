@@ -37,19 +37,11 @@
 
 
 @if ($crud->checkIfFieldIsFirstOfItsType($field, $fields))
-    {{-- FIELD EXTRA CSS  --}}
-    {{-- push things in the after_styles section --}}
-
     @push('crud_fields_styles')
-    <!-- no styles -->
+    {{-- No styles --}}
     @endpush
 
-
-    {{-- FIELD EXTRA JS --}}
-    {{-- push things in the after_scripts section --}}
-
     @push('crud_fields_scripts')
-    <script src="/js/vue.js"></script>
     <script>
         var categorySelect = $("select[name='category_slug']");
 
@@ -133,5 +125,3 @@
     </script>
     @endpush
 @endif
-
-{{-- Note: most of the times you'll want to use @if ($crud->checkIfFieldIsFirstOfItsType($field, $fields)) to only load CSS/JS once, even though there are multiple instances of it. --}}
