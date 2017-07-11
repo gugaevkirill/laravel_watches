@@ -210,6 +210,11 @@ if (isset($field['value']) && is_array($field['value'])) {
                                 return el !== img;
                             });
                             this.images_to_remove.push(img);
+
+                            // Скрыть cropper
+                            if (img === this.openInCropperImage) {
+                                this.mainImage.closest('.image').addClass('hidden');
+                            }
                         },
 //                        moveUp: function (img) {
 //
