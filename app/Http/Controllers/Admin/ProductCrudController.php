@@ -132,7 +132,7 @@ class ProductCrudController extends CrudController
             // run a function on the CRUD model and show its return value
             'label' => "Активный", // Table column heading
             'name' => 'is_active',
-        ]);
+        ])->beforeField('order');
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value
@@ -141,7 +141,7 @@ class ProductCrudController extends CrudController
             'function_name' => 'getAdminImagesHtml', // the method in your Model
             'upload' => true,
             'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
-        ]);
+        ])->beforeField('attrs');
 
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
