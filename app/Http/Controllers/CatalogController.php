@@ -125,6 +125,7 @@ class CatalogController extends Controller
 
                 'categoryName' => $category->name_ru,
 
+                'productDescription' => $product->descriptionnew,
                 'productName' => $product->name,
                 'productPrices' => $product->getPrices(),
                 'productAttrs' => $product->getAttrsForProductPage(),

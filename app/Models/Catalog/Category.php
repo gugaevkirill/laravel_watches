@@ -12,15 +12,13 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property string $slug
  * @property int $order
- * @property string $name_ru
- * @property string $name_en
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Category whereNameEn($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Category whereNameRu($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Category whereOrder($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Catalog\Category whereSlug($value)
- * @mixin \Eloquent
+ * @property array $name
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Catalog\Param[] $params
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Catalog\Product[] $products
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Category whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Category whereSlug($value)
+ * @mixin \Eloquent
  */
 class Category extends Model
 {

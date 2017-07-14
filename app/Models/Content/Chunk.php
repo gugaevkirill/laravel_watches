@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Content\Chunk whereSlug($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Content\Chunk whereTitle($value)
  * @mixin \Eloquent
+ * @property array $content
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Content\Chunk whereContent($value)
  */
 class Chunk extends Model
 {
