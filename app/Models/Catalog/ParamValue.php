@@ -4,6 +4,7 @@ namespace App\Models\Catalog;
 
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -25,11 +26,13 @@ use Illuminate\Database\Eloquent\Model;
 class ParamValue extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     public $timestamps = false;
     protected $table = 'param_values';
 
-    protected $fillable = ['order', 'value_ru', 'value_en', 'param_slug'];
+    protected $fillable = ['order', 'value', 'param_slug'];
+    protected $translatable = ['value'];
 
     protected static function boot()
     {

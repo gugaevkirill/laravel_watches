@@ -6,8 +6,9 @@ use App\Models\ImageTrait;
 use App\Scopes\IsActiveScope;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
-use Illuminate\Database\Eloquent\Model;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Models\Catalog\Product
@@ -49,6 +50,7 @@ class Product extends Model
 {
     use ImageTrait;
     use CrudTrait;
+    use HasTranslations;
 
     protected $dateFormat = 'Y-m-d H:i:sP';
     protected $casts = [
@@ -56,18 +58,18 @@ class Product extends Model
         'imagesnew' => 'array',
         'attrs'=>'array',
     ];
-
     protected $fillable = [
         'order',
         'brand_slug',
         'category_slug',
         'name',
-        'description',
+        'descriptionnew',
         'imagesnew',
         'price_rub',
         'price_dollar',
         'attrs',
     ];
+    protected $translatable = ['descriptionnew'];
 
     // Картинки
     protected $imagesFieldName = "imagesnew";

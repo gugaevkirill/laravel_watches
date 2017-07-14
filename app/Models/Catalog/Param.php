@@ -4,6 +4,7 @@ namespace App\Models\Catalog;
 
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -31,16 +32,18 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Param extends Model
 {
+    use CrudTrait;
+    use HasTranslations;
+
     const CATEGORY_PIVOT = 'categories_params';
     const VALUE_PIVOT = 'params_param_values';
-
-    use CrudTrait;
 
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
 
-    protected $fillable = ['order', 'title_ru', 'title_en', 'slug', 'type', 'required', 'unique', 'in_filter'];
+    protected $fillable = ['order', 'title', 'slug', 'type', 'required', 'unique', 'in_filter'];
+    protected $translatable = ['title'];
 
     /**
      * При изменении перемигрировать БД

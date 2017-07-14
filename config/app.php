@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,11 +177,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // My own
-        App\Providers\BlateDirectivesProvider::class,
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
-
         // Spark
         Laravel\Spark\Providers\SparkServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
@@ -194,6 +189,12 @@ return [
         Backpack\LogManager\LogManagerServiceProvider::class,
         Backpack\Settings\SettingsServiceProvider::class,
         Backpack\PermissionManager\PermissionManagerServiceProvider::class,
+
+        // My own
+        App\Providers\BlateDirectivesProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+        Spatie\Translatable\TranslatableServiceProvider::class,
     ],
 
     /*

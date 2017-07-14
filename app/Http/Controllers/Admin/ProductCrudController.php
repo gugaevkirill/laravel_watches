@@ -120,13 +120,22 @@ class ProductCrudController extends CrudController
             'update/create/both'
         );
 
+        $this->crud->addField(
+            [
+                'label' => "Описание",
+                'name' => 'descriptionnew',
+                'type' => 'textarea',
+            ],
+            'update/create/both'
+        );
+
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-        $this->crud->removeColumns(['attrs', 'images', 'imagesnew', 'description']);
+        $this->crud->removeColumns(['attrs', 'imagesnew', 'descriptionnew']);
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value

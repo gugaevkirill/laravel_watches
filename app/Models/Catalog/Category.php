@@ -4,6 +4,7 @@ namespace App\Models\Catalog;
 
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -24,14 +25,16 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use CrudTrait;
+    use HasTranslations;
+
+    const SLUGS = ['watches', 'luxury', 'accessories'];
 
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
 
-    protected $fillable = ['slug', 'order', 'name_ru', 'name_en'];
-
-    const SLUGS = ['watches', 'luxury', 'accessories'];
+    protected $fillable = ['slug', 'order', 'name', 'name_en'];
+    protected $translatable = ['name'];
 
     protected static function boot()
     {

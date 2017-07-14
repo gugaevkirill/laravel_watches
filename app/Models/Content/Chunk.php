@@ -2,8 +2,8 @@
 
 namespace App\Models\Content;
 
-use App\Events\ChunkEvent;
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -22,10 +22,12 @@ use Illuminate\Database\Eloquent\Model;
 class Chunk extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     public $timestamps = false;
     public $incrementing = false;
     protected $primaryKey = 'slug';
 
-    protected $fillable = ['slug', 'title', 'content_ru', 'content_en'];
+    protected $fillable = ['slug', 'title', 'content'];
+    protected $translatable = ['content'];
 }

@@ -113,8 +113,6 @@ class ParamCrudController extends CrudController
 
         // ------ CRUD COLUMNS
 
-        $this->crud->removeColumn('title_en');
-
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value
             'label' => "Slug", // Table column heading
