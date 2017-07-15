@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title')
-    {{ $category->name_ru }} - EliteBazaar
+    {{ $category->name }} - EliteBazaar
 @endsection
 
 @push('headOther')
@@ -24,7 +24,7 @@
 @section('content')
 {{--<div class="breadcrumb-box">--}}
     {{--<a href="/">Главная</a>--}}
-    {{--<a href="/{{ $category->slug }}/">{{ $category->name_ru }}</a>--}}
+    {{--<a href="/{{ $category->slug }}/">{{ $category->name }}</a>--}}
 {{--</div>--}}
 
 <div id="vue-catalog" class="m-t-30">

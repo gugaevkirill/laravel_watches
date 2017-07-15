@@ -16,8 +16,7 @@ class BlateDirectivesProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('chunk', function($slug) {
-            // TODO: выдавать текст в зависимости от локали
-            $text = Chunk::where('slug', trim($slug, '\'\" '))->firstOrFail()->content_ru;
+            $text = Chunk::where('slug', trim($slug, '\'\" '))->firstOrFail()->content;
             return "<?php echo '" . $text . "'; ?>";
         });
 

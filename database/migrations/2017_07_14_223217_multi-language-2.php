@@ -47,22 +47,22 @@ class MultiLanguage2 extends Migration
     {
 
         Schema::table('categories', function (Blueprint $table) {
-            $table->string('name_ru')->unique();
+            $table->string('name_ru')->unique()->nullable();
             $table->string('name_en')->unique()->nullable();
         });
 
         Schema::table('chunks', function (Blueprint $table) {
-            $table->text('content_ru');
+            $table->text('content_ru')->nullable();;
             $table->text('content_en')->nullable();
         });
 
         Schema::table('params', function (Blueprint $table) {
-            $table->string('title_ru')->unique();
+            $table->string('title_ru')->unique()->nullable();;
             $table->string('title_en')->unique()->nullable();
         });
 
         Schema::table('param_values', function (Blueprint $table) {
-            $table->string('value_ru');
+            $table->string('value_ru')->nullable();;
             $table->string('value_en')->nullable();
         });
 

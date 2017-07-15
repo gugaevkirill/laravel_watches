@@ -2,9 +2,9 @@
 
 namespace App\Models\Content;
 
+use App\Models\ModelExtended;
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Models\Content\Chunk
@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property array $content
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Content\Chunk whereContent($value)
  */
-class Chunk extends Model
+class Chunk extends ModelExtended
 {
     use CrudTrait;
     use HasTranslations;

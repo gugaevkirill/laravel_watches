@@ -38,19 +38,14 @@ class CatalogController extends Controller
             ->join(Param::CATEGORY_PIVOT, 'param_slug', '=', 'params.slug')
             ->where('category_slug', $cateogorySlug)
             ->with('values')
-            // TODO: получать нужный title в зависимости от языка
-            ->get(['slug', 'title_ru', 'type'])
+            ->get(['slug', 'title', 'type'])
             ->map(function (Param $one) {
                 $ans = $one->toArray();
-
-                // Название параметра на нужном языке
-                $ans['title'] = $ans['title_ru'];
-                unset($ans['title_ru']);
 
                 // Массив значений параметра
                 $tmp = [];
                 foreach ($ans['values'] as $value) {
-                    $tmp['val' . $value['id']] = ['title' => $value['value_ru']];
+                    $tmp['val' . $value['id']] = ['title' => $value['value']];
                 }
                 $ans['values'] = $tmp;
 
@@ -123,7 +118,7 @@ class CatalogController extends Controller
                 'brandHref' => $brand->getHref(),
                 'brandImage' => $brand->getImageUrl($brand->imagenew),
 
-                'categoryName' => $category->name_ru,
+                'categoryName' => $category->name,
 
                 'productDescription' => $product->descriptionnew,
                 'productName' => $product->name,

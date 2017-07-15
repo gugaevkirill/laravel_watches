@@ -2,10 +2,10 @@
 
 namespace App\Models\Catalog;
 
+use App\Models\ModelExtended;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Models\Catalog\Category
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Category whereSlug($value)
  * @mixin \Eloquent
  */
-class Category extends Model
+class Category extends ModelExtended
 {
     use CrudTrait;
     use HasTranslations;
@@ -62,8 +62,8 @@ class Category extends Model
      */
     public static function getForAdminPage(): array
     {
-        return self::all(['name_ru', 'slug'])
-            ->pluck('name_ru', 'slug')
+        return self::all(['name', 'slug'])
+            ->pluck('name', 'slug')
             ->toArray();
     }
 }

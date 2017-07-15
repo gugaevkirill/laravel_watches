@@ -24,22 +24,28 @@ class CategoriesSeeder extends Seeder
         $this->createCategory([
             'slug' => 'watches',
             'order' => 1,
-            'name_ru' => 'Часы',
-            'name_en' => 'Watches',
+            'name' => [
+                'ru' => 'Часы',
+                'en' => 'Watches',
+            ],
         ]);
 
         $this->createCategory([
             'slug' => 'accessories',
             'order' => 2,
-            'name_ru' => 'Аксессуары',
-            'name_en' => 'Accessories',
+            'name' => [
+                'ru' => 'Аксессуары',
+                'en' => 'Accessories',
+            ],
         ]);
 
         $this->createCategory([
             'slug' => 'luxury',
             'order' => 3,
-            'name_ru' => 'Элитные товары',
-            'name_en' => 'Luxury goods',
+            'name' => [
+                'ru' => 'Элитные товары',
+                'en' => 'Luxury goods',
+            ],
         ]);
     }
 }

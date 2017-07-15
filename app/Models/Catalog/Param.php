@@ -2,10 +2,10 @@
 
 namespace App\Models\Catalog;
 
+use App\Models\ModelExtended;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Models\Catalog\Param
@@ -28,7 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Param whereUnique($value)
  * @mixin \Eloquent
  */
-class Param extends Model
+class Param extends ModelExtended
 {
     use CrudTrait;
     use HasTranslations;
@@ -81,9 +81,9 @@ class Param extends Model
      */
     public static function getForAdminPage(): array
     {
-        $params = self::orderByRaw('"order" ASC, "title_ru" DESC')
+        $params = self::orderByRaw('"order" ASC, "title"::text DESC')
             ->with('categories')
-            ->get(['slug', 'title_ru', 'type', 'required', 'unique'])
+            ->get(['slug', 'title', 'type', 'required', 'unique'])
             ->toArray();
 
         foreach ($params as &$param) {

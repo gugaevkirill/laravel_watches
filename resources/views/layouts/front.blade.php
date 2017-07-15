@@ -118,7 +118,7 @@
 
                         <ul class="georgia pull-none">
                             @foreach ($categories as $category)
-                            <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
+                            <li><a href="/{{ $category['slug'] }}/">{{ $category['name'] }}</a></li>
                             @endforeach
                         </ul>
 
@@ -154,7 +154,7 @@
                                 <h3 class="column-title">Магазин</h3>
                                 <ul class="column">
                                     @foreach ($categories as $category)
-                                        <li><a href="/{{ $category['slug'] }}/">{{ $category['name_ru'] }}</a></li>
+                                        <li><a href="/{{ $category['slug'] }}/">{{ $category['name'] }}</a></li>
                                     @endforeach
                                     <li><a href="/about/">О нас</a></li>
                                     <li><a href="/contacts/">Контакты</a></li>

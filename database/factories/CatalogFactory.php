@@ -1,20 +1,21 @@
 <?php
 
-use App\Models\Catalog\Category;
 use App\Models\Catalog\Brand;
+use App\Models\Catalog\Category;
 use App\Models\Catalog\Param;
 use App\Models\Catalog\ParamValue;
 use App\Models\Catalog\Product;
 use Faker\Generator;
-
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Category::class, function (Generator $faker) {
     $faker = $faker->unique();
     return [
         'slug' => $faker->word . str_random(5),
-        'name_ru' => $faker->name,
-        'name_en' => $faker->name,
+        'name' => [
+            'ru' => $faker->lastName,
+            'en' => $faker->firstName,
+        ],
         'order' => random_int(1000, 9999),
     ];
 });
@@ -34,8 +35,9 @@ $factory->define(Param::class, function (Generator $faker) {
     $faker = $faker->unique();
     return [
         'slug' => $faker->word . str_random(5),
-        'title_ru' => $faker->unique()->word . str_random(5),
-        'title_en' => $faker->word . str_random(5),
+        'title' => [
+            'ru' => $faker->unique()->word . str_random(5),
+        ],
         'type' => 'string',
         'required' => false,
         'unique' => false,
@@ -48,8 +50,9 @@ $factory->define(Param::class, function (Generator $faker) {
 $factory->define(ParamValue::class, function (Generator $faker) {
     $faker = $faker->unique();
     return [
-        'value_ru' => $faker->word . str_random(5),
-        'value_en' => $faker->word . str_random(5),
+        'value' => [
+            'ru' => $faker->word . str_random(5),
+        ],
         'order' => 100,
     ];
 });
@@ -65,7 +68,7 @@ $factory->define(Product::class, function (Generator $faker) {
             return factory(Category::class)->create()->slug;
         },
         'name' => $faker->name,
-        'images' => [],
+        'imagesnew' => [-1],
         'order' => 100,
     ];
 });

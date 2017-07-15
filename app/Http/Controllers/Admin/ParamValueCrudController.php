@@ -46,7 +46,7 @@ class ParamValueCrudController extends CrudController
             'type' => 'select_multiple',
             'name' => 'params',
             'entity' => 'params',
-            'attribute' => 'title_ru',
+            'attribute' => 'title',
             'model' => 'App\Models\Catalog\Param',
             'pivot' => true,
         ]);

@@ -2,10 +2,10 @@
 
 namespace App\Models\Catalog;
 
+use App\Models\ModelExtended;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Models\Catalog\ParamValue
@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\ParamValue whereValue($value)
  * @mixin \Eloquent
  */
-class ParamValue extends Model
+class ParamValue extends ModelExtended
 {
     use CrudTrait;
     use HasTranslations;
@@ -50,9 +50,9 @@ class ParamValue extends Model
      */
     public static function getForAdminPage(): array
     {
-        return self::orderByRaw('"order" ASC, "value_ru" DESC')
+        return self::orderByRaw('"order" ASC, "value"::text DESC')
             ->join(Param::VALUE_PIVOT, 'id', '=', 'param_value_id')
-            ->get(['id', 'value_ru', 'param_slug'])
+            ->get(['id', 'value', 'param_slug'])
             ->toArray();
     }
 }

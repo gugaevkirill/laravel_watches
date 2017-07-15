@@ -15,7 +15,7 @@
     <div id="jsonattr">
         <div :class="['form-group', 'col-md-12', (!param.required || param.value) ? '' : 'has-error']" v-for="param in params" v-if="paramInCurrentCat(param)">
             <label class="col-md-4 col-xs-12">
-                @{{ param.title_ru }}
+                @{{ param.title }}
                 <i class="fa fa-copyright" v-if="param.unique" data-toggle="tooltip" data-placement="bottom" title="Уникальный"></i>
             </label>
 

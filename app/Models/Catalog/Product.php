@@ -3,12 +3,12 @@
 namespace App\Models\Catalog;
 
 use App\Models\ImageTrait;
+use App\Models\ModelExtended;
 use App\Scopes\IsActiveScope;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Models\Catalog\Product
@@ -44,7 +44,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Product extends Model
+class Product extends ModelExtended
 {
     use ImageTrait;
     use CrudTrait;
@@ -52,7 +52,6 @@ class Product extends Model
 
     protected $dateFormat = 'Y-m-d H:i:sP';
     protected $casts = [
-        'images' => 'array',
         'imagesnew' => 'array',
         'attrs'=>'array',
     ];
@@ -129,12 +128,12 @@ class Product extends Model
 
         $params = Param::whereIn('slug', array_keys($this->attrs))
             ->orderBy('order')
-            ->get(['title_ru', 'title_en', 'type', 'slug']);
+            ->get(['title', 'type', 'slug']);
 
         $ans = [];
         foreach ($params as $param) {
             if ($val = $this->param($param->slug)) {
-                $ans[$param->title_ru] = $val;
+                $ans[$param->title] = $val;
             }
         }
 

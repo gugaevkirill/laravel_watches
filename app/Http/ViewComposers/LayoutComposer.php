@@ -15,6 +15,7 @@ class LayoutComposer
      */
     public function compose(View $view)
     {
-        $view->with('categories', Category::all(['slug', 'name_ru', 'name_en'])->toArray());
+        $view->with('categories', Category::all(['slug', 'name']));
+
     }
 }

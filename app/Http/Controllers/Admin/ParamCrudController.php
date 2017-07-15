@@ -99,7 +99,7 @@ class ParamCrudController extends CrudController
             'type' => 'select_multiple',
             'name' => 'categories',
             'entity' => 'categories',
-            'attribute' => 'name_ru',
+            'attribute' => 'name',
             'model' => 'App\Models\Catalog\Category',
             'pivot' => true,
         ]);
