@@ -53,10 +53,22 @@
                         <a href="/"><img class="nav-logo" src="/img/logo_xss.png"></a>
 
                         <div class="header-top-entry">
-                            <div class="title"><img src="/img/flag-lang-1.png" alt="" />Русский<i class="fa fa-caret-down"></i></div>
-                            <div class="list">
-                                <a href="http://luxurybazaar.biz/" class="list-entry"><img src="/img/flag-lang-1.png" alt="" />English</a>
-                            </div>
+                            @foreach ($locales as $locale)
+                                @if ($loop->iteration == 1)
+                                    <div class="title">
+                                        <img src="/img/flags/4x3/{{ $locale['code'] }}.svg" alt="{{ $locale['name'] }}"/>
+                                        {{ $locale['name'] }}
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                @else
+                                    <div class="list">
+                                        <a href="{{ $locale['url'] }}" class="list-entry">
+                                            <img src="/img/flags/4x3/{{ $locale['code'] }}.svg" alt="{{ $locale['name'] }}" />
+                                            {{ $locale['name'] }}
+                                        </a>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>

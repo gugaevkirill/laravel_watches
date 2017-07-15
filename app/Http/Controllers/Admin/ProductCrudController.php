@@ -135,7 +135,7 @@ class ProductCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-        $this->crud->removeColumns(['attrs', 'imagesnew', 'descriptionnew']);
+        $this->crud->removeColumns(['attrs', 'imagesnew', 'descriptionnew', 'price_rub', 'price_dollar']);
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value

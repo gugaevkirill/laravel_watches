@@ -355,7 +355,7 @@ header nav > ul {display: inline-block; text-align: left;}
 .header-top-entry { position: absolute; display: block; right: 0; top: 0; font-size: 13px; line-height: 60px; color: #f1f9ff; font-weight: 400; }
 .header-top-entry .title { border-left: 1px #d6dee3 solid; padding: 0 20px; cursor: pointer; white-space: nowrap;}
 .header-top-entry:first-child .title{border-color: transparent; padding-left: 0;}
-.header-top-entry .title img, .header-top-entry .list-entry img{display: inline-block; vertical-align: middle; margin-right: 7px; position: relative; top: -1px;}
+.header-top-entry .title img, .header-top-entry .list-entry img { display: inline-block; vertical-align: middle; margin-right: 7px; position: relative; top: -1px; height: 15px; }
 .header-top-entry .title a{color: #747474;}
 .header-top-entry .title a:hover{text-decoration: underline;}
 .header-top-entry .title b{font-weight: 600;}
