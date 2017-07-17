@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Content\Chunk;
+use App\Repositories\LangRepository;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,8 +17,27 @@ class BlateDirectivesProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('chunk', function($slug) {
-            $text = Chunk::where('slug', trim($slug, '\'\" '))->firstOrFail()->content;
-            return "<?php echo '" . $text . "'; ?>";
+            $chunk = Chunk::where('slug', trim($slug, '\'\" '))->firstOrFail();
+
+            $templateCode = "<?php switch (\App::getLocale()) {\n";
+
+            foreach (array_keys(config('backpack.crud.locales')) as $code) {
+                $templateCode .= <<<PHP
+case '$code':
+    echo '{$chunk->getTranslation('content', $code)}';
+    break;\n
+PHP;
+            }
+
+            $defaultLocale = LangRepository::DEFAULT_LOCALE;
+            $templateCode .= <<<PHP
+default:
+    echo '{$chunk->getTranslation('content', $defaultLocale)}';
+    break;
+} ?>
+PHP;
+
+            return $templateCode;
         });
 
         // TODO: заюзать слайдеры
