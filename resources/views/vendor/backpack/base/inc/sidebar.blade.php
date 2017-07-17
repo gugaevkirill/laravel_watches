@@ -45,8 +45,10 @@
                     {{--</ul>--}}
                 {{--</li>--}}
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/setting') }}"><i class="fa fa-cog"></i> <span>Настройки</span></a></li>
-                {{--<li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/language') }}"><i class="fa fa-flag-o"></i> <span>Languages</span></a></li>--}}
-                {{--<li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/language/texts') }}"><i class="fa fa-language"></i> <span>Language Files</span></a></li>--}}
+                @if (env('APP_DEBUG'))
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/language') }}"><i class="fa fa-flag-o"></i> <span>Языки</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/language/texts') }}"><i class="fa fa-language"></i> <span>Языковые файлы</span></a></li>
+                @endif
 
                 <li class="header">Сервер</li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-file-text-o"></i> <span>Логи</span></a></li>

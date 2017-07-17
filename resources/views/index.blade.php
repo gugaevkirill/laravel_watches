@@ -79,7 +79,7 @@
             <div class="title">@lang('site.system_novels')</div>
             <div class="list">
                 <a class="block-title tab-switcher active">@lang('site.main_tabs1')</a>
-                <a class="block-title tab-switcher">@lang('site.main_tabs2')</a>
+                <a class="block-title tab-switcher">@lang('site.main_elitegoods')</a>
                 <a class="block-title tab-switcher">@lang('site.main_tabs3')</a>
                 <div class="clear"></div>
             </div>
