@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title')
-    Скупка швейцарских часов в Москве - элитный часовой ломбард.
+    @lang('site.title_sell')
 @endsection
 
 @section('content')
@@ -11,8 +11,8 @@
             <div class="navigation-banner-content">
                 <div class="cell-view">
                     <h2 class="subtitle"></h2>
-                    <h1 class="title">Скупка часов</h1>
-                    <div class="description">Узнать оценочную стоимость ваших швейцарских часов очень просто. Где бы вы ни находились, просто пришлите нам их фотографию любым удобным способом и заполните онлайн простую форму.</div>
+                    <h1 class="title">@lang('site.sell_bannertitle')</h1>
+                    <div class="description">@lang('site.sell_bannertext')</div>
                 </div>
             </div>
             <div class="clear"></div>
@@ -25,20 +25,20 @@
     <div class="row nopadding">
         <div class="col-sm-4 information-entry left-border nopadding">
             <div class="column-article-entry">
-                <span class="title roboto">Скупаем только оригинал</span>
-                <div class="description">Мы готовы выкупить ваши часы в Москве, только если они настоящие. Специалисты компании Elite Bazaar не смогут вам помочь, если вы хотите продать китайские копии, электронные часы в пластмассовом корпусе, или изделия производства СССР.</div>
+                <span class="title roboto">@lang('site.sell_benefittitle1')</span>
+                <div class="description">@lang('site.sell_benefittext1')</div>
             </div>
         </div>
         <div class="col-sm-4 information-entry left-border nopadding">
             <div class="column-article-entry">
-                <span class="title roboto">Честная оценка</span>
-                <div class="description">Точная цена швейцарских часов озвучивается только после осмотра профессионального эксперта. Такой подход позволяет гарантировать, что клиент получит за свои винтажные или элитные часы максимальную цену.</div>
+                <span class="title roboto">@lang('site.sell_benefittitle2')</span>
+                <div class="description">@lang('site.sell_benefittext2')</div>
             </div>
         </div>
         <div class="col-sm-4 information-entry left-border nopadding">
             <div class="column-article-entry">
-                <span class="title roboto">Бесплатная экспертиза</span>
-                <div class="description">Обращаясь к нам, вы можете рассчитывать на бесплатную оценку. Мы гарантируем, что оценка будет максимально объективной. Своевременное обращение к нам позволит убедиться, что вас не обманывают в другом месте.</div>
+                <span class="title roboto">@lang('site.sell_benefittitle3')</span>
+                <div class="description">@lang('site.sell_benefittext3')</div>
             </div>
         </div>
     </div>
@@ -48,19 +48,12 @@
     <div class="row">
         <div class="banner-column col-sm-6">
             <a style="background-image: url(/img/sell/600x420_2.jpg); background-size: cover; background-position: center center;" class="mozaic-banner-entry type-3">
-                <span class="mozaic-banner-content">
-                    <span class="subtitle">При наличии паспорта</span>
-                    <span class="title">Деньги в день обращения</span>
-                    <span class="view">узнать цену</span>
-                </span>
+                <span class="mozaic-banner-content">@lang('site.sell_card1')</span>
             </a>
         </div>
         <div class="banner-column col-sm-6">
             <a style="background-image: url(/img/sell/600x420_3.jpg); background-size: cover; background-position: center center;" class="mozaic-banner-entry type-3">
-                <span class="mozaic-banner-content">
-                    <span class="subtitle">Гарантируем</span>
-                    <span class="title">Полную приватность</span>
-                </span>
+                <span class="mozaic-banner-content">@lang('site.sell_card2')</span>
             </a>
         </div>
         <div class="clear"></div>
@@ -70,24 +63,24 @@
 <div class="information-blocks" style="margin-top: 40px;">
     <div class="row">
         <div class="col-md-8 information-entry">
-            <h3 class="block-title main-heading">Заказать оценку</h3>
+            <h3 class="block-title main-heading">@lang('site.sell_button')</h3>
             {{ Form::open(array('route' => 'sell.process', 'files' => true)) }}
             <div class="row">
                 <div class="col-sm-6">
-                    <label>Ваше имя <span>*</span></label>
-                    <input class="simple-field" type="text" placeholder="Как к вам обращаться" name="name" required />
+                    <label>@lang('site.contacts_name') <span>*</span></label>
+                    <input class="simple-field" type="text" placeholder="@lang('site.contacts_nameplaceholder')" name="name" required />
                     <div class="clear"></div>
                 </div>
 
                 <div class="col-sm-6">
-                    <label>Фото <span>*</span></label>
+                    <label>@lang('site.system_photo') <span>*</span></label>
                     <input class="simple-field" type="file" name="imagenew" required />
                     <div class="clear"></div>
                 </div>
 
                 <div class="col-sm-6">
-                    <label>Телефон <span>*</span></label>
-                    <input class="simple-field" type="text" placeholder="Номер телефона" name="phone" required />
+                    <label>@lang('site.system_phone') <span>*</span></label>
+                    <input class="simple-field" type="text" placeholder="@lang('site.form_phoneplaceholder')" name="phone" required />
                     <div class="clear"></div>
                 </div>
 
@@ -104,23 +97,23 @@
                 </div>
 
                 <div class="col-sm-6">
-                    <label>Год выпуска</label>
+                    <label>@lang('site.form_year')</label>
                     <input class="simple-field" type="number" name="year" />
                     <div class="clear"></div>
                 </div>
 
                 <div class="col-sm-6">
-                    <label>Сумма, желаемая к получению, руб.</label>
+                    <label>@lang('site.form_price')</label>
                     <input class="simple-field" type="number" name="amount" />
                     <div class="clear"></div>
                 </div>
 
                 <label class="col-sm-6 checkbox-entry">
-                    {{ Form::checkbox('has_box') }} <span class="check"></span> С коробкой
+                    {{ Form::checkbox('has_box') }} <span class="check"></span> @lang('site.form_withbox')
                 </label>
 
                 <label class="col-sm-6 checkbox-entry">
-                    {{ Form::checkbox('has_documents') }} <span class="check"></span> С документами
+                    {{ Form::checkbox('has_documents') }} <span class="check"></span> @lang('site.form_withbox')
                 </label>
 
                 <div class="col-sm-12">
@@ -129,21 +122,18 @@
                     @endforeach
 
                     @if ($success)
-                        <label class="text-success">Форма отправлена!</label>
+                        <label class="text-success">@lang('site.form_sent')</label>
                     @endif
 
-                    <div class="button style-10 sell-button">Отправить<input type="submit" value="" /></div>
+                    <div class="button style-10 sell-button">@lang('site.system_sent')<input type="submit" value="" /></div>
                 </div>
             </div>
             {{ Form::close() }}
         </div>
         <div class="p-t-30 p-b-30 hidden-xs-up display-block"></div>
         <div class="col-md-4 information-entry">
-            <h3 class="block-title main-heading">Как происходит онлайн-оценка</h3>
-            <div class="article-container style-1">
-                <p>Для удобства клиентов ломбарда Elite Bazaar мы позаботились о создании сервиса онлайн оценки швейцарских часов. Процедура предельно проста: вам достаточно сфотографировать свои часы, заполнить простую анкету и прислать эти данные нам любым удобным способом. После этого останется лишь получить предварительную оценку вашего экземпляра.</p>
-                <p>Как правило, экспертное заключение соответствует действительности, однако следует понимать, что окончательный вердикт может быть вынесен только после вашего визита в офис компании. Эксперт сможет лично осмотреть ваши швейцарские часы и подтвердить предварительно озвученную стоимость. Здесь же вы сможете сразу получить наличные деньги.</p>
-            </div>
+            <h3 class="block-title main-heading">@lang('site.sell_title4')</h3>
+            <div class="article-container style-1">@lang('site.sell_text4')</div>
         </div>
     </div>
 </div>

@@ -36,7 +36,6 @@
                 </div>
 
                 <div class="page-selector">
-                    {{--TODO: запилить тут вывод--}}
                     <div class="description">@include('parts/products-count')</div>
                     <div class="pages-box">
                         {!! $paginator->render('parts/products-pagen') !!}
@@ -47,7 +46,7 @@
 
             <div class="col-md-3 col-md-pull-9 col-sm-4 col-sm-pull-8 blog-sidebar">
                 <div class="information-blocks categories-border-wrapper">
-                    <div class="block-title size-3">Бренды</div>
+                    <div class="block-title size-3">@lang('site.system_brands')</div>
                     <ul class="brands-filter">
                         @foreach($brands as $brand)
                         <router-link :to="{ query: { brand: '{{ $brand['slug'] }}', page: 1 }}" tag="li" v-if="!brands.{{ $brand['slug'] }}.active">
@@ -63,7 +62,7 @@
                     <div class="block-title size-2">{{ $param['title'] }}</div>
                     @if (isset($param['value']))
                     <div class="size-selector">
-                        <div :class="['entry', params.{{ $param['slug'] }}.value === '0' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '0')">Все</div>
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '0' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '0')">@lang('system.system_all')</div>
 
                         {{-- Для параметров типа Select --}}
                         @foreach($param['values'] as $valId => $val)
@@ -72,8 +71,8 @@
 
                         {{-- Для boolean параметров --}}
                         @if ($param['type'] == 'boolean')
-                        <div :class="['entry', params.{{ $param['slug'] }}.value === '1' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '1')">Да</div>
-                        <div :class="['entry', params.{{ $param['slug'] }}.value === '2' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '2')">Нет</div>
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '1' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '1')">@lang('site.system_yes')</div>
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '2' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '2')">@lang('site.system_no')</div>
                         @endif
                     </div>
                     @else

@@ -26,7 +26,7 @@
                                         <h1 class="title">Patek Philippe</h1>
                                         <div class="description">@lang('site.menu_patek')</div>
                                         <div class="info">
-                                            <a class="button style-1" href="/watches/?brand=patek_philippe">В каталог</a>
+                                            <a class="button style-1" href="/watches/?brand=patek_philippe">@lang('site.main_in_catalog')</a>
                                         </div>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                         <h1 class="title">Audemars Piguet</h1>
                                         <div class="description">@lang('site.menu_audemar')</div>
                                         <div class="info">
-                                            <a class="button style-1" href="/watches/?brand=audemars_piguet">В каталог</a>
+                                            <a class="button style-1" href="/watches/?brand=audemars_piguet">@lang('site.main_in_catalog')</a>
                                         </div>
                                     </div>
                                 </div>
@@ -78,9 +78,9 @@
         <div class="swiper-tabs tabs-switch">
             <div class="title">@lang('site.system_novels')</div>
             <div class="list">
-                <a class="block-title tab-switcher active">Швейцарские часы</a>
-                <a class="block-title tab-switcher">Элитные товары</a>
-                <a class="block-title tab-switcher">Аксессуары</a>
+                <a class="block-title tab-switcher active">@lang('site.main_tabs1')</a>
+                <a class="block-title tab-switcher">@lang('site.main_tabs2')</a>
+                <a class="block-title tab-switcher">@lang('site.main_tabs3')</a>
                 <div class="clear"></div>
             </div>
         </div>
@@ -146,15 +146,15 @@
     padding: 20px;
     color: white;
 "></i></div>
-                <div class="sale-title">Лучшая цена</div>
-                <div class="sale-description">Как при покупке, так и при продаже.</div>
+                <div class="sale-title">@lang('site.main_cardstitle1')</div>
+                <div class="sale-description">@lang('site.main_cardstext1')</div>
             </div>
         </div>
         <div class="information-entry col-md-6 promotion">
             <div class="sale-entry sale-entry-border main-banner2">
                 <div class="sale-price" style="color: white;"><i class="fa fa-3x fa-credit-card" style="padding: 20px;"></i></div>
-                <div class="sale-title">Быстрые выплаты</div>
-                <div class="sale-description">Вы получите деньги в тот же день, когда обратитесь к нам.</div>
+                <div class="sale-title">@lang('site.main_cardstitle2')</div>
+                <div class="sale-description">@lang('site.main_cardstext2')</div>
             </div>
         </div>
     </div>
@@ -163,41 +163,34 @@
 <div class="information-blocks m-b-30">
     <div class="row">
         <div class="col-md-4 information-entry">
-            <h3 class="block-title">Кто мы такие?</h3>
+            <h3 class="block-title">@lang('site.main_benefitstitle1')</h3>
             <div class="from-the-blog-entry">
                 <span class="image"><img src="/img/main/main-1.jpg" alt=""></span>
-                <div class="description m-b-30">Компания Elite Bazaar представляет собой проверенный временем ломбард, где можно выгодно продать часы. Мужские или женские – не имеет значения. Доверие многочисленных клиентов подтверждает высокий уровень и безупречную репутацию заведения. Независимо от состояния часов, которые у вас имеются, вы можете быть стопроцентно уверены, что Elite Bazaar предложит лучшую цену.</div>
+                <div class="description m-b-30">@lang('site.main_benefitstext1')</div>
                 <div class="clear"></div>
             </div>
         </div>
         <div class="col-md-4 information-entry m-b-30">
-            <h3 class="block-title">Как продать часы</h3>
-            <ol class="list-type-2">
-                <li><b>Оценка</b> Прямо при вас эксперт оценивает состояние часов и озвучивает их точную стоимость.</li>
-                <li><b>Оформление документов</b> Сделка оформляется юристом. От вас потребуется лишь паспорт.</li>
-                <li><b>Выплата суммы</b> Оценочная стоимость часов выплачивается клиенту. Все банкноты проходят проверку на подлинность. </li>
-            </ol>
+            <h3 class="block-title">@lang('site.main_benefitstitle2')</h3>
+            <ol class="list-type-2">@lang('site.main_benefitstext2')</ol>
         </div>
         <div class="col-md-4 information-entry m-b-30 otz">
-            <h3 class="block-title">Отзывы</h3>
+            <h3 class="block-title">@lang('site.system_comments')</h3>
             <div class="swiper-container blockquote-slider" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="1">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <blockquote class="latest-review">
-                            <div class="text">Неожиданно хороший сервис. Думал, придется отдать хорошую вещь за копейки, но здесь предложили действительно хорошую цену! Спасибо вам и успехов в бизнесе!</div>
-                            <footer class="roboto"><cite>Алексей Ягофаров</cite>, 10.01.2016</footer>
+                            @lang('site.main_comment1')
                         </blockquote>
                     </div>
                     <div class="swiper-slide">
                         <blockquote class="latest-review">
-                            <div class="text">Пришлось продать любимые часы, так как напряженка с деньгами. Все корректно и вежливо, никаких проблем. Деньги получила в течение получаса, спасибо!</div>
-                            <footer class="roboto"><cite>Дарья Осипова</cite>, 18.07.2016</footer>
+                            @lang('site.main_comment2')
                         </blockquote>
                     </div>
                     <div class="swiper-slide">
                         <blockquote class="latest-review">
-                            <div class="text">В других ломбардах за мой Ролекс давали, как за китайскую подделку, курам на смех! Здесь предложили адекватную цену и выплатили быстро. Буду рекомендовать знакомым.</div>
-                            <footer class="roboto"><cite>Андрей Кишин</cite>, 12.02.2017</footer>
+                            @lang('site.main_comment3')
                         </blockquote>
                     </div>
                 </div>

@@ -92,7 +92,7 @@
                 @endforeach
 
                 <div class="share-box detail-info-entry">
-                    <div class="title">Поделиться в соц. сетях:</div>
+                    <div class="title">@lang('site.social_share'):</div>
                     <div class="clear"></div>
                     <div class="addthis_inline_share_toolbox"></div>
                 </div>
@@ -107,7 +107,7 @@
                     <div class="information-blocks production-logo">
                         <div class="background">
                             <div class="logo"><img src="{{ $brandImage }}" alt="" /></div>
-                            <a href="{{ $brandHref }}">Перейти к бренду</a>
+                            <a href="{{ $brandHref }}">@lang('site.catalog_gotobrand')</a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                 <div class="col-md-12">
                     <div class="information-blocks">
                         <div class="information-entry products-list">
-                            <h3 class="block-title inline-product-column-title">Похожие товары {{--Featured products--}}</h3>
+                            <h3 class="block-title inline-product-column-title">@lang('site.catalog_similars')</h3>
 
                             @foreach($featuredItems as $item)
                             <div class="inline-product-entry">
