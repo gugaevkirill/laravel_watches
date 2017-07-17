@@ -136,7 +136,6 @@ trait ImageTrait
 
             // Стираем с диска удаленные картинки
             $request = \Request::instance();
-//            dd($request, 'clean_' . $this->imagesFieldName, $request->get('clean_' . $this->imagesFieldName));
             if ($toClean = $request->get('clean_' . $this->imagesFieldName)) {
                 foreach ($toClean as $filename) {
                     \Storage::disk()->delete($this->getImageDestination($filename));
@@ -145,5 +144,13 @@ trait ImageTrait
         } else {
             throw new \Exception('Invalid value');
         }
+    }
+
+    /**
+     * @param $value
+     */
+    public function setCleanImagesnewAttribute($value)
+    {
+        // Грязный хак: атрибут clean_imagesnew не должен попадать в SQL запрос.
     }
 }
