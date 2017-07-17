@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="information-blocks">
-                <h3 class="block-title inline-product-column-title">@lang('site.about_header5'):</h3>
+                <h3 class="block-title inline-product-column-title">@lang('site.about_header5')</h3>
 
                 <div class="inline-product-entry">
                     <span class="image"><img src="/img/about/about-1.jpg" alt=""></span>

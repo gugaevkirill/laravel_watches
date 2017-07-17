@@ -109,7 +109,7 @@
                         @if (isset($isSellPage))
                         <a class="header-functionality-entry" href="/contacts/">
                             <i class="fa fa-envelope-o"></i>
-                            <span>@lang('site.menu_contacts')</span>
+                            <span>@lang('site.system_contacts')</span>
                         </a>
                         @else
                         <a class="header-functionality-entry" href="/sell/">
@@ -169,7 +169,7 @@
                                         <li><a href="/{{ $category['slug'] }}/">{{ $category['name'] }}</a></li>
                                     @endforeach
                                     <li><a href="/about/">@lang('site.menu_about')</a></li>
-                                    <li><a href="/contacts/">@lang('site.menu_contacts')</a></li>
+                                    <li><a href="/contacts/">@lang('site.system_contacts')</a></li>
                                 </ul>
                                 <div class="clear"></div>
                             </div>

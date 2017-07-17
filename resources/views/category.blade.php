@@ -62,7 +62,7 @@
                     <div class="block-title size-2">{{ $param['title'] }}</div>
                     @if (isset($param['value']))
                     <div class="size-selector">
-                        <div :class="['entry', params.{{ $param['slug'] }}.value === '0' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '0')">@lang('system.system_all')</div>
+                        <div :class="['entry', params.{{ $param['slug'] }}.value === '0' ? 'active' : null]" @click.stop="setParam('{{ $param['slug'] }}', '0')">@lang('site.system_all')</div>
 
                         {{-- Для параметров типа Select --}}
                         @foreach($param['values'] as $valId => $val)

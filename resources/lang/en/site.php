@@ -52,7 +52,7 @@ return [
     'main_in_catalog' => 'In catalog',
     'main_watchesofday' => 'Watches of the day',
     'main_newaccessories' => 'New accessories',
-    'main_tabs1' => '>Swiss watches',
+    'main_tabs1' => 'Swiss watches',
     'main_tabs3' => 'Accessories',
     'main_elitegoods' => 'Elite goods',
     'main_cardstitle1' => 'Best price',

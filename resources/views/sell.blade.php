@@ -113,7 +113,7 @@
                 </label>
 
                 <label class="col-sm-6 checkbox-entry">
-                    {{ Form::checkbox('has_documents') }} <span class="check"></span> @lang('site.form_withbox')
+                    {{ Form::checkbox('has_documents') }} <span class="check"></span> @lang('site.form_withdoc')
                 </label>
 
                 <div class="col-sm-12">
