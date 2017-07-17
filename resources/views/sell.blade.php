@@ -99,7 +99,7 @@
 
                 <div class="col-sm-6">
                     <label>Ref. No <span>*</span></label>
-                    <input class="simple-field" type="text" placeholder="Референс часов" name="reference" required />
+                    <input class="simple-field" type="text" placeholder="" name="reference" required />
                     <div class="clear"></div>
                 </div>
 

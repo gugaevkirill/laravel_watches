@@ -32,7 +32,7 @@
     @stack('styles')
     @stack('headOther')
 
-    <title>@yield('title', 'Элитная жизнь')</title>
+    <title>@yield('title', __('site.title_default'))</title>
 </head>
 
 <body class="style-3">
@@ -81,7 +81,7 @@
                             </span>
                             <span class="text roboto">
                                 <a href="@chunk('phone1href')"><b>@chunk('phone1')</b></a>&nbsp;&nbsp;
-                                <a class="popup-trigger" href="/contacts/#call-us">Перезвоните&nbsp;мне</a>
+                                <a class="popup-trigger" href="/contacts/#call-us">@lang('site.head_call_me')</a>
                             </span>
                         </span>
                         <span class="icon-entry">
@@ -109,12 +109,12 @@
                         @if (isset($isSellPage))
                         <a class="header-functionality-entry" href="/contacts/">
                             <i class="fa fa-envelope-o"></i>
-                            <span>Контакты</span>
+                            <span>@lang('site.menu_contacts')</span>
                         </a>
                         @else
                         <a class="header-functionality-entry" href="/sell/">
                             <i class="fa fa-envelope-o"></i>
-                            <span>Онлайн оценка</span>
+                            <span>@lang('site.system_onlinerequest')</span>
                         </a>
                         @endif
                     </div>
@@ -123,7 +123,7 @@
                 <div class="close-header-layer"></div>
                 <div class="navigation">
                     <div class="navigation-header responsive-menu-toggle-class">
-                        <div class="title">Меню</div>
+                        <div class="title">@lang('site.head_menu')</div>
                     </div>
                     <nav>
                         <div class="close-menu">&#10005;</div>
@@ -156,37 +156,37 @@
                                 <div class="footer-description">@chunk('footer-description')</div>
                                 <div class="footer-address roboto">
                                     @chunk('address')<br/>
-                                    Телефон: @chunk('phone1')<br/>
-                                    Онлайн-оценка: @chunk('phone2')<br/>
+                                    @lang('site.system_phone'): @chunk('phone1')<br/>
+                                    @lang('site.system_onlinerequest'): @chunk('phone2')<br/>
                                     Email: <a href="mailto:@chunk('email')">@chunk('email')</a><br/>
                                 </div>
                                 <div class="clear"></div>
                             </div>
                             <div class="col-md-3 col-sm-4">
-                                <h3 class="column-title">Магазин</h3>
+                                <h3 class="column-title">@lang('site.system_shop')</h3>
                                 <ul class="column">
                                     @foreach ($categories as $category)
                                         <li><a href="/{{ $category['slug'] }}/">{{ $category['name'] }}</a></li>
                                     @endforeach
-                                    <li><a href="/about/">О нас</a></li>
-                                    <li><a href="/contacts/">Контакты</a></li>
+                                    <li><a href="/about/">@lang('site.menu_about')</a></li>
+                                    <li><a href="/contacts/">@lang('site.menu_contacts')</a></li>
                                 </ul>
                                 <div class="clear"></div>
                             </div>
                             <div class="col-md-3 col-sm-4">
-                                <h3 class="column-title">Услуги</h3>
+                                <h3 class="column-title">@lang('site.system_services')</h3>
                                 <ul class="column">
-                                    <li><a href="/sell/">Скупка часов</a></li>
-                                    <li><a href="/repair/">Ремонт часов</a></li>
+                                    <li><a href="/sell/">@lang('site.footer_sell')</a></li>
+                                    <li><a href="/repair/">@lang('site.footer_repair')</a></li>
                                 </ul>
                                 <div class="clear"></div>
                             </div>
                             <div class="clearfix visible-sm-block"></div>
                             <div class="col-md-3">
-                                <h3 class="column-title">Контактная информация</h3>
+                                <h3 class="column-title">@lang('site.footer_contacts')</h3>
                                 <div class="footer-description roboto">@chunk('address')</div>
                                 <div class="footer-description roboto">
-                                    Часы работы: @chunk('working-hours')<br/>
+                                    @lang('site.system_workhours'): @chunk('working-hours')<br/>
                                 </div>
                                 <div class="clear"></div>
                             </div>

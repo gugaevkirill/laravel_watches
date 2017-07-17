@@ -5,7 +5,7 @@
     </div>
 @empty
     <div class="col-md-12 no-products">
-        Товаров нет
+        @lang('site.catalog_nogoods')
         <div class="clear"></div>
     </div>
 @endforelse

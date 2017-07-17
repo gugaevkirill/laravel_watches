@@ -1,5 +1,5 @@
 <?php $startCount = ($paginator->currentPage() - 1) * $paginator->perPage() + 1 ?>
-Показано:
+@lang('site.catalog_show'):
 @if ($paginator->count() >= 1)
 {{ $startCount }} - {{ $startCount + $paginator->count() - 1 }}
 @elseif ($paginator->count() == 1)
@@ -7,4 +7,4 @@
 @else
 0
 @endif
-из {{ $paginator->total() }}
+@lang('site.catalog_pagenpretext') {{ $paginator->total() }}

@@ -66,7 +66,7 @@ return [
     'translatable_field_icon_position' => 'right', // left or right
 
     'locales' => [
-        "ru" => "Russian",
+        "ru" => "Русский",
         'en' => 'English',
 
         // "af_NA" => "Afrikaans (Namibia)",

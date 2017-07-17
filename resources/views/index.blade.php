@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-3 p-a-0">
             <div class="sidebar-navigation">
-                <div class="title">Бренды<i class="fa fa-angle-down"></i></div>
+                <div class="title">@lang('site.system_brands')<i class="fa fa-angle-down"></i></div>
                 <div class="list">
                     @foreach($brands as $brand)
                     <a class="entry" href="{{ $brand->getHref() }}"><span><i class="fa fa-angle-right"></i>{{ $brand->name }}</span></a>
@@ -24,7 +24,7 @@
                                     <div class="cell-view">
                                         {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
                                         <h1 class="title">Patek Philippe</h1>
-                                        <div class="description">Часы класса «Люкс»</div>
+                                        <div class="description">@lang('site.menu_patek')</div>
                                         <div class="info">
                                             <a class="button style-1" href="/watches/?brand=patek_philippe">В каталог</a>
                                         </div>
@@ -39,7 +39,7 @@
                                     <div class="cell-view">
                                         {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
                                         <h1 class="title">Audemars Piguet</h1>
-                                        <div class="description">Шедевры часового искусства</div>
+                                        <div class="description">@lang('site.menu_audemar')</div>
                                         <div class="info">
                                             <a class="button style-1" href="/watches/?brand=audemars_piguet">В каталог</a>
                                         </div>
@@ -52,11 +52,10 @@
                             <div class="navigation-banner-wrapper light-text align-1" style="background-image: url(/img/main/900x500_Rolex.jpg);">
                                 <div class="navigation-banner-content">
                                     <div class="cell-view">
-                                        {{--<h2 class="subtitle">Слайдер из баннеров</h2>--}}
                                         <h1 class="title">ROLEX</h1>
-                                        <div class="description">Новый уровень совершенства</div>
+                                        <div class="description">@lang('site.menu_rolex')</div>
                                         <div class="info">
-                                            <a class="button style-1" href="/watches/?brand=rolex">В каталог</a>
+                                            <a class="button style-1" href="/watches/?brand=rolex">@lang('site.main_in_catalog')</a>
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +76,7 @@
 <div class="information-blocks">
     <div class="tabs-container">
         <div class="swiper-tabs tabs-switch">
-            <div class="title">Новинки</div>
+            <div class="title">@lang('site.system_novels')</div>
             <div class="list">
                 <a class="block-title tab-switcher active">Швейцарские часы</a>
                 <a class="block-title tab-switcher">Элитные товары</a>
