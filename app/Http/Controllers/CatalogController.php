@@ -101,7 +101,7 @@ class CatalogController extends Controller
      */
     public function productPage(string $categorySlug, int $productId)
     {
-        $product = Product::find($productId);
+        $product = Product::findOrFail($productId);
         $category = Category::findOrFail($categorySlug);
         /** @var Brand $brand */
         $brand = $product->brand;
