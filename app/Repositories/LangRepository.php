@@ -21,9 +21,9 @@ class LangRepository
      */
     private $locales;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request = null)
     {
-        $this->request = $request;
+        $this->request = $request ?? Request::capture();
         $this->locales = array_keys(config('backpack.crud.locales'));
     }
 

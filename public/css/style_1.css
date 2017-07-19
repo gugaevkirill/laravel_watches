@@ -469,7 +469,21 @@ header .icon-entry .text .soc { margin-left: 3px; }
 header .icon-entry .text .soc img { margin-bottom: -6px!important; }
 header .icon-entry .text .popup-trigger { color: #8096a5; border-bottom: 1px dotted #8096a5; }
 header .icon-entry .text .popup-trigger:hover { color: #446386; }
-.menu-button, .nav-logo, .close-menu { display: none; }
+.menu-button, .nav-logo { display: none; }
+
+.currency { position: relative; width: 80px; box-sizing: border-box; line-height: 40px; padding: 0 10px 0 17px; border: 1px solid rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); font-size: 14px; text-align: left; margin: 15px 0 0 calc(100% - 80px); }
+.currency:hover { border: 1px solid rgba(0, 0, 0, 0.9); color: rgba(0, 0, 0, 0.9); cursor: pointer; }
+.currency .now { text-transform: uppercase; }
+.currency .fa { float: right; line-height: 40px; }
+.currency .fa-angle-up { display: none; }
+.currency .list { position: absolute; background-color: #f3f3f3; left: -1px; top: 40px; width: 80px; z-index: 999; display: none; }
+.currency.open .list { display: block; }
+.currency .list > li { border-left: 1px solid rgba(0, 0, 0, 0.3); border-right: 1px solid rgba(0, 0, 0, 0.3); line-height: 30px; padding: 0 14px; color: black; }
+.currency:hover .list > li { border-left: 1px solid rgba(0, 0, 0, 0.9); border-right: 1px solid rgba(0, 0, 0, 0.9); }
+.currency .list > li:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+.currency:hover .list > li:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.9); }
+.currency.open .fa-angle-down { display: none; }
+.currency.open .fa-angle-up { display: inline; }
 
 /*Desktops (>=992px)*/
 @media (max-width: 1199px) {
@@ -531,6 +545,9 @@ header .icon-entry .text .popup-trigger:hover { color: #446386; }
 
 /*Phones (<768px)*/
 @media (max-width: 767px) {
+    .hidden-xs-up { display: inline!important; }
+    .hidden-xs-down { display: none!important; }
+
     .header-middle { padding-top: 65px; }
 	.header-functionality-entry b{display: none;}
 	.header-functionality-entry .fa{width: 33px; height: 33px; line-height: 33px; font-size: 23px;}
@@ -545,20 +562,25 @@ header .icon-entry .text .popup-trigger:hover { color: #446386; }
     header .header-functionality-entry { border: none; padding: 10px 10px 10px 0; }
     header .header-functionality-entry span { display: none; }
     .nav-overflow { text-align: center; }
-    .menu-button { font-size: 25px; color: #f1f9ff; cursor: pointer; position: absolute; left: 0; top: 0; display: block; line-height: 60px; padding: 0 20px; border-right: 1px solid #d6dee3; }
+    .menu-button { font-size: 25px; color: #f1f9ff; cursor: pointer; position: absolute; left: 0; top: 0; display: block; line-height: 60px; padding: 0 20px; }
     .menu-button .fa {line-height: inherit; display: block; }
     .nav-logo { display: inline-block; height: 60px; }
-    .navigation nav { padding: 30px 0 30px 30px; }
+    .navigation nav { padding: 20px 30px 30px; }
     .navigation nav > ul > li { width: 100%; text-align: left; }
-    .navigation nav > ul > li > a { line-height: 50px; font-size: 18px; color: #f1f9ff; }
+    .navigation nav > ul > li:after { display: none; }
+    .navigation nav > ul > li > a { line-height: 40px; font-size: 16px; color: #f1f9ff; }
     .navigation nav > ul > li > a:hover { color: #d6dee3; }
-    .navigation nav > ul.s-menu { padding-top: 20px; }
-    .navigation nav > ul.s-menu a { color: #a4aaaf; text-transform: none; }
+    .navigation nav > ul.main-menu { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.25); }
+    .navigation nav > ul.s-menu { padding-bottom: 30px; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+    .navigation nav > ul.s-menu a { text-transform: none; }
     .navigation nav > ul.s-menu a:hover { color: #c4cbd0; }
-    .close-menu { display: block; font-size: 20px; color: #a4aaaf; text-align: left; padding-bottom: 10px; cursor: pointer; }
-    .hidden-xs-up { display: inline!important; }
+    .close-menu { float: right; font-size: 20px; color: #a4aaaf; text-align: left; padding: 11px 0 11px 11px; cursor: pointer; }
     .product-detail-box .product-title { margin-top: 30px; }
     .information-entry.product-sidebar { margin-top: 15px; }
+    .currency { color: white; border: 1px solid rgba(255, 255, 255, 0.25); }
+    .mobile-contacts { font-size: 14px; text-align: left; }
+    .mobile-contacts .email { display: block; line-height: 30px; color: #1ab3db; text-decoration: underline; margin-bottom: 10px; }
+    .mobile-contacts .phone { display: block; line-height: 30px; color: #95a5a6; text-decoration: none; font-size: 16px; }
 }
 
 @media (max-width: 480px) {

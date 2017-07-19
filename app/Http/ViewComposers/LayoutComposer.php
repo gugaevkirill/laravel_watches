@@ -2,8 +2,11 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Models\Catalog\Product;
+use App\Repositories\CurrencyRepository;
 use App\Repositories\LangRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\View\View;
 use App\Models\Catalog\Category;
 
@@ -19,7 +22,10 @@ class LayoutComposer
     {
         $view->with('categories', Category::all(['slug', 'name']));
 
-        $repository = new LangRepository(Request::capture());
-        $view->with('locales', $repository->getLocalesAsArray());
+        $langRepository = new LangRepository();
+        $view->with('locales', $langRepository->getLocalesAsArray());
+
+        $currencyRepository = new CurrencyRepository();
+        $view->with('currency', $currencyRepository->getCurrency());
     }
 }

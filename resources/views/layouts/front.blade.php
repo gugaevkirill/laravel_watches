@@ -117,6 +117,8 @@
                             <span>@lang('site.system_onlinerequest')</span>
                         </a>
                         @endif
+
+                        @include('parts.currency-picker', ['class' => 'hidden-xs-down'])
                     </div>
                 </div>
 
@@ -126,9 +128,11 @@
                         <div class="title">@lang('site.head_menu')</div>
                     </div>
                     <nav>
-                        <div class="close-menu">&#10005;</div>
+                        <a class="close-menu hidden-xs-up">&#10005;</a>
 
-                        <ul class="georgia pull-none">
+                        @include('parts.currency-picker', ['class' => 'hidden-xs-up'])
+
+                        <ul class="georgia pull-none main-menu">
                             @foreach ($categories as $category)
                             <li><a href="/{{ $category['slug'] }}/">{{ $category['name'] }}</a></li>
                             @endforeach
@@ -136,6 +140,12 @@
 
                         @include('parts.menu-submenu')
 
+                        <div class="hidden-xs-up mobile-contacts">
+                            <a href="mailto:@chunk('email')" class="email">@chunk('email')</a>
+                            <a class="phone">@chunk('phone1')</a>
+                            <a class="phone">@chunk('phone2')</a>
+                        </div>
+                        
                         <div class="clear"></div>
                     </nav>
                 </div>
