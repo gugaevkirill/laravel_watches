@@ -211,7 +211,7 @@
 
 <script src="/js/libs/jquery-2.1.3.min.js"></script>
 <script src="/js/libs/idangerous.swiper.min.js"></script>
-<script src="/js/global.js"></script>
+<script src="/js/global_1.js"></script>
 
 {{-- custom scrollbar --}}
 <script src="/js/libs/jquery.mousewheel.js"></script>

@@ -25,8 +25,7 @@ class ParamValueRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            'value_ru' => 'required|string|min:2|max:80',
-            'value_en' => 'required|string|min:2|max:80',
+            'value' => 'required|string|min:2|max:180',
             'order' => 'required|min:0|numeric',
         ];
     }
