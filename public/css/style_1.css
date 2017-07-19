@@ -471,9 +471,8 @@ header .icon-entry .text .popup-trigger { color: #8096a5; border-bottom: 1px dot
 header .icon-entry .text .popup-trigger:hover { color: #446386; }
 .menu-button, .nav-logo { display: none; }
 
-.currency { position: relative; width: 80px; box-sizing: border-box; line-height: 40px; padding: 0 10px 0 17px; border: 1px solid rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); font-size: 14px; text-align: left; margin: 15px 0 0 calc(100% - 80px); }
+.currency { position: relative; width: 80px; box-sizing: border-box; text-transform: uppercase; line-height: 40px; padding: 0 10px 0 17px; border: 1px solid rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); font-size: 14px; text-align: left; margin: 15px 0 0 calc(100% - 80px); }
 .currency:hover { border: 1px solid rgba(0, 0, 0, 0.9); color: rgba(0, 0, 0, 0.9); cursor: pointer; }
-.currency .now { text-transform: uppercase; }
 .currency .fa { float: right; line-height: 40px; }
 .currency .fa-angle-up { display: none; }
 .currency .list { position: absolute; background-color: #f3f3f3; left: -1px; top: 40px; width: 80px; z-index: 999; display: none; }
@@ -577,7 +576,9 @@ header .icon-entry .text .popup-trigger:hover { color: #446386; }
     .close-menu { float: right; font-size: 20px; color: #a4aaaf; text-align: left; padding: 11px 0 11px 11px; cursor: pointer; }
     .product-detail-box .product-title { margin-top: 30px; }
     .information-entry.product-sidebar { margin-top: 15px; }
-    .currency { color: white; border: 1px solid rgba(255, 255, 255, 0.25); }
+    .currency, .currency:hover { color: white; border: 1px solid rgba(255, 255, 255, 0.25); margin: 0; }
+    .currency.hidden-xs-up { display: block!important; }
+    .currency .list > li, .currency:hover .list > li { border: none; }
     .mobile-contacts { font-size: 14px; text-align: left; }
     .mobile-contacts .email { display: block; line-height: 30px; color: #1ab3db; text-decoration: underline; margin-bottom: 10px; }
     .mobile-contacts .phone { display: block; line-height: 30px; color: #95a5a6; text-decoration: none; font-size: 16px; }

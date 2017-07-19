@@ -3,8 +3,8 @@
     <i class="fa fa-angle-down"></i>
     <i class="fa fa-angle-up"></i>
     <ul class="list">
-        <li>RUB</li>
-        <li>USD</li>
-        <li>EUR</li>
+        @foreach($currencies as $code)
+        <li>{{ $code }}</li>
+        @endforeach
     </ul>
 </div>

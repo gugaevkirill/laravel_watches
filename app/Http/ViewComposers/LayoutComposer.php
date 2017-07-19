@@ -27,5 +27,6 @@ class LayoutComposer
 
         $currencyRepository = new CurrencyRepository();
         $view->with('currency', $currencyRepository->getCurrency());
+        $view->with('currencies', CurrencyRepository::ALLOWED_CURRENCIES);
     }
 }
