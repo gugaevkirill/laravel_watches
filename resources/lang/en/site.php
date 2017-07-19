@@ -56,31 +56,31 @@ return [
     'main_tabs3' => 'Accessories',
     'main_elitegoods' => 'Elite goods',
     'main_cardstitle1' => 'Best price',
-    'main_cardstext1' => 'Как при покупке, так и при продаже.',
-    'main_cardstitle2' => 'Быстрые выплаты',
-    'main_cardstext2' => 'Вы получите деньги в тот же день, когда обратитесь к нам.',
+    'main_cardstext1' => 'Both when selling and when buying.',
+    'main_cardstitle2' => 'Quick payments',
+    'main_cardstext2' => 'You will get your money on the same day as you contact us.',
     'main_benefitstitle1' => 'Who we are?',
-    'main_benefitstext1' => 'Компания Elite Bazaar представляет собой проверенный временем ломбард, где можно выгодно продать часы. Мужские или женские – не имеет значения. Доверие многочисленных клиентов подтверждает высокий уровень и безупречную репутацию заведения. Независимо от состояния часов, которые у вас имеются, вы можете быть стопроцентно уверены, что Elite Bazaar предложит лучшую цену.',
-    'main_benefitstitle2' => 'Как продать часы',
+    'main_benefitstext1' => 'Elite Bazaar is a tried and true pawn shop where you can get the best price for your watch. We don\'t care if they\'re for men or women. The trust put in us by numerous clients bears witness to the quality of our service and our spotless reputation. Regardless of what state your watch might be in, you can be rest assured that Elite Bazaar will offer you the best possible price.',
+    'main_benefitstitle2' => 'How to sell a watch',
     'main_benefitstext2' => <<<HTML
-        <li><b>Оценка</b> Прямо при вас эксперт оценивает состояние часов и озвучивает их точную стоимость.</li>
-        <li><b>Оформление документов</b> Сделка оформляется юристом. От вас потребуется лишь паспорт.</li>
-        <li><b>Выплата суммы</b> Оценочная стоимость часов выплачивается клиенту. Все банкноты проходят проверку на подлинность. </li>
+        <li><b>Appraisal</b> An expert will appraise your watch right in front of you and tell you how much we can offer you for it.</li>
+        <li><b>Getting the documents</b> Each transaction is executed by a legal officer. The only document you need is a passport.</li>
+        <li><b>Payment</b> The client gets paid the appraised value of the watch immediately. All the banknotes get checked for authenticity. </li>
 HTML
     ,
     'main_comment1' => <<<HTML
-        <div class="text">Неожиданно хороший сервис. Думал, придется отдать хорошую вещь за копейки, но здесь предложили действительно хорошую цену! Спасибо вам и успехов в бизнесе!</div>
-        <footer class="roboto"><cite>Алексей Ягофаров</cite>, 10.01.2016</footer>
+        <div class="text">An unexpectedly good service. I thought I was going to have to give up a valuable item for kopeks on the ruble but they offered me a really good deal here! Thank you so much and every success in business!</div>
+        <footer class="roboto"><cite>Aleksey Yagofarov</cite>, 10.01.2016</footer>
 HTML
     ,
     'main_comment2' => <<<HTML
-        <div class="text">Пришлось продать любимые часы, так как напряженка с деньгами. Все корректно и вежливо, никаких проблем. Деньги получила в течение получаса, спасибо!</div>
-        <footer class="roboto"><cite>Дарья Осипова</cite>, 18.07.2016</footer>
+        <div class="text">I had to sell my favorite watch because I was really strapped for cash. They treated me here with utmost respect and the whole transaction went down without a hitch. I got my money within half an hour, thank you very much!</div>
+        <footer class="roboto"><cite>Darya Osipova</cite>, 18.07.2016</footer>
 HTML
     ,
     'main_comment3' => <<<HTML
-        <div class="text">В других ломбардах за мой Ролекс давали, как за китайскую подделку, курам на смех! Здесь предложили адекватную цену и выплатили быстро. Буду рекомендовать знакомым.</div>
-        <footer class="roboto"><cite>Андрей Кишин</cite>, 12.02.2017</footer>
+        <div class="text">All the other pawn shops offered me peanuts for my Rolex as if it was a Chinese fake! Here they offered me a very reasonable price and paid me promptly. I'm going to recommend it to all my friends.</div>
+        <footer class="roboto"><cite>Andrey Kishin</cite>, 12.02.2017</footer>
 HTML
     ,
 
@@ -93,213 +93,213 @@ HTML
     'contacts_contactus' => 'Call us',
     'contacts_placemark' => 'Our office',
     'contacts_name' => 'Your name',
-    'contacts_nameplaceholder' => 'Как к вам обращаться',
+    'contacts_nameplaceholder' => 'How should we address you?',
     'contacts_data' => 'Contact information',
     'contacts_dataplaceholder' => 'Phone / E-mail',
     'contacts_comment' => 'Describe your problem',
     'contacts_commentplaceholder' => 'Leave small comment',
     'contacts_messagesent' => 'Message sent!',
-    'contacts_title' => 'Выгодные условия и оперативность',
+    'contacts_title' => 'Good terms and timeliness',
     'contacts_text' => <<<HTML
-        <p>Ломбард Elite Bazaar предлагает клиентам полный спектр операций покупки-продажи элитных швейцарских часов, а также аксессуаров к ним и украшений. На протяжении многих лет работы нами выработан безупречный алгоритм взаимовыгодного сотрудничества с многочисленными клиентами.</p>
-        <p>Профессиональные эксперты быстро дадут заключение о происхождении и состоянии часов, после чего озвучат их честную стоимость. Бумажная волокита сведена к минимуму, а клиенту достаточно паспорта для совершения любой сделки.</p>
+        <p>The Elite Bazaar pawn shop offers clients the full range of purchase and sale transactions for elite Swiss watches as well as accessories and decorations for them. Over the many years that we've been in this business we've refined a algorithm that allows us to offer mutually beneficial cooperation to a broad range of clients.</p>
+        <p>Our professional experts will quickly verify the authenticity and state of the watch and then name a fair price for it. The rend tape is kept to a minimum and the only document a clinet needs for any transaciton is a passport.</p>
 HTML
     ,
 
-    'about_header1' => 'Что такое Elite Bazaar?',
-    'about_subtext1' => 'Уже более 5 лет наш коллектив работает в сфере скупки-продажи элитных и винтажных швейцарских часов. Наши партнеры убедились в квалификации каждого сотрудника компании, и полностью доверяют профессионалам все типы сделок. Честная цена уже стала визитной карточкой ломбарда Elite Bazaar.',
+    'about_header1' => 'What is Elite Bazaar?',
+    'about_subtext1' => 'For over 5 years our staff have been facilitating the purchases and sales of elite and vintage Swiss watches. Our partners have had plenty of opportunity to verify the professionalism and qualifications of every one of our employees and can now trust them with any kind of deal. A fair price has become our middle name.',
     'about_text1' => <<<HTML
-        <p>Мы предлагаем клиентам приобрести настоящие Rolex, Patek Philippe, Breitling, A.  Lange & Sohne и многие другие марки элитных брендовых часов. На сайте имеется удобный каталог, где каждый может ознакомиться с полным ассортиментом швейцарских часов, имеющихся в наличии.</p>
-        <p>У нас вы в любое время можете купить не только новые, но и б/у часы от швейцарских производителей. Такое решение позволит сэкономить бюджет, получив при этом стопроцентно качественный хронометр производства элитных мастеров.</p>
-        <p>Кроме того, Elite Bazaar предлагает клиентам широкий ассортимент аксессуаров. Если вам нужен высококачественный браслет для швейцарских часов, вы всегда найдете у нас лучшие модели из натуральной кожи и металла.</p>
+        <p>We offer clients authentic watches from Rolex, Patek Philippe, Breitling, A.  Lange & Sohne and numerous other elite brands. Our website features an easy-to-use catalogue where you can browse the full range of the Swiss watches we have in stock.</p>
+        <p>At any time you can buy both new and used Swiss watches from us. What we offer will help you save money while getting a verified authentic watch from elite watch makers.</p>
+        <p>In addition, we offer our clients a broad range of accessories. If you need a high quality bracelet for a Swissh watch, you can always find the best authentic leather and metal moels at our panw shop.</p>
 HTML
     ,
-    'about_header2' => 'Почему с нами работают?',
+    'about_header2' => 'Why choose us?',
     'about_text2' => <<<HTML
         <div class="article-container style-1">
-            <h5><i class="fa fa-check"></i> Возможность сэкономить при покупке</h5>
-            <p>Скидка делает желанную покупку еще приятнее. В отличие от большинства московских дилеров, мы не накручиваем 25-30% от стоимости, что позволяет нашим клиентам купить швейцарские часы по действительно низким ценам.</p>
+            <h5><i class="fa fa-check"></i> You can save a lot of money on a purchase</h5>
+            <p>A steep discount makes the item you want even more attractive. Unlike most Moscow dealers we do not charge 25-30% mark-ups, instead allowing our clients to buy quality Swiss watches for genuinely competitive prices.</p>
         </div>
         <div class="article-container style-1">
-            <h5><i class="fa fa-check"></i> Элитный уровень сервиса</h5>
-            <p>Вы гарантированно останетесь довольны работой сотрудников компании. Вежливые консультанты всегда готовы дать любую информацию относительно покупки или продажи часов при посредничестве нашей компании.</p>
+            <h5><i class="fa fa-check"></i> Elite level service</h5>
+            <p>We guarantee that you will be happy with our quality of service. Our consultants are extra polite and always ready to answer any questions that you might have about selling or buying through our company.</p>
         </div>
         <div class="article-container style-1">
-            <h5><i class="fa fa-check"></i> Оперативность работы</h5>
-            <p>Мы прекрасно понимаем, что наши клиенты – серьезные люди, у которых на счету каждая минута. Именно поэтому каждый из нас делает все возможное, чтобы оформление бумаг и прочие формальности занимали как можно меньше времени. Когда вам требуется быстро продать или купить элитные украшения, швейцарские часы или аксессуары, доверить оформление документации нашим специалистам будет отличным решением.</p>
+            <h5><i class="fa fa-check"></i> Timeliness</h5>
+            <p>We always value our clients' time. For this reason, we each do everything we can to minimize the time it takes to go through all the requisite formalities. When you need to buy or sell some luxury decorations, a Swiss watch or accessories, the easiest and quickest option is to get our specialists to draft all the necessary documents.</p>
         </div>
 HTML
     ,
     'about_qa' => <<<HTML
-        <div class="accordeon-title active">Я живу в другом городе, как продать вам часы? <!--<span class="inline-label red">важно</span>--></div>
+        <div class="accordeon-title active">I live in a different city how can I sell my watch to you? <!--<span class="inline-label red">important</span>--></div>
         <div class="accordeon-entry" style="display: block;">
             <div class="article-container style-1">
-                <p>Никаких проблем, мы готовы выехать к вам и на месте оформить сделку.</p>
+                <p>No problem, our representative can drop by your place and close the deal.</p>
             </div>
         </div>
-        <div class="accordeon-title">Возможна ли выдача залога?</div>
+        <div class="accordeon-title">Can I retrieve the pawned items?</div>
         <div class="accordeon-entry">
             <div class="article-container style-1">
-                <p>Нет, мы занимаемся только покупкой или продажей элитных швейцарских часов.</p>
+                <p>No, we only buy and sell elite Swiss watches.</p>
             </div>
         </div>
-        <div class="accordeon-title">Интересуют ли вас винтажные или раритетные модели часов?</div>
+        <div class="accordeon-title">Are you interested in vintage or rare watch models?</div>
         <div class="accordeon-entry">
             <div class="article-container style-1">
-                <p>Да, подобные изделия, если они оригинальны, как правило, выкупаются по высокой цене.</p>
+                <p>Yes, as a rule, if they're authentic items, we can offer you a very good price for them.</p>
             </div>
         </div>
 HTML
     ,
     'about_header3' => 'Original swiss watches',
     'about_header4' => 'Elite Bazaar is working for you',
-    'about_text4' => 'Мы гарантируем справедливую оценку, высококлассный сервис и лучшие цены на элитные швейцарские часы, как при покупке, так и при продаже. Вы получите деньги или станете владельцем высококлассных часов и аксессуаров в максимально сжатые сроки.',
-    'about_header5' => 'Оправдаем ваше доверие',
+    'about_text4' => 'We guarantee a fair appraisal, top quality service and the best prices for elite Swiss watches both to those seeking to sell and those seeking to buy them. You will get your money or become the proud owner of a high quality watch or accessories in no time at all.',
+    'about_header5' => 'We will never betray your trust',
     'about_benefit1' => <<<HTML
-        <span class="title">Отсутствие ограничений</span>
-        <div class="description">Мы готовы купить любые швейцарские часы, независимо от ценовой категории;</div>
+        <span class="title">No restrictions</span>
+        <div class="description">We are willing to buy any Swiss watches regardless of their price range;</div>
 HTML
     ,
     'about_benefit2' => <<<HTML
-        <span class="title">Открытость</span>
-        <div class="description">Любые операции с финансами понятны и открыты для клиентов;</div>
+        <span class="title">Transparency</span>
+        <div class="description">All the infanical aspects of every deal are transparent and open to the clients;</div>
 HTML
     ,
     'about_benefit3' => <<<HTML
-        <span class="title">Качественный сервис</span>
-        <div class="description">Гарантируем высококлассное обслуживание и взаимную выгоду.</div>
+        <span class="title">Quality service</span>
+        <div class="description">We guarantee quality service and mutual benefits.</div>
 HTML
     ,
 
-    'repair_title1' => 'Ремонт швейцарских часов в Москве',
+    'repair_title1' => 'Repairing Swiss watches in Moscow.',
     'repair_text1' => <<<HTML
-        <p>Часы — любимый аксессуар многих людей. Они позволяют следить за временем, наделяют образ лоском и шиком. Сегодня существует огромное количество разнообразных моделей, разнящихся формой, размером, конструкционными особенностями.</p>
-        <p>Часы — сложный механизм, легко выходящий из строя под действием пагубных факторов. Только настоящий профессионал, обладающий необходимым опытом, навыками и знаниями, сможет аккуратно реанимировать изделие используя в работе оборудование современного образца.</p>
-        <p>ELITE BAZAAR — сервисный центр, выполняющий ремонт и обслуживание швейцарских часов швейцарских марок. Качество сервиса соответствует мировым стандартам. У нас вы сможете получить ответ на любой вопрос относительно эксплуатации часов и узнать, как лучше использовать часы, чтобы продлить срок бесперебойной работы.</p>
+        <p>A watch is a favorite accessory for a lot of people. They allow you to keep track of time while adding chic and refinement to your image. Today there are a multitude of models in the market, offering a variety of shape, size and designs.</p>
+        <p>A watch is a complex mechanism that can easily break down under adverse conditions. It's only a highly qualified expert using modern equipment that can nurse a broken watch back to life.</p>
+        <p>Elite Bazaar is a service center that repairs and mainteains Swiss watches. We offer quality of service that matches the best international standards. We can answer any question about how to use your watch properly and what steps you can take to extend its service life.</p>
 HTML
     ,
-    'repair_title2' => 'Как мы работаем',
+    'repair_title2' => 'How we work',
     'repair_stage1' => <<<HTML
-        <div class="comment-title"><span>Приемка</span></div>
-        <div class="comment-text">Мастер в присутствии клиента проводит диагностику часового механизма, объясняет причину неисправности изделия, отвечает на интересующие вопросы. Все обнаруженные дефекты фиксирует в квитанции. На основе предварительных выводов регламентирует спектр работ, срок их выполнения.</div>
+        <div class="comment-title"><span>Receipt</span></div>
+        <div class="comment-text">Our watchmaker will diagnose the watch mechanism in your presence, explain what's wrong with the watch and answer any questions you might have. All the defects will be recorded in the receipt. A list of repairs will then be compiled and a time-frame for the repairs established.</div>
 HTML
     ,
     'repair_stage2' => <<<HTML
-        <div class="comment-title"><span>Проверка герметичности</span></div>
-        <div class="comment-text">Герметичность — залог качественной работы механизма. Наш мастер проверит герметичность ваших часов абсолютно бесплатно. Проверка осуществляется на воздушной установке, так что целостность корпуса не будет нарушена.</div>
+        <div class="comment-title"><span>Checking the hermetic sealing</span></div>
+        <div class="comment-text">The hermetic sealing of the watch body ensures the flawless running of the mechanism. Our watchmaker will check the hermetic sealing of your watch absolutely free of charge. Hermetic sealing is checked using air so the integrity of the watch body will not be compromised.</div>
 HTML
     ,
     'repair_stage3' => <<<HTML
-        <div class="comment-title"><span>Выдача квитанции</span></div>
-        <div class="comment-text">Перед принятием часов на диагностику и ремонт происходит заполнения квитанции. В ней указываются некоторые технические характеристики изделия и перечисляются дефекты.</div>
+        <div class="comment-title"><span>Issuing a receipt</span></div>
+        <div class="comment-text">A receipt gets filled out before a watch is accepted for diagnostics and repairs. Some of the key technical parameters of the watch and its defects are listed in the receipt.</div>
 HTML
     ,
     'repair_stage4' => <<<HTML
-        <div class="comment-title"><span>Диагностика</span></div>
-        <div class="comment-text">С помощью специальных устрановок проверяем точность хода и герметичность часов. Производим разборку, осмотр и тестирование отдельных систем механизма.</div>
+        <div class="comment-title"><span>Diagnostics</span></div>
+        <div class="comment-text">Special equipment lets us check the accuracy and hermetic sealing of watches. We take apart, examine and test specific systems of the watch mechanism.</div>
 HTML
     ,
     'repair_stage5' => <<<HTML
-        <div class="comment-title"><span>Мойка часов</span></div>
-        <div class="comment-text">Ультразвуковая мойка позволяет очистить детали часов от различных отложений, накопившихся в процессе работы, снижающих точность хода часового механизма. После мойки мастер смажет детали, соберет изделие и проведет проверку точности хода.</div>
+        <div class="comment-title"><span>Cleaning watches</span></div>
+        <div class="comment-text">Ultrasound cleaning removes various deposits on watch parts: these usually accrue during the watch's service life and reduce the accuracy of the mechanism. Once cleaned, the watchmaker will put the watch back together and check its accuracy.</div>
 HTML
     ,
     'repair_stage6' => <<<HTML
-        <div class="comment-title"><span>Ремонт и замена деталей</span></div>
-        <div class="comment-text">Выполнение ремонтных работ любой сложности. При необходимости замены подбираются или заказываются оригинальные комплектующие, многие из которых в наличии на складе. На работы и детали предоставляется гарантия.</div>
+        <div class="comment-title"><span>Repairs and replacement of parts</span></div>
+        <div class="comment-text">We perform repairs of any complexity. When necessary original spare parts can be selected and ordered, plus we have a lot of spare parts in stock. We offer a warranty for repairs and the spare parts we use.</div>
 HTML
     ,
     'repair_stage7' => <<<HTML
-        <div class="comment-title"><span>Сборка и проверка</span></div>
-        <div class="comment-text">Отремонтированные часы собираются и проходят проверку на герметичность. Далее, происходит проверка точности хода. При обнаружении несоответствия одного из заявленных параметров, настройка часового механизма проводится повторно.</div>
+        <div class="comment-title"><span>Assembly and verification</span></div>
+        <div class="comment-text">Once repaired, a watch is put back together and its hermetic sealing is tested. Then the accuracy of the mechanism is tested. If there are discrepancies in any of the original parameters, the watch mechanism is fine-tuned again.</div>
 HTML
     ,
-    'repair_title3' => 'Виды услуг',
+    'repair_title3' => 'Types of services',
     'repair_service1' => <<<HTML
-        <span class="title">Ремонт швейцарских часов</span>
-        <div class="description">Квалифицированный, срочный ремонт на швейцарском оборудовании, с гарантией на все виды услуг — производит наша мастерская.</div>
+        <span class="title">Swiss watch repairs</span>
+        <div class="description">Professional urgent repairs on Swiss equipment with warranty offered for all types of services.</div>
 HTML
     ,
     'repair_service2' => <<<HTML
-        <span class="title">Обслуживание часов</span>
-        <div class="description">Профилактический осмотр часов, реставрация на современном оборудовании профессиональными мастерами — всегда лучший результат.</div>
+        <span class="title">Watch maintenance</span>
+        <div class="description">Preventive maintenance and restoration on modern equipment by professional watchmakers ensure the best results all of the time.</div>
 HTML
     ,
     'repair_service3' => <<<HTML
-        <span class="title">Проверка и замена элементов питания</span>
-        <div class="description">Грамотная замена элемента питания — абсолютная точность хода часов. Параллельно выполним диагностику прибора, ответим на любые вопросы.</div>
+        <span class="title">Checking and replacing batteries</span>
+        <div class="description">Replacing the batteries at the right time ensures accuracy of the watch. We will also diagnose the watch and answer any questions you might have.</div>
 HTML
     ,
     'repair_service4' => <<<HTML
-        <span class="title">Восстановление герметичности</span>
-        <div class="description">Проверка, восстановление, тестирование герметичности. Большой опыт работ — залог качественного предоставления услуг.</div>
+        <span class="title">Restoring the hermetic sealing</span>
+        <div class="description">Checking, restoring and testing the hermetic sealing of a watch. Ample experience guarantees quality of service.</div>
 HTML
     ,
     'repair_service5' => <<<HTML
-        <span class="title">Полировка корпуса и браслета</span>
-        <div class="description">Вернем наручному аксессуару яркий, презентабельный вид. Уберем с поверхности корпуса и браслета потертости, сколы, царапины.</div>
+        <span class="title">Polishing the watch body and bracelet</span>
+        <div class="description">We'll make your accessory shine again, removing chips and scratches from the surface.</div>
 HTML
     ,
     'repair_service6' => <<<HTML
-        <span class="title">Полировка и замена стекол</span>
-        <div class="description">Профессиональная замена стекол любой конфигурации, качественная полировка. Возможна установка сапфирового, минерального, органического стекла.</div>
+        <span class="title">Polishing and replacing the glass</span>
+        <div class="description">Professional replacement of watch glasses of any shape, quality polishing. We can install sapphire, mineral or organic glasses.</div>
 HTML
     ,
     'repair_service7' => <<<HTML
-        <span class="title">Замена ремешков</span>
-        <div class="description">Быстро установим на часы ремни европейских производителей. При возможности восстановим ваш экземпляр. Подгоним под ваше запястье.</div>
+        <span class="title">Replacing the straps</span>
+        <div class="description">We can quickly install straps from European manufactures on any watch. If possible we will try and restore your original straps. We'll fit it to your wrist.</div>
 HTML
     ,
     'repair_service8' => <<<HTML
-        <span class="title">Родирование корпусов и браслетов</span>
-        <div class="description">Родирование вернет часам утраченный блеск, защитит от пагубного воздействия внешних факторов. Работы выполняются на специальной установке.</div>
+        <span class="title">Rhodium-plating of watch bodies and bracelets</span>
+        <div class="description">Rhodium-plating makes your watch shine again, while protecting it from the elements. Rhodium-plating is done on a special machine.</div>
 HTML
     ,
     'repair_service9' => <<<HTML
-        <span class="title">Ремонт колеса баланса</span>
-        <div class="description">Быстрый, но деликатный ремонт, настройка анкерного механизма, колеса баланса. Гарантии на каждый вид услуги.</div>
+        <span class="title">Repairing balance wheels</span>
+        <div class="description">Fine-tuning the anchor mechanism and repairing the balance wheel is a quick but delicate job. We offer warranty for each type of service.</div>
 HTML
     ,
     'repair_service10' => <<<HTML
-        <span class="title">Ремонт турбийона</span>
-        <div class="description">Индивидуальный подход при ремонте турбийона. Запчасти оригинальные, работы высококачественные, гарантии на все услуги.</div>
+        <span class="title">Repairing the tourbillon</span>
+        <div class="description">Every tourbillon is unique and we fully appreciate that. We use original parts, delivery quality of service and offering warranty for all our services.</div>
 HTML
     ,
     'repair_service11' => <<<HTML
-        <span class="title">Ремонт репетира</span>
-        <div class="description">Качественная замена и подстройка — гарантия долгой и безошибочной работы часов.</div>
+        <span class="title">Repairing the repeater</span>
+        <div class="description">We replace and fine-tune watch repeaters to ensure long and accurate operation.</div>
 HTML
     ,
     'repair_service12' => <<<HTML
-        <span class="title">Проверка подлинности часов</span>
-        <div class="description">Тщательная проверка подлинности часов с минимально необходимой сборкой-разборкой.</div>
+        <span class="title">Checking the authenticity of a watch</span>
+        <div class="description">We can check the authenticity of a watch in a short period of time while performing minimal disassembly.</div>
 HTML
     ,
 
-    'sell_bannertitle' => 'Скупка часов',
-    'sell_bannertext' => 'Узнать оценочную стоимость ваших швейцарских часов очень просто. Где бы вы ни находились, просто пришлите нам их фотографию любым удобным способом и заполните онлайн простую форму.',
-    'sell_benefittitle1' => 'Скупаем только оригинал',
-    'sell_benefittext1' => 'Мы готовы выкупить ваши часы в Москве, только если они настоящие. Специалисты компании Elite Bazaar не смогут вам помочь, если вы хотите продать китайские копии, электронные часы в пластмассовом корпусе, или изделия производства СССР.',
-    'sell_benefittitle2' => 'Честная оценка',
-    'sell_benefittext2' => 'Точная цена швейцарских часов озвучивается только после осмотра профессионального эксперта. Такой подход позволяет гарантировать, что клиент получит за свои винтажные или элитные часы максимальную цену.',
-    'sell_benefittitle3' => 'Бесплатная экспертиза',
-    'sell_benefittext3' => 'Обращаясь к нам, вы можете рассчитывать на бесплатную оценку. Мы гарантируем, что оценка будет максимально объективной. Своевременное обращение к нам позволит убедиться, что вас не обманывают в другом месте.',
+    'sell_bannertitle' => 'Buying watches',
+    'sell_bannertext' => 'You want to learn the appraised value of your watch? Nothing could be easier. Regardless of where you are, you can send us a photograph of your watch in any manner you find most convenient and fill out a simple online form.',
+    'sell_benefittitle1' => 'We only buy original watches',
+    'sell_benefittext1' => 'We can buy your watch in Moscow only if it\'s an original one. Elite Bazaar experts can\'t help you if you\'re seeking to sell a Chinese copy, an electronic watch in a plastic body or a Soviet made watch.',
+    'sell_benefittitle2' => 'Fair appraisal',
+    'sell_benefittext2' => 'It\'s only after your watch has been examined by a professional expert, that we will tell you its appraised value. This approach guarantees that our clients get the maximum price for their elite or vintage watch.',
+    'sell_benefittitle3' => 'Free assessment',
+    'sell_benefittext3' => 'We offer free assessment. We guarantee maximum objectivity of our assessments. Get in touch with us if you suspect someone else is trying to pull a fast one on you.',
     'sell_card1' => <<<HTML
-        <span class="subtitle">При наличии паспорта</span>
-        <span class="title">Деньги в день обращения</span>
-        <span class="view">узнать цену</span>
+        <span class="subtitle">If you have your passport on you</span>
+        <span class="title">You get money on the same day</span>
+        <span class="view">find out the price</span>
 HTML
     ,
     'sell_card2' => <<<HTML
-        <span class="subtitle">Гарантируем</span>
-        <span class="title">Полную приватность</span>
+        <span class="subtitle">Guarantee</span>
+        <span class="title">Complete privacy</span>
 HTML
     ,
-    'sell_button' => 'Заказать оценку',
-    'sell_title4' => 'Как происходит онлайн-оценка',
+    'sell_button' => 'Order an appraisal',
+    'sell_title4' => 'The mechanics of an online appraisal',
     'sell_text4' => <<<HTML
-        <p>Для удобства клиентов ломбарда Elite Bazaar мы позаботились о создании сервиса онлайн оценки швейцарских часов. Процедура предельно проста: вам достаточно сфотографировать свои часы, заполнить простую анкету и прислать эти данные нам любым удобным способом. После этого останется лишь получить предварительную оценку вашего экземпляра.</p>
-        <p>Как правило, экспертное заключение соответствует действительности, однако следует понимать, что окончательный вердикт может быть вынесен только после вашего визита в офис компании. Эксперт сможет лично осмотреть ваши швейцарские часы и подтвердить предварительно озвученную стоимость. Здесь же вы сможете сразу получить наличные деньги.</p>
+        <p>To make life easier for our clients we've create an online appraisal service for Swiss watches. The procedure is as simple as it gets: you take a photo of your watch, fill out a simple form and submit this information to us in any way you find most convenient. Now sit back and wait for a preliminary appraisal from our expert.</p>
+        <p>As a rule, an appraisal done in this manner will be fairly accurate, however, you must realize that a final appraisal can only be made after you visit our office and let our experts actually hold your watch. An expert will then personally examine your watch and confirm the value arrived at in the preliminary appraisal. In our office you can also get cash for your watch ASAP.</p>
 HTML
     ,
 ];
