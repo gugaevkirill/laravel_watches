@@ -63,7 +63,8 @@ class Product extends ModelExtended
         'descriptionnew',
         'imagesnew',
         'price_rub',
-        'price_dollar',
+        'price_usd',
+        'price_eur',
         'attrs',
     ];
     protected $translatable = ['descriptionnew'];
