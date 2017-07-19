@@ -106,10 +106,9 @@ class Product extends ModelExtended
 
         switch (Param::findOrFail($slug)->type) {
             case 'select':
-                // TODO: закрыть получение параметров кешем
-                return ParamValue::findOrFail($this->attrs[$slug])->value_ru;
+                return ParamValue::findOrFail($this->attrs[$slug])->value;
             case 'boolean':
-                return $this->attrs[$slug] ? 'Да' : 'Нет';
+                return $this->attrs[$slug] ? __('site.system_yes') : __('site.system_no');
             case 'integer':
                 return number_format($this->attrs[$slug], 0, '.', ' ');
             default:

@@ -23,7 +23,7 @@
             <input  v-if="param.type == 'integer'" type="number"   v-model="param.value" class="col-md-7 col-xs-11">
             <input  v-if="param.type == 'boolean'" type="checkbox" v-model="param.value" class="col-md-7 col-xs-11">
             <select v-if="param.type == 'select'"  v-model="param.value" class="col-md-7 col-xs-11">
-                <option :value="val.id" v-for="val in values" v-if="val.param_slug==param.slug">@{{ val.value_ru }}</option>
+                <option :value="val.id" v-for="val in values" v-if="val.param_slug==param.slug">@{{ val.value }}</option>
             </select>
 
             <a href="" @click.stop.prevent="clearParam(param.slug)" class="col-xs-1" v-if="param.type != 'boolean' && param.value">
