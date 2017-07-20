@@ -90,6 +90,7 @@ HTML
     'catalog_pagenpretext' => 'из',
     'catalog_gotobrand' => 'Перейти к бренду',
     'catalog_similars' => 'Похожие товары',
+    'catalog_pricerequest' => 'Цена по запросу',
 
     'contacts_contactus' => 'Свяжитесь с нами',
     'contacts_placemark' => 'Офис EliteBazaar',

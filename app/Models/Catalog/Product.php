@@ -4,6 +4,7 @@ namespace App\Models\Catalog;
 
 use App\Models\ImageTrait;
 use App\Models\ModelExtended;
+use App\Repositories\CurrencyRepository;
 use App\Scopes\IsActiveScope;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
@@ -46,6 +47,9 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class Product extends ModelExtended
 {
+    const PRICE_PREFIX = 'price_';
+    const NO_PRICE = 'По запросу';
+
     use ImageTrait;
     use CrudTrait;
     use HasTranslations;
@@ -145,13 +149,13 @@ class Product extends ModelExtended
      */
     public function getPrices(): array
     {
-        // Цена в долларах и рублях
+        // Цена во всех имеющихся валютах
         $prices = [];
-        if ($this->price_rub) {
-            $prices[] = number_format($this->price_rub, 0, '.', ' ') . ' ₽';
-        }
-        if ($this->price_dollar) {
-            $prices[] = number_format($this->price_dollar, 0, '.', ' ') . ' $';
+        $currencyRepository = new CurrencyRepository();
+        foreach (CurrencyRepository::ALLOWED_CURRENCIES as $code) {
+            if ($val = $currencyRepository->getProductPrice($this, $code)) {
+                $prices[$code] = $val;
+            }
         }
 
         return $prices;
@@ -162,11 +166,7 @@ class Product extends ModelExtended
      */
     public function getPriceString(): string
     {
-        if (!empty($this->getPrices())) {
-            return $this->getPrices()[0];
-        }
-
-        return 'По запросу';
+        return (new CurrencyRepository())->getProductPrice($this) ?? self::NO_PRICE;
     }
 
     /**

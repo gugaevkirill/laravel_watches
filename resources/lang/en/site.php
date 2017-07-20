@@ -89,6 +89,7 @@ HTML
     'catalog_pagenpretext' => 'of',
     'catalog_gotobrand' => 'Go to brand',
     'catalog_similars' => 'Similars',
+    'catalog_pricerequest' => 'Price by request',
 
     'contacts_contactus' => 'Call us',
     'contacts_placemark' => 'Our office',
