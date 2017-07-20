@@ -145,23 +145,6 @@ class Product extends ModelExtended
     }
 
     /**
-     * @return array
-     */
-    public function getPrices(): array
-    {
-        // Цена во всех имеющихся валютах
-        $prices = [];
-        $currencyRepository = new CurrencyRepository();
-        foreach (CurrencyRepository::ALLOWED_CURRENCIES as $code) {
-            if ($val = $currencyRepository->getProductPrice($this, $code)) {
-                $prices[$code] = $val;
-            }
-        }
-
-        return $prices;
-    }
-
-    /**
      * @return string
      */
     public function getPriceString(): string

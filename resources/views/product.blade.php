@@ -66,18 +66,7 @@
                 <h3 class="product-subtitle">{{ $brandName }}</h3>
 
                 <div class="price detail-info-entry roboto">
-                    @forelse ($productPrices as $price)
-                        @if ($loop->first)
-                            <div class="current">
-                        @else
-                            <div class="prev">
-                        @endif
-
-                        {{ $price }}
-                        </div>
-                    @empty
-                        <div class="prev">@lang('site.catalog_pricerequest')</div>
-                    @endforelse
+                    <div class="current">{{ $productPrice }}</div>
 
                     {{--<a class="button style-10 buy-button">--}}
                         {{--@if (empty($productPrices))--}}

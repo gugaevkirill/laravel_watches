@@ -122,7 +122,7 @@ class CatalogController extends Controller
 
                 'productDescription' => $product->descriptionnew,
                 'productName' => $product->name,
-                'productPrices' => $product->getPrices(),
+                'productPrice' => $product->getPriceString(),
                 'productAttrs' => $product->getAttrsForProductPage(),
                 'productImages' => $productImages,
 
