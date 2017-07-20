@@ -345,20 +345,24 @@ $(function() {
 
 
 	// Currency menu
-	let $currencyEl = $('header .currency');
-    $currencyEl.click(function () {
+	let currencyEl = $('header .currency');
+    currencyEl.click(function () {
 		$(this).toggleClass('open');
 	});
-    $currencyEl.find('.list li').click(function() {
-    	setCookie(
-    		'currency',
-			$(this).text(),
-			{
-				'expires': 60 * 60 * 24 * 30, // 1 month
-				'domain': '.' + document.domain,
-			}
-		);
+    currencyEl.find('.list li').click(function() {
+        var domains = [document.domain, '.' + document.domain];
 
-    	location.reload();
-	});
+        domains.forEach(function (domain) {
+            setCookie(
+                'currency',
+                $(this).text(),
+                {
+                    'expires': 60 * 60 * 24 * 30, // 1 month
+                    'domain': '.' + domain,
+                }
+            );
+        });
+
+        location.reload();
+    });
 });
