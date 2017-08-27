@@ -2,16 +2,14 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\Redis;
 use App\Models\Catalog\Product;
 use Illuminate\Http\Request;
 
 class CurrencyRepository
 {
-    // TODO: заменить на значения из ЦБ
-    const TMP_USD_COURSE = 59.37;
-    const TMP_EUR_COURSE = 68.40;
     // Округлять до десятков
-    const ROUND_DIGITS = 10;
+    const ROUND_DIGITS = 2;
 
     const RUB = 'rub';
     const USD = 'usd';
@@ -22,6 +20,12 @@ class CurrencyRepository
         self::USD => '$',
         self::EUR => '€',
     ];
+
+    const CENTROBANK_URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
+
+    const REDIS_KEY = 'currency:cource';
+    const REDIS_TIME_KEY = 'timestamp';
+    const REDIS_TTL = 60 * 60 * 24;
 
     /**
      * @var string
@@ -96,13 +100,13 @@ class CurrencyRepository
 
         $rubPrice = $from == self::RUB
             ? $price
-            : $price * constant(self::class . "::TMP_" . strtoupper($from) . "_COURSE");
+            : $price * $this->getCource($from);
         
         if ($to == self::RUB) {
             return $rubPrice;
         }
 
-        return $rubPrice / constant(self::class . "::TMP_" . strtoupper($to) . "_COURSE");
+        return $rubPrice / $this->getCource($to);
     }
 
     /**
@@ -119,5 +123,58 @@ class CurrencyRepository
         return number_format($amount, 0, '.', ' ')
             . ' '
             . self::SIGNS[$currency];
+    }
+
+    /**
+     * Обновить курсы валют с ЦБ, записать в Redis и вернуть в массиве
+     * @throws \Exception
+     */
+    public function updateCources(): array
+    {
+        if (!$json_daily = file_get_contents(self::CENTROBANK_URL)) {
+            throw new \Exception('Cources not available');
+        };
+
+        $data = json_decode($json_daily);
+        $result = [];
+
+        foreach (CurrencyRepository::ALLOWED_CURRENCIES as $curr) {
+            if ($curr == CurrencyRepository::RUB) {
+                continue;
+            }
+
+            $value = $data->Valute->{strtoupper($curr)}->Value;
+
+            $result[$curr] = $value;
+            Redis::hset(self::REDIS_KEY, $curr, $value);
+        }
+
+        $result[self::REDIS_TIME_KEY] = time();
+        Redis::hset(self::REDIS_KEY, self::REDIS_TIME_KEY, time());
+
+        return $result;
+    }
+
+    /**
+     * Получает курс валют из редиса и обновляет при необходимости
+     * @param string $currency
+     * @return float
+     * @throws \Exception
+     */
+    private function getCource(string $currency): float
+    {
+        $data = Redis::hgetAll(self::REDIS_KEY);
+
+        if (time() - $data[self::REDIS_TIME_KEY] > self::REDIS_TTL) {
+            try {
+                $data = $this->updateCources();
+            } catch (\Exception $e) {
+                // Если облажались с обновлением курса, следующую попытку будем делать через день.
+                Redis::hset(self::REDIS_KEY, self::REDIS_TIME_KEY, time());
+                throw $e;
+            }
+        }
+
+        return floatval($data[$currency]);
     }
 }

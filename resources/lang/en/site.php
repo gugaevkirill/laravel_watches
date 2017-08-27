@@ -54,7 +54,7 @@ return [
     'main_newaccessories' => 'New accessories',
     'main_tabs1' => 'Swiss watches',
     'main_tabs3' => 'Accessories',
-    'main_elitegoods' => 'Elite goods',
+    'main_elitegoods' => 'Elite products',
     'main_cardstitle1' => 'Best price',
     'main_cardstext1' => 'Both when selling and when buying.',
     'main_cardstitle2' => 'Quick payments',

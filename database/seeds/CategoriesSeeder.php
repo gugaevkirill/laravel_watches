@@ -44,7 +44,7 @@ class CategoriesSeeder extends Seeder
             'order' => 3,
             'name' => [
                 'ru' => 'Элитные товары',
-                'en' => 'Luxury goods',
+                'en' => 'Luxury products',
             ],
         ]);
     }
