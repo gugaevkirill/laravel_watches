@@ -15,7 +15,8 @@
         "laravel/spark": "~4.0",
         "laravel/tinker": "~1.0",
         "sentry/sentry-laravel": "^0.7.0",
-        "spatie/laravel-translatable": "~1.3"
+        "spatie/laravel-translatable": "~1.3",
+        "predis/predis": "~1.0"
     },
     "require-dev": {
         "backpack/generators": "^1.1",
@@ -64,6 +65,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/spatie/laravel-translatable"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/nrk/predis"
         }
     ]
 }
