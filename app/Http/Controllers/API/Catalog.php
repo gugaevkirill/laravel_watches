@@ -7,7 +7,7 @@ use App\Models\Catalog\Category;
 use App\Repositories\CatalogRepository;
 use Illuminate\Http\Request;
 
-class CatalogController extends ControllerAbstract
+class Catalog extends ControllerAbstract
 {
     /**
      * @param Request $request
