@@ -2,27 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ChunkRequest as StoreRequest;
-use App\Http\Requests\ChunkRequest as UpdateRequest;
-use App\Models\Content\Chunk;
+use App\Http\Requests\ContactFormRequest as StoreRequest;
+use App\Http\Requests\ContactFormRequest as UpdateRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
-// VALIDATION: change the requests to match your own file names if you need form validation
-
-class ChunkCrudController extends CrudController
+class ContactForm extends CrudController
 {
 
     public function setUp()
     {
-
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel(Chunk::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/chunk');
-        $this->crud->setEntityNameStrings('chunk', 'chunks');
+        $this->crud->setModel(\App\Models\ContactForm::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/contactform');
+        $this->crud->setEntityNameStrings('contactform', 'contact_forms');
 
         /*
         |--------------------------------------------------------------------------

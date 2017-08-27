@@ -2,27 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\SellFormRequest as StoreRequest;
-use App\Http\Requests\SellFormRequest as UpdateRequest;
-use App\Models\SellForm;
+use App\Http\Requests\ParamValueRequest as StoreRequest;
+use App\Http\Requests\ParamValueRequest as UpdateRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
+use App\Models\Catalog;
 
-// VALIDATION: change the requests to match your own file names if you need form validation
-
-class SellFormCrudController extends CrudController
+class ParamValue extends CrudController
 {
-
     public function setUp()
     {
-
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel(SellForm::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/sellform');
-        $this->crud->setEntityNameStrings('sellform', 'sell_forms');
+        $this->crud->setModel(Catalog\ParamValue::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/value_param');
+        $this->crud->setEntityNameStrings('param_value', 'param_values');
 
         /*
         |--------------------------------------------------------------------------
@@ -32,63 +28,33 @@ class SellFormCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        $this->crud->addField(
+            [
+                'name' => 'order',
+                'label' => 'Сортировка',
+                'type' => 'number',
+                'default' => 100
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField([
+            'label' => 'Параметры',
+            'type' => 'select_multiple',
+            'name' => 'params',
+            'entity' => 'params',
+            'attribute' => 'title',
+            'model' => 'App\Models\Catalog\Param',
+            'pivot' => true,
+        ]);
+
         // ------ CRUD FIELDS
-        $this->crud->addField(
-            [
-                'name' => 'email',
-                'label' => 'E-mail',
-                'type' => 'email',
-            ],
-            'update/create/both'
-        );
-
-
-        $this->crud->addField(
-            [
-                'name' => 'has_box',
-                'label' => 'С коробкой',
-                'type' => 'checkbox',
-                'default' => false
-            ],
-            'update/create/both'
-        );
-
-
-        $this->crud->addField(
-            [
-                'name' => 'has_documents',
-                'label' => 'С документами',
-                'type' => 'checkbox',
-                'default' => false
-            ],
-            'update/create/both'
-        );
-
-        $this->crud->addField(
-            [
-                'label' => "Картинка",
-                'name' => "imagenew",
-                'type' => 'image',
-                'upload' => true,
-            ],
-            'update/create/both'
-        );
-
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-        $this->crud->removeColumn('imagenew');
-
-        $this->crud->addColumn([
-            // run a function on the CRUD model and show its return value
-            'label' => "Картинка", // Table column heading
-            'type' => "model_function",
-            'function_name' => 'getAdminImageHtml', // the method in your Model
-        ]);
-
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack

@@ -2,34 +2,32 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CategoryRequest as StoreRequest;
-use App\Http\Requests\CategoryRequest as UpdateRequest;
-use App\Models\Catalog\Category;
+use App\Http\Requests\ParamRequest as StoreRequest;
+use App\Http\Requests\ParamRequest as UpdateRequest;
+use App\Models\Catalog;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
-// VALIDATION: change the requests to match your own file names if you need form validation
-
-class CategoryCrudController extends CrudController
+class Param extends CrudController
 {
 
     public function setUp()
     {
+        /*
+        |--------------------------------------------------------------------------
+        | BASIC CRUD INFORMATION
+        |--------------------------------------------------------------------------
+        */
+        $this->crud->setModel(Catalog\Param::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/param');
+        $this->crud->setEntityNameStrings('param', 'params');
 
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel(Category::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/category');
-        $this->crud->setEntityNameStrings('category', 'categories');
 
-        /*
-        |--------------------------------------------------------------------------
-        | BASIC CRUD INFORMATION
-        |--------------------------------------------------------------------------
-        */
-
+        // ------ CRUD FIELDS
         $this->crud->addField(
             [
                 'name' => 'slug',
@@ -51,6 +49,59 @@ class CategoryCrudController extends CrudController
             'update/create/both'
         );
 
+        $this->crud->addField(
+            [
+                'name' => 'required',
+                'label' => 'Обязательный',
+                'type' => 'checkbox',
+                'default' => false
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField(
+            [
+                'name' => 'unique',
+                'label' => 'Уникальный',
+                'type' => 'checkbox',
+                'default' => false
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField(
+            [
+                'name' => 'in_filter',
+                'label' => 'Показывать в боковом фильтре',
+                'type' => 'checkbox',
+                'default' => false
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField(
+            [
+                'name' => 'type',
+                'label' => 'Тип',
+                'type' => 'select_from_array',
+                'options' => Catalog\Param::TYPES,
+                'allows_null' => false,
+                'allows_multiple' => false,
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField([
+            'label' => 'Categories',
+            'type' => 'select_multiple',
+            'name' => 'categories',
+            'entity' => 'categories',
+            'attribute' => 'name',
+            'model' => 'App\Models\Catalog\Category',
+            'pivot' => true,
+        ]);
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -58,6 +109,13 @@ class CategoryCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+
+        $this->crud->addColumn([
+            // run a function on the CRUD model and show its return value
+            'label' => "Slug", // Table column heading
+            'name' => 'slug',
+            'type' => "text",
+        ]);
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
@@ -121,7 +179,7 @@ class CategoryCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::storeCrud();
+        $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
@@ -130,7 +188,7 @@ class CategoryCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::updateCrud();
+        $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;

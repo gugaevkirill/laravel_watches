@@ -1,13 +1,13 @@
 <?php
 
-CRUD::resource('category', 'CategoryCrudController');
-CRUD::resource('brand', 'BrandCrudController');
-CRUD::resource('param', 'ParamCrudController');
-CRUD::resource('value_param', 'ParamValueCrudController');
-CRUD::resource('product', 'ProductCrudController');
+CRUD::resource('category', 'Category');
+CRUD::resource('brand', 'Brand');
+CRUD::resource('param', 'Param');
+CRUD::resource('value_param', 'ParamValue');
+CRUD::resource('product', 'Product');
 
-CRUD::resource('sellform', 'SellFormCrudController');
-CRUD::resource('contactform', 'ContactFormCrudController');
+CRUD::resource('sellform', 'SellForm');
+CRUD::resource('contactform', 'ContactForm');
 
-CRUD::resource('chunk', 'ChunkCrudController');
+CRUD::resource('chunk', 'Chunk');
 

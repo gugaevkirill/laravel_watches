@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ContactFormRequest as StoreRequest;
-use App\Http\Requests\ContactFormRequest as UpdateRequest;
-use App\Models\ContactForm;
+use App\Http\Requests\BrandRequest as StoreRequest;
+use App\Http\Requests\BrandRequest as UpdateRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 
-class ContactFormCrudController extends CrudController
+class Brand extends CrudController
 {
 
     public function setUp()
@@ -20,9 +19,9 @@ class ContactFormCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel(ContactForm::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/contactform');
-        $this->crud->setEntityNameStrings('contactform', 'contact_forms');
+        $this->crud->setModel('App\Models\Catalog\Brand');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/brand');
+        $this->crud->setEntityNameStrings('brand', 'brands');
 
         /*
         |--------------------------------------------------------------------------
@@ -30,15 +29,52 @@ class ContactFormCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
+        // ------ CRUD FIELDS
+        $this->crud->addField(
+            [
+                'name' => 'slug',
+                'label' => 'Slug',
+                'type' => 'text',
+            ],
+            'update/create'
+        );
+
         $this->crud->setFromDb();
 
-        // ------ CRUD FIELDS
-        // $this->crud->addField($options, 'update/create/both');
+        $this->crud->addField(
+            [
+                'name' => 'order',
+                'label' => 'Сортировка',
+                'type' => 'number',
+                'default' => 100
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField(
+            [
+                'label' => "Картинка",
+                'name' => "imagenew",
+                'type' => 'image',
+                'upload' => true,
+                'crop' => true, // set to true to allow cropping, false to disable
+                'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
+            ],
+            'update/create/both'
+        );
+
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+        $this->crud->removeColumn('imagenew');
+        $this->crud->addColumn([
+            // run a function on the CRUD model and show its return value
+            'label' => "Картинка", // Table column heading
+            'type' => "model_function",
+            'function_name' => 'getAdminImageHtml', // the method in your Model
+        ]);
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack

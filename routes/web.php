@@ -2,20 +2,20 @@
 
 use \App\Models\Catalog\Category;
 
-$categoryRegex = '^(' . Category::get(['slug'])->implode('slug', '|') . ')$';
+Route::group(['namespace' => 'Site'], function () {
+    Route::get('/', 'Main@mainPage')->name('index');
+    Route::get('/about', 'About@aboutPage');
 
-Route::get('/', 'Site\Main@mainPage')->name('index');
-Route::get('/about', 'Site\About@aboutPage');
+    Route::get('/repair', 'Repair@repairPage')->name('repair.page');
 
-Route::get('/repair', 'Site\Repair@repairPage')->name('repair.page');
+    Route::get('/sell', 'Sell@sellPage')->name('sell.page');
+    Route::post('/sell', 'Sell@processForm')->name('sell.process');
 
-Route::get('/sell', 'Site\Sell@sellPage')->name('sell.page');
-Route::post('/sell', 'Site\Sell@processForm')->name('sell.process');
+    Route::get('/contacts', 'Contacts@contactsPage')->name('contacts.page');
+    Route::post('/contacts', 'Contacts@processForm')->name('contacts.process');
 
-Route::get('/contacts', 'Site\Contacts@contactsPage')->name('contacts.page');
-Route::post('/contacts', 'Site\Contacts@processForm')->name('contacts.process');
-
-Route::get('/{category}', 'Site\Category@categoryPage')
-    ->where(['category' => $categoryRegex]);
-Route::get('/{category}/{id}', 'Site\Product@productPage')
-    ->where(['id' => '[0-9]+', 'category' => $categoryRegex]);
+    Route::get('/{category}', 'Category@categoryPage')
+        ->where(['category' => Category::getRegexForRoutes()]);
+    Route::get('/{category}/{id}', 'Product@productPage')
+        ->where(['id' => '[0-9]+', 'category' => Category::getRegexForRoutes()]);
+});
