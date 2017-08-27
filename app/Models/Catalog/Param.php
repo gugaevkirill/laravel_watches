@@ -47,12 +47,19 @@ class Param extends ModelExtended
      * При изменении перемигрировать БД
      */
     const TYPES = [
-        'integer' => 'Integer',
-        'string' => 'String',
-        'boolean' => 'Boolean',
-        'select' => 'Select',
+        self::TYPE_INT => 'Integer',
+        self::TYPE_STR => 'String',
+        self::TYPE_BOOL => 'Boolean',
+        self::TYPE_SELECT => 'Select',
     ];
+    const TYPE_INT = 'integer';
+    const TYPE_STR = 'string';
+    const TYPE_BOOL = 'boolean';
+    const TYPE_SELECT = 'select';
 
+    /**
+     * Модификация всех SQL запросов по модели
+     */
     protected static function boot()
     {
         parent::boot();

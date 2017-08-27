@@ -44,6 +44,11 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product wherePriceRub($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int|null $price_usd
+ * @property int|null $price_eur
+ * @property-write mixed $clean_imagesnew
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product wherePriceEur($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product wherePriceUsd($value)
  */
 class Product extends ModelExtended
 {

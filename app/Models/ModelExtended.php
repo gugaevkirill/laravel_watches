@@ -4,6 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\ModelExtended
+ *
+ * @mixin \Eloquent
+ */
 class ModelExtended extends Model
 {
     /**

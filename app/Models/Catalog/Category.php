@@ -67,8 +67,11 @@ class Category extends ModelExtended
             ->toArray();
     }
 
+    /**
+     * @return string
+     */
     public static function getRegexForRoutes(): string
     {
-        return '^(' . self::get(['slug'])->implode('slug', '|') . ')$';
+        return '^(' . implode('|', self::SLUGS) . ')$';
     }
 }

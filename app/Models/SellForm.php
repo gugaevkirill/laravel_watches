@@ -34,6 +34,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SellForm whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SellForm whereYear($value)
  * @mixin \Eloquent
+ * @property-write mixed $clean_imagesnew
  */
 class SellForm extends Model
 {

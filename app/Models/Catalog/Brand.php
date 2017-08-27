@@ -22,6 +22,7 @@ use Illuminate\Support\Collection;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Brand whereOrder($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Brand whereSlug($value)
  * @mixin \Eloquent
+ * @property-write mixed $clean_imagesnew
  */
 class Brand extends Model
 {
