@@ -91,7 +91,7 @@ class Product extends CrudController
             [
                 'name' => 'imagesnew',
                 'label' => 'Картинки',
-                'type' => 'ustom_image_multi',
+                'type' => 'custom_image_multi',
                 'upload' => true,
             ],
             'update/create/both'

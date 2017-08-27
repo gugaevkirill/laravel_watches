@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\BrandRequest as StoreRequest;
 use App\Http\Requests\BrandRequest as UpdateRequest;
+use App\Models\Catalog;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
@@ -19,7 +20,7 @@ class Brand extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Catalog\Brand');
+        $this->crud->setModel(Catalog\Brand::class);
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/brand');
         $this->crud->setEntityNameStrings('brand', 'brands');
 
@@ -55,10 +56,12 @@ class Brand extends CrudController
             [
                 'label' => "Картинка",
                 'name' => "imagenew",
-                'type' => 'image',
+                'type' => 'custom_image',
                 'upload' => true,
                 'crop' => true, // set to true to allow cropping, false to disable
                 'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
+                'prefix' => Catalog\Brand::$imageUrlPrefix,
+                'imgFormat' => Catalog\Brand::$imgFormat,
             ],
             'update/create/both'
         );

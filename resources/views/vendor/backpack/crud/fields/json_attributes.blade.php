@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
     // Текущий выбранный язык
     /** @var \Backpack\CRUD\CrudPanel $crud */
     $locale = $crud->request->get('locale') ?? \App\Repositories\LangRepository::DEFAULT_LOCALE;
@@ -25,7 +25,7 @@
             locale: '{{ $locale }}',
         };
     </script>
-    <script src="/js/admin/jsonattrs.js"></script>
+    <script src="/js/admin/json_attributes.js"></script>
     @endpush
 @endif
 

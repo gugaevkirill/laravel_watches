@@ -80,9 +80,9 @@ class Product extends ModelExtended
     protected $translatable = ['descriptionnew'];
 
     // Картинки
-    protected $imagesFieldName = "imagesnew";
-    protected $imageDestination = '/public/products/';
-    protected $imageUrlPrefix = '/storage/products/';
+    protected static $imagesFieldName = "imagesnew";
+    protected static $imageDestination = '/public/products/';
+    public static $imageUrlPrefix = '/storage/products/';
 
     /**
      * Модифицируем SQL запросы по данной модели.

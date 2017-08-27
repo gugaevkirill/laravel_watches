@@ -36,9 +36,9 @@ class Brand extends Model
     protected $fillable = ['order', 'name', 'imagenew', 'slug'];
 
     // Картинка
-    protected $imageFieldName = "imagenew";
-    protected $imageDestination = '/public/brands/';
-    protected $imageUrlPrefix = '/storage/brands/';
+    protected static $imageFieldName = "imagenew";
+    protected static $imageDestination = '/public/brands/';
+    public static $imageUrlPrefix = '/storage/brands/';
 
 
     protected static function boot()

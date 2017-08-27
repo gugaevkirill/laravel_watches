@@ -55,9 +55,9 @@ class SellForm extends Model
     protected $dateFormat = 'Y-m-d H:i:sP';
 
     // Картинка
-    protected $imageFieldName = "imagenew";
-    protected $imageDestination = '/public/sellform/';
-    protected $imageUrlPrefix = '/storage/sellform/';
+    protected static $imageFieldName = "imagenew";
+    protected static $imageDestination = '/public/sellform/';
+    public static $imageUrlPrefix = '/storage/sellform/';
 
     public function __construct(array $attributes = [])
     {

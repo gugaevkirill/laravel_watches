@@ -6,7 +6,7 @@ use \Illuminate\Http\UploadedFile;
 
 trait ImageTrait
 {
-    protected $imgFormat = '.jpg';
+    public static $imgFormat = '.jpg';
 
     /**
      * URL картинки для браузера
@@ -15,7 +15,7 @@ trait ImageTrait
      */
     public function getImageUrl($image): string
     {
-        return $this->imageUrlPrefix . $image . $this->imgFormat;
+        return static::$imageUrlPrefix . $image . static::$imgFormat;
     }
 
     /**
@@ -38,7 +38,7 @@ trait ImageTrait
      */
     public function getImageDestination($image): string
     {
-        return $this->imageDestination . $image . $this->imgFormat;
+        return static::$imageDestination . $image . static::$imgFormat;
     }
 
     /**
@@ -88,7 +88,7 @@ trait ImageTrait
         // if the image was erased
         if ($value == null) {
             \Storage::disk()->delete($this->getImageDestination($this->imagenew));
-            $this->attributes[$this->imageFieldName] = null;
+            $this->attributes[static::$imageFieldName] = null;
         }
         // if a base64 was sent, store it in the db
         elseif (starts_with($value, 'data:image'))
@@ -96,14 +96,14 @@ trait ImageTrait
             $image = \Image::make($value);
             $filename = crc32($value . time());
             \Storage::disk()->put($this->getImageDestination($filename), $image->stream());
-            $this->attributes[$this->imageFieldName] = $filename;
+            $this->attributes[static::$imageFieldName] = $filename;
         } elseif ($value instanceof UploadedFile) {
             $filename = crc32(microtime());
             $image = \Image::make($value);
             \Storage::disk()->put($this->getImageDestination($filename), $image->stream());
-            $this->attributes[$this->imageFieldName] = $filename;
+            $this->attributes[static::$imageFieldName] = $filename;
         } else {
-            $this->attributes[$this->imageFieldName] = $value;
+            $this->attributes[static::$imageFieldName] = $value;
         }
     }
 
@@ -118,7 +118,7 @@ trait ImageTrait
             foreach ($this->imagesnew as $image) {
                 \Storage::disk()->delete($this->getImageDestination($image));
             }
-            $this->attributes[$this->imagesFieldName] = '[]';
+            $this->attributes[static::$imagesFieldName] = '[]';
         } elseif (is_array($value)) {
             $tmp = [];
             // Сохраняем новые картинки на диск
@@ -132,11 +132,11 @@ trait ImageTrait
                     $tmp[] = $img;
                 }
             }
-            $this->attributes[$this->imagesFieldName] = json_encode($tmp);
+            $this->attributes[static::$imagesFieldName] = json_encode($tmp);
 
             // Стираем с диска удаленные картинки
             $request = \Request::instance();
-            if ($toClean = $request->get('clean_' . $this->imagesFieldName)) {
+            if ($toClean = $request->get('clean_' . static::$imagesFieldName)) {
                 foreach ($toClean as $filename) {
                     \Storage::disk()->delete($this->getImageDestination($filename));
                 }
