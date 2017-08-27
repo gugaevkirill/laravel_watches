@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\Builder;
  * @property string $category_slug
  * @property string $name
  * @property int|null $price_rub
- * @property int|null $price_dollar
  * @property array $attrs
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at

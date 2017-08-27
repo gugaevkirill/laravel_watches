@@ -99,6 +99,15 @@ class Product extends CrudController
 
         $this->crud->addField(
             [
+                'name' => 'price_usd',
+                'label' => 'Цена, usd.',
+                'type' => 'number',
+            ],
+            'update/create/both'
+        );
+
+        $this->crud->addField(
+            [
                 'name' => 'price_rub',
                 'label' => 'Цена, руб.',
                 'type' => 'number',
@@ -108,8 +117,8 @@ class Product extends CrudController
 
         $this->crud->addField(
             [
-                'name' => 'price_dollar',
-                'label' => 'Цена, usd.',
+                'name' => 'price_eur',
+                'label' => 'Цена, eur.',
                 'type' => 'number',
             ],
             'update/create/both'
@@ -130,7 +139,7 @@ class Product extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
-        $this->crud->removeColumns(['attrs', 'imagesnew', 'descriptionnew', 'price_rub', 'price_dollar']);
+        $this->crud->removeColumns(['attrs', 'imagesnew', 'descriptionnew', 'price_rub', 'price_usd', 'price_eur']);
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value
