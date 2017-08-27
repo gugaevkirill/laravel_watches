@@ -101,7 +101,8 @@ class Product extends ModelExtended
 
     /**
      * @param string $slug
-     * @return mixed
+     * @return \Illuminate\Contracts\Translation\Translator|mixed|null|string
+     * @throws \Exception
      */
     public function param(string $slug)
     {
@@ -116,9 +117,11 @@ class Product extends ModelExtended
                 return $this->attrs[$slug] ? __('site.system_yes') : __('site.system_no');
             case 'integer':
                 return number_format($this->attrs[$slug], 0, '.', ' ');
-            default:
+            case 'string':
                 return $this->attrs[$slug];
         }
+
+        throw new \Exception("Not implemented");
     }
 
     /**

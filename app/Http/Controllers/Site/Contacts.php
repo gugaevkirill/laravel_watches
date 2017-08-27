@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
-use Session;
+use App\Http\Controllers\ControllerAbstract;
+use App\Models\ContactForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Models\ContactForm;
+use Session;
 
-class ContactsController extends Controller
+class Contacts extends ControllerAbstract
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
-use Illuminate\Http\Request;
-use App\Models\Catalog\Brand;
-use App\Models\Catalog\Product;
+use App\Http\Controllers\ControllerAbstract;
 
-class RepairController extends Controller
+class Repair extends ControllerAbstract
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

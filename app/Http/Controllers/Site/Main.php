@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
-use App\Models\Catalog\Brand;
-use App\Models\Catalog\Category;
-use App\Models\Catalog\Product;
+use App\Http\Controllers\ControllerAbstract;
+use App\Models\Catalog;
 
-class MainController extends Controller
+class Main extends ControllerAbstract
 {
     const BRANDS_ON_MAINPAGE = 9;
 
@@ -28,28 +27,15 @@ class MainController extends Controller
                 [self::BRANDS_ON_MAINPAGE]
             )
         )->map(function ($rowData) {
-            return new Brand((array) $rowData);
+            return new Catalog\Brand((array) $rowData);
         });
 
         return view('index', [
             'brands' => $brands,
 
-            'watches' => Product::where('category_slug', 'watches')->take(6)->get(),
-            'luxury' => Product::where('category_slug', 'luxury')->take(6)->get(),
-            'accessories' => Product::where('category_slug', 'accessories')->take(6)->get(),
+            'watches' => Catalog\Product::where('category_slug', 'watches')->take(6)->get(),
+            'luxury' => Catalog\Product::where('category_slug', 'luxury')->take(6)->get(),
+            'accessories' => Catalog\Product::where('category_slug', 'accessories')->take(6)->get(),
         ]);
-    }
-
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function aboutPage()
-    {
-        return view(
-            'about',
-            [
-                'brands' => Brand::getWithProducts(6),
-            ]
-        );
     }
 }
