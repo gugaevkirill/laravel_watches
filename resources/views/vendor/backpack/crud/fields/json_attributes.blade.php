@@ -1,4 +1,8 @@
 <?php
+    // Текущий выбранный язык
+    /** @var \Backpack\CRUD\CrudPanel $crud */
+    $locale = $crud->request->get('locale') ?? \App\Repositories\LangRepository::DEFAULT_LOCALE;
+
     // Преобразуем объект к массиву
     $tmp = [];
     if (isset($field['value'])) {
@@ -8,6 +12,22 @@
     }
     $field['value'] = $tmp;
 ?>
+
+<!-- Значения по-умолчанию для компонента JsonAttrs -->
+@if ($crud->checkIfFieldIsFirstOfItsType($field, $fields))
+    @push('crud_fields_scripts')
+    <script>
+        var jsonattrsInit = {
+            params: JSON.parse('{!! json_encode($field['params']) !!}'),
+            values: JSON.parse('{!! json_encode($field['values']) !!}'),
+            categories: JSON.parse('{!! json_encode($field['categories']) !!}'),
+            attributes: JSON.parse('{!! json_encode($field['value']) !!}'),
+            locale: '{{ $locale }}',
+        };
+    </script>
+    <script src="/js/admin/jsonattrs.js"></script>
+    @endpush
+@endif
 
 <div @include('crud::inc.field_wrapper_attributes') id="json-attrs-block">
     <label>{!! $field['label'] !!}</label>
@@ -34,90 +54,3 @@
         <input type="hidden" name="attrs" v-model="jsonAttrs">
     </div>
 </div>
-
-
-@if ($crud->checkIfFieldIsFirstOfItsType($field, $fields))
-    @push('crud_fields_scripts')
-    <script>
-        var categorySelect = $("select[name='category_slug']");
-
-        var vueJsonAttr = new Vue({
-            el: '#jsonattr',
-            data: {
-                params: JSON.parse('{!! json_encode($field['params']) !!}'),
-                values: JSON.parse('{!! json_encode($field['values']) !!}'),
-                categories: JSON.parse('{!! json_encode($field['categories']) !!}'),
-
-                // Текущие значения
-                category: categorySelect.find("option:selected").val()
-            },
-
-            created: function () {
-                var that = this;
-
-                // Подписываемся на изменение категории
-                categorySelect.change(function () {
-                    that.category = $(this).val();
-                });
-
-                // Первоначальные значения параметрам
-                var attributes = JSON.parse('{!! json_encode($field['value']) !!}');
-                attributes.forEach(function (attr) {
-                    var param = that.getParamBySlug(attr.slug);
-                    param.value = attr.value;
-                });
-
-                setInterval(function () {
-                    that.$forceUpdate();
-                }, 500);
-            },
-
-            computed: {
-                // Вид атрибутов в формате json для сохранения в админке
-                jsonAttrs: {
-                    get:function () {
-                        var that = this;
-                        var tmp = {};
-
-                        this.params.forEach(function (param) {
-                            if (param.value === null && param.type == 'boolean') {
-                                param.value = false;
-                            }
-
-                            // Отбрасываем пустые параметры и параметры, не принадлежащие категории
-                            if (!param.hasOwnProperty('value')
-                                || param.value === null
-                                || !that.paramInCurrentCat(param)
-                            ) {
-                                return false;
-                            }
-
-                            tmp[param.slug] = param.value;
-                        });
-
-                        return JSON.stringify(tmp);
-                    },
-                    cache: false
-                }
-            },
-
-            methods: {
-                getParamBySlug: function (needleSlug) {
-                    return this.params.find(function (param) {
-                        return param.slug == needleSlug;
-                    })
-                },
-
-                clearParam: function (slug) {
-                    console.log('Clear param: ' + slug);
-                    this.$set(this.getParamBySlug(slug), 'value', null);
-                },
-
-                paramInCurrentCat: function (param) {
-                    return param.categories.indexOf(this.category) != -1;
-                }
-            }
-        });
-    </script>
-    @endpush
-@endif

@@ -27,6 +27,9 @@ class LangRepository
         $this->locales = array_keys(config('backpack.crud.locales'));
     }
 
+    /**
+     * @return string
+     */
     public function getSubdomain(): string
     {
         if (isset($this->subdomain)) {
@@ -88,6 +91,9 @@ class LangRepository
         return preg_replace($pattern, $replacement, $this->request->fullUrl());
     }
 
+    /**
+     * @return array
+     */
     public function getLocalesAsArray(): array
     {
         $locales = [];
@@ -108,5 +114,13 @@ class LangRepository
         }
 
         return $locales;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocale(): string
+    {
+        return \App::getLocale() ?: self::DEFAULT_LOCALE;
     }
 }

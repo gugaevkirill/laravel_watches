@@ -5,6 +5,7 @@ namespace App\Models\Catalog;
 use App\Models\ImageTrait;
 use App\Models\ModelExtended;
 use App\Repositories\CurrencyRepository;
+use App\Repositories\LangRepository;
 use App\Scopes\IsActiveScope;
 use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
@@ -83,6 +84,9 @@ class Product extends ModelExtended
     protected $imageDestination = '/public/products/';
     protected $imageUrlPrefix = '/storage/products/';
 
+    /**
+     * Модифицируем SQL запросы по данной модели.
+     */
     protected static function boot()
     {
         parent::boot();
@@ -94,11 +98,17 @@ class Product extends ModelExtended
         });
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function brand()
     {
         return $this->belongsTo(Brand::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -123,7 +133,9 @@ class Product extends ModelExtended
             case 'integer':
                 return number_format($this->attrs[$slug], 0, '.', ' ');
             case 'string':
-                return $this->attrs[$slug];
+                $lang = new LangRepository();
+                // TODO: грязный хак пока мы не научились требовать заполнения всех локалей
+                return $this->attrs[$slug][$lang->getLocale()] ?? '';
         }
 
         throw new \Exception("Not implemented");
