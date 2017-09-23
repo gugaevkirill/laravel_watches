@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Models\Catalog;
 
@@ -11,6 +11,7 @@ use App\Scopes\OrderByOrderScope;
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Builder;
+use Stichoza\GoogleTranslate\TranslateClient;
 
 /**
  * App\Models\Catalog\Product
@@ -52,6 +53,7 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class Product extends ModelExtended
 {
+    const URL_SLUG = 'url_slug';
     const PRICE_PREFIX = 'price_';
     const NO_PRICE = 'По запросу';
 
@@ -174,8 +176,43 @@ class Product extends ModelExtended
     /**
      * @return string
      */
-    public function getHref()
+    public function getHref(): string
     {
-        return "/$this->category_slug/$this->id";
+        return "/$this->category_slug/$this->url_slug";
+    }
+
+    /**
+     * Генерирует slug один раз при создании
+     * @return string
+     * @throws \Exception
+     */
+    public function generateSlug(): string
+    {
+        // проверяем на пустоту
+        if (!$this->name || trim($this->name) === "") {
+            throw new \Exception('Неудалось сгенерировать slug из пустого названия');
+        }
+
+        // создаём наш Google Translate клиент
+        // первым аргументом вводится язык источника
+        // вторым — язык, на который нужно перевести
+        // соответственно, если первый аргумент null, то производится автоматическое определение языка
+        $tr = new TranslateClient(null, 'en');
+
+        $slug = str_slug($tr->translate($this->name));
+
+        // Если такой slug уже существует
+        while (Product::where(self::URL_SLUG, $slug)->count()) {
+            if (!isset($i)) {
+                $i = 2;
+            } else {
+                $i++;
+                $slug = substr($slug, 0 , -1);
+            }
+
+            $slug .= $i;
+        }
+
+        return $slug;
     }
 }

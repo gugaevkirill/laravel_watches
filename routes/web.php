@@ -16,6 +16,6 @@ Route::group(['namespace' => 'Site'], function () {
 
     Route::get('/{category}', 'Category@categoryPage')
         ->where(['category' => Category::getRegexForRoutes()]);
-    Route::get('/{category}/{id}', 'Product@productPage')
-        ->where(['id' => '[0-9]+', 'category' => Category::getRegexForRoutes()]);
+    Route::get('/{category}/{url_slug}', 'Product@productPage')
+        ->where(['url_slug' => '[a-zA-Z-_0-9]+', 'category' => Category::getRegexForRoutes()]);
 });

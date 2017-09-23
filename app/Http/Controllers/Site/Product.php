@@ -10,13 +10,13 @@ class Product extends ControllerAbstract
 {
     /**
      * @param string $categorySlug
-     * @param int $productId
+     * @param string $productSlug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function productPage(string $categorySlug, int $productId)
+    public function productPage(string $categorySlug, string $productSlug)
     {
         /** @var Catalog\Product $product */
-        $product = Catalog\Product::findOrFail($productId);
+        $product = Catalog\Product::where(Catalog\Product::URL_SLUG, $productSlug)->firstOrFail();
         /** @var Catalog\Category $category */
         $category = Catalog\Category::findOrFail($categorySlug);
 

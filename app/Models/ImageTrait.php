@@ -115,8 +115,10 @@ trait ImageTrait
     {
         if (empty($value)) {
             // Если надо удалить все
-            foreach ($this->imagesnew as $image) {
-                \Storage::disk()->delete($this->getImageDestination($image));
+            if ($this->imagesnew) {
+                foreach ($this->imagesnew as $image) {
+                    \Storage::disk()->delete($this->getImageDestination($image));
+                }
             }
             $this->attributes[static::$imagesFieldName] = '[]';
         } elseif (is_array($value)) {
