@@ -5,6 +5,7 @@ CRUD::resource('brand', 'Brand');
 CRUD::resource('param', 'Param');
 CRUD::resource('value_param', 'ParamValue');
 CRUD::resource('product', 'Product');
+CRUD::resource('archive', 'ProductArchive');
 
 CRUD::resource('sellform', 'SellForm');
 CRUD::resource('contactform', 'ContactForm');

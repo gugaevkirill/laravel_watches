@@ -143,12 +143,6 @@ class Product extends CrudController
 
         $this->crud->addColumn([
             // run a function on the CRUD model and show its return value
-            'label' => "Активный", // Table column heading
-            'name' => 'is_active',
-        ])->beforeField('order');
-
-        $this->crud->addColumn([
-            // run a function on the CRUD model and show its return value
             'label' => "Картинка", // Table column heading
             'type' => "model_function",
             'function_name' => 'getAdminImagesHtml', // the method in your Model

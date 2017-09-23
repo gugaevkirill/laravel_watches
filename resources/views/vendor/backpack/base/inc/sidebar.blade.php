@@ -28,6 +28,7 @@
                 <li><a href="{{ url('admin/param') }}"><i class="fa fa-hand-spock-o"></i> <span>Параметры</span></a></li>
                 <li><a href="{{ url('admin/value_param') }}"><i class="fa fa-hand-pointer-o"></i> <span>Значения параметров</span></a></li>
                 <li><a href="{{ url('admin/product') }}"><i class="fa fa-cubes"></i> <span>Товары</span></a></li>
+                <li><a href="{{ url('admin/archive') }}"><i class="fa fa-archive"></i> <span>Архив</span></a></li>
 
                 <li class="header">Формы</li>
                 <li><a href="{{ url('admin/sellform') }}"><i class="fa fa-shopping-cart"></i> <span>Формы заказа</span></a></li>
