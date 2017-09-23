@@ -23,7 +23,7 @@ class AddProductSlugColumn extends Migration
                 continue;
             }
 
-            $product->slug = $product->generateSlug();
+            $product->url_slug = $product->generateSlug();
             $product->save();
         }
 
