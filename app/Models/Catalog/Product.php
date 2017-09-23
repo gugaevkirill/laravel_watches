@@ -50,6 +50,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
  * @property-write mixed $clean_imagesnew
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product wherePriceEur($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product wherePriceUsd($value)
+ * @property string|null $url_slug
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereUrlSlug($value)
  */
 class Product extends ModelExtended
 {

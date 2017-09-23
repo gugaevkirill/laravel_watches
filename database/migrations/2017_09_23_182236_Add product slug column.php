@@ -19,7 +19,7 @@ class AddProductSlugColumn extends Migration
         });
 
         foreach (Product::all() as $product) {
-            if ($product->slug) {
+            if ($product->url_slug) {
                 continue;
             }
 
