@@ -22,7 +22,7 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700%7CDancing+Script%7CMontserrat:400,700%7CMerriweather:400,300italic%7CLato:400,700,900' rel='stylesheet' type='text/css' />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 
-    <link href="/css/style_2.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style_3.css" rel="stylesheet" type="text/css" />
     <!--[if IE 9]>
     <link href="/css/ie9.css" rel="stylesheet" type="text/css" />
     <![endif]-->
