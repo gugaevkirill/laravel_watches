@@ -84,21 +84,7 @@
                                 <a class="popup-trigger" href="/contacts/#call-us">@lang('site.head_call_me')</a>
                             </span>
                         </span>
-                        <span class="icon-entry">
-                            <span class="text roboto">
-                                <a href="@chunk('phone2href')"><b>@chunk('phone2')</b></a>
-                                <div class="clearfix hidden-md-up"></div>
-                                <a href="@chunk('phone2href')" class="soc m-a-0">
-                                    <img src="/img/whatsapp.png" alt="WhatsApp">
-                                </a>
-                                <a href="@chunk('phone2href')" class="soc">
-                                    <img src="/img/viber.png" alt="Viber">
-                                </a>
-                                <a href="@chunk('phone2href')" class="soc">
-                                    <img src="/img/telegram.png" alt="Telegram">
-                                </a>
-                            </span>
-                        </span>
+                        @include('parts.menu-phones-social', ['showPhone2' => 'true'])
                     </div>
 
                     <div class="logo-wrapper">
@@ -144,8 +130,9 @@
                             <a href="mailto:@chunk('email')" class="email">@chunk('email')</a>
                             <a class="phone">@chunk('phone1')</a>
                             <a class="phone">@chunk('phone2')</a>
+                            @include('parts.menu-phones-social')
                         </div>
-                        
+
                         <div class="clear"></div>
                     </nav>
                 </div>
