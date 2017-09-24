@@ -25,7 +25,7 @@ class Category extends ModelExtended
     use CrudTrait;
     use HasTranslations;
 
-    const SLUGS = ['watches', 'luxury', 'accessories'];
+    const SLUGS = ['watches', 'luxury', 'accessories', 'jewelry'];
 
     public $timestamps = false;
     public $incrementing = false;
