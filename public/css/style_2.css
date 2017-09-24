@@ -2730,6 +2730,7 @@ body.teaser-3 .teaser-title{font-size: 72px; line-height: 62px; border-top: 4px 
 .brands-filter > li { padding-top: 15px; cursor: pointer; }
 .brands-filter > li.active { font-weight: bold; }
 .buy-button { float: none!important; }
+.reserved-button { float: none!important; background: #fff!important; color: #262626!important; cursor: default!important; }
 .roboto { font-family: 'Roboto', sans-serif!important; }
 .no-products { margin: 24px 0!important; font-size: 1.2rem; }
 .swiper-wrapper { cursor: default!important; }

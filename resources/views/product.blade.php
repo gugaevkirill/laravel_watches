@@ -66,15 +66,13 @@
                 <h3 class="product-subtitle">{{ $brandName }}</h3>
 
                 <div class="price detail-info-entry roboto">
+                    @if ($productIsReserved)
+                    <div class="button style-10 reserved-button">
+                        В резерве
+                    </div>
+                    @else
                     <div class="current">{{ $productPrice }}</div>
-
-                    {{--<a class="button style-10 buy-button">--}}
-                        {{--@if (empty($productPrices))--}}
-                            {{--Узнать цену--}}
-                        {{--@else--}}
-                            {{--Купить--}}
-                        {{--@endif--}}
-                    {{--</a>--}}
+                    @endif
 
                     <div class="clear"></div>
                 </div>

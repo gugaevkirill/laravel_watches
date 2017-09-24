@@ -32,8 +32,17 @@ class Product extends CrudController
 
         $this->crud->addField(
             [
+                'name' => 'is_reserved',
+                'label' => 'В резерве?',
+                'type' => 'checkbox',
+            ],
+            'update'
+        );
+
+        $this->crud->addField(
+            [
                 'name' => 'is_active',
-                'label' => 'Активный?',
+                'label' => 'Архивный?',
                 'type' => 'checkbox',
             ],
             'update'

@@ -41,6 +41,8 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\ProductArchived whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\ProductArchived whereUrlSlug($value)
  * @mixin \Eloquent
+ * @property bool $is_reserved
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\ProductArchived whereIsReserved($value)
  */
 class ProductArchived extends Product
 {

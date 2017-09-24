@@ -52,6 +52,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product wherePriceUsd($value)
  * @property string|null $url_slug
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereUrlSlug($value)
+ * @property bool $is_reserved
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Catalog\Product whereIsReserved($value)
  */
 class Product extends ModelExtended
 {

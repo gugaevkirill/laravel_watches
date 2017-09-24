@@ -37,6 +37,7 @@ class Product extends ControllerAbstract
                 'productDescription' => $product->descriptionnew,
                 'productName' => $product->name,
                 'productPrice' => $product->getPriceString(),
+                'productIsReserved' => $product->is_reserved,
                 'productAttrs' => $product->getAttrsForProductPage(),
                 'productImages' => $productImages,
 
