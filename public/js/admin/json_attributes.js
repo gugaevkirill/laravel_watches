@@ -54,7 +54,9 @@ var vueJsonAttr = new Vue({
                             var tmp = {};
                             tmp[that.locale] = param.value;
                             valueToSave = _.omitBy(_.assign(param.multilangValue, tmp), _.isEmpty);
-
+                            break;
+                        case 'integer':
+                            valueToSave = parseInt(param.value);
                             break;
                     }
 
