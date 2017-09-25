@@ -14,7 +14,7 @@ class CurrencyRepository
     const RUB = 'rub';
     const USD = 'usd';
     const EUR = 'eur';
-    const ALLOWED_CURRENCIES = [self::RUB, self::USD, self::EUR];
+    const ALLOWED_CURRENCIES = [self::USD, self::RUB, self::EUR];
     const SIGNS = [
         self::RUB => '₽',
         self::USD => '$',
