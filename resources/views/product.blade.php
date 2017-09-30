@@ -77,6 +77,10 @@
                     <div class="clear"></div>
                 </div>
 
+                <div class="detail-info-entry">
+                    <span>{{ $productDescription }}</span>
+                </div>
+
                 @foreach ($productAttrs as $attrName => $attrValue)
                 <div class="detail-info-entry">
                     <span class="detail-info-entry-title">{{ $attrName }}:</span>
