@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="detail-info-entry">
-                    <span>{{ $productDescription }}</span>
+                    <span>{!! $productDescription !!}</span>
                 </div>
 
                 @foreach ($productAttrs as $attrName => $attrValue)
