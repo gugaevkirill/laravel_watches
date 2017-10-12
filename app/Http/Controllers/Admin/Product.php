@@ -42,7 +42,7 @@ class Product extends CrudController
         $this->crud->addField(
             [
                 'name' => 'is_active',
-                'label' => 'Архивный?',
+                'label' => 'Активный',
                 'type' => 'checkbox',
             ],
             'update'
