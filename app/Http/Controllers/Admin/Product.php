@@ -159,6 +159,8 @@ class Product extends CrudController
             'aspect_ratio' => 0, // ommit or set to 0 to allow any aspect ratio
         ])->beforeField('attrs');
 
+        $this->crud->removeButton('delete');
+
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
