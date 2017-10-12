@@ -33,9 +33,30 @@ class Main extends ControllerAbstract
         return view('index', [
             'brands' => $brands,
 
-            'watches' => Catalog\Product::where('category_slug', 'watches')->take(6)->get(),
-            'luxury' => Catalog\Product::where('category_slug', 'luxury')->take(6)->get(),
-            'accessories' => Catalog\Product::where('category_slug', 'accessories')->take(6)->get(),
+            'featured' => $this->getFeaturedProducts(),
         ]);
+    }
+
+    public function getFeaturedProducts(): array
+    {
+        $result = [];
+
+        foreach (Catalog\Category::all() as $cat) {
+            /** @var Catalog\Category $cat */
+            $products = Catalog\Product::where('category_slug', $cat->slug)
+                ->take(6)
+                ->get();
+
+            if (!$products->count()) {
+                continue;
+            }
+
+            $result[] = [
+                'title' => $cat->name,
+                'products' => $products,
+            ];
+        }
+
+        return $result;
     }
 }

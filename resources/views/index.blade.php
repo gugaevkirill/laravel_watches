@@ -78,18 +78,19 @@
         <div class="swiper-tabs tabs-switch">
             <div class="title">@lang('site.system_novels')</div>
             <div class="list">
-                <a class="block-title tab-switcher active">@lang('site.main_tabs1')</a>
-                <a class="block-title tab-switcher">@lang('site.main_elitegoods')</a>
-                <a class="block-title tab-switcher">@lang('site.main_tabs3')</a>
+                @foreach ($featured as $record)
+                <a class="block-title tab-switcher @if ($loop->first) active @endif ">{{ $record['title'] }}</a>
+                @endforeach
                 <div class="clear"></div>
             </div>
         </div>
         <div>
+            @foreach ($featured as $record)
             <div class="tabs-entry">
                 <div class="products-swiper">
                     <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-int-slides="2" data-sm-slides="3" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
                         <div class="swiper-wrapper">
-                            @foreach($watches as $item)
+                            @foreach($record['products'] as $item)
                                 <div class="swiper-slide">
                                     <div class="paddings-container">
                                     @include('parts.product-card')
@@ -101,38 +102,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tabs-entry">
-                <div class="products-swiper">
-                    <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-int-slides="2" data-sm-slides="3" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
-                        <div class="swiper-wrapper">
-                            @foreach($luxury as $item)
-                                <div class="swiper-slide">
-                                    <div class="paddings-container">
-                                    @include('parts.product-card')
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="pagination"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="tabs-entry">
-                <div class="products-swiper">
-                    <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-int-slides="2" data-sm-slides="3" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
-                        <div class="swiper-wrapper">
-                            @foreach($accessories as $item)
-                                <div class="swiper-slide">
-                                    <div class="paddings-container">
-                                    @include('parts.product-card')
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="pagination"></div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
