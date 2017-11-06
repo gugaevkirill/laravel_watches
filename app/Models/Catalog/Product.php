@@ -206,9 +206,12 @@ class Product extends ModelExtended
         $slug = str_slug($tr->translate($this->name));
 
         // Если такой slug уже существует
-        while (Product::where(self::URL_SLUG, $slug)->count()
-            || ProductArchived::where(self::URL_SLUG, $slug)->count()
-        ) {
+        $analogs = [];
+        foreach (\DB::select("select distinct url_slug from products where url_slug like '$slug%'") as $row) {
+            $analogs[] = $row->url_slug;
+        }
+
+        while (in_array($slug, $analogs)) {
             if (!isset($i)) {
                 $i = 2;
             } else {

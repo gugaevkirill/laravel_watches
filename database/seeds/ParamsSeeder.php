@@ -36,7 +36,6 @@ class ParamsSeeder extends Seeder
                     'ru' => 'Референс',
                 ],
                 'required' => true,
-                'unique' => true,
             ]
         );
         $this->createParam(
