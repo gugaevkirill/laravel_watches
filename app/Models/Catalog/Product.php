@@ -206,7 +206,9 @@ class Product extends ModelExtended
         $slug = str_slug($tr->translate($this->name));
 
         // Если такой slug уже существует
-        while (Product::where(self::URL_SLUG, $slug)->count()) {
+        while (Product::where(self::URL_SLUG, $slug)->count()
+            || ProductArchived::where(self::URL_SLUG, $slug)->count()
+        ) {
             if (!isset($i)) {
                 $i = 2;
             } else {
