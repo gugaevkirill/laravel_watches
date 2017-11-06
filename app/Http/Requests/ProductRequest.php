@@ -28,6 +28,7 @@ class ProductRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
             'order' => 'required|min:0|numeric',
             'brand_slug' => 'required',
             'category_slug' => 'required',
+            'url_slug' => 'required|string|max:150',
             'name' => 'required|string|min:5|max:150',
             'description' => 'string|min:10|max:10000',
             'price_rub' => 'numeric|min:100|max:10000000000',

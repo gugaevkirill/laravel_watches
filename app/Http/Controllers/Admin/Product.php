@@ -32,6 +32,14 @@ class Product extends CrudController
 
         $this->crud->addField(
             [
+                'label' => "URL slug",
+                'name' => 'url_slug',
+            ],
+            'update'
+        );
+
+        $this->crud->addField(
+            [
                 'name' => 'is_reserved',
                 'label' => 'В резерве?',
                 'type' => 'checkbox',

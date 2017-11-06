@@ -47,5 +47,14 @@ class CategoriesSeeder extends Seeder
                 'en' => 'Luxury products',
             ],
         ]);
+
+        $this->createCategory([
+            'slug' => 'jewelry',
+            'order' => 4,
+            'name' => [
+                'ru' => 'Драгоценности',
+                'en' => 'Jewelry',
+            ],
+        ]);
     }
 }
