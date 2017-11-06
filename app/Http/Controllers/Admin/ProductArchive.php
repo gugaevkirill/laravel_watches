@@ -19,6 +19,7 @@ class ProductArchive extends Product
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/archive');
         $this->crud->setEntityNameStrings('archived product', 'archived products');
 
+        $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete', 'end');
         $this->crud->removeButton('create');
     }
 }
