@@ -3,7 +3,6 @@
 namespace App\Console;
 
 use App\Console\Commands\CustomMigration;
-use App\Console\Commands\FixUrlSlug;
 use App\Console\Commands\UpdateCurrencyCources;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -18,7 +17,6 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         CustomMigration::class,
         UpdateCurrencyCources::class,
-        FixUrlSlug::class,
     ];
 
     /**
