@@ -18,7 +18,7 @@
         params: {!! $paramsJSON !!}
     };
 </script>
-<script src="/js/site/catalog.js"></script>
+<script src="/js/site/catalog_2.js"></script>
 @endpush
 
 @section('content')

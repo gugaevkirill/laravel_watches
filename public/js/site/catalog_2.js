@@ -10,7 +10,8 @@ const app = new Vue({
         brands: config.brands,
         currentPage: config.currentPage,
         token: config.token,
-        params: config.params
+        params: config.params,
+        needScrollTop: false,
     },
     mounted: function () {
         this.updateFilters(this.$route);
@@ -35,7 +36,11 @@ const app = new Vue({
             }
 
             // Page
-            this.$set(this, 'currentPage', to.query['page'] || 1);
+            var toPage = to.query['page'] || 1;
+            if (this.currentPage !== toPage) {
+                this.needScrollTop = true;
+                this.$set(this, 'currentPage', toPage);
+            }
 
             // Params
             for (var pKey in this.params) {
@@ -73,6 +78,13 @@ const app = new Vue({
                 $('.shop-grid.grid-view').html(data.html);
                 $('.page-selector .description').html(data.countInfo);
                 $('.page-selector > .pages-box').html(data.pagenInfo);
+
+                if (that.needScrollTop) {
+                    $('html, body').animate({
+                        scrollTop: $('#vue-catalog').offset().top - 90
+                    }, 500);
+                    that.needScrollTop = false;
+                }
             })
             .fail(function() {
                 // location.reload();
