@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\CustomMigration;
+use App\Console\Commands\ShuffleProducts;
 use App\Console\Commands\UpdateCurrencyCources;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -17,6 +18,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         CustomMigration::class,
         UpdateCurrencyCources::class,
+        ShuffleProducts::class,
     ];
 
     /**
@@ -27,8 +29,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+         $schedule->command('custom:currencyupdate')
+             ->weekly();
     }
 
     /**
