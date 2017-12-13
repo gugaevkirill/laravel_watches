@@ -91,6 +91,7 @@ HTML
     'catalog_gotobrand' => 'Перейти к бренду',
     'catalog_similars' => 'Похожие товары',
     'catalog_pricerequest' => 'Цена по запросу',
+    'catalog_awailability_warning' => 'Перед приездом в ломбард, пожалуйста, уточняйте наличие!',
 
     'contacts_contactus' => 'Свяжитесь с нами',
     'contacts_placemark' => 'Офис EliteBazaar',

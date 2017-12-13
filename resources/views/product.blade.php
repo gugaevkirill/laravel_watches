@@ -88,6 +88,10 @@
                 </div>
                 @endforeach
 
+                <div class="detail-info-entry availability-warning">
+                    <span><i class="fa fa-exclamation-triangle"></i>@lang('site.catalog_awailability_warning')</span>
+                </div>
+
                 <div class="share-box detail-info-entry">
                     <div class="title">@lang('site.social_share'):</div>
                     <div class="clear"></div>

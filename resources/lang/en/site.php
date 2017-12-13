@@ -90,6 +90,7 @@ HTML
     'catalog_gotobrand' => 'Go to brand',
     'catalog_similars' => 'Similars',
     'catalog_pricerequest' => 'Price by request',
+    'catalog_awailability_warning' => 'Before coming to the pawnshop, please, check availability!',
 
     'contacts_contactus' => 'Call us',
     'contacts_placemark' => 'Our office',

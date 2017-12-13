@@ -2740,6 +2740,7 @@ body.teaser-3 .teaser-title{font-size: 72px; line-height: 62px; border-top: 4px 
 
 .repair-block { margin-top: 30px; }
 .promotion { padding: 0!important; }
+.availability-warning i {font-size: 1.3rem; color: rgba(0,0,0,.5); padding-right: .5rem;}
 
 .main-banner1 { background: url('/img/mainbanner1.jpg') center no-repeat; background-size: cover; }
 .main-banner2 { background: url('/img/mainbanner2.jpg') center no-repeat; background-size: cover; }
