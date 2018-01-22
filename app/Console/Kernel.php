@@ -31,6 +31,8 @@ class Kernel extends ConsoleKernel
     {
          $schedule->command('custom:currencyupdate')
              ->weekly();
+        $schedule->command('custom:shuffleproducts')
+            ->weekly();
     }
 
     /**
