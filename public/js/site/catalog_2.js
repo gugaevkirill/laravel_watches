@@ -28,6 +28,8 @@ const app = new Vue({
     },
     methods: {
         updateFilters: function (to) {
+            this.needScrollTop = true;
+
             // Brands
             for (var key in this.brands) {
                 if (this.brands.hasOwnProperty(key)) {
@@ -38,7 +40,6 @@ const app = new Vue({
             // Page
             var toPage = to.query['page'] || 1;
             if (this.currentPage !== toPage) {
-                this.needScrollTop = true;
                 this.$set(this, 'currentPage', toPage);
             }
 
